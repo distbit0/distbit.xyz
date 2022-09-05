@@ -13,7 +13,7 @@ author: distbit
 description: Analysis of collateral required by IRS contracts
 ---
 
-Hmm so with an IRS am I correct in saying there are three types of margin which are ~required?:
+There are three types of margin which IRS contracts require:
 - matured cashflow margin: margin which covers the delta between the cashflows (so far)
 	- e.g.
 		- if the avg variable rate so far has been 5% and the fixed was 1%
@@ -21,8 +21,7 @@ Hmm so with an IRS am I correct in saying there are three types of margin which 
 		- time elapsed so far is 1 year
 	- the fixed rate receiver would need to have a margin at least as large as
 		- (5% - 1%) x $100 x 1 = $4
-	- I guess this could just be payed out on the fly rather than being kept as margin
-		- E.g. difference between collect vs drag
+	- Could just be payed out on the fly rather than being kept as margin
 - contract NPV margin: margin which is equal to the NPV of the remainder of the contract
 	- e.g. 
 		- if the "fixed market rate" for this contract is now 3%
