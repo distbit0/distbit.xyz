@@ -226,6 +226,23 @@ Oh right. I gave the explanation for the wrong part.
 If the signal is 2x worse, then your expected payout per unit of capital invested per round is 2x lower.
 The signal is your edge. Your edge is your expected profit per unit invested per round.
 
+
+Right. For this example we want p to be 0.5. So it doesnt mix the P example with the S example.
+
+So its biden vs trump then. Lets imagine biden is 20% more likely to achieve our economic goals. And they are equally likely to win the election.
+So the probability square is:
+Economy good bad 
+Biden 30 20
+Trump 20 30
+The attacker buys shares saying "biden wins and the economy fails." They buy shares of "trump wins and the economy improves".
+They move the price until the square is like:
+25 25
+25 25
+So, the attackers average bet is expected to lose 10%. (S/2)
+If denfenders do the opposite bets to defend, then their average bet is expected to earn 10%. (S/2)
+So, if a 10% prize is enough incentive to leave veo locked up in the market for a while, then it works as a prediction market.
+If S was 2x bigger, the defenders could earn twice as much on their average bet.
+
 >>
 >>>
 >>>>P is because it is liquidity inefficient to move the price by buying the more expensive type of share. If defenders need to spend 2x as much to move the price the same distance, then the defenders are losing interest on 2x as much money.
@@ -437,3 +454,4 @@ The signal is your edge. Your edge is your expected profit per unit invested per
 >>>
 >>
 >
+
