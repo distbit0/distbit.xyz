@@ -158,6 +158,7 @@ So the effect of people jumping between investments for individual benefit, it m
 >	- I was not disputing the relevance of P to your second equation (required capital for successful a defence to be possible).
 >		- But rather, I was disputing its relevance to the first equation (relating to the profitability of defence)
 >			- See my comments above for why I am disputing its relevance (quoted below)
+>
 >```
 >- Regarding revenue of attack, I would have thought the primary factor here be how much the PM share is mispriced. E.g. if the expected value is 0.95 but the current price is 0.90, then the return on investment is 0.95/0.90=105.5% of principle. 
 >	- So therefore the I would need to be less than this (assuming the collateral asset is not yield bearing, as mentioned above)
@@ -166,6 +167,7 @@ So the effect of people jumping between investments for individual benefit, it m
 >				- Resulting in P multiplying the revenue term and the interest costs term equally?
 >					- Therefore cancelling out the P term?
 >						- If this is correct, the equation would be `M < O` where `M` is the mispricing % and `O` is the opportunity cost of the capital (not the same as the interest rate, as the collateral can be yield bearing)
+>
 >```
 
 If the attacker can invest $1 to make it look like elon musk would be a good president, and it costs me $1000 to bet against that and put the price back, then my expected return for locking up my $1000 is to win a fraction of your $1.
@@ -212,6 +214,7 @@ That capital lockup cost loses money by the inflation rate. So that is why if th
 >	- However, I was asking how S is relevant to the first equation (specifically how it determines the revenue of a defence)
 >		- I.e. how it relates to this inequality: `S * P < I`
 >			- I elaborate below (quoted from above) on how I think the revenue of defence should be determined:
+>
 >```
 >- Regarding revenue of attack, I would have thought the primary factor here be how much the PM share is mispriced. E.g. if the expected value is 0.95 but the current price is 0.90, then the return on investment is 0.95/0.90=105.5% of principle. 
 >	- So therefore the I would need to be less than this (assuming the collateral asset is not yield bearing, as mentioned above)
