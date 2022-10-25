@@ -64,7 +64,7 @@ It is very possible for example that someone would value being able to use the b
 
 The above demonstrates that how much consumption the bowl supports is not something that can be objectively ascertained. This is because the consumption of the bowl can only be compared to the consumption of a cup of rice by assessing what subjective value people assign to each type of consumption.
 
-However different people will value each type of consumption differently. Antique collectors may value the bowl far greater than a cup of rice, whereas someone looking for a quick meal may value the cup of rice far more. 
+However different people will value each type of consumption differently. Antique collectors may value the bowl far greater than a cup of rice, whereas someone looking for a quick meal may prefer the cup of rice over the bowl. 
 
 The price system exists to address this problem by allowing for those who value something the most to acquire it by way of being willing to pay more for it than others are willing to. The result is that prices emerge for goods, reflecting the minimum amount one must forgo to acquire a certain good, in order to outbid all other prospective buyers.
 
