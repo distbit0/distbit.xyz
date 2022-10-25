@@ -16,7 +16,12 @@ author: distbit
 description: A response to a blog post analysing the value lost resulting from the terra luna crash.
 ---
 
-A response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post
+The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. In this post, I discuss:
+- Whether the "potential for supporting future consumption" is actually a coherent measure of value
+- Whether a parable mischaracterises the concept of market capitalisation
+- The implications of market capitalisation
+- The importance of liquidity when measuring market capitalisation
+- Whether Terra holders actually valued their losses resulting from the crash at $20B
 
 > What are we to make of the recent near-total wipeout of the stablecoin Terra and its companion coin Luna, in which around $50 billion of value vaporized in less than a week? [2](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/#easy-footnote-bottom-2-5327) One perspective that might be useful comes from a parable beloved by Vic’s dad:[3](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/#easy-footnote-bottom-3-5327)
 >
