@@ -66,7 +66,7 @@ The above demonstrates that how much consumption the bowl supports is not someth
 
 However different people will value each type of consumption differently. Antique collectors may value the bowl far greater than a cup of rice, whereas someone looking for a quick meal may value the cup of rice far more. 
 
-The price system exists to address this problem by allowing for those who value something the most to acquire it by way of being willing to pay more for it than others are willing to. The result is that prices emerge for goods, reflecting the minimum amount one must forgo to acquire a certain good, due to no one else being willing to pay anymore for it.  
+The price system exists to address this problem by allowing for those who value something the most to acquire it by way of being willing to pay more for it than others are willing to. The result is that prices emerge for goods, reflecting the minimum amount one must forgo to acquire a certain good, in order to outbid all other prospective buyers.
 
 As a result, the "future consumption" theory of value suggested by the author either results in the value of the bowl and a cup of rice being impossible to compare, due to each person valuing them differently, or simply results in using prices to assess the relative (marginal) values placed on each good.
 
