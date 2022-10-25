@@ -1,5 +1,5 @@
 ---
-title: "Discussion with Zack Hess about secruity of Futarchy"
+title: "Discussion with @zack_bitcoin about secruity of Futarchy"
 layout: post
 date: 2022-09-26 00:00
 image: /assets/images/markdown.jpg
@@ -11,7 +11,7 @@ tag:
 - Price manipulation
 category: blog
 author: distbit
-description: An on-going discussion with Zack Hess about the security of Futarchy against price manipulation attacks
+description: An on-going discussion with @zack_bitcoin about the security of Futarchy against price manipulation attacks
 ---
 
 >>>>Futarchy's Failure
