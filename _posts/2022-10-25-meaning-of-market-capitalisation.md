@@ -17,7 +17,7 @@ description: A response to a blog post analysing the value lost resulting from t
 ---
 
 The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. In this post, I discuss:
-- Whether the "potential for supporting future consumption" is actually a coherent measure of value
+- Whether the "capacity to support future consumption" is actually a coherent measure of value
 - Whether a parable mischaracterises the concept of market capitalisation
 - The implications of market capitalisation
 - The importance of liquidity when measuring market capitalisation
