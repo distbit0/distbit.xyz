@@ -1,7 +1,7 @@
 ---
 title: "A response on the meanining of market capitalisation"
 layout: post
-date: 2022-09-26 00:00
+date: 2022-10-25 00:00
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
@@ -24,15 +24,24 @@ This is a response to the following blog post: https://elmwealth.com/hassan-and-
 >
 > After thirty days of this very sociable pattern of trading, Ali and Hassan congratulate each other on discovering such a valuable business. Based on their last trade, in which Ali bought back a roughly 1.5 billionth interest in the bowl for 75 Rials, they valued the bowl at about 50 Billion Rials, with ownership split almost exactly 50/50, and their bank accounts exactly as they were before the very first trade.[5](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/#easy-footnote-bottom-5-5327)
 
-I think what fundamentally differentiates this from most uses of "market capitalisation" is the lack of demonstrated preference.
+I think what fundamentally differentiates this from most uses of "market capitalisation" is the lack of demonstrated preference:
 
-When the market cap of a company such as Google is calculated, it is done so by multiplying the last trading price of a share by the quantity of shares in existence. The difference though between this and the above bowl scenario is that there is no liquidity at the last price, whereas for companies like google, there always is. As a result, for most companies the last price is economically meaningful because if share holders wanted to, they could sell at least some of their shares at said price. The existence of liquidity at the last price proves that all current share holders value every one of their shares more highly than the last price (or more specifically, at the price of the highest bid).
+When the market cap of a company such as Google is calculated, it is done so by multiplying the last trading price of a share by the quantity of shares in existence.
 
-This situation however can be contrasted with that of the bowl in the above scenario, where there is no liquidity at the last trading price: no bids committing to buy from the current owners of the bowl, were they to decide to sell.
+The difference between this and the above bowl scenario is that there is no liquidity at the bowl's last price, whereas for companies like google, there always is. 
+As a result, for most companies the last price is economically meaningful because if shareholdershave the option to sell at said price. 
 
-As a result, the continued possession of the bowl by hassan and ali proves very little about how much they value their shares of the bowl. Unlike in the case of google, their continued possession of the bowl does not prove that they value every fraction of it more than the last price they traded it for, as there is no one who is offering to buy it from them at said price. As a result, they may in fact be willing to sell their entire stake for $100 at the present moment, but no one would know as they aren't being presented with this opportunity, and as a consequence aren't able to refuse it.
+The existence of this liquidity at the last price proves that all shareholders value every one of their shares more highly than the last price (or more specifically, than the price of the highest bid).
 
-The above tells us that in the context of most companies, the market capitalisation is meaningful in some sense as it represents the minimum value someone could offer to all current share holders in exchange for their shares, yet still not be able to acquire a single share from them. Whereas in the context of the bowl, we have no such guarantee as the "last price" is economically meaningless, as neither hassan and ali are able to sell their shares at said price were they to want to do so. There is no liquidity.
+This situation can be contrasted with that of the bowl in the above scenario, where there is no liquidity at the last trading price: no bids committing to buy from the current owners of the bowl, were they to decide to sell.
+
+As a result, the continued possession of the bowl by hassan and ali proves very little about how much they value their shares of the bowl. Unlike in the case of google, their continued possession of the bowl does not prove that they value every fraction of it more than the last price they traded it for, as there is no one who is offering to buy it from them at said price. 
+
+As a result, they may in fact be willing to sell their entire stake for $100 at the present moment, but no one would know. They aren't being presented with this opportunity, and as a consequence aren't able to refuse it.
+
+The above tells us that in the context of most companies, the market capitalisation is meaningful in the sense that it represents the maximum value someone could offer to all shareholders in exchange for their shares, yet still not succeed in acquiring a single share from them. 
+
+Whereas in the context of the bowl, we have no such guarantee. The "last price" is economically meaningless, as neither hassan nor ali are able to sell their shares at said price were they to want to do so. There is no liquidity.
 
 > They spend the evening drinking to their success, hatching plans to sell a small interest in the bowl to passing tourists, or posting the bowl as collateral for a large loan that will give them a chance to enjoy their new-found riches.[6](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/#easy-footnote-bottom-6-5327) But that very night, the bowl is stolen. Down on his luck, the thief exchanges it for a bowl of rice in the bazaar of a distant city.
 >
@@ -41,13 +50,19 @@ The above tells us that in the context of most companies, the market capitalisat
 > But we suggest a more sensible way to think about the wealth generated by an asset is as the present value of the future consumption it can support.
 
 As I demonstrated above, there is no need to appeal to notions of future consumption to understand why the bowl's valuation was deceptive.
+
 Rather, all that is necessary to appreciate this is to realise that what differentiates the bowl's market capitalisation from most other assets is simply that there was no liquidity at the last price.
 
 > Hassan and Ali may have been able to sell a few fractional shares to unsuspecting tourists, or hoodwink a hapless loan officer into giving them a small loan against the bowl, but it’s clear there’s no way this bowl could support 50 billion Rials of future consumption or anywhere close to it. The true wealth stolen from them was a lot closer to one cup of rice.
 
-Given that value is ultimately subjective, any assessments of how much the bowl was "really" worth must be made in reference to certain individual's preferences. As far as hassan and ali are concerned, I'd agree that the bowl was probably worth to them something closer to a cup of price, purely due to lack of evidence to the contrary (as a result of liquidity lacking at the prices at which they were trading it amongst themselves).
+Given that value is ultimately subjective, any assessments of how much the bowl is "really" worth must be made in reference to certain individual's preferences. 
+As far as hassan and ali are concerned, I'd agree that the bowl was probably worth to them something closer to a cup of price, purely due to lack of evidence to the contrary (as a result of liquidity lacking at the prices at which they were trading it amongst themselves).
 
-I think however that the "consumption" rationale for this conclusion is ultimately circular, as it can not be objectively determined that a bowl supports a similar level of consumption to a cup of rice without comparing the value of a bowl to a cup of rice. Any such comparisons depend on the prices of said goods, which result from consumer's preferences for said goods. There is nothing technically preventing the bowl from in fact being a valuable collectable, which would cause its price to be far greater than that of a cup of rice, and consequently would result in it supporting a much greater level of "consumption". As a result, the "future consumption" theory of value ultimately falls back to market prices of goods.
+I think however that the "consumption" rationale for this conclusion is ultimately circular, as it can not be objectively determined that a bowl supports a similar level of consumption to a cup of rice without comparing the value of a bowl to a cup of rice. Any such comparisons depend on the relative prices, which result from consumer's preferences for said goods. 
+
+There is nothing technically preventing the bowl from in fact being a valuable collectable, which would cause its price to be far greater than that of a cup of rice, and consequently would result in it supporting a much greater level of "consumption".
+
+As a result, the "future consumption" theory of value ultimately falls back to simply observing market prices, so can not be used to prove that the bowl has a similar value to that of a cup of rice.
 
 > Let’s contrast this to an asset like the common stock of General Motors, currently worth about $50 billion. If every holder of GM decided to sell simultaneously, they might receive less than $50 billion
 > or they might receive more (controlling stakes often trade at a premium) – but the ownership of an interest in GM is sufficiently deep and broad-based that $50 billion is a reasonable estimate for the wealth that would be lost by stockholders in aggregate if the GM stock price suddenly went to zero.
