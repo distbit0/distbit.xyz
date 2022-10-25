@@ -26,9 +26,9 @@ This is a response to the following blog post: https://elmwealth.com/hassan-and-
 
 I think what fundamentally differentiates this from most uses of "market capitalisation" is the lack of demonstrated preference:
 
-When the market cap of a company such as Google is calculated, it is done so by multiplying the last trading price of a share by the quantity of shares in existence.
-
+When the market cap of a company such as Google is calculated, it is done so by multiplying the last trading price of a share by the quantity of shares in existence. 
 The difference between this and the above bowl scenario is that there is no liquidity at the bowl's last price, whereas for companies like google, there always is. 
+
 As a result, for most companies the last price is economically meaningful because if shareholdershave the option to sell at said price. 
 
 The existence of this liquidity at the last price proves that all shareholders value every one of their shares more highly than the last price (or more specifically, than the price of the highest bid).
