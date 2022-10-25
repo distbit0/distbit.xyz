@@ -68,12 +68,27 @@ As a result, the "future consumption" theory of value ultimately falls back to s
 
 This question is very much divorced from what market capitalisation measures. Market capitalisation measures the value placed upon the shares by their current owners. It is derived from the fact that at any moment in time, all share holders are willing to hold their shares despite having the option to sell them for the ~last price.
 
-From this observation, the market cap measurement effectively calculates a minimum aggregate value placed on all shares by their owners. It is not supposed to reflect how much all shareholders would receive were they to similtaneously sell their shares. This depends on how much the 
+From this observation, the market cap measurement effectively calculates a minimum aggregate value placed on all shares by their owners. It is not supposed to reflect how much all shareholders would receive were they to similtaneously sell their shares. To answer that, one would need to know how much the marginal share is valued by everyone other than those who currently hold shares.
+
+Given that those who value shares the most will be those who already hold them, the clearing price will almost certainly be lower if those who currently hold shares are excluded from holding them (in the hypothetical where they all sell).
 
 > or they might receive more (controlling stakes often trade at a premium) – but the ownership of an interest in GM is sufficiently deep and broad-based that $50 billion is a reasonable estimate for the wealth that would be lost by stockholders in aggregate if the GM stock price suddenly went to zero.
->
+
+I think that this mostly mischaracterises what fundamentally differentiates the bowl hypothetical from what determines the value of GM shares. By far the most important difference is that there is no liquidity at the last price in the bowl hypothetical, whereas there is large liquidity at the last price in for GM shares.
+
+Despite this being the most important difference, I also do agree that a secondarily important difference is the broad-based nature of the GM share holder base relative to the very centralised (consisting of only Hassan and Ali) ownership of the bowl.
+
+Centralised ownership can result in less accurate pricing, as few owners may more easily collude to withold supply/not sell their shares, which is much more difficult to coordinate amongst millions of shareholders in the context of GM. 
+
 > There’s a continuum between assets like GM’s common stock and Hassan and Ali’s bowl. Your evaluation of how much wealth was created and destroyed by the rise and fall of Terra and Luna will depend on where along this continuum these assets lie.
->
+
+Based on the two above important factors I have identified as being necessary for meaningful pricing of an asset, being:
+- Relatively broad-based ownership of shares, to minimise risk of collusion to withold supply
+- Liquidity available at the last price, providing all holders with the option to sell at said price were they to want to
+
+The Terra stablecoin satisfies both, as it was both held by millions of people and had very liquid markets at its former $1 "peg". As a result, crash of terra represented a loss of value at least equal to its nominal $20 billion dollar market cap, for the holders of Terra tokens.
+
+
 > 1.  This not is not an offer or solicitation to invest, nor should this be construed in any way as tax advice. **Past returns are not indicative of future performance.** Thanks to John Karubian, Vildana Hajric and Anna Wroblewska for their helpful comments.
 > 2.  Terra and Luna were “worth” about $20 billion and $40 billion when they were changing hands at their highest prices, in early April 2022. See Matt Levine’s excellent post from May 11th, 2022 for more on specifics: [Terra Flops.](https://www.bloomberg.com/opinion/articles/2022-05-11/terra-flops)
 > 3.  We talked about this parable before, in a slightly different form in 2017: [A Brainteaser Double-Feature for the Holidays](https://elmwealth.com/brainteaser-double-feature-holidays/)
