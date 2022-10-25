@@ -16,6 +16,8 @@ author: distbit
 description: A response to a blog post analysing the value lost resulting from the terra luna crash.
 ---
 
+This is a response to the following blog post: https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/
+
 > What are we to make of the recent near-total wipeout of the stablecoin Terra and its companion coin Luna, in which around $50 billion of value vaporized in less than a week? [2](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/#easy-footnote-bottom-2-5327) One perspective that might be useful comes from a parable beloved by Vic’s dad:[3](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/#easy-footnote-bottom-3-5327)
 >
 > Hassan and Ali are antique dealers in the bazaar. Hassan notices a beautiful antique bowl in Ali’s shop, which Ali was given by an itinerant dervish in return for a cup of rice. Hassan asks Ali for a price to buy it, but Ali doesn’t want to part with it completely, so offers to sell Hassan a 3/4 share for 75 Rials. The next day, Ali drops by for tea and expresses regret at having sold a majority interest in the bowl. Ali proposes buying back half his previous sale, but Hassan is reluctant. Now Ali has to offer 75 Rials for a 3/8 share to get the deal done. The next day, Hassan is having some FOMO,[4](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/#easy-footnote-bottom-4-5327) so he wants to buy back a 3/16 interest in the bowl – and again, it takes 75 Rials to get Ali to the table.
