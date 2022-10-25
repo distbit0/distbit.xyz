@@ -23,7 +23,7 @@ The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-te
 - The importance of liquidity when measuring market capitalisation
 - Whether Terra holders actually valued their losses resulting from the crash at $20B
 
-Block-quoted text is from the original post, all other text is mine. 
+Block-quoted text is from the original post while all other text is mine. 
 
 > What are we to make of the recent near-total wipeout of the stablecoin Terra and its companion coin Luna, in which around $50 billion of value vaporized in less than a week? [2](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/#easy-footnote-bottom-2-5327) One perspective that might be useful comes from a parable beloved by Vic’s dad:[3](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/#easy-footnote-bottom-3-5327)
 >
