@@ -16,7 +16,7 @@ author: distbit
 description: A response to a blog post analysing the value lost resulting from the terra luna crash.
 ---
 
-The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. In this post, I discuss:
+The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. Below I discuss:
 - Whether the "capacity to support future consumption" is actually a coherent measure of value
 - Whether a parable mischaracterises the concept of market capitalisation
 - The implications of market capitalisation
