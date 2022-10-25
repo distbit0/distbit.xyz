@@ -1,5 +1,5 @@
 ---
-title: "A response on the meanining of market capitalisation"
+title: "A response on the meaning of market capitalisation"
 layout: post
 date: 2022-10-25 00:00
 image: /assets/images/markdown.jpg
@@ -62,9 +62,14 @@ I think however that the "consumption" rationale for this conclusion is ultimate
 
 There is nothing technically preventing the bowl from in fact being a valuable collectable, which would cause its price to be far greater than that of a cup of rice, and consequently would result in it supporting a much greater level of "consumption".
 
-As a result, the "future consumption" theory of value ultimately falls back to simply observing market prices, so can not be used to prove that the bowl has a similar value to that of a cup of rice.
+As a result, the "future consumption" theory of value ultimately falls back to simply observing market prices, so can not, in isolation prove that the bowl has a similar value to that of a cup of rice.
 
 > Let’s contrast this to an asset like the common stock of General Motors, currently worth about $50 billion. If every holder of GM decided to sell simultaneously, they might receive less than $50 billion
+
+This question is very much divorced from what market capitalisation measures. Market capitalisation measures the value placed upon the shares by their current owners. It is derived from the fact that at any moment in time, all share holders are willing to hold their shares despite having the option to sell them for the ~last price.
+
+From this observation, the market cap measurement effectively calculates a minimum aggregate value placed on all shares by their owners. It is not supposed to reflect how much all shareholders would receive were they to similtaneously sell their shares. This depends on how much the 
+
 > or they might receive more (controlling stakes often trade at a premium) – but the ownership of an interest in GM is sufficiently deep and broad-based that $50 billion is a reasonable estimate for the wealth that would be lost by stockholders in aggregate if the GM stock price suddenly went to zero.
 >
 > There’s a continuum between assets like GM’s common stock and Hassan and Ali’s bowl. Your evaluation of how much wealth was created and destroyed by the rise and fall of Terra and Luna will depend on where along this continuum these assets lie.
