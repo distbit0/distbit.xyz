@@ -36,7 +36,7 @@ I think what fundamentally differentiates this from most uses of "market capital
 When the market cap of a company such as Google is calculated, it is done so by multiplying the last trading price of a share by the quantity of shares in existence. 
 The difference between this and the above bowl scenario is that there is no liquidity at the bowl's last price, whereas for companies like google, there always is. 
 
-As a result, for most companies the last price is economically meaningful because if shareholders have the option to sell at said price. 
+As a result, for most companies the last price is economically meaningful, as shareholders have the option to sell at said price. 
 
 The existence of this ("bid orderbook") liquidity at the last price proves that all shareholders value every one of their shares more highly than the last price (or more specifically, than the price of the highest bid). Were they to value any of the shares less than this last price, they would have sold them into the available bid liquidity.
 
