@@ -62,7 +62,7 @@ Attempting to ascertain the "true value" of the bowl from how much consumption i
 
 It is very possible for example that someone would value being able to use the bowl for its servicable lifespan as much as they value being able to eat a cup of rice. It is also however possible that the bowl is actually a "priceless" antique, in which case someone may value possessing and displaying it ("consumption") significantly more than they value a cup of rice.
 
-The above demonstrates that how much consumption the bowl supports is not something that can be objectively ascertained. This is because the value derived from consumption of the bowl can only be compared to the value derived from consumption of a cup of rice by assessing what subjective value people assign to each type of consumption.
+The above demonstrates that how much consumption the bowl supports is not something that can be objectively ascertained. This is because the consumption of the bowl can only be compared to the consumption of a cup of rice by assessing what subjective value people assign to each type of consumption.
 
 However different people will value each type of consumption differently. Antique collectors may value the bowl far greater than a cup of rice, whereas someone looking for a quick meal may value the cup of rice far more. 
 
