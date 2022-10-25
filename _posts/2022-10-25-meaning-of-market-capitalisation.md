@@ -31,7 +31,7 @@ The difference between this and the above bowl scenario is that there is no liqu
 
 As a result, for most companies the last price is economically meaningful because if shareholdershave the option to sell at said price. 
 
-The existence of this liquidity at the last price proves that all shareholders value every one of their shares more highly than the last price (or more specifically, than the price of the highest bid).
+The existence of this ("bid orderbook") liquidity at the last price proves that all shareholders value every one of their shares more highly than the last price (or more specifically, than the price of the highest bid). Were they to value any of the shares less than this last price, they would have sold them into the available bid liquidity.
 
 This situation can be contrasted with that of the bowl in the above scenario, where there is no liquidity at the last trading price: no bids committing to buy from the current owners of the bowl, were they to decide to sell.
 
@@ -55,14 +55,20 @@ Rather, all that is necessary to appreciate this is to realise that what differe
 
 > Hassan and Ali may have been able to sell a few fractional shares to unsuspecting tourists, or hoodwink a hapless loan officer into giving them a small loan against the bowl, but it’s clear there’s no way this bowl could support 50 billion Rials of future consumption or anywhere close to it. The true wealth stolen from them was a lot closer to one cup of rice.
 
-Given that value is ultimately subjective, any assessments of how much the bowl is "really" worth must be made in reference to certain individual's preferences. 
-As far as hassan and ali are concerned, I'd agree that the bowl was probably worth to them something closer to a cup of price, purely due to lack of evidence to the contrary (as a result of liquidity lacking at the prices at which they were trading it amongst themselves).
+Given that value is ultimately subjective, any assessment of how much the bowl is "really" worth must be made in reference to certain individual's preferences. 
+As far as hassan and ali are concerned, I'd agree that the bowl was probably worth to them something closer to a cup of rice, purely due to lack of evidence to the contrary (as a result of liquidity lacking at the prices at which they were trading it amongst themselves).
 
-I think however that the "consumption" rationale for this conclusion is ultimately circular, as it can not be objectively determined that a bowl supports a similar level of consumption to a cup of rice without comparing the value of a bowl to a cup of rice. Any such comparisons depend on the relative prices, which result from consumer's preferences for said goods. 
+Attempting to ascertain the "true value" of the bowl from how much consumption it can support is ultimately futile. The amount of consumption that the bowl can support depends on how people value what the bowl provides over the course of its consumption. 
 
-There is nothing technically preventing the bowl from in fact being a valuable collectable, which would cause its price to be far greater than that of a cup of rice, and consequently would result in it supporting a much greater level of "consumption".
+It is very possible for example that someone would value being able to use the bowl for its servicable lifespan as much as they value being able to eat a cup of rice. It is also however possible that the bowl is actually a "priceless" antique, in which case someone may value possessing and displaying it ("consumption") significantly more than they value a cup of rice.
 
-As a result, the "future consumption" theory of value ultimately falls back to simply observing market prices, so can not, in isolation prove that the bowl has a similar value to that of a cup of rice.
+The above demonstrates that how much consumption the bowl supports is not something that can be objectively ascertained. This is because the value derived from consumption of the bowl can only be compared to the value derived from consumption of a cup of rice by assessing what subjective value people assign to each type of consumption.
+
+However different people will value each type of consumption differently. Antique collectors may value the bowl far greater than a cup of rice, whereas someone looking for a quick meal may value the cup of rice far more. 
+
+The price system exists to address this problem by allowing for those who value something the most to acquire it by way of being willing to pay more for it than others are willing to. The result is that prices emerge for goods, reflecting the minimum amount one must forgo to acquire a certain good, due to no one else being willing to pay anymore for it.  
+
+As a result, the "future consumption" theory of value suggested by the author either results in the value of the bowl and a cup of rice being impossible to compare, due to each person valuing them differently, or simply results in using prices to assess the relative (marginal) values placed on each good.
 
 > Let’s contrast this to an asset like the common stock of General Motors, currently worth about $50 billion. If every holder of GM decided to sell simultaneously, they might receive less than $50 billion
 
@@ -77,12 +83,11 @@ Given that those who value shares the most will be those who already hold them, 
 I think that this mostly mischaracterises what fundamentally differentiates the bowl hypothetical from what determines the value of GM shares. By far the most important difference is that there is no liquidity at the last price in the bowl hypothetical, whereas there is large liquidity at the last price in for GM shares.
 
 Despite this being the most important difference, I also do agree that a secondarily important difference is the broad-based nature of the GM share holder base relative to the very centralised (consisting of only Hassan and Ali) ownership of the bowl.
-
-Centralised ownership can result in less accurate pricing, as few owners may more easily collude to withold supply/not sell their shares, which is much more difficult to coordinate amongst millions of shareholders in the context of GM. 
+Centralised ownership can result in less accurate pricing, as few owners may more easily collude to withold supply (not sell their shares), which is much more difficult to coordinate amongst millions of shareholders in the context of GM. 
 
 > There’s a continuum between assets like GM’s common stock and Hassan and Ali’s bowl. Your evaluation of how much wealth was created and destroyed by the rise and fall of Terra and Luna will depend on where along this continuum these assets lie.
 
-Based on the two above important factors I have identified as being necessary for meaningful pricing of an asset, being:
+Based on the two above factors I have identified as being necessary for meaningful pricing of an asset, being:
 - Relatively broad-based ownership of shares, to minimise risk of collusion to withold supply
 - Liquidity available at the last price, providing all holders with the option to sell at said price were they to want to
 
