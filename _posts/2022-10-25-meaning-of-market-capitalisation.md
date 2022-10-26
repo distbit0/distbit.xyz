@@ -65,7 +65,7 @@ Rather, all that is necessary to appreciate this is to realise that what differe
 Given that value is ultimately subjective, any assessment of how much the bowl is "really" worth must be made in reference to certain individual's preferences. 
 As far as Hassan and Ali are concerned, I'd agree that the bowl was probably worth to them something closer to a cup of rice, purely due to lack of evidence to the contrary (as a result of liquidity lacking at the prices at which they were trading it amongst themselves).
 
-Attempting to ascertain the "true value" of the bowl from how much consumption it can support is ultimately futile. The amount of consumption that the bowl can support depends on how people value what the bowl provides over the course of its consumption. 
+Attempting to ascertain the "true value" of the bowl from how much consumption it can support is ultimately futile. The amount of consumption that the bowl can support depends on how people value the bowl provides over the course of its consumption. 
 
 It is very possible for example that someone would value being able to use the bowl for its serviceable lifespan as much as they value being able to eat a cup of rice. It is also however possible that the bowl is actually a "priceless" antique, in which case someone may value possessing and displaying it ("consumption") significantly more than they value a cup of rice.
 
@@ -73,7 +73,7 @@ The above demonstrates that how much consumption the bowl supports is not someth
 
 However different people will value each type of consumption differently. Antique collectors may value the bowl far greater than a cup of rice, whereas someone looking for a quick meal may prefer the cup of rice over the bowl. 
 
-The price system exists to address this problem by allowing for those who value something the most to acquire it by way of being willing to pay more for it than others are willing to. The result is that prices emerge for goods, reflecting the minimum amount one must forgo to acquire a certain good, in order to outbid all other prospective buyers.
+The price system exists to address this by allowing for those who value something most to acquire it by way of being willing to pay more for it than others are. The result is that prices emerge for goods, reflecting the minimum amount one must forgo to acquire a certain good, in order to outbid all other prospective buyers.
 
 As a result, the "future consumption" theory of value suggested by the author either results in the value of the bowl and a cup of rice being impossible to compare, due to each person valuing them differently, or simply results in using prices to assess the relative (marginal) values placed on each good.
 
@@ -87,7 +87,7 @@ Given that those who value shares the most will be those who already hold them, 
 
 > or they might receive more (controlling stakes often trade at a premium) – but the ownership of an interest in GM is sufficiently deep and broad-based that $50 billion is a reasonable estimate for the wealth that would be lost by stockholders in aggregate if the GM stock price suddenly went to zero.
 
-I think that this mostly mischaracterises what fundamentally differentiates the bowl hypothetical from what determines the value of GM shares. By far the most important difference is that there is no liquidity at the last price in the bowl hypothetical, whereas there is large liquidity at the last price in for GM shares.
+I think that this mostly mischaracterises what fundamentally differentiates the bowl hypothetical from what determines the value of GM shares. By far the most important difference is that there is no liquidity at the last price in the bowl hypothetical, whereas there is large liquidity at the last price for GM shares.
 
 Despite this being the most important difference, I also do agree that a secondarily important difference is the broad-based nature of the GM share holder base relative to the very centralised (consisting of only Hassan and Ali) ownership of the bowl.
 Centralised ownership can result in less accurate pricing, as few owners may more easily collude to withhold supply (not sell their shares), which is much more difficult to coordinate amongst millions of shareholders in the context of GM. 
