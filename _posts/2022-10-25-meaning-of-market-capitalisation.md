@@ -75,11 +75,11 @@ However different people will value each type of consumption differently. Antiqu
 
 The price system exists to address this by allowing for those who value something most to acquire it by way of being willing to pay more for it than others are. The result is that prices emerge for goods, reflecting the minimum amount one must forgo to acquire a certain good, in order to outbid all other prospective buyers.
 
-As a result, the "future consumption" theory of value suggested by the author either results in the value of the bowl and a cup of rice being impossible to compare, due to each person valuing them differently, or simply results in using prices to assess the relative (marginal) values placed on each good.
+As a result, the "future consumption" theory of value suggested by the author either results in the value of the bowl and a cupeeee of rice being impossible to compare, due to each person valuing them differently, or simply results in using prices to assess the relative (marginal) values placed on each good.
 
 > Let’s contrast this to an asset like the common stock of General Motors, currently worth about $50 billion. If every holder of GM decided to sell simultaneously, they might receive less than $50 billion
 
-This question is very much divorced from what market capitalisation measures. Market capitalisation measures the value placed upon the shares by their current owners. It is derived from the fact that at any moment in time, all share holders are willing to hold their shares despite having the option to sell them for the ~last price.
+The answer to this question is much divorced from what market capitalisation is supposed to measure. Market capitalisation measures the value placed upon the shares by their current owners. It is derived from the fact that at any moment in time, all share holders are willing to hold their shares despite having the option to sell them for near the last price.
 
 From this observation, the market cap measurement effectively calculates a minimum aggregate value placed on all shares by their owners. It is not supposed to reflect how much all shareholders would receive were they to simultaneously sell their shares. To answer that, one would need to know how much the marginal share is valued by everyone other than those who currently hold shares.
 
