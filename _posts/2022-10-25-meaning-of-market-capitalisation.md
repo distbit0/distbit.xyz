@@ -75,7 +75,7 @@ However different people will value each type of consumption differently. Antiqu
 
 The price system exists to address this by allowing for those who value something most to acquire it by way of being willing to pay more for it than others are. The result is that prices emerge for goods, reflecting the minimum amount one must forgo to acquire a certain good, in order to outbid all other prospective buyers.
 
-As a result, the "future consumption" theory of value suggested by the author either results in the value of the bowl and a cupeeee of rice being impossible to compare, due to each person valuing them differently, or simply results in using prices to assess the relative (marginal) values placed on each good.
+As a result, the "future consumption" theory of value suggested by the author either results in the value of the bowl and a cup of rice being impossible to compare, due to each person valuing them differently, or simply results in using prices to assess the relative (marginal) values placed on each good.
 
 > Let’s contrast this to an asset like the common stock of General Motors, currently worth about $50 billion. If every holder of GM decided to sell simultaneously, they might receive less than $50 billion
 
