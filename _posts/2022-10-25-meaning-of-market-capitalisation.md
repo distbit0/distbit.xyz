@@ -71,7 +71,7 @@ It is very possible for example that someone would value being able to use the b
 
 The above demonstrates that how much consumption the bowl supports is not something that can be objectively ascertained. This is because the consumption of the bowl can only be compared to the consumption of a cup of rice by assessing what subjective value people assign to each type of consumption.
 
-However different people will value each type of consumption differently. Antique collectors may value the bowl far greater than a cup of rice, whereas someone looking for a quick meal may prefer the cup of rice over the bowl. 
+However different people will value each type of consumption differently. Antique collectors may value the bowl far more than a cup of rice, whereas someone looking for a quick meal may prefer the cup of rice to the bowl. 
 
 The price system exists to address this by allowing for those who value something most to acquire it by way of being willing to pay more for it than others are. The result is that prices emerge for goods, reflecting the minimum amount one must forgo to acquire a certain good, in order to outbid all other prospective buyers.
 
@@ -98,7 +98,7 @@ Based on the two above factors I have identified as being necessary for meaningf
 - Relatively broad-based ownership of shares, to minimise risk of collusion to withold supply
 - Liquidity available at the last price, providing all holders with the option to sell at said price were they to want to
 
-The Terra stablecoin satisfies both, as it was both held by millions of people and had very liquid markets at its former $1 "peg". As a result, the crash of terra represented a loss of value at least equal to its nominal $20 billion dollar market cap, for the holders of Terra tokens.
+The Terra stablecoin satisfies both, as it was both held by millions of people and had very liquid markets at its former $1 "peg". As a result, the crash of Terra represented a loss of value at least equal to its nominal $20 billion dollar market cap, for the holders of Terra tokens.
 
 
 > 1.  This not is not an offer or solicitation to invest, nor should this be construed in any way as tax advice. **Past returns are not indicative of future performance.** Thanks to John Karubian, Vildana Hajric and Anna Wroblewska for their helpful comments.
