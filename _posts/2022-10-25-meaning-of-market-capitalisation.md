@@ -65,7 +65,7 @@ Rather, all that is necessary to appreciate this is to realise that what differe
 Given that value is ultimately subjective, any assessment of how much the bowl is "really" worth must be made in reference to certain individual's preferences. 
 As far as Hassan and Ali are concerned, I'd agree that the bowl was probably worth to them something closer to a cup of rice, purely due to lack of evidence to the contrary (as a result of liquidity lacking at the prices at which they were trading it amongst themselves).
 
-Attempting to ascertain the "true value" of the bowl from how much consumption it can support is ultimately futile. The amount of consumption that the bowl can support depends on how people value the bowl provides over the course of its consumption. 
+Attempting to ascertain the "true value" of the bowl from how much consumption it can support is ultimately futile. The amount of consumption that the bowl can support depends on how people value what the bowl provides over the course of its consumption. 
 
 It is very possible for example that someone would value being able to use the bowl for its serviceable lifespan as much as they value being able to eat a cup of rice. It is also however possible that the bowl is actually a "priceless" antique, in which case someone may value possessing and displaying it ("consumption") significantly more than they value a cup of rice.
 
