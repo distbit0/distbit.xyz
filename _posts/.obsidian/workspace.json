@@ -1,0 +1,151 @@
+{
+  "main": {
+    "id": "f1861bb3cd4b20d9",
+    "type": "split",
+    "children": [
+      {
+        "id": "731bf6faa06b39d8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f6a41050df8f7a1b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2022-10-25-meaning-of-market-capitalisation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "30876e40f3a1d682",
+    "type": "split",
+    "children": [
+      {
+        "id": "bd4f97cde22a6a76",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d383588f30ddeb43",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2b33a8428055a419",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cac1895182d54c9c",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f7d9f51341fbef76",
+    "type": "split",
+    "children": [
+      {
+        "id": "79ab6873dea1c4c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c97050b7f4f4df42",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2022-10-25-meaning-of-market-capitalisation.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0628f9afd379877e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2022-10-25-meaning-of-market-capitalisation.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2b909c7266ad7c99",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "70fcdfbbb58ae822",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2022-10-25-meaning-of-market-capitalisation.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "f6a41050df8f7a1b",
+  "lastOpenFiles": [
+    "2016-02-24-markdown-common-elements.md",
+    "2022-09-05-capital-efficiency-of-futures-and-IRS.md",
+    "2022-09-26-discussion-with-Zack-Bitcoin-on-problems-with-futarchy.md",
+    "2022-10-25-meaning-of-market-capitalisation.md",
+    "2015-02-24-markdown-extra-components.md",
+    "2016-01-23-indigo-jekyll-theme.md"
+  ]
+}
