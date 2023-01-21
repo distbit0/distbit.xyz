@@ -15,6 +15,7 @@ category: blog
 author: distbit
 description: A response to a blog post analysing the value lost resulting from the terra luna crash.
 ---
+test
 
 The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. Below I discuss:
 - Whether the "capacity to support future consumption" is actually a coherent measure of value
