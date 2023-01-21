@@ -1,0 +1,27 @@
+- Next article
+	- liquidation attacks
+	- impact of size of collateral asset on importance of debtLimits
+	- unprofitable but greifing attacks
+	- liquidity distribution
+	- preventing collat withdrawals for those with open loans colat by colat asset x if debt exceeds debt limit
+	- subsidising liquidity
+	- measuring defacto debt limits for synthetic asset platforms (liquidity for synths)
+	- need for centrally set debtLimits
+		- or else separate capital market is required for each collateral asset
+			- because lenders need to decide whether borrowable amount exceeds debt limit
+		- considerations re: synth markets and analysing liquidity in these markets to determine defacto debt limit
+		- Ability to use liquidations of leveraged positions in liquid markets to amplify manipulation at low cost
+		- Aave multi collat per loan calcs see torin chat dms
+		- Price movement limits per hour
+		- Front running preventing loan before attack 
+		- Attacker makes manip trades incrementally to allow for fake liquidity to be withdrawn in time
+			- Risk if cexes do fake liquidity 
+		- Cl could refuse to report price if liq around price is too low (as a mitigation)
+		- https://www.frontiersin.org/articles/10.3389/frai.2021.667780/full
+- This article
+	- maybe mention fringe finance
+	- lending and borrowing with yourself to manipulate total debt limit across platforms
+	- front-running attacks can be prevented by taking out loans before the attack is carried out!!!!!!!!!!!!
+	- dont draw distinction between volume and liq, as arbitrage is possible so removes distinction
+	- Capital asset debt limits less important than collateral due to systemic riska
+- relevance to amms which use oracles such as curve v2

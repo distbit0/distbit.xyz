@@ -2,12 +2,7 @@
 title: "Capital efficiency of futures and IRS contracts"
 layout: post
 date: 2022-09-05 00:00
-image: /assets/images/markdown.jpg
 headerImage: false
-tag:
-- IRS
-- futures
-- derivatives
 category: blog
 author: distbit
 description: Analysis of collateral required by IRS contracts
