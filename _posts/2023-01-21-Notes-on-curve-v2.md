@@ -8,7 +8,7 @@ author: distbit
 description:
 articleUrl: https://distbit.xyz/Notes-on-curve-v2
 ---
-
+- this is a test
 - opp cost of lps is IR
 	- can't you use yield bearing lp liquidity?
 - two primary types of IL
