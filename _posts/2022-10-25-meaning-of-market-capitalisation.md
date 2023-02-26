@@ -107,3 +107,6 @@ The Terra stablecoin satisfies both, as it was both held by millions of people a
 > 4.  FOMO = Fear of Missing Out.
 > 5.  The final share of the bowl traded was 3/(231), and the cup’s exact “value” using the last trade price was =75/[3/(231)]=53,687,091,200 Rials.
 > 6.  Or selling some of the bowl to yield-seekers by offering to pay a 20% rate of interest on their bowl investment – in kind, of course.
+
+
+[[market cap]], [[total demand stock]], [[STOV]]
