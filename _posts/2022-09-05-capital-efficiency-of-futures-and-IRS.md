@@ -28,3 +28,6 @@ There are three types of margin which IRS contracts require:
 			- since the delta was covered by the margin
 -  default exposure margin: margin which covers the exposure incurred by either party if the other defaults on them, before they find a new counterparty
 	- This I'd imagine would depend on some measure of expected volatility in the market fixed rate and also how long it is expected to take for the defaulted-on party to find a new counterparty
+
+
+[[capital efficiency]], [[interest rate swap]], [[futures]], [[interest rates]]
