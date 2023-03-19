@@ -11,11 +11,13 @@ articleUrl: https://distbit.xyz/Summary-of-say's-law
 
 [[says law]], [[keynesianism]]
 
-In which I defend the statement that: "goods remaining unsold is never a result of insufficient aggregate demand, but rather is always a consequence of a misallocation of production or a result of government intervention", which is what I mean when by say's law (and what afaik almost all of those who defend it believe it to mean).
+In which I defend the statement that: "goods never remain unsold as a result of insufficient aggregate demand, but rather always because of a misallocation of production or a result of government intervention."
 
-A common description of say's law is the idea that "supply creates its own demand" which I think is a misleading formulation of say's law, in isolation.
+The above is what I mean by say's law (and what afaik almost all of those who defend it believe it to mean).
 
-What is misleading about it is that it evokes the cost theory of value/labour theory of value. I.e. the idea that the act of production is what gives something value. Hence it sounds absurd to most reasonable people. This is unequivocally not what is meant by those who agree with say's law.  
+A common description of say's law is the idea that "supply creates its own demand" which I think is a misleading formulation of say's law, in isolation. 
+What is misleading about it is that it evokes the cost theory of value/labour theory of value. I.e. the idea that the act of production is what gives something value. Hence it sounds absurd to most reasonable people. 
+This is unequivocally not what is meant by those who agree with say's law.  
 
 
 Key points:
