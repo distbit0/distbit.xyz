@@ -1,7 +1,7 @@
 ---
 title: "Summary of say's law"
 layout: post
-date: 2023-03-20 00:00
+date: 2023-03-19 00:00
 headerImage: false
 category: blog
 author: distbit
