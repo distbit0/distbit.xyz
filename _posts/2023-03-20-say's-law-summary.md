@@ -20,7 +20,7 @@ What is misleading about it is that it evokes the cost theory of value/labour th
 
 Key points:
 1. In the absence of a misallocation of production (incl. govt intervention), qty supplied = qty demanded for all goods.
-2. therefore any goods going unsold is as a result of a misallocation of production (i.e the producer incorrectly anticipating demand or govt intervention)
+2. therefore any goods going unsold is as a result of a misallocation of production (i.e caused by 1) the producer incorrectly anticipating demand or 2) govt intervention)
 3. therefore it is not possible for any unsold goods to be the result of insufficient aggregate demand.
 4. bob supplying goods which satisfy consumer preferences creates demand for other goods (where "goods" includes future goods)
 5. this is what is meant by "supply creates its own demand" by those who agree with this statement. Supplying goods creates demand for other goods. 
