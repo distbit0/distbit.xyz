@@ -1,12 +1,12 @@
 ---
-title: "say's law summary"
+title: "Summary of say's law"
 layout: post
 date: 2023-03-20 00:00
 headerImage: false
 category: blog
 author: distbit
 description:
-articleUrl: https://distbit.xyz/say's-law-summary
+articleUrl: https://distbit.xyz/Summary-of-say's-law
 ---
 
 [[says law]], [[keynesianism]]
