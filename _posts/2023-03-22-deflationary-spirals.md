@@ -16,8 +16,8 @@ articleUrl: https://distbit.xyz/deflationary-spirals
 	- entrepreneurs decreasing production in response to falling prices, therefore reducing supply.  
 	- consumers demanding a higher qty of goods, as a result of the lower prices. I.e. as prices decrease, qty demanded increases.
 
-- Deflationary spiral is in essence a speculative bubble in the context of a currency
-	- Such perpetual upward spirals are not know to occur in any other assets, e.g. shares.
+- Deflationary spiral is in essence a speculative bubble without which does not end, in the context of a currency
+	- Such indefinite speculative bubbles are not know to occur in any other assets, e.g. shares.
 		- So same arguments for why share price bubbles eventually reverse/end can be used to argue that deflationary spirals will also end. Namely that investors eventually decide that:
 			- appreciation will not continue, so they allocate some of their portfolio away from the share towards other assets, therefore reducing demand.
 			- appreciation will continue but they prefer present goods now to a greater qty of future goods, due to their time preference being "higher" than the expected share appreciation rate.
