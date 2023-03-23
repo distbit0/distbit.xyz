@@ -1,5 +1,5 @@
 ---
-title: "deflationary spirals"
+title: "Deflationary spirals"
 layout: post
 date: 2023-03-22 00:00
 headerImage: false
@@ -12,7 +12,7 @@ articleUrl: https://distbit.xyz/deflationary-spirals
 ## A deflationary spiral is the idea that once (price) deflation begins, a self-reinforcing feedback loop ensues, which results in cessation of most trade, unless the central bank intervenes by printing money/spending.
 
 
-- factors which would counter a deflationary spiral
+- factors which counter a deflationary spiral
 	- entrepreneurs decreasing production in response to falling prices, therefore reducing supply.  
 	- consumers demanding a higher qty of goods, as a result of the lower prices. I.e. as prices decrease, qty demanded increases.
 
@@ -23,7 +23,7 @@ articleUrl: https://distbit.xyz/deflationary-spirals
 			- appreciation will continue but they prefer present goods now to a greater qty of future goods, due to their time preference being "higher" than the expected share appreciation rate.
 	- generally currencies are also less volatile than share prices, so a speculative bubble for a currency should result in lower volatility for a currency than it usually causes for share prices.
 
-- If deflationary spirals turn out to be a problem, people would adopt forms of money without this volatility, voluntarily. E.g.: 
+- If deflationary spirals turn out to be a problem, people would adopt forms of money without this volatility risk, voluntarily. E.g.: 
 	- free banking/fractional reserve banking bank notes
 		- (free banking proponents argue that fractional reserve/free banking addresses these problems but I forget the arguments)
 	- cryptocurrencies/stablecoins with mechanisms for minimising volatility
