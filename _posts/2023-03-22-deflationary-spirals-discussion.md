@@ -1,12 +1,12 @@
 ---
-title: "sam deflationary spirals discussion"
+title: "deflationary spirals discussion"
 layout: post
 date: 2023-03-22 00:00
 headerImage: false
 category: blog
 author: distbit
 description:
-articleUrl: https://distbit.xyz/sam-deflationary-spirals-discussion
+articleUrl: https://distbit.xyz/deflationary-spirals-discussion
 ---
 
 [[deflation]], [[inflation]]
