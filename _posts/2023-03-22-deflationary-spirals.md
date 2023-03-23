@@ -14,8 +14,7 @@ articleUrl: https://distbit.xyz/deflationary-spirals
 
 - factors which would counter a deflationary spiral
 	- entrepreneurs decreasing production in response to falling prices, therefore reducing supply.  
-	- consumers demanding a higher qty of goods, as a result of the lower prices. I.e. as prices decrease, qty demanded increases.  
-	  
+	- consumers demanding a higher qty of goods, as a result of the lower prices. I.e. as prices decrease, qty demanded increases.
 
 - Deflationary spiral is in essence a speculative bubble in the context of a currency
 	- Such perpetual upward spirals are not know to occur in any other assets, e.g. shares.
