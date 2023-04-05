@@ -5,12 +5,6 @@ date: 2022-10-25 00:00
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
-    - demonstrated preference
-    - Subjective theory of value
-    - Market cap
-    - Market capitalisation
-    - Austrian economics
-    - Price theory
 category: blog
 author: distbit
 description: A response to a blog post analysing the value lost resulting from the terra luna crash.

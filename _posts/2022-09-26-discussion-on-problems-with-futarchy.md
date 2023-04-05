@@ -5,10 +5,6 @@ date: 2022-09-26 00:00
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
-- Futarchy
-- Prediction markets
-- Game theory
-- Price manipulation
 category: blog
 author: distbit
 description: An on-going discussion with @zack_bitcoin about the security of Futarchy against price manipulation attacks
