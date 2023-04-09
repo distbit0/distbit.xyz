@@ -9,7 +9,7 @@ description:
 articleUrl: https://distbit.xyz/Summary-of-say's-law
 ---
 
-[[says law]], [[keynesianism]]
+[says law](says%20law.md), [keynesianism](keynesianism)
 
 In which I defend the statement that: "goods never remain unsold as a result of insufficient aggregate demand, but rather always because of a misallocation of production or a result of government intervention."
 

@@ -103,4 +103,4 @@ The Terra stablecoin satisfies both, as it was both held by millions of people a
 > 6.  Or selling some of the bowl to yield-seekers by offering to pay a 20% rate of interest on their bowl investment – in kind, of course.
 
 
-[[market cap]], [[total demand stock]], [[STOV]]
+[market cap](market%20cap), [total demand stock](total%20demand%20stock), [STOV](STOV.md)

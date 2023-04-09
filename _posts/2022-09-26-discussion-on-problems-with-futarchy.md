@@ -454,4 +454,4 @@ If S was 2x bigger, the defenders could earn twice as much on their average bet.
 >>
 >
 
-[[futarchy]], [[prediction markets]], [[capital efficiency]]
+[futarchy](futarchy), [prediction markets](prediction%20markets.md), [capital efficiency](capital%20efficiency)
