@@ -31,3 +31,4 @@ If a zettelkasten is employed:
 - for each idea/memory, an agent should store semantic links to other ideas
 	- these can be added or removed over time as new connections/relevant ideas are discovered
 		- allows for more efficiently finding relevant ideas when solving problem/carrying out a task
+- more thoughts on this topic can be found in [[learning requires integration of idea into concept network-ghp]] and [[optimised agi forgetting algo-ghp]]
