@@ -1,12 +1,12 @@
 ---
-title: "LLM ideation tool"
+title: "LLM idea workbench"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description:
-articleUrl: https://distbit.xyz/LLM-ideation-tool
+articleUrl: https://distbit.xyz/LLM-idea-workbench
 ---
 
 #gpt 
@@ -15,8 +15,6 @@ related product: [Brainstorming](https://fermat.ws/brainstorming)
 #project 
 
 - relates to convergence of tools for thought and agi
-	- very similar to [[LLM wrapper mind with memory]] but more human oriented
-
 - a web app for using LLMs to compose and modify ideas
 	- drag and drop ideas into "combine", "find contradictions" etc. panels
 		- create custom panels
