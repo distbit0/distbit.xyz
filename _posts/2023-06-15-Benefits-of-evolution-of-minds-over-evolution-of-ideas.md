@@ -1,19 +1,19 @@
 ---
-title: "Benefits of evolution of minds vs evolution of ideas"
+title: "Benefits of evolution of minds over evolution of ideas"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description:
-articleUrl: https://distbit.xyz/Benefits-of-evolution-of-minds-vs-evolution-of-ideas
+articleUrl: https://distbit.xyz/Benefits-of-evolution-of-minds-over-evolution-of-ideas
 ---
 
 #gpt 
 
-AGIs have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This relates to ![[impact of agi will be massive compared to brain count increase]] and [[impact of agi]].
+AGIs have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This relates to ![[impact of agi will be larger than brain count increase suggests]] and [[impact of agi]].
 
-The question is, why will the ability for [[evolution]] to occur at the level of minds be an advantage over the existing ability for evolution to occur at the level of ideas as is possible in human brains?
+Why would the ability for [[evolution]] to occur at the level of minds have advantages over the evolution at the level of ideas, as is already possible within and between human brains?
 
 It seems that all of the following factors contribute to effective evolution:
 1. ease with which improved strains can be identified
@@ -26,12 +26,12 @@ It seems that all of the following factors contribute to effective evolution:
 	- Ease of identification of idea
 		- Useful ideas are often hard for their user to identify or even realise the existence of, whereas effective minds are comparatively easy to identify due to being distinct pieces of software.
 	- Ease of running controlled experiments
-		- it is easier to run a controlled experiment to determine the goodness of a mind than it is to do so with an idea
+		- it is easier to run a controlled experiment to determine the usefulness of a mind than it is to do so with an idea
 			- this is because a mind can be easily compared to another version of itself or another mind
 				- whereas the same can not be said for ideas, as it is not possible for everything about two (human) minds to be the same with the exception of one idea.
 					- because this would require duplicating a human mind, which is not possible.
 	- Ease of evaluation
-		- Much easier to evaluate a mind than an idea, unless it is possible to have two minds that are identical w/ exception of the single idea in question (so same issue as mentioned above)
+		- It is much easier to evaluate a mind than an idea, unless it is possible to have two minds that are identical w/ exception of the single idea in question (so same issue as mentioned above)
 - 2. ease with which improvements can be replicated
 	- cost of replication relative to number of recipients
 		- idea replication often requires separate contextualisation/discussion for each mind the idea is replicated to, although can be more efficienct once economies of scale are reached (e.g. via books/forums etc.)

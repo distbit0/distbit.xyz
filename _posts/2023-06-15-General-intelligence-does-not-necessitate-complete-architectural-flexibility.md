@@ -13,7 +13,7 @@ articleUrl: https://distbit.xyz/General-intelligence-does-not-necessitate-comple
 
 #gpt 
 
-For an AutoGPT to have general intelligence (the ability to be able to able to learn any idea/solve any problem) it does not necessarily need a completely flexible architecture or the ability to modify its own code.
+For an AutoGPT to have general intelligence (be able to in principle learn any idea/solve any problem) it does not necessarily need a completely flexible architecture or the ability to modify its own code.
 
 This is analogous to how humans do not need to modify their genetic code in order to increase their "intelligence", but rather to do so, only need to learn new ideas, which involves modifications of neuronal connections.
 
