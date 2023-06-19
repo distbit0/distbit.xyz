@@ -9,10 +9,10 @@ description:
 articleUrl: https://distbit.xyz/benefits-of-mulvad-vpn
 ---
 
-Below are the reasons why I recommend [Mulvad VPN](https://mullvad.net/).
+Below is why I recommend [Mulvad VPN](https://mullvad.net/).
 - accepts crypto
 - accepts cash by mail
-- 5 usd/month flat rate (less than protonvpn premium)
+- 5 usd/month flat rate (less than ProtonVPN premium)
 - no bandwidth limits
 - up to 5 simultaneous devices
 - servers in all cities, so low latency
