@@ -1,12 +1,12 @@
 ---
-title: "Teaching LLMs complex ideas beyond their context limit"
+title: "Teaching LLMs ideas beyond their context limit"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
-description:
-articleUrl: https://distbit.xyz/Teaching-LLMs-complex-ideas-beyond-their-context-limit
+description: None
+articleUrl: https://distbit.xyz/Teaching-LLMs-ideas-beyond-their-context-limit
 ---
 
 #gpt

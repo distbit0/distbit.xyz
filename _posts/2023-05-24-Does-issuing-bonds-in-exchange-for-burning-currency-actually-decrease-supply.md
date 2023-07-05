@@ -5,7 +5,7 @@ date: 2023-05-24 00:00
 headerImage: false
 category: blog
 author: distbit
-description:
+description: None
 articleUrl: https://distbit.xyz/Does-issuing-bonds-in-exchange-for-burning-currency-actually-decrease-supply
 ---
 

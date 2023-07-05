@@ -5,7 +5,7 @@ date: 2023-03-19 00:00
 headerImage: false
 category: blog
 author: distbit
-description:
+description: None
 articleUrl: https://distbit.xyz/Summary-of-say's-law
 ---
 

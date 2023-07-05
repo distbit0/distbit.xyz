@@ -5,7 +5,7 @@ date: 2023-05-23 00:00
 headerImage: false
 category: blog
 author: distbit
-description:
+description: None
 articleUrl: https://distbit.xyz/Crypto-is-well-suited-to-agentic-AIs
 ---
 

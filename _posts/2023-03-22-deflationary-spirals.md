@@ -1,11 +1,11 @@
 ---
-title: "Deflationary spirals"
+title: "deflationary spirals"
 layout: post
 date: 2023-03-22 00:00
 headerImage: false
 category: blog
 author: distbit
-description:
+description: None
 articleUrl: https://distbit.xyz/deflationary-spirals
 ---
 

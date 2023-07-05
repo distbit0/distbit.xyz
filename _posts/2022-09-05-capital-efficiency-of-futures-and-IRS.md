@@ -1,11 +1,12 @@
 ---
-title: "Capital efficiency of futures and IRS contracts"
+title: "capital efficiency of futures and IRS"
 layout: post
 date: 2022-09-05 00:00
 headerImage: false
 category: blog
 author: distbit
 description: Analysis of collateral required by IRS contracts
+articleUrl: https://distbit.xyz/capital-efficiency-of-futures-and-IRS
 ---
 
 There are three types of margin which IRS contracts require:
