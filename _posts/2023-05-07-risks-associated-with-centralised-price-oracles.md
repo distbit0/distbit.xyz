@@ -5,7 +5,7 @@ date: 2023-05-07 00:00
 headerImage: false
 category: blog
 author: distbit
-description: None
+description: 
 articleUrl: https://distbit.xyz/Risks-associated-with-centralised-price-oracles
 ---
 

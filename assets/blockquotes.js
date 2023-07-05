@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
     const allBlockquotes = document.querySelectorAll('blockquote');
     let maxDepth = 0;
     const topBlockquotes = document.querySelectorAll('.post > blockquote');

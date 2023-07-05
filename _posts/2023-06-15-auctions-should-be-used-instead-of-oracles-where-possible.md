@@ -5,7 +5,7 @@ date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
-description: None
+description: 
 articleUrl: https://distbit.xyz/Auctions-should-be-used-instead-of-oracles-where-possible
 ---
 

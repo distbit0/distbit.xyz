@@ -1,12 +1,12 @@
 ---
-title: "Ai agents can decide what is worth remembering"
+title: "AI Agents can decide what is worth remembering"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
-description: None
-articleUrl: https://distbit.xyz/Ai-agents-can-decide-what-is-worth-remembering
+description: 
+articleUrl: https://distbit.xyz/AI-Agents-can-decide-what-is-worth-remembering
 ---
 
 #gpt

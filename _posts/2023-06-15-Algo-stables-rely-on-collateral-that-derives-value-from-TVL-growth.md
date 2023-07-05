@@ -1,12 +1,12 @@
 ---
-title: "Algo stables rely on collateral that derives value from tvl growth"
+title: "Algo stables rely on collateral that derives value from TVL growth"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
-description: None
-articleUrl: https://distbit.xyz/Algo-stables-rely-on-collateral-that-derives-value-from-tvl-growth
+description: 
+articleUrl: https://distbit.xyz/Algo-stables-rely-on-collateral-that-derives-value-from-TVL-growth
 ---
 
 Terra Luna and other [[algo stables]] failed as a result of being collateralised by tokens who's value was derived from the growth of the stablecoin.

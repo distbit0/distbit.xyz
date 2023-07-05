@@ -1,12 +1,12 @@
 ---
-title: "Llm based teacher"
+title: "LLM based teacher"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
-description: None
-articleUrl: https://distbit.xyz/Llm-based-teacher
+description: 
+articleUrl: https://distbit.xyz/LLM-based-teacher
 ---
 
 #project #gpt
