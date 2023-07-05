@@ -1,12 +1,12 @@
 ---
-title: "discussion of problems with futarchy"
+title: "Discussion of problems with futarchy"
 layout: post
 date: 2022-09-26 00:00
 headerImage: false
 category: blog
 author: distbit
 description: An on-going discussion with @zack_bitcoin about the security of Futarchy against price manipulation attacks
-articleUrl: https://distbit.xyz/discussion-of-problems-with-futarchy
+articleUrl: https://distbit.xyz/Discussion-of-problems-with-futarchy
 ---
 
 >>>>>Futarchy's Failure

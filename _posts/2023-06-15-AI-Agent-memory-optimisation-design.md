@@ -1,12 +1,12 @@
 ---
-title: "AI Agent memory optimisation design"
+title: "Ai agent memory optimisation design"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/AI-Agent-memory-optimisation-design
+articleUrl: https://distbit.xyz/Ai-agent-memory-optimisation-design
 ---
 
 #gpt 

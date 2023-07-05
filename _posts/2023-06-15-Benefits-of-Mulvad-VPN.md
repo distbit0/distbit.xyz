@@ -1,12 +1,12 @@
 ---
-title: "Benefits of Mulvad VPN"
+title: "Benefits of mulvad vpn"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Benefits-of-Mulvad-VPN
+articleUrl: https://distbit.xyz/Benefits-of-mulvad-vpn
 ---
 
 Below is why I recommend [Mulvad VPN](https://mullvad.net/).

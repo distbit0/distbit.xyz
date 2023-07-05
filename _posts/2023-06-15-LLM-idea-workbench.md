@@ -1,12 +1,12 @@
 ---
-title: "LLM idea workbench"
+title: "Llm idea workbench"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/LLM-idea-workbench
+articleUrl: https://distbit.xyz/Llm-idea-workbench
 ---
 
 #gpt 

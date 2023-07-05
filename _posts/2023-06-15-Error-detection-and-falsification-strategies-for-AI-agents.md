@@ -1,12 +1,12 @@
 ---
-title: "Error detection and falsification strategies for AI agents"
+title: "Error detection and falsification strategies for ai agents"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Error-detection-and-falsification-strategies-for-AI-agents
+articleUrl: https://distbit.xyz/Error-detection-and-falsification-strategies-for-ai-agents
 ---
 
 Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents: 
