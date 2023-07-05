@@ -1,12 +1,12 @@
 ---
-title: "auctions should be used instead of oracles where possible"
+title: "auctions should be used instead of oracles where possible "
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/auctions-should-be-used-instead-of-oracles-where-possible
+articleUrl: https://distbit.xyz/auctions-should-be-used-instead-of-oracles-where-possible-
 ---
 
 - [[auctions]] should be used instead of oracles where possible

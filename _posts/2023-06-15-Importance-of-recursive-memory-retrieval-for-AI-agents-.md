@@ -1,12 +1,12 @@
 ---
-title: "Importance of recursive memory retrieval for AI agents"
+title: "Importance of recursive memory retrieval for AI agents "
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Importance-of-recursive-memory-retrieval-for-AI-agents
+articleUrl: https://distbit.xyz/Importance-of-recursive-memory-retrieval-for-AI-agents-
 ---
 
 #gpt 

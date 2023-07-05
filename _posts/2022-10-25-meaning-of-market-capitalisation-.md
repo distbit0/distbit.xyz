@@ -1,12 +1,12 @@
 ---
-title: "meaning of market capitalisation"
+title: "meaning of market capitalisation "
 layout: post
 date: 2022-10-25 00:00
 headerImage: false
 category: blog
 author: distbit
 description: A response to a blog post analysing the value lost resulting from the terra luna crash.
-articleUrl: https://distbit.xyz/meaning-of-market-capitalisation
+articleUrl: https://distbit.xyz/meaning-of-market-capitalisation-
 ---
 
 The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. Below I discuss:

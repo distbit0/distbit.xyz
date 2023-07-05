@@ -1,12 +1,12 @@
 ---
-title: "Algo stables rely on collateral that derives value from TVL growth"
+title: "Algo stables rely on collateral that derives value from TVL growth "
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Algo-stables-rely-on-collateral-that-derives-value-from-TVL-growth
+articleUrl: https://distbit.xyz/Algo-stables-rely-on-collateral-that-derives-value-from-TVL-growth-
 ---
 
 Terra Luna and other [[algo stables]] failed as a result of being collateralised by tokens who's value was derived from the growth of the stablecoin.
@@ -19,4 +19,4 @@ The reason most algorithmic stablecoins are prone to this occurring is that the 
 
 Therefore if long term expected growth rate of the stablecoin becomes negative (i.e. customers begin to move to alternatives), the value of the collateral becomes very low or near zero (given it can not be negative). The collateral becoming ~worthless while the stablecoin still has a non-zero yet declining TVL is not something holders of any stablecoin want to see. 
 
-Algorithmic stablecoins are on the most reflexive end of [[the collateral price reflexivity continuum-ghp]].
+Algorithmic stablecoins are on the most reflexive end of [[the collateral price reflexivity continuum ghp]].

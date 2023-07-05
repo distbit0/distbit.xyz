@@ -1,12 +1,12 @@
 ---
-title: "Use of Zettelkasten in agent memory"
+title: "Use of Zettelkasten in agent memory "
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Use-of-Zettelkasten-in-agent-memory
+articleUrl: https://distbit.xyz/Use-of-Zettelkasten-in-agent-memory-
 ---
 
 #gpt 
@@ -31,4 +31,4 @@ If a zettelkasten is employed:
 - for each idea/memory, an agent should store semantic links to other ideas
 	- these can be added or removed over time as new connections/relevant ideas are discovered
 		- allows for more efficiently finding relevant ideas when solving problem/carrying out a task
-- more thoughts on this topic can be found in [[Learning as adding new functions to a concept network-ghp]] and [[AI Agent memory optimisation design-ghp]]
+- more thoughts on this topic can be found in [[Learning as adding new functions to a concept network ghp]] and [[AI Agent memory optimisation design ghp]]

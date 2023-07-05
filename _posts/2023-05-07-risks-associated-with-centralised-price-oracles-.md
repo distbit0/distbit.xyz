@@ -1,12 +1,12 @@
 ---
-title: "risks associated with centralised price oracles"
+title: "risks associated with centralised price oracles "
 layout: post
 date: 2023-05-07 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/risks-associated-with-centralised-price-oracles
+articleUrl: https://distbit.xyz/risks-associated-with-centralised-price-oracles-
 ---
 
 [[centralised price oracles]], [[state censorship]], [[oracles]], [[oracle minimisation]]

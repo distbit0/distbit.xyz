@@ -1,12 +1,12 @@
 ---
-title: "deflationary spirals"
+title: "deflationary spirals "
 layout: post
 date: 2023-03-22 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/deflationary-spirals
+articleUrl: https://distbit.xyz/deflationary-spirals-
 ---
 
 ## A deflationary spiral is the idea that once (price) deflation begins, a self-reinforcing feedback loop ensues, which results in cessation of most trade, unless the central bank intervenes by printing money/spending.
