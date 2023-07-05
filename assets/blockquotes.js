@@ -20,9 +20,11 @@ window.onload = function () {
 
     function colorize(blockquote, depth) {
         if ((maxDepth - depth) % 2 === 0) {
-            blockquote.style.backgroundColor = '#1a1a1a';
+            blockquote.style.backgroundColor = '#404040';
+            blockquote.style.color = 'black';
         } else {
             blockquote.style.backgroundColor = 'black';
+            blockquote.style.color = 'white';
         }
 
         const nestedBlockquotes = blockquote.querySelectorAll(':scope > blockquote');
