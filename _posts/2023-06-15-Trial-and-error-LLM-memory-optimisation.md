@@ -1,12 +1,12 @@
 ---
-title: "Trial and error LLM memory optimisation "
+title: "Trial and error LLM memory optimisation"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Trial-and-error-LLM-memory-optimisation-
+articleUrl: https://distbit.xyz/Trial-and-error-LLM-memory-optimisation
 ---
 
 #gpt 

@@ -1,12 +1,12 @@
 ---
-title: "Use of Zettelkasten in agent memory "
+title: "Use of Zettelkasten in agent memory"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Use-of-Zettelkasten-in-agent-memory-
+articleUrl: https://distbit.xyz/Use-of-Zettelkasten-in-agent-memory
 ---
 
 #gpt 

@@ -1,12 +1,12 @@
 ---
-title: "Learning as adding new functions to a concept network "
+title: "Learning as adding new functions to a concept network"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Learning-as-adding-new-functions-to-a-concept-network-
+articleUrl: https://distbit.xyz/Learning-as-adding-new-functions-to-a-concept-network
 ---
 
 #gpt 

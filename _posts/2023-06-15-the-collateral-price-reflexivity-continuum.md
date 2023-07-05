@@ -1,12 +1,12 @@
 ---
-title: "the collateral price reflexivity continuum "
+title: "the collateral price reflexivity continuum"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/the-collateral-price-reflexivity-continuum-
+articleUrl: https://distbit.xyz/the-collateral-price-reflexivity-continuum
 ---
 
 [[collateral]], [[valuation]], [[total demand stock]]

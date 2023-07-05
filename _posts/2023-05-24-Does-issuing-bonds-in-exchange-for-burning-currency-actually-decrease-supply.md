@@ -1,12 +1,12 @@
 ---
-title: "Does issuing bonds in exchange for burning currency actually decrease supply "
+title: "Does issuing bonds in exchange for burning currency actually decrease supply"
 layout: post
 date: 2023-05-24 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Does-issuing-bonds-in-exchange-for-burning-currency-actually-decrease-supply-
+articleUrl: https://distbit.xyz/Does-issuing-bonds-in-exchange-for-burning-currency-actually-decrease-supply
 ---
 
 The below is in reference to basis-style algo stables, which issue bonds as a way to temporarily reduce the stablecoin supply to counteract de-peggings below one dollar.

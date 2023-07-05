@@ -1,12 +1,12 @@
 ---
-title: "benefits of zettelkasten "
+title: "benefits of zettelkasten"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/benefits-of-zettelkasten-
+articleUrl: https://distbit.xyz/benefits-of-zettelkasten
 ---
 
 [[zettelkasten]] 

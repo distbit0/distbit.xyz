@@ -1,12 +1,12 @@
 ---
-title: "Benefits of evolution of minds over evolution of ideas "
+title: "Benefits of evolution of minds over evolution of ideas"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Benefits-of-evolution-of-minds-over-evolution-of-ideas-
+articleUrl: https://distbit.xyz/Benefits-of-evolution-of-minds-over-evolution-of-ideas
 ---
 
 #gpt 

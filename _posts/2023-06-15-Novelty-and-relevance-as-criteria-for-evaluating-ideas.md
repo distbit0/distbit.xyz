@@ -1,12 +1,12 @@
 ---
-title: "Novelty and relevance as criteria for evaluating ideas "
+title: "Novelty and relevance as criteria for evaluating ideas"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: None
-articleUrl: https://distbit.xyz/Novelty-and-relevance-as-criteria-for-evaluating-ideas-
+articleUrl: https://distbit.xyz/Novelty-and-relevance-as-criteria-for-evaluating-ideas
 ---
 
 #gpt 
