@@ -3,7 +3,7 @@ title: Dist Bit
 bio: "Cryptoecon researcher and consultant. <a href='https://cal.com/distbit/30min'>Calendly</a>"
 
 # twitter summary info
-description: Where I write about cryptoecon and philosophy. Building tools for censorship resistance and self-soverignty.
+description:
 
 # if it's an external image, update below for true
 # better with square images
@@ -44,7 +44,7 @@ email: adp01@pm.me
 authors:
     distbit:
         name: Distbit
-        bio: Passionate about creating censorship resistant institutions and technology.
+        bio: Interested in econ, cryptoecon, agents, finance, epistemology, liberty.
         external-image: false
         picture: assets/images/distbit.jpeg
         #twitter: johndoe
