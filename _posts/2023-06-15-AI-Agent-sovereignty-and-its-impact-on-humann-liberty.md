@@ -1,12 +1,12 @@
 ---
-title: "AI Agent sovereignty and its impact on human liberty"
+title: "AI Agent sovereignty and its impact on humann liberty"
 layout: post
 date: 2023-06-15 00:00
 headerImage: false
 category: blog
 author: distbit
 description: 
-articleUrl: https://distbit.xyz/AI-Agent-sovereignty-and-its-impact-on-human-liberty
+articleUrl: https://distbit.xyz/AI-Agent-sovereignty-and-its-impact-on-humann-liberty
 ---
 
 Agentic AIs are the epitome of the scenario described in the book [[the sovereign individual]] insofar as they have extreme regulatory flexibility and regulatory arbitrage capabilities as a result of their lack of physical presence. 
