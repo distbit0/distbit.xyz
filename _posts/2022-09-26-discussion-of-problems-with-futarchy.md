@@ -9,6 +9,8 @@ description: An on-going discussion with @zack_bitcoin about the security of Fut
 articleUrl: https://distbit.xyz/Discussion-of-problems-with-futarchy
 ---
 
+Distbit = black, Zack = Grey
+
 >>>>>Futarchy's Failure
 >>>>>==============
 >>>>>
