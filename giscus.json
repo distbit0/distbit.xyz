@@ -1,7 +1,5 @@
 {
-    "origins": [
-        "https://distbit.xyz"
-    ],
+    "origins": [],
     "originsRegex": [],
     "defaultCommentOrder": "oldest"
 }
