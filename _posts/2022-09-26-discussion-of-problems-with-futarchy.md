@@ -9,7 +9,7 @@ description: An on-going discussion with @zack_bitcoin about the security of Fut
 articleUrl: https://distbit.xyz/Discussion-of-problems-with-futarchy
 ---
 
-Distbit = black, Zack = Grey
+Distbit = Black, Zack = Grey
 
 >>>>>Futarchy's Failure
 >>>>>==============
@@ -451,8 +451,7 @@ Distbit = black, Zack = Grey
 >>>>>```
 >>>>>
 >>>>>So there is not enough money available to stop manipulations, if they do occur.
->>>>
->>>
->>
->
->[[futarchy]], [[prediction markets]], [[capital efficiency]]
+
+
+
+[[futarchy]], [[prediction markets]], [[capital efficiency]]
