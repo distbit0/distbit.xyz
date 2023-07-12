@@ -40,7 +40,7 @@ comments:
 # Make sure all variables are set properly. Check below link for detail.
 # https://giscus.vercel.app/
 giscus:
-  repo:                "LazyRen/LazyRen.github.io"
+  repo:                "distbit0/distbit.xyz"
   repo-id:             "R_kgDOH8EPwg"
   category:            "General"
   category-id:         "DIC_kwDOH8EPws4CX1oX"
