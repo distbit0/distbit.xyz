@@ -28,10 +28,33 @@ permalink: /:title/
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
 
-# if you don't want comments in your posts, leave categories empty
-disqus:
-    shortname: distbit # enter this from your disqus account
-    categories: [blog, project] # only show disqus for posts that have these categories
+
+
+# Set which comment system to use
+comments:
+  # 'disqus' / 'giscus' / 'utterances' are available
+  provider:            giscus
+
+
+# You must install giscus github app before use.(https://github.com/apps/giscus)
+# Make sure all variables are set properly. Check below link for detail.
+# https://giscus.vercel.app/
+giscus:
+  repo:                "LazyRen/LazyRen.github.io"
+  repo-id:             "R_kgDOH8EPwg"
+  category:            "General"
+  category-id:         "DIC_kwDOH8EPws4CX1oX"
+  mapping:             "url"
+  reaction-enabled:    "1"
+  theme:               "dark_high_contrast"
+  crossorigin:         "anonymous"
+
+
+
+
+
+
+
 
 # if you don't have any of social below, comment the line
 #facebook: myfacebook
