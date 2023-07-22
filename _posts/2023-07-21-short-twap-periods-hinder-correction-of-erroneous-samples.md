@@ -21,4 +21,4 @@ In order to ensure that the bots reaction time, and the manipulation attack dura
 
 Hence, a TWAP period should not only be defined by the maximum age of the a sample in the TWAP series, but also the minimum age of the oldest sample. 
 
-[[|It is still necessary however to enforce a maximum age on samples]].
+[[TWAP samples must have a bounded age|It is still necessary however to enforce a maximum age on samples]].
