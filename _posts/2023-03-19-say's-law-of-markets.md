@@ -1,12 +1,12 @@
 ---
-title: "Summary of say's law"
+title: "Say's law of markets"
 layout: post
 date: 2023-03-19 00:00
 headerImage: false
 category: blog
 author: distbit
 description: 
-articleUrl: https://distbit.xyz/Summary-of-say's-law
+articleUrl: https://distbit.xyz/Say's-law-of-markets
 ---
 
 [[says law]], [[keynesianism]]
