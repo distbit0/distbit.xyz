@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Use of Zettelkasten in agent memory
 ---
-
 
 #gpt 
 

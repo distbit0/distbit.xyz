@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: The collateral price reflexivity continuum
 ---
-
 
 [[collateral]], [[valuation]], [[total demand stock]]
 
@@ -22,11 +21,11 @@ Reflexivity generally results from the utility/long term success of the stableco
 
 The most common ways in which the value of a collateral asset can be tied to the success of a stablecoin are the following. Each strategy is evaluated on the basis of whether it would be able to withstand a situation where the stablecoin's demand is expected to fall to 0 (a.k.a. a "wind-down").
 
-|Association      |Impact of wind-down  |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
-|Asset holders receive seigniorage from stablecoin inflation and are diluted due to stablecoin deflation |Asset will immediately fall to zero due to no more seigniorage revenue being expected.|
-|Asset holders receive dividend derived from fee charged to stablecoin holders. |Asset will decrease in value according to schedule similar to that which stablecoin follows.   |
-|Asset is only supported collateral so experiences induced demand from stablecoin adoption. |Asset will decrease in value according to schedule similar to that which stablecoin follows. |
+| Association                                                                                             | Impact of wind-down                                                                          |
+| :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------- |
+| Asset holders receive seigniorage from stablecoin inflation and are diluted due to stablecoin deflation | Asset will immediately fall to zero due to no more seigniorage revenue being expected.       |
+| Asset holders receive dividend derived from fee charged to stablecoin holders.                          | Asset will decrease in value according to schedule similar to that which stablecoin follows. |
+| Asset is only supported collateral so experiences induced demand from stablecoin adoption.              | Asset will decrease in value according to schedule similar to that which stablecoin follows. |
 
 
 The third row in the above table applies to some degree to all collateral assets, even those which are nominally completely separate to the protocol in which they are being employed as collateral. E.g. the value of ETH is somewhat a function of the demand for DAI, due to ETH being used as a collateral asset by DAI.

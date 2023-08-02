@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Learning as adding new functions to a concept network
 ---
-
 
 #gpt 
 

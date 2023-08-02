@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: General intelligence does not necessitate complete architectural flexibility
 ---
-
 
 [[agi learning]]
 

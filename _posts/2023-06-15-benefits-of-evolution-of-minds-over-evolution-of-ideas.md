@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Benefits of evolution of minds over evolution of ideas
 ---
-
 
 #gpt 
 

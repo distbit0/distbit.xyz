@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Risks associated with centralised price oracles
 ---
-
 
 [[centralised price oracles]], [[state censorship]], [[oracles]], [[oracle minimisation]]
 

@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Auctions can't price synth if oracle is malicious
 ---
-
 
 If the oracle used to determine the value of collateral a synth holder is entitled to (e.g. a stablecoin) is malicious, auctions will not be capable of reliably pricing said synth. E.g. if there is a DAI-like stablecoin but which uses an oracle which is reporting that the value of collateral each DAI is worth is 50c, an auction can not be expected to price the stablecoin at $1. 
 

@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Auctions should be used instead of oracles where possible
 ---
-
 
 [[auctions]] should be used instead of oracles where possible
 - e.g. when liquidating positions, to prevent [[price manipulation]] attacks and to determine value of collateral.

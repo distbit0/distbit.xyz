@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: LLM idea workbench
 ---
-
 
 #gpt 
 

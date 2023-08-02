@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: AI agent memory optimisation design
 ---
-
 
 #gpt 
 

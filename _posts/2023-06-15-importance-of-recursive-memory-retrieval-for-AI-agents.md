@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Importance of recursive memory retrieval for AI agents
 ---
-
 
 #gpt 
 

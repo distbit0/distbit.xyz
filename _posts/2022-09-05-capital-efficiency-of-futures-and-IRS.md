@@ -7,10 +7,9 @@ description: Analysis of collateral required by IRS contracts
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Capital efficiency of futures and IRS
 ---
-
 
 There are three types of margin which IRS contracts require:
 - matured cashflow margin: margin which covers the delta between the cashflows (so far)

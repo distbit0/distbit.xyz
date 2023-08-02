@@ -8,10 +8,9 @@ description: An on-going discussion with @zack_bitcoin about the security of Fut
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Discussion of problems with futarchy
 ---
-
 
 Distbit = Black, Zack = Grey
 

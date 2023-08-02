@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Say's law of markets
 ---
-
 
 [[says law]], [[keynesianism]]
 

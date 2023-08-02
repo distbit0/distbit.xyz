@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Benefits of Mulvad VPN
 ---
-
 
 Below is why I recommend [Mulvad VPN](https://mullvad.net/).
 - accepts crypto

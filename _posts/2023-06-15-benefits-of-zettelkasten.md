@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Benefits of zettelkasten
 ---
-
 
 [[zettelkasten]] 
 - useful for coming up with ideas, as it makes it easy to quickly write up/elaborate on small ideas and then later connect them to/use them in more abstract ideas later on

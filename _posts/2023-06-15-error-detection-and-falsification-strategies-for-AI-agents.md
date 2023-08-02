@@ -7,10 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- main
+- null
 title: Error detection and falsification strategies for AI agents
 ---
-
 
 Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents: 
 - Conceptual ideas
