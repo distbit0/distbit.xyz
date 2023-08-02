@@ -1,15 +1,15 @@
 ---
-title: "Short twap periods hinder correction of erroneous samples"
-layout: post
-date: 2023-07-21 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/Short-twap-periods-hinder-correction-of-erroneous-samples
----
-
-Samples used to calculate a TWAP are susceptible to price manipulation attacks whereby the underlying market is temporarily manipulated by an attacker with the goal of impacting the price recorded for a given TWAP sample. 
+author: distbit
+category: blog
+date: '2023-07-21 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: Short twap periods hinder correction of erroneous samples
+---Samples used to calculate a TWAP are susceptible to price manipulation attacks whereby the underlying market is temporarily manipulated by an attacker with the goal of impacting the price recorded for a given TWAP sample. 
 
 Assuming the weight assigned to a given TWAP sample is proportional to the duration between when it was logged and when the next sample was logged, the above attack can be effectively mitigated.  
 

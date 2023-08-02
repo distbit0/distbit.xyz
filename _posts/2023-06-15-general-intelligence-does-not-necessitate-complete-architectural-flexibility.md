@@ -1,15 +1,15 @@
 ---
-title: "General intelligence does not necessitate complete architectural flexibility"
-layout: post
-date: 2023-06-15 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/General-intelligence-does-not-necessitate-complete-architectural-flexibility
----
-
-[[agi learning]]
+author: distbit
+category: blog
+date: '2023-06-15 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: General intelligence does not necessitate complete architectural flexibility
+---[[agi learning]]
 
 #gpt 
 

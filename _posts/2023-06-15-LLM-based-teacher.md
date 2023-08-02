@@ -1,15 +1,15 @@
 ---
-title: "LLM based teacher"
-layout: post
-date: 2023-06-15 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/LLM-based-teacher
----
-
-#project #gpt
+author: distbit
+category: blog
+date: '2023-06-15 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: LLM based teacher
+---#project #gpt
 [[LLM]]
 
 An AI teacher can employ a user's notes and other material to understand their existing ideas so as to best teach them new ideas.

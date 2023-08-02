@@ -1,15 +1,15 @@
 ---
-title: "AI Agents can decide what is worth remembering"
-layout: post
-date: 2023-06-15 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/AI-Agents-can-decide-what-is-worth-remembering
----
-
-#gpt
+author: distbit
+category: blog
+date: '2023-06-15 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: AI Agents can decide what is worth remembering
+---#gpt
 
 Some ideas which an Agentic AI considers while carrying out a task or solving a problem will be useful in the course of future tasks.  
 

@@ -1,15 +1,15 @@
 ---
-title: "Novelty and relevance as criteria for evaluating ideas"
-layout: post
-date: 2023-06-15 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/Novelty-and-relevance-as-criteria-for-evaluating-ideas
---- 
-
-The below factors are useful for determining how much attention, thought and memory to allocate to to an idea:
+author: distbit
+category: blog
+date: '2023-06-15 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: Novelty and relevance as criteria for evaluating ideas
+---The below factors are useful for determining how much attention, thought and memory to allocate to to an idea:
 - Relevance of the idea to the ones existing ideas
 	- Relevance to existing ideas implies:
 		- better understanding of the idea due to context for it provided by other relevant ideas

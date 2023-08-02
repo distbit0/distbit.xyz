@@ -1,15 +1,15 @@
 ---
-title: "AI agent memory optimisation design"
-layout: post
-date: 2023-06-15 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/AI-agent-memory-optimisation-design
----
-
-#gpt 
+author: distbit
+category: blog
+date: '2023-06-15 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: AI agent memory optimisation design
+---#gpt 
 
 Ideas might be saved in the [[agi memory]] which turn out to not be very useful. This might initially seem harmless. What could be the problem with storing ideas which aren't that useful? It is not as if we are constrained by storage.
 

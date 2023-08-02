@@ -1,15 +1,15 @@
 ---
-title: "Error detection and falsification strategies for AI agents"
-layout: post
-date: 2023-06-15 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/Error-detection-and-falsification-strategies-for-AI-agents
----
-
-Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents: 
+author: distbit
+category: blog
+date: '2023-06-15 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: Error detection and falsification strategies for AI agents
+---Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents: 
 - Conceptual ideas
 	- Testing whether a conclusion is arrived at via multiple reasoning paths
 	- Testing whether a conclusion is arrived at via a more detailed analysis/reasoning pathway

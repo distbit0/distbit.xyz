@@ -1,15 +1,15 @@
 ---
-title: "Crypto is well suited to agentic AIs"
-layout: post
-date: 2023-05-23 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/Crypto-is-well-suited-to-agentic-AIs
----
-
-#gpt 
+author: distbit
+category: blog
+date: '2023-05-23 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: Crypto is well suited to agentic AIs
+---#gpt 
 
 Due to crypto, AI agents are much more capable of living independently than they would be were crypto not to exist.
 

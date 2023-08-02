@@ -1,15 +1,15 @@
 ---
-title: "Benefits of Mulvad VPN"
-layout: post
-date: 2023-06-15 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/Benefits-of-Mulvad-VPN
----
-
-Below is why I recommend [Mulvad VPN](https://mullvad.net/).
+author: distbit
+category: blog
+date: '2023-06-15 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: Benefits of Mulvad VPN
+---Below is why I recommend [Mulvad VPN](https://mullvad.net/).
 - accepts crypto
 - accepts cash by mail
 - 5 usd/month flat rate (less than ProtonVPN premium)

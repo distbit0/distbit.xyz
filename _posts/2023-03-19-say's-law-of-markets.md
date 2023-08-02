@@ -1,15 +1,15 @@
 ---
-title: "Say's law of markets"
-layout: post
-date: 2023-03-19 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/Say's-law-of-markets
----
-
-[[says law]], [[keynesianism]]
+author: distbit
+category: blog
+date: '2023-03-19 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: Say's law of markets
+---[[says law]], [[keynesianism]]
 
 In which I defend the statement that: "goods never remain unsold as a result of insufficient aggregate demand, but rather always because of a misallocation of production or a result of government intervention."
 

@@ -1,15 +1,16 @@
 ---
-title: "Meaning of market capitalisation"
-layout: post
-date: 2022-10-25 00:00
-headerImage: false
-category: blog
-author: distbit
-description: A response to a blog post analysing the value lost resulting from the terra luna crash.
 articleUrl: https://distbit.xyz/Meaning-of-market-capitalisation
----
-
-The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. Below I discuss:
+author: distbit
+category: blog
+date: '2022-10-25 00:00 '
+description: A response to a blog post analysing the value lost resulting from the
+  terra luna crash.
+headerImage: false
+layout: post
+tag:
+- main
+title: Meaning of market capitalisation
+---The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. Below I discuss:
 - Whether the "capacity to support future consumption" is actually a coherent measure of value
 - Whether a parable mischaracterises the concept of market capitalisation
 - The implications of market capitalisation

@@ -1,15 +1,15 @@
 ---
-title: "The collateral price reflexivity continuum"
-layout: post
-date: 2023-06-15 00:00
-headerImage: false
-category: blog
-author: distbit
-description: 
 articleUrl: https://distbit.xyz/The-collateral-price-reflexivity-continuum
----
-
-[[collateral]], [[valuation]], [[total demand stock]]
+author: distbit
+category: blog
+date: '2023-06-15 00:00 '
+description: null
+headerImage: false
+layout: post
+tag:
+- main
+title: The collateral price reflexivity continuum
+---[[collateral]], [[valuation]], [[total demand stock]]
 
 Previously [[algo stables]] have failed as a result of the fact that [[algorithmic stables employ collateral that derives its value from TVL growth ghp]]. Such algo stables however simply exist on one end of a continuum, across which many designs exist at various points.
 
