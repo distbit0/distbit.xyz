@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- ai
+- agents
+- epistemology
 title: Novelty and relevance as criteria for evaluating ideas
 ---
 

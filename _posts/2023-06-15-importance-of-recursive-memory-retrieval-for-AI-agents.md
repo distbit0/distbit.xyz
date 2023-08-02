@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- ai
+- agents
+- memory
 title: Importance of recursive memory retrieval for AI agents
 ---
 

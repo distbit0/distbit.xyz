@@ -7,7 +7,9 @@ description: Analysis of collateral required by IRS contracts
 headerImage: false
 layout: post
 tag:
-- null
+- defi
+- derivatives
+- interest rate swaps
 title: Capital efficiency of futures and IRS
 ---
 

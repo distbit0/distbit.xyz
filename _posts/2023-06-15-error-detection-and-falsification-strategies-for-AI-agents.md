@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- ai
+- agents
+- epistemology
 title: Error detection and falsification strategies for AI agents
 ---
 

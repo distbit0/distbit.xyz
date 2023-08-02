@@ -8,7 +8,10 @@ description: An on-going discussion with @zack_bitcoin about the security of Fut
 headerImage: false
 layout: post
 tag:
-- null
+- futarchy
+- derivatives
+- finance
+- defi
 title: Discussion of problems with futarchy
 ---
 

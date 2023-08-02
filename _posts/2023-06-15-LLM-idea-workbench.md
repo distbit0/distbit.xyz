@@ -7,7 +7,10 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- ai
+- epistemology
+- web of trust
+- idea composition
 title: LLM idea workbench
 ---
 
@@ -30,3 +33,5 @@ related product: [Brainstorming](https://fermat.ws/brainstorming)
 - Allow ideas (as functions) to be connected with user-defined loops
 - Social sharing of components/functions
 - Connects to Twitter to import ideas from tweets
+
+Contact me at adp01@pm.me or if you are interested in working on this!

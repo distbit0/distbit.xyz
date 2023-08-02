@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- oracles
+- defi
+- auctions
 title: Auctions can't price synth if oracle is malicious
 ---
 

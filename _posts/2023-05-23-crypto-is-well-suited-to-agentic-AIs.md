@@ -7,7 +7,10 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- cryptocurrency
+- agents
+- ai
+- liberty
 title: Crypto is well suited to agentic AIs
 ---
 

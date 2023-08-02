@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- memory
+- ai
+- agents
 title: Trial and error LLM memory optimisation
 ---
 

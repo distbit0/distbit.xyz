@@ -7,7 +7,10 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- defi
+- stablecoins
+- collateral
+- reflexivity
 title: The collateral price reflexivity continuum
 ---
 

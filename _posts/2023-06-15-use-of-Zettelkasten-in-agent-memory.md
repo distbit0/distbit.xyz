@@ -7,7 +7,10 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- zettelkasten
+- memory
+- ai
+- agents
 title: Use of Zettelkasten in agent memory
 ---
 

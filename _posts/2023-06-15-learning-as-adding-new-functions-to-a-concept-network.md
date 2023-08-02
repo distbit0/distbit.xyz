@@ -7,7 +7,11 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- learning
+- ai
+- agents
+- zettelkasten
+- idea composition
 title: Learning as adding new functions to a concept network
 ---
 

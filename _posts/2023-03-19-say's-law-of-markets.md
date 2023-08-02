@@ -7,7 +7,10 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- econ
+- austrian econ
+- keynesianism
+- inflation
 title: Say's law of markets
 ---
 

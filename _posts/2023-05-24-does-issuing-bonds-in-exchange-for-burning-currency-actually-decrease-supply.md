@@ -7,7 +7,10 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- econ
+- defi
+- finance
+- free banking
 title: Does issuing bonds in exchange for burning currency actually decrease supply
 ---
 

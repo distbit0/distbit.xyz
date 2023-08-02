@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- ai
+- agents
+- liberty
 title: AI Agent sovereignty and its impact on human liberty
 ---
 

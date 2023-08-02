@@ -7,7 +7,7 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- privacy
 title: Benefits of Mulvad VPN
 ---
 

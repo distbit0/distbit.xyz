@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- ai
+- agents
+- memory
 title: AI Agents can decide what is worth remembering
 ---
 

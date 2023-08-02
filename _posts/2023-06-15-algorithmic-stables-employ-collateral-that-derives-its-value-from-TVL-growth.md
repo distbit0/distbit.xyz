@@ -7,7 +7,8 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- stablecoins
+- defi
 title: Algorithmic stables employ collateral that derives its value from TVL growth
 ---
 

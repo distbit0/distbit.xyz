@@ -7,7 +7,8 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- zettelkasten
+- tools for thought
 title: Benefits of zettelkasten
 ---
 

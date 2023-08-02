@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- auctions
+- oracles
+- defi
 title: Auctions should be used instead of oracles where possible
 ---
 

@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- econ
+- keynesianism
+- austrian econ
 title: Deflationary spirals
 ---
 

@@ -3,11 +3,13 @@ articleUrl: https://distbit.xyz/AI-agent-memory-optimisation-design
 author: distbit
 category: blog
 date: 2023-06-15 00:00
-description: This is a test description
+description: null
 headerImage: false
 layout: post
 tag:
-- null
+- ai
+- agents
+- memory
 title: AI agent memory optimisation design
 ---
 

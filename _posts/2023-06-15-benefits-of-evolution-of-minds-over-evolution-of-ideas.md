@@ -7,7 +7,9 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- epistemology
+- ai
+- agents
 title: Benefits of evolution of minds over evolution of ideas
 ---
 
