@@ -7,7 +7,7 @@ description: null
 headerImage: false
 layout: post
 tag:
-- null
+- oracles
 title: Short twap periods hinder correction of erroneous samples
 ---
 
