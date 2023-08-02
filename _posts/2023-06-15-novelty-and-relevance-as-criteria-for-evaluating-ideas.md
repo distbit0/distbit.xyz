@@ -7,9 +7,7 @@ category: blog
 author: distbit
 description: 
 articleUrl: https://distbit.xyz/Novelty-and-relevance-as-criteria-for-evaluating-ideas
----
-
-#gpt 
+--- 
 
 The below factors are useful for determining how much attention, thought and memory to allocate to to an idea:
 - Relevance of the idea to the ones existing ideas
