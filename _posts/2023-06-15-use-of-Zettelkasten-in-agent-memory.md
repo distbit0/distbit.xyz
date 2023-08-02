@@ -2,14 +2,17 @@
 articleUrl: https://distbit.xyz/Use-of-Zettelkasten-in-agent-memory
 author: distbit
 category: blog
-date: '2023-06-15 00:00 '
+date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
 tag:
 - main
 title: Use of Zettelkasten in agent memory
----#gpt 
+---
+
+
+#gpt 
 
 [[zettelkasten]] can potentially be useful for [[agi idea retrieval]] as well as [[agi idea relation representation]] for [[agi memory]].
 

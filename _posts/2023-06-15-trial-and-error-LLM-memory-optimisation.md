@@ -2,14 +2,17 @@
 articleUrl: https://distbit.xyz/Trial-and-error-LLM-memory-optimisation
 author: distbit
 category: blog
-date: '2023-06-15 00:00 '
+date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
 tag:
 - main
 title: Trial and error LLM memory optimisation
----#gpt 
+---
+
+
+#gpt 
 
 If an LLM decides that an idea or piece of information it has recently acquired will be useful in the future, and is therefore worth saving to its memory, it will need to ensure that it is saved in a format which will be understandable to its future self.
 

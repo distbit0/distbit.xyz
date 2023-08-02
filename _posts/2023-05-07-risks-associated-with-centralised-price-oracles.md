@@ -2,14 +2,17 @@
 articleUrl: https://distbit.xyz/Risks-associated-with-centralised-price-oracles
 author: distbit
 category: blog
-date: '2023-05-07 00:00 '
+date: 2023-05-07 00:00
 description: null
 headerImage: false
 layout: post
 tag:
 - main
 title: Risks associated with centralised price oracles
----[[centralised price oracles]], [[state censorship]], [[oracles]], [[oracle minimisation]]
+---
+
+
+[[centralised price oracles]], [[state censorship]], [[oracles]], [[oracle minimisation]]
 
 
 risks associated with centralised price oracles can be divided into two categories/cases:

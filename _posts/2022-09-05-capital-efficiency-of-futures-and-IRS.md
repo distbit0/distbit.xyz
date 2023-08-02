@@ -2,14 +2,17 @@
 articleUrl: https://distbit.xyz/Capital-efficiency-of-futures-and-IRS
 author: distbit
 category: blog
-date: '2022-09-05 00:00 '
+date: 2022-09-05 00:00
 description: Analysis of collateral required by IRS contracts
 headerImage: false
 layout: post
 tag:
 - main
 title: Capital efficiency of futures and IRS
----There are three types of margin which IRS contracts require:
+---
+
+
+There are three types of margin which IRS contracts require:
 - matured cashflow margin: margin which covers the delta between the cashflows (so far)
 	- e.g.
 		- if the avg variable rate so far has been 5% and the fixed was 1%

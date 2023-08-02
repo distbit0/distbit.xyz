@@ -2,14 +2,17 @@
 articleUrl: https://distbit.xyz/LLM-idea-workbench
 author: distbit
 category: blog
-date: '2023-06-15 00:00 '
+date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
 tag:
 - main
 title: LLM idea workbench
----#gpt 
+---
+
+
+#gpt 
 
 related product: [Brainstorming](https://fermat.ws/brainstorming)
 #project 

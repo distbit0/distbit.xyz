@@ -2,14 +2,17 @@
 articleUrl: https://distbit.xyz/Learning-as-adding-new-functions-to-a-concept-network
 author: distbit
 category: blog
-date: '2023-06-15 00:00 '
+date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
 tag:
 - main
 title: Learning as adding new functions to a concept network
----#gpt 
+---
+
+
+#gpt 
 
 In concept-network mediums such as the human brain, a zettelkasten, or an artificial neural network (ANN), learning entails integrating new ideas into an existing network.
 

@@ -2,7 +2,7 @@
 articleUrl: https://distbit.xyz/Discussion-of-problems-with-futarchy
 author: distbit
 category: blog
-date: '2022-09-26 00:00 '
+date: 2022-09-26 00:00
 description: An on-going discussion with @zack_bitcoin about the security of Futarchy
   against price manipulation attacks
 headerImage: false
@@ -10,7 +10,10 @@ layout: post
 tag:
 - main
 title: Discussion of problems with futarchy
----Distbit = Black, Zack = Grey
+---
+
+
+Distbit = Black, Zack = Grey
 
 >>>>>Futarchy's Failure
 >>>>>==============
