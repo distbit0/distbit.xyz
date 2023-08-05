@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/What-barriers-exist-to-a-tor-hidden-services-for-physical-goods
+articleUrl: https://distbit.xyz/What-barriers-exist-to-tor-hidden-services-for-physical-goods
 author: distbit
 category: blog
 date: 2023-08-04 00:00
@@ -9,7 +9,7 @@ layout: post
 tag:
 - onion routing
 - agorism
-title: What barriers exist to a tor hidden services for physical goods
+title: What barriers exist to tor hidden services for physical goods
 ---
 
 THS = Tor hidden services
