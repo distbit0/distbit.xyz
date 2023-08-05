@@ -7,7 +7,8 @@ description: ''
 headerImage: false
 layout: post
 tag:
-- ''
+- onion routing
+- agorism
 title: What barriers exist to a tor hidden services for physical goods
 ---
 
