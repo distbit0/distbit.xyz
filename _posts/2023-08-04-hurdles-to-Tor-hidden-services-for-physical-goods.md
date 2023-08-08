@@ -14,6 +14,10 @@ title: Hurdles to Tor hidden services for physical goods
 
 THS = Tor hidden services
 
+Tor hidden services is an internet protocol which facilitates communication between two parties without either of them disclosing their IP address to each other or a trusted third party. It is used by tor to allow servers to operate without clients needing to know their ip address in order to connect.
+
+A physical instantiation of THS would be a protocol which allows for physical goods to be transferred between two parties without either party needing to know the location of the other, nor able to easily discover it. Such a protocol would lessen the trust buyers must place in DNM vendors and other physical agorist markets. This is because buyers would no longer be at risk of the vendor leaking/reporting/disclosing the buyer's postage address.
+
 - Differences between physical and digital THS
 	- payload is encrypted in digital THS but not physical THS
 		- harder to claim accidental possession if contraband is unencrypted
@@ -31,9 +35,8 @@ THS = Tor hidden services
 - Misc notes
 	- The advantage of physical THS over dead drops is that dead drops place very little between the sender and the recipient
 		- therefore making the recipient vulnerable to identification by a malicious/state-allied sender
-- Questions
-	- can web of trust reputation be used to mitigate theft risks of physical THS
-- Possible project idea
+	- web of trust reputation can mitigate theft risks of physical THS
+- Possible project
 	- A decentralised tor hidden services protocol
 		- using
 			- dead drops
@@ -42,7 +45,4 @@ THS = Tor hidden services
 		- every hop is managed by the sender of the item
 		- transporters specify if the item is in a good state when they pick it up
 			- so that the previous transporter can be given a bad reputation
-	- To facilitate [[agorism]]. 
-
-
-#question
+	- To facilitate [[agorism]].
