@@ -15,6 +15,8 @@ tag:
 title: Discussion of problems with futarchy
 ---
 
+Source document: https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_failure.md
+
 Distbit = Black, Zack = Grey
 
 >>>>>Futarchy's Failure
