@@ -9,10 +9,11 @@ layout: post
 tag:
 - zettelkasten
 - tools
+- test
 title: Benefits of zettelkasten
 ---
 
- -for-thought
+ -for-thought 
  
 
 - useful for coming up with ideas, as it makes it easy to quickly write up/elaborate on small ideas and then later connect them to/use them in more abstract ideas later on
