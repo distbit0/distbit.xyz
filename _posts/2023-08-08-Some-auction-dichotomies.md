@@ -21,7 +21,7 @@ title: Some auction dichotomies
 - when auction has no reserve price, reward is guaranteed to be earned
 	- however there can be no guarantee that costs expended by bidders = reward
 		- rather, the difference between total costs expended by bidders and total reward is a function of the heterogeneity of the bidders' costs 
-			- i.e when they all have almost the same costs, they all almost 
+			- i.e when they all have almost the same costs, they all almost     
 #### Whether bidder with lowest average cost for entire task is subject to competition from bidders with lower marginal costs for fractions of the task (`workDivisible`=true/false)
 - equivalent to: whether it is possible the marginal costs of the contributor to be higher than the marginal cost of any non-contributors
 - this significantly reduces the competition for the auction
