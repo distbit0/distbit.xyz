@@ -15,7 +15,7 @@ title: The collateral price reflexivity continuum
 ---
 
 
-Previously algo stables have failed as a result of the fact that [algorithmic stables employ collateral that derives its value from TVL growth ghp](/Algorithmic-stables-employ-collateral-that-derives-its-value-from-TVL-growth). Such algo stables however simply exist on one end of a continuum, across which many designs exist at various points.
+Previously algo stables have failed as a result of the fact that [algorithmic stables employ collateral that derives its value from TVL growth](/Algorithmic-stables-employ-collateral-that-derives-its-value-from-TVL-growth). Such algo stables however simply exist on one end of a continuum, across which many designs exist at various points.
 
 The spectrum reflects the extent to which the price of the collateral asset decreasing causes the price of the collateral asset to further decrease. This is referred to as the reflexivity of the collateral asset.
 
