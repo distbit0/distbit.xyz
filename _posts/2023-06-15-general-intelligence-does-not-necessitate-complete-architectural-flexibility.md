@@ -13,7 +13,6 @@ tag:
 title: General intelligence does not necessitate complete architectural flexibility
 ---
 
-agi learning
 
 #gpt 
 

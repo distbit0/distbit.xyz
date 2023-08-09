@@ -12,7 +12,6 @@ title: LLM-based teacher
 ---
 
 #project #gpt
-LLM
 
 An AI teacher can employ a user's notes and other material to understand their existing ideas so as to best teach them new ideas.
 - examples of context/personalisation data:

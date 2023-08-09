@@ -27,6 +27,3 @@ Of course there are even more fundamental flaws in this design, but I do not rec
 	- as they could serve as an alternative supply of basis rather than removing it from the market.
 - A possible solution could be making bonds non-transferable
 	- though it is uncertain if this measure will be implemented.
-
-
-economics total demand stock credit free banking

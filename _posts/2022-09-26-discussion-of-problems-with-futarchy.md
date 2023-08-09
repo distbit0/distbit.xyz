@@ -459,7 +459,3 @@ Distbit = Black, Zack = Grey
 >>>>>```
 >>>>>
 >>>>>So there is not enough money available to stop manipulations, if they do occur.
-
-
-
-futarchy, prediction markets, capital efficiency

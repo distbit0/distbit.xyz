@@ -28,6 +28,3 @@ Below is why I recommend [Mulvad VPN](https://mullvad.net/).
 - vpn client supports blocking connections if connection to vpn server is lost, to prevent any from accidentally being routed via clearnet
 - is audited annually and releases audit reports https://github.com/mullvad/mullvadvpn-app/tree/main/audits
 - client apps are opensource
-
-
-privacy, vpns

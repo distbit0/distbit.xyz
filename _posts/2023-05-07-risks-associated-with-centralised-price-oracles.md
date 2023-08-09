@@ -13,7 +13,6 @@ tag:
 title: Risks associated with centralised price oracles
 ---
 
-centralised price oracles, state censorship, oracles, oracle minimisation
 
 
 risks associated with centralised price oracles can be divided into two categories/cases:

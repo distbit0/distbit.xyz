@@ -24,6 +24,4 @@ Agentic AIs can be seen as "black market people", as governments will inevitably
 
 Additionally, most fiat networks assume all users have a government issued-identity 
 
-As a result, any currency which is subject to state-censorship (i.e. all fiat currencies) will be unsuitable for use by Agentic AIs due to the accompanying risk of censorship. Hence the value of non-state digital money, in the form of crypto. 
-
-valuation, agentic AI
+As a result, any currency which is subject to state-censorship (i.e. all fiat currencies) will be unsuitable for use by Agentic AIs due to the accompanying risk of censorship. Hence the value of non-state digital money, in the form of crypto.
