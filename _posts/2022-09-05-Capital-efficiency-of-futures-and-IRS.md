@@ -14,6 +14,7 @@ title: Capital efficiency of futures and IRS
 ---
 
 #defi #derivatives #interest rate swaps
+#defi #derivatives #interest rate swaps
  
 
 There are three types of margin which IRS contracts require:

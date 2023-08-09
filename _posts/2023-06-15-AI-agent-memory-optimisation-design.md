@@ -19,6 +19,7 @@ title: AI agent memory optimisation design
 #ai #agents #memory
 #ai #agents #memory
 #ai #agents #memory
+#ai #agents #memory
  
 
 Ideas might be saved in the agi memory which turn out to not be very useful. This might initially seem harmless. What could be the problem with storing ideas which aren't that useful? It is not as if we are constrained by storage.

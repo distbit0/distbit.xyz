@@ -14,6 +14,7 @@ title: Risks associated with centralised price oracles
 ---
 
 #oracles #defi #censorship resistance
+#oracles #defi #censorship resistance
  
 
 

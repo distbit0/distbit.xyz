@@ -14,6 +14,7 @@ title: Auctions should be used instead of oracles where possible
 ---
 
 #auctions #oracles #defi
+#auctions #oracles #defi
 
 
 auctions should be used instead of oracles where possible

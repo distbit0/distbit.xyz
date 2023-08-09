@@ -16,6 +16,7 @@ title: Discussion of problems with futarchy
 ---
 
 #futarchy #derivatives #finance #defi
+#futarchy #derivatives #finance #defi
  
 
 Source document: https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_failure.md
