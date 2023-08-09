@@ -16,13 +16,15 @@ title: Some auction dichotomies
      
 
 ### Distinctions between types of auctions/competitions.
-#### whether auction has reserve price (`reservePrice`=true/false)
+#### Whether auction has reserve price (`reservePrice`=true/false)
+
 - special case of this is when it is impossible to attain reward, resulting in an implicit infinite reserve price
 - when auction has no reserve price, reward is guaranteed to be earned
 	- however there can be no guarantee that costs expended by bidders = reward
 		- rather, the difference between total costs expended by bidders and total reward is a function of the heterogeneity of the bidders' costs 
 			- i.e when they all have almost the same costs, they all almost     
 #### Whether bidder with lowest average cost for entire task is subject to competition from bidders with lower marginal costs for fractions of the task (`workDivisible`=true/false)
+
 - equivalent to: whether it is possible the marginal costs of the contributor to be higher than the marginal cost of any non-contributors
 - this significantly reduces the competition for the auction
 	- as the pool of competitors is reduced from those with marginal cost for a fraction of the task that is lower than the clearing price
