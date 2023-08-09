@@ -14,7 +14,7 @@ tag:
 title: LLM idea workbench
 ---
 
-#gpt 
+#ghp
 
 related product: [Brainstorming](https://fermat.ws/brainstorming)
 #project 

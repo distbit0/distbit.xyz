@@ -13,6 +13,8 @@ tag:
 title: Error detection and falsification strategies for AI agents
 ---
 
+#ghp 
+
 Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents: 
 - Conceptual ideas
 	- Testing whether a conclusion is arrived at via multiple reasoning paths

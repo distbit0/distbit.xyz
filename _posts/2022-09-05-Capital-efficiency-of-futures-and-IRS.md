@@ -13,6 +13,8 @@ tag:
 title: Capital efficiency of futures and IRS
 ---
 
+#ghp 
+
 There are three types of margin which IRS contracts require:
 - matured cashflow margin: margin which covers the delta between the cashflows (so far)
 	- e.g.

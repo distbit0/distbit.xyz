@@ -14,7 +14,8 @@ tag:
 title: Teaching LLMs ideas beyond their context limit
 ---
 
-#gpt
+#ghp
+
 In order to understand new complex topics, often hundreds or even thousands of new ideas need to be learned. Not all of these ideas are needed when making most decisions. However, it seems dozens or more may be used subconsciously while reasoning or formulating new ideas, to both act as constraints and guide the idea creation process.
 
 This relates to an aspect of agi idea retrieval and how agi memory can be accessed.

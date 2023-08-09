@@ -12,6 +12,8 @@ tag:
 title: Hurdles to Tor hidden services for physical goods
 ---
 
+#ghp
+
 THS = Tor hidden services
 
 Tor hidden services is an internet protocol which facilitates communication between two parties without either of them disclosing their IP address to each other or a trusted third party. It is used by tor to allow servers to operate without clients needing to know their ip address in order to connect.

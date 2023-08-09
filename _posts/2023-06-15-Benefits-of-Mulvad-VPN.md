@@ -11,6 +11,8 @@ tag:
 title: Benefits of Mulvad VPN
 ---
 
+#ghp
+
 Below is why I recommend [Mulvad VPN](https://mullvad.net/).
 - accepts crypto
 - accepts cash by mail

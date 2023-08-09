@@ -14,7 +14,7 @@ tag:
 title: Crypto is well suited to agentic AIs
 ---
 
-#gpt 
+#ghp
 
 Due to crypto, AI agents are much more capable of living independently than they would be were crypto not to exist.
 

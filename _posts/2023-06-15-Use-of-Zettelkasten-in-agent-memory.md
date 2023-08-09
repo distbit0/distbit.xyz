@@ -14,7 +14,7 @@ tag:
 title: Use of Zettelkasten in agent memory
 ---
 
-#gpt 
+#ghp
 
 zettelkasten can potentially be useful for agi idea retrieval as well as agi idea relation representation for agi memory.
 
@@ -36,4 +36,4 @@ If a zettelkasten is employed:
 - for each idea/memory, an agent should store semantic links to other ideas
 	- these can be added or removed over time as new connections/relevant ideas are discovered
 		- allows for more efficiently finding relevant ideas when solving problem/carrying out a task
-- more thoughts on this topic can be found in [learning as adding new functions to a concept network](/Learning-as-adding-new-functions-to-a-concept-network) and [AI agent memory optimisation design](/AI-agent-memory-optimisation-design)
+- more thoughts on this topic can be found in learning as adding new functions to a concept network and [AI agent memory optimisation design](/AI-agent-memory-optimisation-design)

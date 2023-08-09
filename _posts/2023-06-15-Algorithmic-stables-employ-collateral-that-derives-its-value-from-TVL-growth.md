@@ -12,6 +12,8 @@ tag:
 title: Algorithmic stables employ collateral that derives its value from TVL growth
 ---
 
+#ghp 
+
 Terra Luna and other algo stables failed as a result of being collateralised by tokens who's value was derived from the growth of the stablecoin itself.
 
 The term collateral here is used to refer to the secondary token in each algo stable ecosystem which is minted when the stable's price falls below its peg. E.g. in the Terra Luna ecosystem the "collateral" in this sense was Luna. In other designs, such as Basis, the collateral is the bonds that are issued to incentivise stablecoin supply contraction.

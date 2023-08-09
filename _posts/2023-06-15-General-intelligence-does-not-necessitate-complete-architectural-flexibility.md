@@ -14,7 +14,7 @@ title: General intelligence does not necessitate complete architectural flexibil
 ---
 
 
-#gpt 
+#ghp
 
 For an AutoGPT to have general intelligence (be able to in principle learn any idea/solve any problem) it does not necessarily need a completely flexible architecture or the ability to modify its own code.
 

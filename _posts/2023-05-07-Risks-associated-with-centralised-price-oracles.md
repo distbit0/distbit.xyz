@@ -13,6 +13,8 @@ tag:
 title: Risks associated with centralised price oracles
 ---
 
+#ghp 
+
 
 
 risks associated with centralised price oracles can be divided into two categories/cases:
