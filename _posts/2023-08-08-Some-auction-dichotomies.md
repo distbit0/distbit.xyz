@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/Different-types-of-auctions
+articleUrl: https://distbit.xyz/Some-auction-dichotomies
 author: distbit
 category: blog
 date: 2023-08-08 00:00
@@ -7,7 +7,7 @@ description: ''
 headerImage: false
 layout: post
 tag: []
-title: Different types of auctions
+title: Some auction dichotomies
 ---
 
  
