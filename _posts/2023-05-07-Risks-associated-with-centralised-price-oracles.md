@@ -9,11 +9,11 @@ layout: post
 tag:
 - oracles
 - defi
-- censorship
+- censorship-resistance
 title: Risks associated with centralised price oracles
 ---
 
-  -resistance
+  
  
 
 

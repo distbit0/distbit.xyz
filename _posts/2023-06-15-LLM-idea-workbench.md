@@ -10,12 +10,12 @@ tag:
 - ai
 - epistemology
 - WoT
-- idea
+- idea-composition
 - project
 title: LLM idea workbench
 ---
 
-   -composition
+   
 
 
 related product: [Brainstorming](https://fermat.ws/brainstorming)

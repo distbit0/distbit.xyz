@@ -9,11 +9,11 @@ layout: post
 tag:
 - defi
 - derivatives
-- interest
+- interest-rate-swaps
 title: Capital efficiency of futures and IRS
 ---
 
-  -rate-swaps
+  
  
 
 There are three types of margin which IRS contracts require:
