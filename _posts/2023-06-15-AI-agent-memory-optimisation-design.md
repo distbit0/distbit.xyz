@@ -26,3 +26,5 @@ I think that this can be done by having the LLM rate the usefulness of an idea w
 In addition to using this feedback to weaken the connection's weight, an alternate approach could involve changing the link's meaning/description in the context of semantic links, so that it more accurately describes the relevance/significance of the idea being linked to. As a result, the agent will be less likely to erroneously traverse this link in the future, due to having a better understanding of whether what it links to is relevant.
 
 E.g. maybe the link has a misleading description x, but the agent rates it badly so it is asked what it should be changed to in order to accurately describe the relationship between the two ideas.
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

@@ -462,3 +462,8 @@ Distbit = Black, Zack = Grey
 >>>>>```
 >>>>>
 >>>>>So there is not enough money available to stop manipulations, if they do occur.
+
+
+
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

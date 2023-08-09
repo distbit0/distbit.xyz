@@ -31,3 +31,5 @@ title: Benefits of zettelkasten
 	- this link-oriented approach obviates the need for a hierarchical folder structure which means i no longer waste hours re-organising notes in a folder hierarchy
 - makes it easy to record ideas I might come up with in the context of a conversation, which I might find useful later.
 - writing notes helps thinking of ideas as atomic units
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

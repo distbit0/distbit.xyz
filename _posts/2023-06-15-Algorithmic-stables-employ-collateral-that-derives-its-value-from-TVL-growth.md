@@ -26,3 +26,5 @@ The reason most algorithmic stablecoins are prone to this occurring is that the 
 Therefore if long term expected growth rate of the stablecoin becomes negative (i.e. users move to alternatives), the value of the collateral becomes very low or near zero (given it can not be negative). The collateral becoming ~worthless while the stablecoin still has a non-zero yet declining TVL is highly problematic for any stablecoin project that values its continued existence. 
 
 Algorithmic stablecoins are on the most reflexive end of [the collateral price reflexivity continuum](/The-collateral-price-reflexivity-continuum).
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

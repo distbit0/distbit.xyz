@@ -38,3 +38,5 @@ If a zettelkasten is employed:
 	- these can be added or removed over time as new connections/relevant ideas are discovered
 		- allows for more efficiently finding relevant ideas when solving problem/carrying out a task
 - more thoughts on this topic can be found in [learning as adding new functions to a concept network](/Learning-as-adding-new-functions-to-a-concept-network) and [AI agent memory optimisation design](/AI-agent-memory-optimisation-design)
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

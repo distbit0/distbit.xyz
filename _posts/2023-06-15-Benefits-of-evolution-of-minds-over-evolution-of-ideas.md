@@ -52,3 +52,5 @@ It seems that all of the following factors contribute to effective evolution:
 	- it seems that similar strategies can be used by both minds and ideas to generate variations, given that variations in a mind are the same as variations of the ideas within the mind.
 	- However due to more efficienct replication and selection (points 1) and 2) above)
 		- variation of minds should be more targeted than variations of ideas, due to better minds being much more likely to proliferate, and due to better minds having better strategies for varying their ideas.
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

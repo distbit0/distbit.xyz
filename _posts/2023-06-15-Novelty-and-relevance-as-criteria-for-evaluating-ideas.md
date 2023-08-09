@@ -27,3 +27,5 @@ The below factors are useful for determining how much attention, thought and mem
 	- relates to the extent to which the idea does not overlap with existing ideas and hence is likely to provide new knowledge 
 
 relates to: agi learning,  agi memory, agi attention + resource allocation
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

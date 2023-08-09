@@ -21,3 +21,5 @@ auctions should be used instead of oracles where possible
 - only doesn't work when the outcome of the auction determines something more valuable than the cost of manipulating the auction uniswap is manipulation-resistant due to its symmetry
 	- or when then the asset being priced will not be properly priced due to its design relying on an oracle that is malicious
 		- i.e. any synthetic assets/stablecoins/derivatives
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

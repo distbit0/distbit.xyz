@@ -1,5 +1,5 @@
 # main text of home
-title: Dist Bit
+title: distbit
 bio: "Cryptoecon researcher and consultant. <a href='https://cal.com/distbit/30min'>Let's chat</a>"
 
 # twitter summary info
@@ -57,11 +57,12 @@ giscus:
 
 # if you don't have any of social below, comment the line
 #facebook: myfacebook
-#twitter: mytwitter
-#sinstagram: myinstagram
+twitter: 0xdist
+#instagram: myinstagram
 #linkedin: mylinkedin
 github: distbit0
 email: adp01@pm.me
+telegram: distbit
 
 authors:
     distbit:

@@ -24,4 +24,7 @@ This may be a useful initial strategy for deciding what information to store.
 
 A limitation of this approach may be that an idea might be relevant to one of the AGI's interests/goals/tasks but the LLM may not be currently aware of said goal/interest due to it not being "in-context". Hence the LLM may erroneously decide not to store a piece of information or idea.
 
-As a result, this approach may be improved by first searching for relevant notes/ideas in the AGI's memory/task list to provide as additional context when asking the AGI whether an idea is worthy of being remembered.
+As a result, this approach may be improved by first searching for relevant notes/ideas in the AGI's memory/task list to provide as additional context when asking the AGI whether an idea is worthy of being remembered. 
+
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

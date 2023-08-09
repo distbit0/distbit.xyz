@@ -32,3 +32,5 @@ title: Deflationary spirals
 	- free banking/fractional reserve banking bank notes
 		- (free banking proponents argue that fractional reserve/free banking addresses these problems but I forget the arguments)
 	- cryptocurrencies/stablecoins with mechanisms for minimising volatility
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

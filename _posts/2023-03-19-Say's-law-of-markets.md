@@ -40,3 +40,5 @@ Key points:
 8. bob becoming unemployed and buying less of good x, resulting in some good x going unsold, doesn't represent insufficient aggregate demand.
     1. it represents a misallocation by the business which made good x. 
     2. the business did not expect bob to become unemployed and demand less as a result. They produced something which turned out not to be wanted.
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

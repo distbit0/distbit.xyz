@@ -36,3 +36,5 @@ Strategies for error-correction/error-detection/falsification for use when creat
 	- Asking user to select from multiple generated outputs
 	- Using log prob of output as certainty heuristic
 	- Having the LLM create an experiment (in novel situations) with the goal of testing its output
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

@@ -37,3 +37,5 @@ The third row in the above table applies to some degree to all collateral assets
 Hence there is some need for DAI to maintain higher than otherwise necessary overcollateralisation so as to mitigate the risk of a decrease in demand for DAI resulting in a decrease in demand for ETH. More generally, a collateral asset's overcollateralisation ratio must be increased as a function of its reflexivity (among other things), so as to mitigate insolvency risk resulting from collateral price fluctuations. 
 
 This is especially important when the marketcap of the collateral asset is low relative to the TVL of the protocol in which it is used as collateral.
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

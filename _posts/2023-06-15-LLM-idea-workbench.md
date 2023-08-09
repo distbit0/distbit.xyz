@@ -37,3 +37,5 @@ related product: [Brainstorming](https://fermat.ws/brainstorming)
 - Connects to Twitter to import ideas from tweets
 
 Contact me at adp01@pm.me or if you are interested in working on this!
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

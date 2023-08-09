@@ -27,4 +27,7 @@ This mitigation however depends on the bots reaction time, and the manipulation 
 
 In order to ensure that the bots reaction time, and the manipulation attack duration always constitute a sufficiently small % of the total TWAP duration, it is necessary to enforce a minimum age of the oldest sample used to calculate the TWAP. This is because the total period of the TWAP (used as the denominator when calculating the weight to assign to each sample based on its duration) is equal to the age of the oldest sample in the TWAP series.
 
-Hence, a TWAP period should not only be defined by the maximum age of the a sample in the TWAP series, but also the minimum age of the oldest sample.
+Hence, a TWAP period should not only be defined by the maximum age of the a sample in the TWAP series, but also the minimum age of the oldest sample. 
+
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

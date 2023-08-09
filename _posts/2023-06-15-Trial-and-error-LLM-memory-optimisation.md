@@ -31,3 +31,5 @@ The agent may need to carry out several attempts/iterations before it finds a re
 This is a strategy for agi memory 
 
 Similar strategies to this can be employed for agi memory optimisation.
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

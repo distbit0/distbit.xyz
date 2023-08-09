@@ -26,3 +26,5 @@ The means by which an AutoGPT can increase its intelligence without needing to m
 In order for this to occur though, the initial architecture must be designed to be capable of representing and reasoning about any possible idea. This is mostly already achieved by the LLM component of the AutoGPT, however other components are also necessary such as a long term memory mechanism able to store and relate such ideas to one another, akin to how ideas are represented in a zettelkasten.
 
 The ability of the AutoGPT to store new ideas in its memory is critical to it being able to improve itself, given that what really constitutes and distinguishes one instance of an AutoGPT from another are the ideas in their memory.
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

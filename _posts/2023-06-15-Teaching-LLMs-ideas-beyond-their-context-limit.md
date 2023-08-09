@@ -37,3 +37,5 @@ There are strong similarities between the abstraction technique and the parallel
 Specifically, abstraction involves abstracting away details which aren't relevant to a given context. The more "given context" refers to a class of problems which the AGI expects to need to solve, rather than the particular problem at hand, the more distinct the abstraction technique is from the parallelisation technique.
 
 At the extreme where the "given context" = the current idea needing to be solved, abstraction is equivalent to parallelisation.
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)

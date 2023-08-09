@@ -50,3 +50,5 @@ A physical instantiation of THS would be a protocol which allows for physical go
 		- transporters specify if the item is in a good state when they pick it up
 			- so that the previous transporter can be given a bad reputation
 	- To facilitate agorism.
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)
