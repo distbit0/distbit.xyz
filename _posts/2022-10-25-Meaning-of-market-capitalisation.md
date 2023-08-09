@@ -10,11 +10,6 @@ layout: post
 tag:
 - finance
 - econ
-- easy-footnote-bottom-2-5327
-- easy-footnote-bottom-3-5327
-- easy-footnote-bottom-4-5327
-- easy-footnote-bottom-5-5327
-- easy-footnote-bottom-6-5327
 title: Meaning of market capitalisation
 ---
 
