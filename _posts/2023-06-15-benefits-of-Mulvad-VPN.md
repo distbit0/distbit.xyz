@@ -30,4 +30,4 @@ Below is why I recommend [Mulvad VPN](https://mullvad.net/).
 - client apps are opensource
 
 
-[[privacy]], [[vpns]]
+privacy, vpns

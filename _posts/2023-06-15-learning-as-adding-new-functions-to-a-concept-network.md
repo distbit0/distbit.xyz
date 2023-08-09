@@ -36,4 +36,4 @@ Some knowledge will be best represented in mediums other than text, particularly
 In addition to the obvious ability for "programmatic ideas" to refer to other programmatic ideas as dependencies, as is common in code, they can also both be used as a dependency by and employ as a dependency textual ideas. An example might be a textual idea referring to a programmatic idea as relevant to solving a certain problem or in the opposite direction, a programmatic idea referring to a textual idea as context for understanding the purpose of output of the programmatic idea. 
 
 
-[[zettelkasten]], [[agi memory]], [[concept network]]
+zettelkasten, agi memory, concept network

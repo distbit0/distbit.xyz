@@ -10,7 +10,7 @@ tag:
 - memory
 - ai
 - agents
-title: Trial and error LLM memory optimisation
+title: Trial-and-error LLM memory optimisation
 ---
 
 #gpt 
@@ -27,6 +27,6 @@ Questions about the idea can be asked to this blank instance of itself to test i
 
 The agent may need to carry out several attempts/iterations before it finds a representation of a new idea which is reliably understood by a blank instance of itself.
 
-This is a strategy for [[agi memory]] 
+This is a strategy for agi memory 
 
-Similar strategies to this can be employed for [[agi memory optimisation]].
+Similar strategies to this can be employed for agi memory optimisation.

@@ -17,7 +17,7 @@ title: AI Agents can decide what is worth remembering
 
 Some ideas which an Agentic AI considers while carrying out a task or solving a problem will be useful in the course of future tasks.  
 
-If an [[agi]] is aware of its goals and the relevant context, it can simply be asked what of the currently "in-context" ideas should be stored in its memory.
+If an agi is aware of its goals and the relevant context, it can simply be asked what of the currently "in-context" ideas should be stored in its memory.
 
 This may be a useful initial strategy for deciding what information to store.
 
@@ -25,4 +25,4 @@ A limitation of this approach may be that an idea might be relevant to one of th
 
 As a result, this approach may be improved by first searching for relevant notes/ideas in the AGI's memory/task list to provide as additional context when asking the AGI whether an idea is worthy of being remembered. 
 
-[[agi memory]]. [[agi attention + resource allocation]]
+agi memory. agi attention + resource allocation

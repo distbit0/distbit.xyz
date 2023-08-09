@@ -17,4 +17,4 @@ If the oracle used to determine the value of collateral a synth holder is entitl
 
 Therefore auctions can not be used as a substitute for the synth asset using a reliable oracle when pricing said collateral asset.
 
-However [[auctions should be used instead of oracles where possible ghp]], or at least to minimise reliance on oracles. Cases where this works include lending platforms which can price collateral using auctions (e.g. [[health factor auctions]] and DAI's time based auctions) due to being able to assume that the market price of the collateral assets is accurate.
+However auctions should be used instead of oracles where possible ghp, or at least to minimise reliance on oracles. Cases where this works include lending platforms which can price collateral using auctions (e.g. health factor auctions and DAI's time based auctions) due to being able to assume that the market price of the collateral assets is accurate.

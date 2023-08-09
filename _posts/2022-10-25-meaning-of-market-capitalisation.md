@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 tag:
 - null
-title: Meaning of market capitalisation
+title: Meaning-of-market-capitalisation
 ---
 
 The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. Below I discuss:
@@ -105,4 +105,4 @@ The Terra stablecoin satisfies both, as it was both held by millions of people a
 > 6.  Or selling some of the bowl to yield-seekers by offering to pay a 20% rate of interest on their bowl investment – in kind, of course.
 
 
-[[market cap]], [[total demand stock]], [[STOV]]
+market cap, total demand stock, STOV

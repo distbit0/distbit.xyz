@@ -14,7 +14,7 @@ tag:
 title: Say's law of markets
 ---
 
-[[says law]], [[keynesianism]]
+says law, keynesianism
 
 In which I defend the statement that: "goods never remain unsold as a result of insufficient aggregate demand, but rather always because of a misallocation of production or a result of government intervention."
 

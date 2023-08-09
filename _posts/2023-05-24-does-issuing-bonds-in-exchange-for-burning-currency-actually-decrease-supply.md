@@ -29,4 +29,4 @@ Of course there are even more fundamental flaws in this design, but I do not rec
 	- though it is uncertain if this measure will be implemented.
 
 
-[[economics]] [[total demand stock]] [[credit]] [[free banking]]
+economics total demand stock credit free banking

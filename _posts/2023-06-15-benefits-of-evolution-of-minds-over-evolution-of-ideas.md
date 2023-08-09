@@ -15,9 +15,9 @@ title: Benefits of evolution of minds over evolution of ideas
 
 #gpt 
 
-AGIs have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This relates to ![[impact of agi will be larger than brain count increase suggests]] and [[impact of agi]].
+AGIs have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This relates to !impact of agi will be larger than brain count increase suggests and impact of agi.
 
-Why would the ability for [[evolution]] to occur at the level of minds have advantages over the evolution at the level of ideas, as is already possible within and between human brains?
+Why would the ability for evolution to occur at the level of minds have advantages over the evolution at the level of ideas, as is already possible within and between human brains?
 
 It seems that all of the following factors contribute to effective evolution:
 1. ease with which improved strains can be identified

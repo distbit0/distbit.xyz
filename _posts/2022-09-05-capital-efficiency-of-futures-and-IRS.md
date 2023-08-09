@@ -35,4 +35,4 @@ There are three types of margin which IRS contracts require:
 	- This I'd imagine would depend on some measure of expected volatility in the market fixed rate and also how long it is expected to take for the defaulted-on party to find a new counterparty
 
 
-[[capital efficiency]], [[interest rate swap]], [[futures]], [[interest rates]]
+capital efficiency, interest rate swap, futures, interest rates

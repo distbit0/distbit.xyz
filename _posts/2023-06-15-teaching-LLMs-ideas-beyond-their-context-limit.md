@@ -17,7 +17,7 @@ title: Teaching LLMs ideas beyond their context limit
 #gpt
 In order to understand new complex topics, often hundreds or even thousands of new ideas need to be learned. Not all of these ideas are needed when making most decisions. However, it seems dozens or more may be used subconsciously while reasoning or formulating new ideas, to both act as constraints and guide the idea creation process.
 
-This relates to an aspect of [[agi idea retrieval]] and how [[agi memory]] can be accessed.
+This relates to an aspect of agi idea retrieval and how agi memory can be accessed.
 
 How will LLM-based AGIs be able to use all of the ideas they accrue over time in the process of solving problems/coming up with new ideas?
 
@@ -34,4 +34,4 @@ Abstraction consists of converting a set of ideas into a smaller set of ideas wh
 There are strong similarities between the abstraction technique and the parallelisation technique. The difference is probably a matter of degree.
 Specifically, abstraction involves abstracting away details which aren't relevant to a given context. The more "given context" refers to a class of problems which the AGI expects to need to solve, rather than the particular problem at hand, the more distinct the abstraction technique is from the parallelisation technique.
 
-At the extreme where the "given context" = the current idea needing to be solved, [[abstraction]] is equivalent to parallelisation.
+At the extreme where the "given context" = the current idea needing to be solved, abstraction is equivalent to parallelisation.

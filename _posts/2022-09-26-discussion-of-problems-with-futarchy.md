@@ -462,4 +462,4 @@ Distbit = Black, Zack = Grey
 
 
 
-[[futarchy]], [[prediction markets]], [[capital efficiency]]
+futarchy, prediction markets, capital efficiency
