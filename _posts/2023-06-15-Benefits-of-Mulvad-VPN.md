@@ -11,8 +11,7 @@ tag:
 title: Benefits of Mulvad VPN
 ---
 
-#privacy
-#privacy
+
 
 
 Below is why I recommend [Mulvad VPN](https://mullvad.net/).

@@ -8,12 +8,11 @@ headerImage: false
 layout: post
 tag:
 - zettelkasten
-- tools for thought
+- tools
 title: Benefits of zettelkasten
 ---
 
-#zettelkasten #tools for thought
-#zettelkasten #tools for thought
+ -for-thought
  
 
 - useful for coming up with ideas, as it makes it easy to quickly write up/elaborate on small ideas and then later connect them to/use them in more abstract ideas later on

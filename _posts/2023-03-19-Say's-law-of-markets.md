@@ -8,14 +8,12 @@ headerImage: false
 layout: post
 tag:
 - econ
-- austrian econ
 - keynesianism
 - inflation
 title: Say's law of markets
 ---
 
-#econ #austrian econ #keynesianism #inflation
-#econ #austrian econ #keynesianism #inflation
+  
 
 
 In which I defend the statement that: "goods never remain unsold as a result of insufficient aggregate demand, but rather always because of a misallocation of production or a result of government intervention."

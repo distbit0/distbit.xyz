@@ -11,12 +11,11 @@ tag:
 - ai
 - agents
 - zettelkasten
-- idea composition
+- idea
 title: Learning as adding new functions to a concept network
 ---
 
-#learning #ai #agents #zettelkasten #idea composition
-#learning #ai #agents #zettelkasten #idea composition
+    -composition
  
 
 In concept-network mediums such as the human brain, a zettelkasten, or an artificial neural network (ANN), learning entails integrating new ideas into an existing network.

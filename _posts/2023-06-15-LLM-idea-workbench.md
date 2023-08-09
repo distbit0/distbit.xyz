@@ -9,22 +9,17 @@ layout: post
 tag:
 - ai
 - epistemology
-- web of trust
-- idea composition
+- WoT
+- idea
+- project
 title: LLM idea workbench
 ---
 
-#ai #epistemology #web of trust #idea composition
-#ai #epistemology #web of trust #idea composition
-#ai #epistemology #web of trust #idea composition
-#ai #epistemology #web of trust #idea composition
-#ai #epistemology #web of trust #idea composition
-#ai #epistemology #web of trust #idea composition
-#ai #epistemology #web of trust #idea composition
+   -composition
 
 
 related product: [Brainstorming](https://fermat.ws/brainstorming)
-#project 
+ 
 
 - relates to convergence of tools for thought and agi
 - a web app for using LLMs to compose and modify ideas

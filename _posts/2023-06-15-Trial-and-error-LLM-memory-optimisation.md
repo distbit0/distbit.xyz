@@ -13,8 +13,7 @@ tag:
 title: Trial-and-error LLM memory optimisation
 ---
 
-#memory #ai #agents
-#memory #ai #agents
+  
 
 
 If an LLM decides that an idea or piece of information it has recently acquired will be useful in the future, and is therefore worth saving to its memory, it will need to ensure that it is saved in a format which will be understandable to its future self.

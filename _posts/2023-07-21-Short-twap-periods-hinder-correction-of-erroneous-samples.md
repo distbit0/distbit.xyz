@@ -13,8 +13,7 @@ tag:
 title: Short twap periods hinder correction of erroneous samples
 ---
 
-#oracles #defi #twap
-#oracles #defi #twap
+  
 
 
 

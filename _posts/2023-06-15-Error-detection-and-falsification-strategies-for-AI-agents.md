@@ -13,8 +13,7 @@ tag:
 title: Error detection and falsification strategies for AI agents
 ---
 
-#ai #agents #epistemology
-#ai #agents #epistemology
+  
  
 
 Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents: 
@@ -37,5 +36,3 @@ Strategies for error-correction/error-detection/falsification for use when creat
 	- Asking user to select from multiple generated outputs
 	- Using log prob of output as certainty heuristic
 	- Having the LLM create an experiment (in novel situations) with the goal of testing its output
-
-#gpt
