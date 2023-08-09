@@ -22,4 +22,4 @@ It is possible, though, that agentic ais are so un-affected by the usual control
 
 However, as more economic activity is conducted by Agentic AIs, humans will also become more mobile and hence harder for states to control, insofar as their work will no longer be geographically bound. This is the result of agentic AIs likely increasing the rate of digitisation and automation, and hence the % of jobs capable of being done remotely.
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)

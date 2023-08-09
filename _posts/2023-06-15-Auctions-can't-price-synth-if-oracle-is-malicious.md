@@ -22,4 +22,4 @@ Therefore auctions can not be used as a substitute for the synth asset using a r
 
 However [auctions should be used instead of oracles where possible](/Auctions-should-be-used-instead-of-oracles-where-possible), or at least to minimise reliance on oracles. Cases where this works include lending platforms which can price collateral using auctions (e.g. health factor auctions and DAI's time based auctions) due to being able to assume that the market price of the collateral assets is accurate.
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)

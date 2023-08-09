@@ -28,4 +28,4 @@ The below factors are useful for determining how much attention, thought and mem
 
 relates to: agi learning,  agi memory, agi attention + resource allocation
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)

@@ -32,4 +32,4 @@ risks associated with centralised price oracles can be divided into two categori
 	- risk that centralised price oracle decides to stop offering certain price sources due to a change in its business model
 	- risk that centralised price oracle (not out of malice) changes the parameters/specifications of the price feeds it offers, resulting in degraded security
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)

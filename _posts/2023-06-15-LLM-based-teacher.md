@@ -26,4 +26,4 @@ An AI teacher can employ a user's notes and other material to understand their e
 - when teacher ai intends to or is requested to explain a concept or idea to user, it can first consult data it has about users's knowledge and known ideas, to use as context or analogies when explaining things
 	- as well as consulting external knowledge bases
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)
