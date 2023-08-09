@@ -12,7 +12,8 @@ tag:
 title: Benefits of zettelkasten
 ---
 
-#ghp 
+#zettelkasten #tools for thought
+ 
 
 - useful for coming up with ideas, as it makes it easy to quickly write up/elaborate on small ideas and then later connect them to/use them in more abstract ideas later on
 - process of writing about an idea helps generate new ideas and precipitating realisations that wouldn't have otherwise had

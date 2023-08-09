@@ -14,7 +14,8 @@ tag:
 title: Does issuing bonds in exchange for burning currency actually decrease supply
 ---
 
-#ghp
+#econ #defi #finance #free banking
+
 
 The below is in reference to basis-style algo stables, which issue bonds as a way to temporarily reduce the stablecoin supply to counteract de-peggings below one dollar.
 

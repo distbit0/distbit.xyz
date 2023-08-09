@@ -13,7 +13,13 @@ tag:
 title: Benefits of evolution of minds over evolution of ideas
 ---
 
-#ghp
+#epistemology #ai #agents
+#epistemology #ai #agents
+#epistemology #ai #agents
+#epistemology #ai #agents
+#epistemology #ai #agents
+#epistemology #ai #agents
+
 
 AGIs have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This relates to !impact of agi will be larger than brain count increase suggests and impact of agi.
 

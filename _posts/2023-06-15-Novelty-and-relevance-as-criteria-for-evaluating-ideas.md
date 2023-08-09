@@ -13,7 +13,8 @@ tag:
 title: Novelty and relevance as criteria for evaluating ideas
 ---
 
-#ghp 
+#ai #agents #epistemology
+ 
 
 The below factors are useful for determining how much attention, thought and memory to allocate to to an idea:
 - Relevance of the idea to the ones existing ideas

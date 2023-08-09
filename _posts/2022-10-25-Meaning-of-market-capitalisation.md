@@ -12,7 +12,7 @@ tag:
 title: Meaning of market capitalisation
 ---
 
-#ghp
+
 
 The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. Below I discuss:
 - Whether the "capacity to support future consumption" is actually a coherent measure of value

@@ -13,7 +13,8 @@ tag:
 title: Short twap periods hinder correction of erroneous samples
 ---
 
-#ghp
+#oracles #defi #twap
+
 
 
 Samples used to calculate a TWAP are susceptible to price manipulation attacks whereby the underlying market is temporarily manipulated by an attacker with the goal of impacting the price recorded for a given TWAP sample. 

@@ -13,7 +13,8 @@ tag:
 title: Auctions should be used instead of oracles where possible
 ---
 
-#ghp
+#auctions #oracles #defi
+
 
 auctions should be used instead of oracles where possible
 - e.g. when liquidating positions, to prevent price manipulation attacks and to determine value of collateral.

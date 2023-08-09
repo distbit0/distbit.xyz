@@ -14,7 +14,8 @@ tag:
 title: Use of Zettelkasten in agent memory
 ---
 
-#ghp
+#zettelkasten #memory #ai #agents
+
 
 zettelkasten can potentially be useful for agi idea retrieval as well as agi idea relation representation for agi memory.
 

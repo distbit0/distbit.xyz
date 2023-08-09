@@ -13,7 +13,8 @@ tag:
 title: Error detection and falsification strategies for AI agents
 ---
 
-#ghp 
+#ai #agents #epistemology
+ 
 
 Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents: 
 - Conceptual ideas

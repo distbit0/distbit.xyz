@@ -14,7 +14,13 @@ tag:
 title: LLM idea workbench
 ---
 
-#ghp
+#ai #epistemology #web of trust #idea composition
+#ai #epistemology #web of trust #idea composition
+#ai #epistemology #web of trust #idea composition
+#ai #epistemology #web of trust #idea composition
+#ai #epistemology #web of trust #idea composition
+#ai #epistemology #web of trust #idea composition
+
 
 related product: [Brainstorming](https://fermat.ws/brainstorming)
 #project 

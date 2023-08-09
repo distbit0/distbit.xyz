@@ -13,7 +13,8 @@ tag:
 title: Risks associated with centralised price oracles
 ---
 
-#ghp 
+#oracles #defi #censorship resistance
+ 
 
 
 

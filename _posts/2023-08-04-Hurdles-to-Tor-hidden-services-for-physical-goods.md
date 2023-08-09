@@ -12,7 +12,8 @@ tag:
 title: Hurdles to Tor hidden services for physical goods
 ---
 
-#ghp
+#onion routing #agorism
+
 
 THS = Tor hidden services
 
