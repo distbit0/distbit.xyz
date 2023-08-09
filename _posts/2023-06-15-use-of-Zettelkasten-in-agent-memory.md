@@ -36,4 +36,4 @@ If a zettelkasten is employed:
 - for each idea/memory, an agent should store semantic links to other ideas
 	- these can be added or removed over time as new connections/relevant ideas are discovered
 		- allows for more efficiently finding relevant ideas when solving problem/carrying out a task
-- more thoughts on this topic can be found in learning as adding new functions to a concept network ghp and AI agent memory optimisation design ghp
+- more thoughts on this topic can be found in [learning as adding new functions to a concept network ghp](Learning-as-adding-new-functions-to-a-concept-network) and [AI agent memory optimisation design ghp](AI-agent-memory-optimisation-design)
