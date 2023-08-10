@@ -1,0 +1,42 @@
+---
+articleUrl: https://distbit.xyz/use-of-zettelkasten-in-agent-memory
+author: distbit
+category: blog
+date: 2023-06-15 00:00
+description: null
+headerImage: false
+layout: post
+tag:
+- zettelkasten
+- memory
+- ai
+- agents
+title: Use of Zettelkasten in agent memory
+---
+
+   
+
+
+zettelkasten can potentially be useful for agi idea retrieval as well as agi idea relation representation for agi memory.
+
+The benefits of using zettelkasten for AGI memory are that:
+- it is human interprable
+- makes finding relevant ideas easy
+- allows for natural language description of ideas
+- links between ideas can have meaning (semantic linking)
+- doesn't enforce rigid structure
+
+Problems which need to be solved:
+- how to have agi determine when to store an idea
+- how to refactor ideas, prune and make connections to allow better navigation
+- delete ideas and combine ideas
+- find relevant ideas to link to
+- determine when to stop searching through memory
+
+If a zettelkasten is employed:
+- for each idea/memory, an agent should store semantic links to other ideas
+	- these can be added or removed over time as new connections/relevant ideas are discovered
+		- allows for more efficiently finding relevant ideas when solving problem/carrying out a task
+- more thoughts on this topic can be found in [learning as adding new functions to a concept network](/learning-as-adding-new-functions-to-a-concept-network) and [AI agent memory optimisation design](/ai-agent-memory-optimisation-design)
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)
