@@ -79,7 +79,7 @@ The below are some notes on various types of LP token price manipulation attacks
 			- (although I do not believe flash loans deserve to be subject to such discrimination)
 	- can other lending protocols be affected by this attack even if they implement mitigations, due to another protocol being exploited?
 		- if they support asset as collateral, lenders of the asset will incur bad debt/defaults, but still be ok due to collateral still covering the original value of the assets
-		- if the lenders of the asset can borrow against their bad debt, then the platform will incur bad debt
+		- if the lenders of the asset can borrow against their bad debt, the platform will incur bad debt
 
 
 Thanks to [Torgin](https://twitter.com/MTorgin) for explaining the donation attack mechanism.
