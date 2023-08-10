@@ -81,4 +81,7 @@ The below are some notes on various types of LP token price manipulation attacks
 		- if they support asset as collateral, lenders of the asset will incur bad debt/defaults, but still be ok due to collateral still covering the original value of the assets
 		- if the lenders of the asset can borrow against their bad debt, then the platform will incur bad debt
 
+
+Thanks to [Torgin](https://twitter.com/MTorgin) for explaining in great detail the how donation attack works.
+
 If you found this interesting, have feedback or are working on something related, let's get in touch: [@0xdist](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)
