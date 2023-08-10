@@ -17,6 +17,7 @@ title: Does issuing bonds in exchange for burning currency actually decrease sup
    
 
 
+
 The below is in reference to basis-style algo stables, which issue bonds as a way to temporarily reduce the stablecoin supply to counteract de-peggings below one dollar.
 
 Of course there are even more fundamental flaws in this design, but I do not recall seeing the below discussed, so decided to write it up:

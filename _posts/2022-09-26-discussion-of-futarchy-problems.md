@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/futarchy-problems-discussion
+articleUrl: https://distbit.xyz/discussion-of-futarchy-problems
 author: distbit
 category: blog
 date: 2022-09-26 00:00
@@ -12,7 +12,7 @@ tag:
 - derivatives
 - finance
 - defi
-title: Futarchy problems discussion
+title: Discussion of futarchy problems
 ---
 
    
@@ -117,7 +117,7 @@ All investments are in the market for investments. People move their money to wh
 As more people pile into an investment class, it is a bigger group of people dividing the reward of an industry into smaller slices per investor.
 Each part of the exonomy has an ideal amount of capital it needs to grow efficiently, relative to the other parts of the economy.
 So the effect of people jumping between investments for individual benefit, it means that a rising price necessarily comes with more volatility, or some other kind of risk.
->
+
 >>The extra volatility adds more noise, and makes it harder to detect the signal we want.
 >>
 >>It comes down to subjective values. Like, if you live in a part of the world that is denominated in USD, and your expenses are all in USD, then it might be more convenient for you to have your bets also denominated in USD. 
