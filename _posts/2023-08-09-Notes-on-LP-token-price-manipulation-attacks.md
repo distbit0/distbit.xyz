@@ -6,8 +6,7 @@ date: 2023-08-09 00:00
 description: ''
 headerImage: false
 layout: post
-tag:
-- L148C1-L153C59
+tag: []
 title: Notes on LP token price manipulation attacks
 ---
 
@@ -16,8 +15,6 @@ title: Notes on LP token price manipulation attacks
 The below are some notes on various types of LP token price manipulation attacks. Some of this may assume certain background knowledge, most of which can be found in the linked attack explanations.
 
 - [read-only re-entrancy](https://chainsecurity.com/curve-lp-oracle-manipulation-post-mortem/) curve
-	- [also affects univ2 pools with erc777 tokens as underlying](https://github.com/Uniswap/v2-core/blob/ee547b17853e71ed4e0101ccfd52e70d5acded58/contracts/UniswapV2Pair.sol)
-		- [related attack](https://slowmist.medium.com/slowmist-an-analysis-of-the-attack-on-rari-31bbca767ec2)
 	- explanation 
 		- only works if one of the assets supports callbacks (i.e. erc777, erc677 or ETH)
 		- when lp tokens are burned, the lp token supply is reduced before all of the erc20 collateral is sent to the user
