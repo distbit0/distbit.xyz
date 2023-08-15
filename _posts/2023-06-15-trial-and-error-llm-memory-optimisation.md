@@ -32,4 +32,4 @@ This is a strategy for agi memory
 
 Similar strategies to this can be employed for agi memory optimisation.
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)

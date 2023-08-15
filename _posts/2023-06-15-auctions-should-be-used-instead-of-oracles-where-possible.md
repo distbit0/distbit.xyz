@@ -22,4 +22,4 @@ auctions should be used instead of oracles where possible
 	- or when then the asset being priced will not be properly priced due to its design relying on an oracle that is malicious
 		- i.e. any synthetic assets/stablecoins/derivatives
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)

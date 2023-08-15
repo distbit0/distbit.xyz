@@ -38,4 +38,4 @@ Specifically, abstraction involves abstracting away details which aren't relevan
 
 At the extreme where the "given context" = the current idea needing to be solved, abstraction is equivalent to parallelisation.
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)

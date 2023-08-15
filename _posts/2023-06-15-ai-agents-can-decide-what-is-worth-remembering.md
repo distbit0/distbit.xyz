@@ -27,4 +27,4 @@ A limitation of this approach may be that an idea might be relevant to one of th
 As a result, this approach may be improved by first searching for relevant notes/ideas in the AGI's memory/task list to provide as additional context when asking the AGI whether an idea is worthy of being remembered. 
 
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)

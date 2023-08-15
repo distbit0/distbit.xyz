@@ -32,4 +32,4 @@ title: Benefits of zettelkasten
 - makes it easy to record ideas I might come up with in the context of a conversation, which I might find useful later.
 - writing notes helps thinking of ideas as atomic units
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30min call](https://cal.com/distbit/30min)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)
