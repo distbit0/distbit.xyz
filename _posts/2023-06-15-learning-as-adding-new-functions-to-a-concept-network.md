@@ -34,7 +34,7 @@ Some knowledge will be best represented in mediums other than text, particularly
 
 "Procedural memory", or knowledge of executing specific tasks, is often best encapsulated as executable code, benefiting from the reliability and speed of code, compared to LLM inference. This doesn't limit its composability with LLMs or its integration with textual knowledge, as LLMs are capable of interacting with external tools. Conceptual procedural knowledge, like research skills, may be optimally represented as a combination of code and text.
 
-In addition to the obvious ability for "programmatic ideas" to refer to other programmatic ideas as dependencies, as is common in code, they can also both be used as a dependency by and employ as a dependency textual ideas. An example might be a textual idea referring to a programmatic idea as relevant to solving a certain problem or in the opposite direction, a programmatic idea referring to a textual idea as context for understanding the purpose of output of the programmatic idea. 
+In addition to the obvious ability for "programmatic ideas" to refer to other programmatic ideas as dependencies, as is common in code, they can also both be used as a dependency by and employ as a dependency textual ideas. An example might be a textual idea referring to a programmatic idea as relevant to solving a certain problem or in the opposite direction, a programmatic idea referring to a textual idea as context for understanding the purpose or output of the programmatic idea. 
 
 
 
