@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/trial-and-error-llm-memory-optimisation
+articleUrl: https://distbit.xyz/agent-memory-optimisation
 author: distbit
 category: blog
 date: 2023-06-15 00:00
@@ -10,7 +10,7 @@ tag:
 - memory
 - ai
 - agents
-title: Trial-and-error LLM memory optimisation
+title: Agent memory optimisation
 ---
 
   
@@ -28,8 +28,6 @@ Questions about the idea can be asked to this blank instance of itself to test i
 
 The agent may need to carry out several attempts/iterations before it finds a representation of a new idea which is reliably understood by a blank instance of itself.
 
-This is a strategy for agi memory 
-
-Similar strategies to this can be employed for agi memory optimisation.
+This is a strategy for agi memory
 
 If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)
