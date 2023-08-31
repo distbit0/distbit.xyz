@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/does-issuing-bonds-in-exchange-for-burning-currency-actually-decrease-supply
+articleUrl: https://distbit.xyz/is-burning-tokens-in-exchange-for-bonds-actually-deflationary
 author: distbit
 category: blog
 date: 2023-05-24 00:00
@@ -11,7 +11,7 @@ tag:
 - defi
 - finance
 - free-banking
-title: Does issuing bonds in exchange for burning currency actually decrease supply
+title: Is burning tokens in exchange for bonds actually deflationary
 ---
 
    
@@ -29,8 +29,8 @@ Of course there are even more fundamental flaws in this design, but I do not rec
 		- instead of effectively withdrawing basis from circulation.
 - This dynamic might disrupt the fundamental function of bonds
 	- as they could serve as an alternative supply of basis rather than removing it from the market.
-- A possible solution could be making bonds non-transferable
-	- though it is uncertain if this measure will be implemented.
+- The magnitude of this effect depends on the extent to which marginal currency holders are able to use bonds as a replacement to currency
+	- which depends on factors such as liquidity, legal frictions, default risks, financial system integration etc.
 
 
 
