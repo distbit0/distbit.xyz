@@ -17,7 +17,7 @@ title: Use of Zettelkasten in agent memory
    
 
 
-zettelkasten can potentially be useful for agi idea retrieval as well as agi idea relation representation for agi memory.
+zettelkasten is potentially useful for agi idea retrieval as well as agi idea relation representation for agi memory.
 
 The benefits of using zettelkasten for AGI memory are that:
 - it is human interprable
