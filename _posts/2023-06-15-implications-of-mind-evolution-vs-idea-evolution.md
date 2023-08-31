@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/benefits-of-evolution-of-minds-over-evolution-of-ideas
+articleUrl: https://distbit.xyz/implications-of-mind-evolution-vs-idea-evolution
 author: distbit
 category: blog
 date: 2023-06-15 00:00
@@ -10,13 +10,13 @@ tag:
 - epistemology
 - ai
 - agents
-title: Benefits of evolution of minds over evolution of ideas
+title: Implications of mind evolution vs idea evolution
 ---
 
   
 
 
-AGIs have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This relates to !impact of agi will be larger than brain count increase suggests and impact of agi.
+Agents have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This is relevant to whether the impact of agi will be larger than brain count increase suggests.
 
 Why would the ability for evolution to occur at the level of minds have advantages over the evolution at the level of ideas, as is already possible within and between human brains?
 
