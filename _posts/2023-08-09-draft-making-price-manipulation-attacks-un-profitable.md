@@ -9,7 +9,7 @@ layout: post
 tag:
 - gid
 - gid
-title: DRAFT Making price manipulation attacks unprofitable
+title: DRAFT Making price manipulation attacks un-profitable
 ---
 
  
