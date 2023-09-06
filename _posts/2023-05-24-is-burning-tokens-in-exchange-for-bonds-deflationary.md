@@ -11,7 +11,7 @@ tag:
 - defi
 - finance
 - free-banking
-title: Is burning tokens in exchange for bonds actually deflationary
+title: Is burning tokens in exchange for bonds deflationary
 ---
 
    
@@ -22,13 +22,12 @@ The below is in reference to basis-style algo stables, which issue bonds as a wa
 
 Of course there are even more fundamental flaws in this design, but I do not recall seeing the below discussed, so decided to write it up:
 
-- What if bonds inadvertently substitute for basis, thereby not only reducing basis supply
-	- but also creating a competitive asset with similar, if somewhat riskier and cheaper, characteristics.
-- This potential substitution could undermine the intended role of bonds
-	- possibly causing them to increase the supply of basis-like assets
-		- instead of effectively withdrawing basis from circulation.
-- This dynamic might disrupt the fundamental function of bonds
-	- as they could serve as an alternative supply of basis rather than removing it from the market.
+- Bonds may inadvertently act as a substitute for the asset which they promise future payment of
+	- therefore reducing the "supply" of said asset less than expected
+		- due to also creating a competitive asset with similar, if somewhat riskier and less liquid, characteristics.
+- This potential substitution could undermine the intended role of bonds in the basis algorithmic stabilisation mechanism
+	- possibly resulting in bond issuance actually increasing the supply of basis-like assets
+		- rather than withdrawing basis from circulation.
 - The magnitude of this effect depends on the extent to which marginal currency holders are able to use bonds as a replacement to currency
 	- which depends on factors such as liquidity, legal frictions, default risks, financial system integration etc.
 
