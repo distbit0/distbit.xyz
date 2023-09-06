@@ -6,6 +6,19 @@ title: Blog
 pagination:
 enabled: true
 ---
+
+
+<section class="tags-section">
+    <h2>Topics</h2>
+    <ul>
+        {% assign sorted_tags = site.tags | sort %}
+        {% for tag in sorted_tags limit:7 %}
+        <li><a href="https://distbit.xyz/tags/#{{ tag[0] }}">{{ tag[0] }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+
+
 <section class="list">
     {% if site.posts.size == 0 %}
     <p class="text-center">Nothing published yet!</p>
