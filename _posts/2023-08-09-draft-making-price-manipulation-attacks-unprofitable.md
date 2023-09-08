@@ -9,6 +9,10 @@ layout: post
 tag:
 - gid
 - gid
+tags:
+- defi
+- oracles
+- collateral
 title: DRAFT Making price manipulation attacks un-profitable
 ---
 
