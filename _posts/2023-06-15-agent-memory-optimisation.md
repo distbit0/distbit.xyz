@@ -10,7 +10,7 @@ tag:
 - memory
 - ai
 - agents
-title: Agent memory optimisation process
+title: Agent memory optimisation
 ---
 
   
