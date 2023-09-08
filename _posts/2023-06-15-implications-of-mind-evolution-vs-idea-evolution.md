@@ -7,13 +7,12 @@ description: null
 headerImage: false
 layout: post
 tag:
-- epistemology
 - ai
 - agents
 title: Implications of mind evolution vs idea evolution
 ---
 
-
+#epistemology
 
 
 Agents have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This is relevant to whether the impact of agi will be larger than brain count increase suggests.

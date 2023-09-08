@@ -7,13 +7,12 @@ description: null
 headerImage: false
 layout: post
 tag:
-- ai
 - agents
 - epistemology
 title: General intelligence does not necessitate complete architectural flexibility
 ---
 
-
+#ai
 
 
 

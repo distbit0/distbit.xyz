@@ -8,12 +8,11 @@ description: A response to a blog post analysing the value lost resulting from t
 headerImage: false
 layout: post
 tag:
-- finance
 - econ
 title: Meaning of market capitalisation
 ---
 
-
+#finance
 
 
 The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. Below I discuss:

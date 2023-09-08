@@ -7,13 +7,12 @@ description: null
 headerImage: false
 layout: post
 tag:
-- oracles
 - defi
 - twap
 title: Short twap periods hinder correction of erroneous samples
 ---
 
-
+#oracles
 
 
 

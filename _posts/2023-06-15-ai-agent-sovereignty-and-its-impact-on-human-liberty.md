@@ -7,13 +7,12 @@ description: null
 headerImage: false
 layout: post
 tag:
-- ai
 - agents
 - liberty
 title: AI Agent sovereignty and its impact on human liberty
 ---
 
-
+#ai
  
 
 Agentic AIs are the epitome of the scenario described in the book the sovereign individual insofar as they have extreme regulatory flexibility and regulatory arbitrage capabilities as a result of their lack of physical presence. 

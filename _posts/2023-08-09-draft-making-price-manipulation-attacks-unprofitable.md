@@ -10,8 +10,6 @@ tag:
 - defi
 - oracles
 - collateral
-- gid
-- gid
 tags:
 - defi
 - oracles
@@ -160,7 +158,7 @@ An increase in `manipFactor` has the following two countervailing effects on the
 
 As a result of the above two countervailing consequences of a higher `manipFactor`, we can not assume that either the highest or lowest values of `manipFactor` will correspond to the highest or lowest values of `debtLimit`. 
 
-To see what a graph of the absolute value of `debtLimit` over the course of a sample orderbook looks like, see the following spreadsheet: https://docs.google.com/spreadsheets/d/14Gxmj3_Vc-XBuf74Cj3xDlFZ3QMGFwZfPCVCw_G7Dgs/edit=885922950.  
+To see what a graph of the absolute value of `debtLimit` over the course of a sample orderbook looks like, see the following spreadsheet: https://docs.google.com/spreadsheets/d/14Gxmj3_Vc-XBuf74Cj3xDlFZ3QMGFwZfPCVCw_G7Dgs/edit#gid=885922950.  
 You can vary the `LTV` parameter to see the impact of doing so on the shape of the `debtLimit` curve, after cloning the spreadsheet.
 
 Perhaps most notably, the point at which price manipulation attacks become possible* corresponds to the vertical asymptote in the `debtLimit` curve. The true (non-absolute) debt limit flips from being negative to being positive at this point. See the section below: "Lower bound on `manipFactor x LTV` for an attack to be possible" for more information about the significance of this asymptote.
@@ -215,7 +213,7 @@ This reversibility of Uniswap order filling allows the attacker to cancel out th
 
 Despite the above however, it is possible to securely use Uniswap v2 TWAP feeds by "wrapping them" with a function which applies a geometric mean function to prices periodically sampled from the native v2 TWAP feed. This works because, as explained in the above paper, a geometric mean TWAP is significantly much more resistant to single outlier data points. Consequently, the attacker must continue the manipulation over multiple blocks, which becomes prohibitive using the MEV manipulation strategy outlined in the paper. 
 
-This geometric mean wrapper solution is infeasible in practice though, unless the onchain gas costs are shared by multiple data consumers, as the periodic TWAP samples required by the geometric mean function are estimated to cost $100k+ per year to provision (depending on various gas price assumptions). See this spreadsheet for more details: https://docs.google.com/spreadsheets/d/1T7MIKD_NfAX5mlbfD_jPYPnW4QUYdPaPAhwhALbHzPc/edit=0. 
+This geometric mean wrapper solution is infeasible in practice though, unless the onchain gas costs are shared by multiple data consumers, as the periodic TWAP samples required by the geometric mean function are estimated to cost $100k+ per year to provision (depending on various gas price assumptions). See this spreadsheet for more details: https://docs.google.com/spreadsheets/d/1T7MIKD_NfAX5mlbfD_jPYPnW4QUYdPaPAhwhALbHzPc/edit#gid=0. 
 
   
 Considerations relating to Chainlink price feeds    
