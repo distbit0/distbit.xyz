@@ -7,6 +7,7 @@ description: null
 headerImage: false
 layout: post
 tag:
+- ai
 - epistemology
 - WoT
 - idea-composition
@@ -14,7 +15,7 @@ tag:
 title: LLM idea workbench
 ---
 
-#ai
+
 
 
 related product: [Brainstorming](https://fermat.ws/brainstorming) 

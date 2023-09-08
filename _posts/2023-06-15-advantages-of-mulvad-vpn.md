@@ -6,11 +6,12 @@ date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
-tag: []
+tag:
+- privacy
 title: Advantages of Mulvad VPN
 ---
 
-#privacy
+
 
 
 Below are some of the reasons why I use [Mulvad VPN](https://mullvad.net/).

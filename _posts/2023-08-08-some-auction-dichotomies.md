@@ -13,6 +13,7 @@ tag:
 title: Some auction dichotomies
 ---
 
+
   
 
 ### Distinctions between types of auctions/competitions.

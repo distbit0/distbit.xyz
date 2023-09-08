@@ -13,10 +13,9 @@ tag:
 tags:
 - defi
 - oracles
-- collateral
-- gid
 title: DRAFT Making price manipulation attacks un-profitable
 ---
+
 
  
 # Making price manipulation attacks unprofitable

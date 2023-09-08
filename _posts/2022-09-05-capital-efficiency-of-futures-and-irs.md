@@ -7,12 +7,13 @@ description: Analysis of collateral required by IRS contracts
 headerImage: false
 layout: post
 tag:
+- defi
 - derivatives
 - interest-rate-swaps
 title: Capital efficiency of futures and IRS
 ---
 
-#defi
+
  
 
 There are three types of margin which IRS contracts require:
