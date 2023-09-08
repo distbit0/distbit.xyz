@@ -6,12 +6,15 @@ date: 2023-08-09 00:00
 description: ''
 headerImage: false
 layout: post
-tag: []
+tag:
+- defi
+- oracles
+- collateral
 title: Notes on LP token price manipulation attacks
 ---
 
 
-
+ 
 
 The below are some notes on various types of LP token price manipulation attacks. Some of this may assume certain background knowledge, most of which can be found in the linked attack explanations.
 
