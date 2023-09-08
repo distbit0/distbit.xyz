@@ -7,12 +7,13 @@ description: null
 headerImage: false
 layout: post
 tag:
-- ' #agents'
-- ' #memory'
+- ai
+- agents
+- memory
 title: Agents can decide what to remember
 ---
 
-#ai
+
  
 
 Some ideas which an Agentic AI considers while carrying out a task or solving a problem will be useful in the course of future tasks.  

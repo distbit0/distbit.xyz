@@ -7,9 +7,9 @@ description: ''
 headerImage: false
 layout: post
 tag:
-- ' #finance'
-- ' #auctions'
-- ' #defi'
+- finance
+- auctions
+- defi
 title: Some auction dichotomies
 ---
 

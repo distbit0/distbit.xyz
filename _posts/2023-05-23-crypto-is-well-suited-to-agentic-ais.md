@@ -7,13 +7,14 @@ description: null
 headerImage: false
 layout: post
 tag:
-- ' #agents'
-- ' #ai'
-- ' #liberty'
+- cryptocurrency
+- agents
+- ai
+- liberty
 title: Crypto is well suited to agentic AIs
 ---
 
-#cryptocurrency
+
 
 
 Due to crypto, AI agents are much more capable of living independently than they would be were crypto not to exist.

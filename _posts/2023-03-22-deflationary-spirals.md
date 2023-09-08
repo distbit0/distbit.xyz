@@ -7,11 +7,12 @@ description: null
 headerImage: false
 layout: post
 tag:
-- ' #keynesianism'
+- econ
+- keynesianism
 title: Deflationary spirals
 ---
 
-#econ 
+ 
 
 ## A deflationary spiral is the idea that once (price) deflation begins, a self-reinforcing feedback loop ensues, which results in cessation of most trade, unless the central bank intervenes by printing money/spending.
 
