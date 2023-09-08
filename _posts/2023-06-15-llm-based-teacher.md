@@ -7,12 +7,11 @@ description: null
 headerImage: false
 layout: post
 tag:
-- ai
-- learning
+- ' #learning'
 title: LLM-based teacher
 ---
 
-  
+#ai 
 
 
 An AI teacher can employ a user's notes and other material to understand their existing ideas so as to best teach them new ideas.

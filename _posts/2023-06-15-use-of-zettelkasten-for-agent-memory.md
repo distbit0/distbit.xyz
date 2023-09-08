@@ -7,14 +7,13 @@ description: null
 headerImage: false
 layout: post
 tag:
-- zettelkasten
-- memory
-- ai
-- agents
+- ' #memory'
+- ' #ai'
+- ' #agents'
 title: Use of Zettelkasten for agent memory
 ---
 
-   
+#zettelkasten
 
 
 zettelkasten may be useful for agent idea retrieval and agent idea relation representation for agi memory

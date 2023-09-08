@@ -7,14 +7,13 @@ description: null
 headerImage: false
 layout: post
 tag:
-- econ
-- defi
-- finance
-- free-banking
+- ' #defi'
+- ' #finance'
+- ' #free-banking'
 title: Is burning tokens in exchange for bonds deflationary
 ---
 
-   
+#econ
 
 
 

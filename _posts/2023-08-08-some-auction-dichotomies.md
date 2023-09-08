@@ -7,13 +7,13 @@ description: ''
 headerImage: false
 layout: post
 tag:
-- finance
-- auctions
-- defi
+- ' #finance'
+- ' #auctions'
+- ' #defi'
 title: Some auction dichotomies
 ---
 
-     
+  
 
 ### Distinctions between types of auctions/competitions.
 #### Whether auction has reserve price (`reservePrice`=true/false)

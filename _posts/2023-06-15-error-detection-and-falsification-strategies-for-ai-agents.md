@@ -7,13 +7,12 @@ description: null
 headerImage: false
 layout: post
 tag:
-- ai
-- agents
-- epistemology
+- ' #agents'
+- ' #epistemology'
 title: Error detection and falsification strategies for AI agents
 ---
 
-  
+#ai
  
 
 Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents: 
