@@ -9,12 +9,21 @@ enabled: true
 
 <section class="tags-section">
     <h2>Topics</h2>
+    {% capture site_tags %}
+    {% for tag in site.tags %}
+    {{ tag[1].size | plus: 1000 }}&#x1F;{{ tag | first }}
+    {% unless forloop.last %}&#x1E;{% endunless %}
+    {% endfor %}
+    {% endcapture %}
+    {% assign site_tags = site_tags | split: '&#x1E;' | sort | reverse %}
     <ul>
-        {% assign sorted_tags = site.tags | sort %}
-        {% for tag in sorted_tags limit:7 %}
-        <li><a href="https://distbit.xyz/tags/#{{ tag[0] }}">{{ tag[0] }}</a></li>
+        {% for item in site_tags limit:7 %}
+        {% assign tag_item = item | split: '&#x1F;' %}
+        <li><a href="https://distbit.xyz/tags/#{{ tag_item[1] }}">{{ tag_item[1] }}</a></li>
         {% endfor %}
     </ul>
+
+
 </section>
 
 
