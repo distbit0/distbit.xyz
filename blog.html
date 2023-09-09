@@ -20,7 +20,7 @@ enabled: true
     <ul>
         {% for item in site_tags limit:7 %}
         {% assign tag_item = item | split: '&#x1F;' %}
-        <li><b><a href="/tags/#{{ tag_item[1] }}">{{ tag_item[1] }}</a></b></li>
+        <li><a href="/tags/#{{ tag_item[1] }}">{{ tag_item[1] }}</a></li>
         {% endfor %}
     </ul>
 </section>
