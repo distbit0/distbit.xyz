@@ -226,7 +226,7 @@ Yeah I think it does make sense for them to do this. It is positive EV. They can
 
 >If defenders did show up to bet this way, and no one bought 1000x more shares of elon-loses to maintain the balance, then the market would incorrectly show that elon has like  10% chance of winning.
 
-If this were to occur, couldn't someone just short (i.e. borrow then sell) the price of the shares now priced at 10% back down to their true probability, relatively capital efficiently?
+If this were to occur, couldn't someone just short (i.e. borrow then sell) the shares now priced at 10% back down to their correct price, relatively capital efficiently?
 
 >Thinking about the elon example.
 >What if the defenders buy up shares of "elon wins, and the economy improves"?
