@@ -240,7 +240,7 @@ If this were to occur, couldn't someone just short (i.e. borrow then sell) the s
 
 What if you short both shares, just short one a bit more than the other to reflect the mispricing of the economy improves shares?
 
-This way you profit from their combined prices decreasing back down to 0.1%, and also profit from the price of the economy improve shares converging back to 50/50 (i.e. 0.05% and 0.05% respectively).in
+This way you profit from their combined prices decreasing back down to 0.1%, and also profit from the price of the economy improve shares converging back to 50/50 (i.e. 0.05% and 0.05% respectively).
 
 >So that is why it is capital intensive to defend against these attacks.
 >That capital lockup cost loses money by the inflation rate. So that is why if the signal=S is worse, it costs more to defend.
