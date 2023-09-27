@@ -132,8 +132,8 @@ Regardless, I agree that the marketcap of the collateral asset used in a PM is a
 
 - expected returns are subjective. some people find the best use of their marginal dollar is to invest it into things which pms could use as collateral
 	- hence pms present very low opportunity cost for such people
-- pms only present opportunity cost to the extent that pm speculators want to hold less of any supported collateral asset than the amount they would like to bet
-	- i.e. if they want to bet 100 but only want to hold 30 of the available collateral assets, then they incur OC
+- pms only present opportunity cost to the extent that pm speculators want to hold fewer $ worth of all supported collateral assets, than the amount they would like to bet
+	- i.e. if they want to bet $100 but only want to hold $30 of the available collateral assets, then they incur OC
 		- otherwise their OC is ~0
 	- as a result, it is not a given that the OC for all speculators will be = IR
 		- for some, the OC may be higher and for some the OC may be lower than IR
