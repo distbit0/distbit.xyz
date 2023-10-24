@@ -21,7 +21,7 @@ title: DRAFT Making price manipulation attacks un-profitable
 # Making price manipulation attacks unprofitable
 
 Introduction
----
+----
 Due to the pseudonymous nature of DeFi, all synthetic assets and loans must be over-collateralised. 
 
 In a 100% collateralisation regime, if the value of the collateral decreases at all relative to the loan value, the position becomes immediately under-collateralised and fractionally-reserved.
