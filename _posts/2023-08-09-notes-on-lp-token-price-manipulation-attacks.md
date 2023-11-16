@@ -81,6 +81,7 @@ The below are some notes on various types of LP token price manipulation attacks
 				- and platform has time to stop bad debt from spreading from their account to the rest of the platform
 		- do not update price using price data only made available in the current block
 			- (although I do not believe flash loans deserve to be subject to such discrimination)
+			- this also does not address the root cause, as the attack is possible (just more capital intensive/expensive) without flash loans
 	- can other lending protocols be affected by this attack even if they implement mitigations, due to another protocol being exploited?
 		- if they support asset as collateral, lenders of the asset will incur bad debt/defaults, but still be ok due to collateral still covering the original value of the assets
 		- if the lenders of the asset can borrow against their bad debt, the platform will incur bad debt
