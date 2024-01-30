@@ -24,7 +24,7 @@ There are three types of margin which IRS contracts require:
 		- time elapsed so far is 1 year
 	- the fixed rate receiver would need to have a margin at least as large as
 		- (5% - 1%) x $100 x 1 = $4
-	- Could just be payed out on the fly rather than being kept as margin
+	- Could just be paid out on the fly rather than being kept as margin
 - contract NPV margin: margin which is equal to the NPV of the remainder of the contract
 	- e.g. 
 		- if the "fixed market rate" for this contract is now 3%
