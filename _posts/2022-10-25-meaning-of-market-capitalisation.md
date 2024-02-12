@@ -5,6 +5,7 @@ category: blog
 date: 2022-10-25 00:00
 description: A response to a blog post analysing the value lost resulting from the
   terra luna crash.
+gist_url: https://gist.github.com/b7eec1e84560aa06a8fca50f51b4e705
 headerImage: false
 layout: post
 tag:
