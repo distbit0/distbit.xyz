@@ -20,6 +20,8 @@ title: Discussion of futarchy problems
 https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_back.md
 Source document: [https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_failure.md](https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_failure.md)
 
+relevant: https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_back.md
+
 Distbit = Black, Zack = Grey
 
 >>>>>>>Futarchy's Failure
