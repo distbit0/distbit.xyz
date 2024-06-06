@@ -179,32 +179,36 @@ function findBlockquotesWithoutNestedBlockquotes() {
 
 function reuniteOrphanRootQuotes() {
     let lastIdAtDepth = [];
-    let maxDepth = 0
+    let maxDepth = 0;
     let depthGap;
     let directParentId;
     let ancestors;
     const blockquotesWithNestingLevels = findBlockquotesWithoutNestedBlockquotes();
     for (const [blockquote, nestingLevel, parentBlockquoteIds] of blockquotesWithNestingLevels) {
+        maxDepth = Math.max(maxDepth, nestingLevel);
         depthGap = maxDepth - nestingLevel;
         let same = true;
         for (let i = 0; i < Math.min(lastIdAtDepth.length, parentBlockquoteIds.length); i++) {
-            if (lastIdAtDepth[i] != parentBlockquoteIds[i]) {
+            if (lastIdAtDepth[i] !== parentBlockquoteIds[i]) {
                 same = false;
+                break;
             }
         }
         if (!same || lastIdAtDepth.length < parentBlockquoteIds.length) {
             lastIdAtDepth = parentBlockquoteIds;
         }
-        // else if (depthGap > 0) {
-        console.log("______________________")
+        console.log("______________________");
         console.log("lastIdAtDepth", lastIdAtDepth);
         console.log("parentBlockquoteIds", parentBlockquoteIds);
         console.log("nestingLevel", nestingLevel);
-        directParentId = lastIdAtDepth[nestingLevel];
-        console.log("directParentId", directParentId);
-        ancestors = lastIdAtDepth.slice(nestingLevel, parentBlockquoteIds.length);
-        console.log(ancestors);
-        // }
+        if (nestingLevel > 0) {
+            directParentId = lastIdAtDepth[nestingLevel - 1];
+            console.log("directParentId", directParentId);
+            ancestors = lastIdAtDepth.slice(nestingLevel, -1);
+            console.log("ancestors", ancestors);
+        } else {
+            console.log("This is a top-level blockquote");
+        }
     }
 }
 /// TODO
@@ -215,3 +219,4 @@ function reuniteOrphanRootQuotes() {
 // remove margins which separate blockquotes when there is no text between them
 // start off with all blockquotes except root ones collapsed
 // replace 4 buttons with 2 toggle buttons
+// if expand button is pressed and there is no text that is displayed as a result, expand the next level until text is displayed or the last level is reached. so that the user doesn't have to keep clicking expand if the response to something is separated by several layers
