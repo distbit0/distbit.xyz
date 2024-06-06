@@ -58,21 +58,26 @@ document.addEventListener('DOMContentLoaded', function () {
         blockquote.appendChild(showChildrenButton);
         blockquote.appendChild(hideChildrenButton);
 
-        const elements = blockquote.querySelectorAll(':not(blockquote)');
-        elements.forEach(element => {
-            // Assign classes based on nested blockquote IDs
-            const nestedBlockquotes = blockquote.querySelectorAll('blockquote');
-            nestedBlockquotes.forEach(nestedBlockquote => {
-                element.classList.add(nestedBlockquote.id);
-            });
+        const blockquoteAncestors = getAncestorBlockquotes(blockquote);
+        let childElements = [];
 
-            // Assign class based on direct parent blockquote ID
-            const directParentBlockquote = blockquote.querySelector('blockquote');
-            if (directParentBlockquote) {
-                element.classList.add(`childof_${directParentBlockquote.id}`);
+        for (const ancestor of blockquoteAncestors) {
+            const descendants = Array.from(ancestor.querySelectorAll('*'));
+            const filteredDescendants = descendants.filter(descendant => !blockquoteAncestors.includes(descendant));
+            childElements = childElements.concat(filteredDescendants);
+        }
+        childElements.forEach(element => {
+            if (blockquote.parentNode === element) {
+                // Assign class based on direct parent blockquote ID
+                if (directParentBlockquote) {
+                    element.classList.add(`childof_${blockquote.id}`);
+                }
+
+            }
+            if (isIndirectAncestor(element, blockquote)) {
+                element.classList.add(blockquote.id);
             }
 
-            // Auto-hide element if it contains "#draft"
             if (element.textContent.includes('#draft')) {
                 element.style.display = 'none';
             }
@@ -96,3 +101,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+function isIndirectAncestor(currentElement, targetBlockquote) {
+    closestBlockquote = currentElement.closest('blockquote');
+
+    if (!closestBlockquote) {
+        return false;
+    }
+    // console.log("closestBlockquote contains targetBlockquote", closestBlockquote.contains(targetBlockquote));
+    // console.log("closestBlockquote !== targetBlockquote", closestBlockquote !== targetBlockquote);
+    if (closestBlockquote.contains(targetBlockquote) && closestBlockquote !== targetBlockquote) {
+        console.log("true");
+    }
+    return closestBlockquote.contains(targetBlockquote) && closestBlockquote !== targetBlockquote;
+}
+
+function getAncestorBlockquotes(element) {
+    const ancestorBlockquotes = [];
+    let currentElement = element.parentElement;
+
+    while (currentElement) {
+        if (currentElement.tagName === 'BLOCKQUOTE') {
+            ancestorBlockquotes.push(currentElement);
+        }
+        currentElement = currentElement.parentElement;
+    }
+
+    return ancestorBlockquotes;
+}
