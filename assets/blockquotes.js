@@ -178,28 +178,35 @@ function findBlockquotesWithoutNestedBlockquotes() {
 }
 
 function reuniteOrphanRootQuotes() {
-    let lastIdAtDepth = {};
+    let lastIdAtDepth = [];
     let maxDepth = 0
     let depthGap;
-    let parentId;
+    let directParentId;
+    let ancestors;
     const blockquotesWithNestingLevels = findBlockquotesWithoutNestedBlockquotes();
     for (const [blockquote, nestingLevel, parentBlockquoteIds] of blockquotesWithNestingLevels) {
         depthGap = maxDepth - nestingLevel;
-        if (depthGap > 0) {
-            parentId = lastIdAtDepth[nestingLevel];
-            for (let i = 0; i < depthGap; i++) {
-                lastIdAtDepth[nestingLevel + i] = blockquote.id;
+        let same = true;
+        for (let i = 0; i < Math.min(lastIdAtDepth.length, parentBlockquoteIds.length); i++) {
+            if (lastIdAtDepth[i] != parentBlockquoteIds[i]) {
+                same = false;
             }
         }
-        lastIdAtDepth[nestingLevel] = blockquote.id;
-        maxDepth = Math.max(maxDepth, nestingLevel);
-        if (nestingLevel < maxDepth) {
-            console.log(blockquotesWithNestingLevels);
-
+        if (!same || lastIdAtDepth.length < parentBlockquoteIds.length) {
+            lastIdAtDepth = parentBlockquoteIds;
         }
+        // else if (depthGap > 0) {
+        console.log("______________________")
+        console.log("lastIdAtDepth", lastIdAtDepth);
+        console.log("parentBlockquoteIds", parentBlockquoteIds);
+        console.log("nestingLevel", nestingLevel);
+        directParentId = lastIdAtDepth[nestingLevel];
+        console.log("directParentId", directParentId);
+        ancestors = lastIdAtDepth.slice(nestingLevel, parentBlockquoteIds.length);
+        console.log(ancestors);
+        // }
     }
 }
-
 /// TODO
 // - iterate through all first level children of root blockquote
 // - keep array of last deepest element at each level of depth
