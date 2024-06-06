@@ -57,67 +57,41 @@ document.addEventListener('DOMContentLoaded', function () {
         blockquote.appendChild(hideAllButton);
         blockquote.appendChild(showChildrenButton);
         blockquote.appendChild(hideChildrenButton);
-
-        const blockquoteAncestors = getAncestorBlockquotes(blockquote);
-        let childElements = [];
-
-        for (const ancestor of blockquoteAncestors) {
-            const descendants = Array.from(ancestor.querySelectorAll('*'));
-            const filteredDescendants = descendants.filter(descendant => !blockquoteAncestors.includes(descendant));
-            childElements = childElements.concat(filteredDescendants);
-        }
-        childElements.forEach(element => {
-            if (blockquote.parentNode === element) {
-                // Assign class based on direct parent blockquote ID
-                if (directParentBlockquote) {
-                    element.classList.add(`childof_${blockquote.id}`);
-                }
-
-            }
-            if (isIndirectAncestor(element, blockquote)) {
-                element.classList.add(blockquote.id);
-            }
-
-            if (element.textContent.includes('#draft')) {
-                element.style.display = 'none';
-            }
-        });
-
     });
 
-    // Function to create buttons
-    function createButton(text, clickHandler) {
-        const button = document.createElement('button');
-        button.textContent = text;
-        button.addEventListener('click', clickHandler);
-        return button;
-    }
+    blockquotes.forEach(blockquote => {
+        addClassToChildElements(blockquote);
+    });
 
-    // Function to toggle visibility of elements based on classes
-    function toggleVisibility(visible, className) {
-        const elements = document.querySelectorAll(`.${className}`);
-        elements.forEach(element => {
-            element.style.display = visible ? 'block' : 'none';
-        });
-    }
 });
+
+
+// Function to create buttons
+function createButton(text, clickHandler) {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.addEventListener('click', clickHandler);
+    return button;
+}
+
+// Function to toggle visibility of elements based on classes
+function toggleVisibility(visible, className) {
+    const elements = document.querySelectorAll(`.${className}`);
+    elements.forEach(element => {
+        element.style.display = visible ? 'block' : 'none';
+    });
+}
 
 
 function isIndirectAncestor(currentElement, targetBlockquote) {
     closestBlockquote = currentElement.closest('blockquote');
-
     if (!closestBlockquote) {
         return false;
-    }
-    // console.log("closestBlockquote contains targetBlockquote", closestBlockquote.contains(targetBlockquote));
-    // console.log("closestBlockquote !== targetBlockquote", closestBlockquote !== targetBlockquote);
-    if (closestBlockquote.contains(targetBlockquote) && closestBlockquote !== targetBlockquote) {
-        console.log("true");
     }
     return closestBlockquote.contains(targetBlockquote) && closestBlockquote !== targetBlockquote;
 }
 
-function getAncestorBlockquotes(element) {
+function getAncestorChildElements(element) {
     const ancestorBlockquotes = [];
     let currentElement = element.parentElement;
 
@@ -128,5 +102,39 @@ function getAncestorBlockquotes(element) {
         currentElement = currentElement.parentElement;
     }
 
-    return ancestorBlockquotes;
+
+    let childElements = [];
+
+    for (const ancestor of blockquoteAncestors) {
+        const descendants = Array.from(ancestor.querySelectorAll('*'));
+        const filteredDescendants = descendants.filter(descendant => !blockquoteAncestors.includes(descendant));
+        childElements = childElements.concat(filteredDescendants);
+    }
+    return childElements;
 }
+
+function addClassToChildElements(blockquote) {
+    const childElements = getAncestorChildElements(blockquote);
+    childElements.forEach(element => {
+        if (blockquote.parentNode === element) {
+            // Assign class based on direct parent blockquote ID
+            if (directParentBlockquote) {
+                element.classList.add(`childof_${blockquote.id}`);
+            }
+
+        }
+        if (isIndirectAncestor(element, blockquote)) {
+            element.classList.add(blockquote.id);
+        }
+
+        if (element.textContent.includes('#draft')) {
+            element.style.display = 'none';
+        }
+    });
+}
+
+
+/// TODO
+// - iterate through all first level children of root blockquote
+// - keep array of last deepest element at each level of depth
+// - if child element of root blockquote has max depth that is less than the length of the array, add the id of the elements deeper in the array to it and all its children, because it has been cut off
