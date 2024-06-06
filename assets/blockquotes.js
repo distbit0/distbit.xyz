@@ -45,22 +45,21 @@ document.addEventListener('DOMContentLoaded', function () {
         blockquote.id = `blockquote-${index}`;
     });
 
-    // Assign classes to <p> tags and create buttons
     blockquotes.forEach(blockquote => {
         // Create buttons
         const showAllButton = createButton('Show All', () => toggleVisibility(true, blockquote.id));
         const hideAllButton = createButton('Hide All', () => toggleVisibility(false, blockquote.id));
-        const showChildrenButton = createButton('Show Child', () => toggleVisibility(true, `childof_${blockquote.id}`));
-        const hideChildrenButton = createButton('Hide Child', () => toggleVisibility(false, `childof_${blockquote.id}`));
+        const showChildrenButton = createButton('Show Child', () => toggleVisibility(true, `childOf_${blockquote.id}`));
+        const hideChildrenButton = createButton('Hide Child', () => toggleVisibility(false, `childOf_${blockquote.id}`));
 
         blockquote.appendChild(showAllButton);
         blockquote.appendChild(hideAllButton);
         blockquote.appendChild(showChildrenButton);
         blockquote.appendChild(hideChildrenButton);
     });
-
     blockquotes.forEach(blockquote => {
-        addClassToChildElements(blockquote);
+        const maxHeight = blockquote.getBoundingClientRect().top;
+        addClassToParentBlockquoteChildren(blockquote, blockquote.id, maxHeight);
     });
 
 });
@@ -78,7 +77,7 @@ function createButton(text, clickHandler) {
 function toggleVisibility(visible, className) {
     const elements = document.querySelectorAll(`.${className}`);
     elements.forEach(element => {
-        element.style.display = visible ? 'block' : 'none';
+        element.style.display = visible ? 'inline-block' : 'none';
     });
 }
 
@@ -91,7 +90,7 @@ function isIndirectAncestor(currentElement, targetBlockquote) {
     return closestBlockquote.contains(targetBlockquote) && closestBlockquote !== targetBlockquote;
 }
 
-function getAncestorChildElements(element) {
+function getAncestorBlockQuotes(element) {
     const ancestorBlockquotes = [];
     let currentElement = element.parentElement;
 
@@ -101,40 +100,54 @@ function getAncestorChildElements(element) {
         }
         currentElement = currentElement.parentElement;
     }
+    return ancestorBlockquotes;
+}
 
-
+function getAllChildElements(ancestorBlockquotes) {
     let childElements = [];
-
-    for (const ancestor of blockquoteAncestors) {
+    for (const ancestor of ancestorBlockquotes) {
         const descendants = Array.from(ancestor.querySelectorAll('*'));
-        const filteredDescendants = descendants.filter(descendant => !blockquoteAncestors.includes(descendant));
+        let filteredDescendants = descendants.filter(descendant => !ancestorBlockquotes.includes(descendant)); // removes blockquotes
+        filteredDescendants = filteredDescendants.filter(descendant => descendant.closest('blockquote') == ancestor);
         childElements = childElements.concat(filteredDescendants);
     }
     return childElements;
 }
 
-function addClassToChildElements(blockquote) {
-    const childElements = getAncestorChildElements(blockquote);
+function addClassToParentBlockquoteChildren(blockquote, classToAdd, maxVisualHeight) {
+    // visual height allows us to discriminate between replies to the above message and replies to the current message, even if both are in a blockquote which is a parent of the current message
+    // it is apparently measures from top of screen not bottom, which makes comparisons seem weird
+    const ancestorBlockquotes = getAncestorBlockQuotes(blockquote);
+    const childElements = getAllChildElements(ancestorBlockquotes);
     childElements.forEach(element => {
-        if (blockquote.parentNode === element) {
-            // Assign class based on direct parent blockquote ID
-            if (directParentBlockquote) {
-                element.classList.add(`childof_${blockquote.id}`);
+        if (element.getBoundingClientRect().top > maxVisualHeight) {
+            if (blockquote.parentNode === element) {
+                element.classList.add(`childOf_${classToAdd}`);
             }
 
+            if (isIndirectAncestor(element, blockquote)) {
+                element.classList.add(classToAdd);
+            }
         }
-        if (isIndirectAncestor(element, blockquote)) {
-            element.classList.add(blockquote.id);
-        }
-
         if (element.textContent.includes('#draft')) {
             element.style.display = 'none';
         }
     });
 }
 
+function addClassToBlockquoteChildren(blockquote, classToAdd) {
+    const childElements = getAllChildElements([blockquote]);
+    childElements.forEach(element => {
+        if (element.textContent.includes('#draft')) {
+            element.style.display = 'none';
+        }
+        element.classList.add(classToAdd);
+    });
+}
 
 /// TODO
+/// create function which adds class to a blockquote itself rather than its child blockquotes
 // - iterate through all first level children of root blockquote
 // - keep array of last deepest element at each level of depth
 // - if child element of root blockquote has max depth that is less than the length of the array, add the id of the elements deeper in the array to it and all its children, because it has been cut off
+// only collapse things which are after not before the current message and its ancestors. otherwise you can collapse reply to previous message just because it is at the same level of indentation as a reply to the current message
