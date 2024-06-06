@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const maxHeight = blockquote.getBoundingClientRect().top;
         addClassToParentBlockquoteChildren(blockquote, blockquote.id, maxHeight);
     });
+    reuniteOrphanRootQuotes();
 
 });
 
@@ -145,9 +146,65 @@ function addClassToBlockquoteChildren(blockquote, classToAdd) {
     });
 }
 
+function findBlockquotesWithoutNestedBlockquotes() {
+    const blockquotes = Array.from(document.querySelectorAll('blockquote'));
+    const blockquotesWithoutNestedBlockquotes = blockquotes.filter(blockquote => {
+        const nestedBlockquotes = blockquote.querySelectorAll('blockquote');
+        return nestedBlockquotes.length === 0;
+    });
+
+    const blockquotesWithNestingLevels = blockquotesWithoutNestedBlockquotes.map(blockquote => {
+        let nestingLevel = 0;
+        let parentBlockquoteIds = [];
+        let parentElement = blockquote.parentElement;
+        while (parentElement) {
+            if (parentElement.tagName === 'BLOCKQUOTE') {
+                nestingLevel++;
+                parentBlockquoteIds.push(parentElement.id);
+            }
+            parentElement = parentElement.parentElement;
+        }
+        parentBlockquoteIds.reverse(); // so that the first element is blockquote for outermost reply
+        return [blockquote, nestingLevel, parentBlockquoteIds];
+    });
+
+    blockquotesWithNestingLevels.sort((a, b) => {
+        const rectA = a[0].getBoundingClientRect();
+        const rectB = b[0].getBoundingClientRect();
+        return rectA.top - rectB.top;
+    });
+
+    return blockquotesWithNestingLevels;
+}
+
+function reuniteOrphanRootQuotes() {
+    let lastIdAtDepth = {};
+    let maxDepth = 0
+    let depthGap;
+    let parentId;
+    const blockquotesWithNestingLevels = findBlockquotesWithoutNestedBlockquotes();
+    for (const [blockquote, nestingLevel, parentBlockquoteIds] of blockquotesWithNestingLevels) {
+        depthGap = maxDepth - nestingLevel;
+        if (depthGap > 0) {
+            parentId = lastIdAtDepth[nestingLevel];
+            for (let i = 0; i < depthGap; i++) {
+                lastIdAtDepth[nestingLevel + i] = blockquote.id;
+            }
+        }
+        lastIdAtDepth[nestingLevel] = blockquote.id;
+        maxDepth = Math.max(maxDepth, nestingLevel);
+        if (nestingLevel < maxDepth) {
+            console.log(blockquotesWithNestingLevels);
+
+        }
+    }
+}
+
 /// TODO
-/// create function which adds class to a blockquote itself rather than its child blockquotes
 // - iterate through all first level children of root blockquote
 // - keep array of last deepest element at each level of depth
 // - if child element of root blockquote has max depth that is less than the length of the array, add the id of the elements deeper in the array to it and all its children, because it has been cut off
 // only collapse things which are after not before the current message and its ancestors. otherwise you can collapse reply to previous message just because it is at the same level of indentation as a reply to the current message
+// remove margins which separate blockquotes when there is no text between them
+// start off with all blockquotes except root ones collapsed
+// replace 4 buttons with 2 toggle buttons
