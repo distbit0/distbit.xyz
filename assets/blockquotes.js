@@ -41,28 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
     assignIdsToBlockquotes();
     const blockquotes = document.querySelectorAll('blockquote');
     blockquotes.forEach(blockquote => {
-        // Create buttons
-        const showAllButton = createButton('Show All', () => toggleVisibility(true, blockquote.id));
-        const hideAllButton = createButton('Hide All', () => toggleVisibility(false, blockquote.id));
-        const showChildrenButton = createButton('Show Child', () => toggleVisibility(true, `childOf_${blockquote.id}`));
-        const hideChildrenButton = createButton('Hide Child', () => toggleVisibility(false, `childOf_${blockquote.id}`));
-
-        blockquote.appendChild(showAllButton);
-        blockquote.appendChild(hideAllButton);
-        blockquote.appendChild(showChildrenButton);
-        blockquote.appendChild(hideChildrenButton);
+        const toggleAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id));
+        const toggleNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, `childOf_${blockquote.id}`));
+        blockquote.appendChild(toggleAllReplies);
+        blockquote.appendChild(toggleNextReply);
     });
-
     assignDepthLevelClassesToBlockquotes();
     addClassesToChildElements();
 });
-
-function assignIdsToBlockquotes() {
-    const blockquotes = document.querySelectorAll('blockquote');
-    blockquotes.forEach((blockquote, index) => {
-        blockquote.id = `blockquote-${index}`;
-    });
-}
 
 // Function to create buttons
 function createButton(text, clickHandler) {
@@ -73,14 +59,27 @@ function createButton(text, clickHandler) {
 }
 
 // Function to toggle visibility of elements based on classes
-function toggleVisibility(visible, className) {
+function toggleVisibility(event, className) {
+    const clickedButton = event.target;
     const elements = document.querySelectorAll(`.${className}`);
+    const visible = clickedButton.textContent.includes('Show');
+
     elements.forEach(element => {
         if (!element.textContent.includes('#draft')) {
             element.style.display = visible ? 'inline-block' : 'none';
         }
     });
+
+    clickedButton.textContent = visible ? clickedButton.textContent.replace('Show', 'Hide') : clickedButton.textContent.replace('Hide', 'Show');
 }
+
+function assignIdsToBlockquotes() {
+    const blockquotes = document.querySelectorAll('blockquote');
+    blockquotes.forEach((blockquote, index) => {
+        blockquote.id = `blockquote-${index}`;
+    });
+}
+
 
 function assignDepthLevelClassesToBlockquotes() {
     const blockquotes = Array.from(document.querySelectorAll('blockquote'));
@@ -114,7 +113,7 @@ function addClassesToChildElements() {
     const depthLevels = Array.from(document.querySelectorAll('blockquote'))
         .map(blockquote => parseInt(blockquote.className.match(/depth-(\d+)/)[1]))
         .filter((depth, index, self) => self.indexOf(depth) === index);
-
+    let maxDepth = depthLevels.length;
     depthLevels.forEach(depth => {
         const blockquotesAtDepth = Array.from(document.querySelectorAll(`.depth-${depth}`));
         blockquotesAtDepth.forEach((blockquote, index) => {
@@ -126,7 +125,7 @@ function addClassesToChildElements() {
                 .filter(element => !element.matches('blockquote') && element.closest('blockquote'))
                 .filter(element => {
                     const elementTop = element.getBoundingClientRect().top;
-                    return elementTop > blockquoteBottom && elementTop < nextBlockquoteTop;
+                    return elementTop >= blockquoteBottom && elementTop <= nextBlockquoteTop;
                 });
 
             childElements.forEach(element => {
@@ -134,6 +133,9 @@ function addClassesToChildElements() {
                 const closestBlockquote = element.closest('blockquote');
                 if (closestBlockquote && parseInt(closestBlockquote.className.match(/depth-(\d+)/)[1]) === depth - 1) {
                     element.classList.add(`childOf_${blockquote.id}`);
+                    if (depth < maxDepth) {
+                        element.style.display = 'none';
+                    }
                 }
                 if (element.textContent.includes('#draft')) {
                     element.style.display = 'none';
