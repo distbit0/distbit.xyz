@@ -1,6 +1,4 @@
 - todo
-    - if expand button is pressed and there is no text that is displayed as a result, expand the next level until text is displayed or the last level is reached. so that the user doesn't have to keep clicking expand if the response to something is separated by several layers
-    - make mobile friendly
 - done
     - auto-hide text div if the div innnerhtml contains the string "#draft"
     - add two buttons to each blockquote which turn on/off the visibility of all its children recursively
