@@ -194,17 +194,18 @@ function reuniteOrphanRootQuotes() {
                 break;
             }
         }
-        if (!same || lastIdAtDepth.length < parentBlockquoteIds.length) {
+        if (parentBlockquoteIds.length == maxDepth) {
             lastIdAtDepth = parentBlockquoteIds;
         }
         console.log("______________________");
         console.log("lastIdAtDepth", lastIdAtDepth);
         console.log("parentBlockquoteIds", parentBlockquoteIds);
         console.log("nestingLevel", nestingLevel);
+        console.log(blockquote.querySelector('p').innerHTML);
         if (nestingLevel > 0) {
-            directParentId = lastIdAtDepth[nestingLevel - 1];
+            directParentId = lastIdAtDepth[nestingLevel];
             console.log("directParentId", directParentId);
-            ancestors = lastIdAtDepth.slice(nestingLevel, -1);
+            ancestors = lastIdAtDepth.slice(nestingLevel);
             console.log("ancestors", ancestors);
         } else {
             console.log("This is a top-level blockquote");

@@ -133,4 +133,4 @@ compress_html:
             - development
             - stage
 
-exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vendor"]
+exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vendor", node_modules]
