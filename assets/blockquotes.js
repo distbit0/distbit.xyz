@@ -41,12 +41,23 @@ document.addEventListener('DOMContentLoaded', function () {
     assignDepthLevelClassesToBlockquotes();
     const blockquotes = document.querySelectorAll('blockquote');
     blockquotes.forEach(blockquote => {
-        const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id));
-        const hideAllReplies = createButton('Hide All Replies', (event) => toggleVisibility(event, blockquote.id));
-        const toggleNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, `childOf_${blockquote.id}`));
-        blockquote.appendChild(toggleNextReply);
-        blockquote.appendChild(showAllReplies);
-        blockquote.appendChild(hideAllReplies);
+        const lastElement = blockquote.lastElementChild;
+        // don't add buttons to blockquotes that do not actually have any text in them
+        if (lastElement && lastElement.tagName !== 'BLOCKQUOTE') {
+            const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id));
+            const hideAllReplies = createButton('Hide All Replies', (event) => toggleVisibility(event, blockquote.id));
+            const toggleNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, `childOf_${blockquote.id}`));
+            blockquote.appendChild(toggleNextReply);
+            blockquote.appendChild(showAllReplies);
+            blockquote.appendChild(hideAllReplies);
+        }
+        else {
+            // so that logic works which relies on each blockquote having at least one child element
+            // specifically logic relating to recursively hiding/showing next blockquote until text is found
+            let dustElement = document.createElement('div');
+            dustElement.style.display = 'none';
+            blockquote.appendChild(dustElement)
+        }
     });
     addClassesToChildElements();
     enableDesktopModeIfNestedBlockquotes();
@@ -75,7 +86,6 @@ function toggleVisibility(event, className) {
     // keep toggling visibility of elements until come across one which actually contains text, to save user from having to successively toggle until they find a blockquote with text
     const modifiedElements = Array.from(elements).filter(element => element.style.display == targetDisplay);
     if (!modifiedElements.some(element => element.textContent.trim().length > 0 && !element.matches("button"))) {
-        elements.forEach(element => { if (element.matches("button")) { element.textContent = element.textContent.replace('Show Next', 'Hide Next'); } });
         const closestBlockquoteClass = "childOf_" + modifiedElements[0].closest('blockquote').id;
         toggleVisibility(event, closestBlockquoteClass);
     }
