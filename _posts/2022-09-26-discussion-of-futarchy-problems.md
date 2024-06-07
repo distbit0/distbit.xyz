@@ -77,7 +77,6 @@ Distbit = Black, Zack = Grey
 >>>>>>>P = Probability that we make the less likely choice. A number between 0 and 1. If the bitcoin community only has a 0.2% chance of increasing the block size, then P=0.002  
 >>>>>>>  
 >>>>>>>L = Liquidity. The amount of money defenders have ready to participate in prediction markets. In the context of blockchains, L is necessarily less than the market cap of the tokens in the blockchain where the prediction market happens.  
->>>>>>
 >>>>>>  
 >>>>>>- Does S depend on amt of leverage used?  
 >>>>>>	- ah it seems S is more about correlation between choice and effect, rather than magnitude of effect resulting from the choice  
@@ -87,7 +86,6 @@ Distbit = Black, Zack = Grey
 >>>>>>		- resulting in L increasing as a result of the value of each unit of the currency increasing  
 >>>>>>			- As a result, the current value of L might be unreliable for using to calculate whether or not enough liquidity exists to defend against an attack  
 >>>>>>				- As L may increase if an actual attack were to occur, due to increased demand.  
->>>
 >>>  
 >>>You mentioned the idea that if the market cap is too low, defenders will buy coins and push up the price so it will be higher, and then more collateral is available to defend with.  
 >>>  
@@ -98,7 +96,6 @@ Distbit = Black, Zack = Grey
 >>>So how it looks for most participants is that they spend $100 to get 90 tokens. They win an expected 100 tokens. And they can sell those 100 tokens for $100.  
 >>>Other participants would sell their veo for dollars before the market, and buy back their veo after the market. Acting as a restoring effect, so the market cap of veo doesnt grow too much.  
 >>>The people who are trying to defend veo are mostly just paying a tax to people who hold dollars during the market.  
->>
 >>  
 >>Interesting ok. The below is my rephrasing of your above argument, to ensure i understand:  
 >>- the collateral asset's price will revert upon settlement of the market  
@@ -115,29 +112,24 @@ Distbit = Black, Zack = Grey
 >>>>>>>X = amount of money an attacker is willing to lose to manipulate the market.  
 >>>>>>>  
 >>>>>>>I = interest rate in cryptocurrency for the duration of the market. If you can earn 20% a year by lending your VEO, and the market will last for 3 months, then the for 3 months is around 4.7%, so I=0.047  
->>>>>>
 >>>>>>  
 >>>>>>- Doesn't this assume that PM shares do not use yield bearing collateral?  
 >>>>>>	- As if yield bearing collateral assets were used, the opportunity cost of locking capital in the PM would only be:  
 >>>>>>		- The difference between returns/interest earned from the supported collateral assets  
 >>>>>>			- and the interest/returns a speculator expects they might have been able to earn in investments which can not collateralise the PM contracts  
 >>>>>>				- E.g. they might think they could make a higher return by investing in their local real estate market, but might not be able to use real-estate as collateral in the PM contract  
->>>>>
 >>>>>  
 >>>>>using a yield bearing asset to collateralized the prediction market.  
 >>>>>There is no free lunch.  
 >>>>>If the asset is expected to increase in value, then it is necessarily more volatile to counter that.   
->>>>
 >>>>  
 >>>>Why is this? Does this also apply to assets such as bonds and compoundEth (tokens on eth which are redeemable for tokens being loaned out)?  
->>>
 >>>  
 >>>All investments are in the market for investments. People move their money to whatever gives the best return, but also need to account for the risks.  
 >>>  
 >>>As more people pile into an investment class, it is a bigger group of people dividing the reward of an industry into smaller slices per investor.  
 >>>Each part of the exonomy has an ideal amount of capital it needs to grow efficiently, relative to the other parts of the economy.  
 >>>So the effect of people jumping between investments for individual benefit, it means that a rising price necessarily comes with more volatility, or some other kind of risk.  
->>
 >>  
 >>  
 >>- expected returns are subjective. some people find the best use of their marginal dollar is to invest it into things which pms could use as collateral  
@@ -162,7 +154,6 @@ Distbit = Black, Zack = Grey
 >>			- These curves do not all slope in the same direction and hence the impact of increased liquidity on market accuracy is not knowable via a priori reasoning.  
 >>- the conclusion from this is that it is difficult to determine apriori what the opportunity cost will be for traders in a given PM  
 >>	- and that multiplying the interest rate by the value of locked capital is unlikely to reflect the true OC of the marginal trader  
->
 >  
 >  
 >You made the argument that the opportunity cost of leaving money in a PM could be zero, if the investor had already wanted to hold the assets that collateralize that PM anyway.  
@@ -197,7 +188,6 @@ Distbit = Black, Zack = Grey
 >>>>>>>(profit of defense) < (cost of defense)  
 >>>>>>>S * P < I  
 >>>>>>>```  
->>>>>>
 >>>>>>  
 >>>>>>- Profit should probably be changed to revenue here, for clarity. Profit usually = revenue - costs.  
 >>>>>>  
@@ -214,7 +204,6 @@ Distbit = Black, Zack = Grey
 >>>>>>				- Resulting in P multiplying the revenue term and the interest costs term equally?  
 >>>>>>					- Therefore cancelling out the P term?  
 >>>>>>						- If this is correct, the equation would be `M < O` where `M` is the mispricing % and `O` is the opportunity cost of the capital (not the same as the interest rate, as the collateral can be yield bearing)  
->>>>>
 >>>>>  
 >>>>>### Why does the probability of the less likely choice impact the accuracy of the prediction market?  
 >>>>>imagine we have a futarchy to see if Elon Musk being president would be good for the economy.  
@@ -230,12 +219,10 @@ Distbit = Black, Zack = Grey
 >>>>>  
 >>>>>If a defender wants to profit by fixing the odds, there is no capital efficient way to do it.  
 >>>>>If they bet that Elon wins, and he harms the economy. Then they are betting that he will win, and at a bad price. If they try to buy all the other shares, to cancel out their bet on Elon, then they need to spend 1000x more than the attacker to move the price the same distance.  
->>>>
 >>>>  
 >>>>- I understand and agree with all of this.   
 >>>>	- I was not disputing the relevance of P to your second equation (required capital for successful a defence to be possible).  
 >>>>		- But rather, I was disputing its relevance to the first equation (relating to the profitability of defence)  
->
 >  
 >If defenders need to lock up 10x more money than the attackers, then the reward defenders could get is 10x smaller per unit invested.  
 >So, if we hold the amount of money defenders invest constant, and vary the value of P, you can see that the defenders get paid less when P is smaller.  
@@ -248,7 +235,6 @@ Distbit = Black, Zack = Grey
 >>>>  
 >>>>```  
 >>>>- Regarding revenue of attack, I would have thought the primary factor here be how much the PM share is mispriced. E.g. if the expected value is 0.95 but the current price is 0.90, then the return on investment is 0.95/0.90=105.5% of principle.   
->
 >  
 >  
 >This kind of market is a prediction market, but it is not a futarchy market.  
@@ -267,7 +253,6 @@ Distbit = Black, Zack = Grey
 >>>>						- If this is correct, the equation would be `M < O` where `M` is the mispricing % and `O` is the opportunity cost of the capital (not the same as the interest rate, as the collateral can be yield bearing)  
 >>>>  
 >>>>```  
->>>
 >>>  
 >>>If the attacker can invest $1 to make it look like elon musk would be a good president, and it costs me $1000 to bet against that and put the price back, then my expected return for locking up my $1000 is to win a fraction of your $1.  
 >>>  
@@ -277,15 +262,12 @@ Distbit = Black, Zack = Grey
 >>>If he does win, your ticket is super valuable, whether he looks good for the economy or not.  
 >>>  
 >>>Maybe it does make sense for the defenders to buy just that one share without hedging in-protocol by buying $999 of elon-loses.  
->>
 >>  
 >>Yeah I think it does make sense for them to do this. It is positive EV. They can hold cash if they want to reduce volatility, or can have a portfolio of a bunch of positive EV, low probability shares like this, similar to an insurance company.  
 >>  
 >>>If defenders did show up to bet this way, and no one bought 1000x more shares of elon-loses to maintain the balance, then the market would incorrectly show that elon has like  10% chance of winning.  
->>
 >>  
 >>If this were to occur, couldn't someone just short (i.e. borrow then sell) the shares now priced at 10% back down to their correct price, relatively capital efficiently?  
->
 >  
 >borrow from who? sell to who?  
 >What does that even mean in the context of a LMSR market?  
@@ -299,12 +281,10 @@ Distbit = Black, Zack = Grey
 >>>If you try to fix the market, you are taking on a 1000 to one bet, at odds 50x worse than market rate, to bet that elon will win.  
 >>>And you are taking on a 50-50 bet that the economy will improve.  
 >>>Even if you are expected to earn a profit on the economy improves part of the bet, that doesnt make up for how much you are losing on the elon wins part of the bet.  
->>
 >>  
 >>What if you short both shares, just short one a bit more than the other to reflect the mispricing of the economy improves shares?  
 >>  
 >>This way you profit from their combined prices decreasing back down to 0.1%, and also profit from the price of the economy improve shares converging back to 50/50 (i.e. 0.05% and 0.05% respectively).  
->
 >  
 >I still don't get what "shorting" means in this context.  
 >The LMSR only changes price if someone buys new shares from it, or someone sells shares they already own back into it.  
@@ -322,7 +302,6 @@ Distbit = Black, Zack = Grey
 >>>>>>		- I do not concretely understand what S represents tbh.  
 >>>>>>			- I think an example of a defence which makes reference to S and how it affects defence revenues would help a lot  
 >>>>>>				- Thx  
->>>>>
 >>>>>  
 >>>>>S is the signal to noise ratio.  
 >>>>>  
@@ -331,7 +310,6 @@ Distbit = Black, Zack = Grey
 >>>>>  
 >>>>>You don't bet 100%.  
 >>>>>This is the kelly criterion.  
->>>>
 >>>>  
 >>>>- This also seems to describe the importance of S in relation to the second equation (required capital for successful a defence to be possible)  
 >>>>	- However, I was asking how S is relevant to the first equation (specifically how it determines the revenue of a defence)  
@@ -347,7 +325,6 @@ Distbit = Black, Zack = Grey
 >>>>					- Therefore cancelling out the P term?  
 >>>>						- If this is correct, the equation would be `M < O` where `M` is the mispricing % and `O` is the opportunity cost of the capital (not the same as the interest rate, as the collateral can be yield bearing)  
 >>>>```  
->>>
 >>>  
 >>>Oh right. I gave the explanation for the wrong part.  
 >>>If the signal is 2x worse, then your expected payout per unit of capital invested per round is 2x lower.  
@@ -369,7 +346,6 @@ Distbit = Black, Zack = Grey
 >>>If denfenders do the opposite bets to defend, then their average bet is expected to earn 10%. (S/2)  
 >>>So, if a 10% prize is enough incentive to leave veo locked up in the market for a while, then it works as a prediction market.  
 >>>If S was 2x bigger, the defenders could earn twice as much on their average bet.  
->>
 >>  
 >>It is also possible though that the attacker actually manipulates the price in the other direction, rather than stopping their manipulation once they reach 50/50 or 25/25/25/25.  
 >>  
@@ -379,7 +355,6 @@ Distbit = Black, Zack = Grey
 >>	- I am defining mispricing as the % difference between:  
 >>		- what the share's price is (after the manipulation)  
 >>		- and what the defenders think it should be/what the correct price is  
->
 >  
 >  
 >  
@@ -438,16 +413,13 @@ Distbit = Black, Zack = Grey
 >>>>>>>```  
 >>>>>>>  
 >>>>>>>The S is because we are expecting the defenders to use a profit maximizing strategy. They want to hedge against the risk that the result of the market is determined by something other than the decision futarchy is making. Kelly's criterion says that investing only S portion of their funds is the most profitable strategy for defenders https://en.wikipedia.org/wiki/Kelly_criterion  
->>>>>>
 >>>>>>  
 >>>>>>- What if L is not the entirety of the defender's funds? E.g. what if they have funds/some of their portfolio outside of the blockchain?  
 >>>>>>	- E.g. if it was a hedge fund where their veo/btc holdings were only a small % of their folio, the assumption that it represents their entire portfolio would not hold  
->>>>>
 >>>>>  
 >>>>>oh, you make a good point.  
 >>>>>If the defenders have money outside the blockchain to hedge with, then they may invest more of their VEO in comparison to what the kelly criterion would calculate.  
 >>>>>So L could be bigger than the market cap of VEO.  
->>>>
 >>>>  
 >>>>Yeah exactly :)  
 >>>>>  
@@ -530,7 +502,6 @@ Distbit = Black, Zack = Grey
 >>>>>>>L = $400 billion. (market cap of bitcoin)  
 >>>>>>>  
 >>>>>>>X = $70 million (obama's net worth at the end of his presidency)  
->>>>>>
 >>>>>>  
 >>>>>>lol  
 >>>>>>>  
