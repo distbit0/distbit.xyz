@@ -66,7 +66,7 @@ function toggleVisibility(event, className) {
     const elements = document.querySelectorAll(`.${className}`);
     const visible = clickedButton.textContent.includes('Show');
 
-    let targetDisplay = visible ? 'inline-block' : 'none';
+    let targetDisplay = visible ? '' : 'none';
     elements.forEach(element => {
         if (!element.textContent.includes('#draft')) {
             element.style.display = targetDisplay;
