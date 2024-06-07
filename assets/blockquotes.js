@@ -164,16 +164,15 @@ function addClassesToChildElements() {
 }
 
 
+function isMobileBrowser() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function enableDesktopModeIfNestedBlockquotes() {
     const nestedBlockquotesExist = document.querySelector('blockquote blockquote') !== null;
-
     if (nestedBlockquotesExist && isMobileBrowser()) {
         enableDesktopMode();
     }
-}
-
-function isMobileBrowser() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 function enableDesktopMode() {
