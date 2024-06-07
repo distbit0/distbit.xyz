@@ -19,5 +19,4 @@
                     - where the depth level of the closest blockquote ancestor is only one less than the depth level of the current blockquote
     - replace 4 buttons with 2 toggle buttons
     - if expand button is pressed and there is no text that is displayed as a result, expand the next level until text is displayed or the last level is reached. so that the user doesn't have to keep clicking expand if the response to something is separated by several layers
-
-
+    - enable desktop mode if nested blockquotes exist
