@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     blockquotes.forEach(blockquote => {
         const maxHeight = blockquote.getBoundingClientRect().top;
-        addClassToParentBlockquoteChildren(blockquote, blockquote.id, maxHeight);
+        addClassToParentBlockquoteChildren(blockquote, blockquote.id, maxHeight, false);
     });
     reuniteOrphanRootQuotes();
 
@@ -115,15 +115,17 @@ function getAllChildElements(ancestorBlockquotes) {
     return childElements;
 }
 
-function addClassToParentBlockquoteChildren(blockquote, classToAdd, maxVisualHeight) {
+function addClassToParentBlockquoteChildren(blockquote, classToAdd, maxVisualHeight, classFromDifferentBlockquote) {
     // visual height allows us to discriminate between replies to the above message and replies to the current message, even if both are in a blockquote which is a parent of the current message
     // it is apparently measures from top of screen not bottom, which makes comparisons seem weird
     const ancestorBlockquotes = getAncestorBlockQuotes(blockquote);
     const childElements = getAllChildElements(ancestorBlockquotes);
     childElements.forEach(element => {
         if (element.getBoundingClientRect().top > maxVisualHeight) {
-            if (blockquote.parentNode === element) {
-                element.classList.add(`childOf_${classToAdd}`);
+            if (!classFromDifferentBlockquote) {
+                if (blockquote.parentNode === element) {
+                    element.classList.add(`childOf_${classToAdd}`);
+                }
             }
 
             if (isIndirectAncestor(element, blockquote)) {
@@ -136,7 +138,7 @@ function addClassToParentBlockquoteChildren(blockquote, classToAdd, maxVisualHei
     });
 }
 
-function addClassToBlockquoteChildren(blockquote, classToAdd) {
+function addClassToBlockquoteChildElements(blockquote, classToAdd) {
     const childElements = getAllChildElements([blockquote]);
     childElements.forEach(element => {
         if (element.textContent.includes('#draft')) {
@@ -182,7 +184,7 @@ function reuniteOrphanRootQuotes() {
     let maxDepth = 0;
     let depthGap;
     let directParentId;
-    let ancestors;
+    let ancestorIds;
     const blockquotesWithNestingLevels = findBlockquotesWithoutNestedBlockquotes();
     for (const [blockquote, nestingLevel, parentBlockquoteIds] of blockquotesWithNestingLevels) {
         maxDepth = Math.max(maxDepth, nestingLevel);
@@ -201,12 +203,22 @@ function reuniteOrphanRootQuotes() {
         console.log("lastIdAtDepth", lastIdAtDepth);
         console.log("parentBlockquoteIds", parentBlockquoteIds);
         console.log("nestingLevel", nestingLevel);
-        console.log(blockquote.querySelector('p').innerHTML);
+        let pElement = blockquote.querySelector('p');
+        if (pElement) {
+            console.log(pElement.innerHTML);
+        }
         if (nestingLevel > 0) {
             directParentId = lastIdAtDepth[nestingLevel];
             console.log("directParentId", directParentId);
-            ancestors = lastIdAtDepth.slice(nestingLevel);
-            console.log("ancestors", ancestors);
+            ancestorIds = lastIdAtDepth.slice(nestingLevel);
+            console.log("ancestors", ancestorIds);
+            if (directParentId) {
+                addClassToBlockquoteChildElements(blockquote, `childOf_${directParentId}`);
+                maxVisualHeight = document.getElementById(directParentId).getBoundingClientRect().top;
+            }
+            for (ancestorId of ancestorIds) {
+                addClassToParentBlockquoteChildren(blockquote, ancestorId, maxVisualHeight, true);
+            }
         } else {
             console.log("This is a top-level blockquote");
         }
@@ -223,3 +235,4 @@ function reuniteOrphanRootQuotes() {
 // if expand button is pressed and there is no text that is displayed as a result, expand the next level until text is displayed or the last level is reached. so that the user doesn't have to keep clicking expand if the response to something is separated by several layers
 // make mobile friendly
 // hide child show child not working
+// element only child of a node if it is below it and above the next node at the same indent level
