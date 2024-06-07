@@ -1,0 +1,31 @@
+
+modify this code so that it instead uses relative height of non-blockquote elements to determine if they are replies to/children of a given blockquote, rather than using the current strategy of using the nesting relationships to determine this
+
+implement these todo and preserve the "done" tasks.
+- todo
+    - for each blockquote
+        - assign it a class corresponding to its depth level (where the outermost blockquote is always at depth 0)
+        - set its id equal to depthlevel-indexatthatlevel
+    - iterate through each depth level with non-zero qty of blockquotes
+        - iterate through each blockquote at that depth level
+            - and add the <id of the blockquote> to all non-blockquote elements that are
+                - below its bottom edge
+                - and above the top edge of the next blockquote at that level
+                - and which has a blockquote ancestor
+            - add childOf_<id of the blockquote> class to all non-blockquote elements that are
+                - below its bottom edge
+                - and above the top edge of the next blockquote at that level
+                - and which has a blockquote ancestor
+                    - where the depth level of the closest blockquote ancestor is only one less than the depth level of the current blockquote
+- done
+    - auto-hide text div if the div innnerhtml contains the string "#draft"
+    - add two buttons to each blockquote which turn on/off the visibility of all its children recursively
+    - add two buttons to each blockquote which turn on/off the visibility of its direct children
+
+
+
+ start off with all blockquotes except root ones collapsed
+ replace 4 buttons with 2 toggle buttons
+ if expand button is pressed and there is no text that is displayed as a result, expand the next level until text is displayed or the last level is reached. so that the user doesn't have to keep clicking expand if the response to something is separated by several layers
+ make mobile friendly
+ hide child/show child buttons not working
