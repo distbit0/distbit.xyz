@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
     blockquotes.forEach(blockquote => {
         const toggleAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id));
         const toggleNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, `childOf_${blockquote.id}`));
-        blockquote.appendChild(toggleAllReplies);
         blockquote.appendChild(toggleNextReply);
+        blockquote.appendChild(toggleAllReplies);
     });
     addClassesToChildElements();
 });
