@@ -20,7 +20,7 @@ window.onload = function () {
 
     function colorize(blockquote, depth) {
         if ((maxDepth - depth) % 2 === 0) {
-            blockquote.style.backgroundColor = '#262626';
+            blockquote.style.backgroundColor = '#1f1f1f';
         } else {
             blockquote.style.backgroundColor = 'black';
         }
