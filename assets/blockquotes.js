@@ -156,8 +156,9 @@ function findBlockquotesWithoutNestedBlockquotes() {
     });
 
     const blockquotesWithNestingLevels = blockquotesWithoutNestedBlockquotes.map(blockquote => {
-        let nestingLevel = 0;
+        let nestingLevel = 1;
         let parentBlockquoteIds = [];
+        parentBlockquoteIds.push(blockquote.id);
         let parentElement = blockquote.parentElement;
         while (parentElement) {
             if (parentElement.tagName === 'BLOCKQUOTE') {
@@ -218,9 +219,8 @@ function reuniteOrphanRootQuotes() {
             }
             for (ancestorId of ancestorIds) {
                 addClassToParentBlockquoteChildren(blockquote, ancestorId, maxVisualHeight, true);
+                addClassToBlockquoteChildElements(blockquote, ancestorId);
             }
-        } else {
-            console.log("This is a top-level blockquote");
         }
     }
 }
