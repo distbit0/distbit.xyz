@@ -38,7 +38,7 @@ window.onload = function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    assignIdsToBlockquotes();
+    assignDepthLevelClassesToBlockquotes();
     const blockquotes = document.querySelectorAll('blockquote');
     blockquotes.forEach(blockquote => {
         const toggleAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id));
@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
         blockquote.appendChild(toggleAllReplies);
         blockquote.appendChild(toggleNextReply);
     });
-    assignDepthLevelClassesToBlockquotes();
     addClassesToChildElements();
 });
 
@@ -72,14 +71,6 @@ function toggleVisibility(event, className) {
 
     clickedButton.textContent = visible ? clickedButton.textContent.replace('Show', 'Hide') : clickedButton.textContent.replace('Hide', 'Show');
 }
-
-function assignIdsToBlockquotes() {
-    const blockquotes = document.querySelectorAll('blockquote');
-    blockquotes.forEach((blockquote, index) => {
-        blockquote.id = `blockquote-${index}`;
-    });
-}
-
 
 function assignDepthLevelClassesToBlockquotes() {
     const blockquotes = Array.from(document.querySelectorAll('blockquote'));
@@ -109,6 +100,18 @@ function assignDepthLevelClassesToBlockquotes() {
     });
 }
 
+function isElementBetween(topElement, bottomElement, compElement) {
+    const originalDisplay = compElement.style.display;
+    compElement.style.display = 'block';
+    const topRect = topElement.getBoundingClientRect();
+    const compRect = compElement.getBoundingClientRect();
+    const topBottom = topRect.bottom;
+    const bottomTop = bottomElement ? bottomElement.getBoundingClientRect().top : Infinity;
+    const compTop = compRect.top;
+    compElement.style.display = originalDisplay;
+    return compTop >= topBottom && compTop <= bottomTop;
+}
+
 function addClassesToChildElements() {
     const depthLevels = Array.from(document.querySelectorAll('blockquote'))
         .map(blockquote => parseInt(blockquote.className.match(/depth-(\d+)/)[1]))
@@ -118,16 +121,11 @@ function addClassesToChildElements() {
         const blockquotesAtDepth = Array.from(document.querySelectorAll(`.depth-${depth}`));
         blockquotesAtDepth.forEach((blockquote, index) => {
             const nextBlockquote = blockquotesAtDepth[index + 1];
-            const blockquoteBottom = blockquote.getBoundingClientRect().bottom;
-            const nextBlockquoteTop = nextBlockquote ? nextBlockquote.getBoundingClientRect().top : Infinity;
-
             const childElements = Array.from(document.querySelectorAll('*'))
                 .filter(element => !element.matches('blockquote') && element.closest('blockquote'))
                 .filter(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    return elementTop >= blockquoteBottom && elementTop <= nextBlockquoteTop;
+                    return isElementBetween(blockquote, nextBlockquote, element);
                 });
-
             childElements.forEach(element => {
                 element.classList.add(blockquote.id);
                 const closestBlockquote = element.closest('blockquote');
