@@ -71,7 +71,7 @@ function toggleVisibility(event, className) {
             element.style.display = targetDisplay;
         }
     });
-
+    // keep toggling visibility of elements until come across one which actually contains text, to save user from having to successively toggle until they find a blockquote with text
     const modifiedElements = Array.from(elements).filter(element => element.style.display == targetDisplay);
     if (!modifiedElements.some(element => element.textContent.trim().length > 0 && !element.matches("button"))) {
         elements.forEach(element => { if (element.matches("button")) { element.textContent = element.textContent.replace('Show Next', 'Hide Next'); } });
