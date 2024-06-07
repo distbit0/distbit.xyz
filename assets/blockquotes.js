@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         blockquote.appendChild(hideAllReplies);
     });
     addClassesToChildElements();
+    enableDesktopModeIfNestedBlockquotes();
 });
 
 // Function to create buttons
@@ -150,4 +151,30 @@ function addClassesToChildElements() {
             });
         });
     });
+}
+
+
+function enableDesktopModeIfNestedBlockquotes() {
+    const nestedBlockquotesExist = document.querySelector('blockquote blockquote') !== null;
+
+    if (nestedBlockquotesExist && isMobileBrowser()) {
+        enableDesktopMode();
+    }
+}
+
+function isMobileBrowser() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function enableDesktopMode() {
+    const metaViewport = document.querySelector('meta[name="viewport"]');
+
+    if (metaViewport) {
+        metaViewport.setAttribute('content', 'width=1024');
+    } else {
+        const newMetaViewport = document.createElement('meta');
+        newMetaViewport.setAttribute('name', 'viewport');
+        newMetaViewport.setAttribute('content', 'width=1024');
+        document.head.appendChild(newMetaViewport);
+    }
 }
