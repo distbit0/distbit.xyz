@@ -18,5 +18,3 @@
                 - and which has a blockquote ancestor
                     - where the depth level of the closest blockquote ancestor is only one less than the depth level of the current blockquote
     - replace 4 buttons with 2 toggle buttons
-
-

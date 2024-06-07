@@ -41,10 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
     assignDepthLevelClassesToBlockquotes();
     const blockquotes = document.querySelectorAll('blockquote');
     blockquotes.forEach(blockquote => {
-        const toggleAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id));
+        const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id));
+        const hideAllReplies = createButton('Hide All Replies', (event) => toggleVisibility(event, blockquote.id));
         const toggleNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, `childOf_${blockquote.id}`));
         blockquote.appendChild(toggleNextReply);
-        blockquote.appendChild(toggleAllReplies);
+        blockquote.appendChild(showAllReplies);
+        blockquote.appendChild(hideAllReplies);
     });
     addClassesToChildElements();
 });
@@ -63,13 +65,20 @@ function toggleVisibility(event, className) {
     const elements = document.querySelectorAll(`.${className}`);
     const visible = clickedButton.textContent.includes('Show');
 
+    let targetDisplay = visible ? 'inline-block' : 'none';
     elements.forEach(element => {
         if (!element.textContent.includes('#draft')) {
-            element.style.display = visible ? 'inline-block' : 'none';
+            element.style.display = targetDisplay;
         }
     });
 
-    clickedButton.textContent = visible ? clickedButton.textContent.replace('Show', 'Hide') : clickedButton.textContent.replace('Hide', 'Show');
+    const modifiedElements = Array.from(elements).filter(element => element.style.display == targetDisplay);
+    if (!modifiedElements.some(element => element.textContent.trim().length > 0 && !element.matches("button"))) {
+        elements.forEach(element => { if (element.matches("button")) { element.textContent = element.textContent.replace('Show Next', 'Hide Next'); } });
+        const closestBlockquoteClass = "childOf_" + modifiedElements[0].closest('blockquote').id;
+        toggleVisibility(event, closestBlockquoteClass);
+    }
+    clickedButton.textContent = visible ? clickedButton.textContent.replace('Show Next', 'Hide Next') : clickedButton.textContent.replace('Hide Next', 'Show Next');
 }
 
 function assignDepthLevelClassesToBlockquotes() {
