@@ -38,7 +38,7 @@ window.onload = function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    assignDepthLevelClassesToBlockquotes();
+    assignDepthLevelClassesAndIdsToBlockquotes();
     const blockquotes = document.querySelectorAll('blockquote');
     blockquotes.forEach(blockquote => {
         const lastElement = blockquote.lastElementChild;
@@ -53,13 +53,91 @@ document.addEventListener('DOMContentLoaded', function () {
             // so that logic works which relies on each blockquote having at least one child element
             // specifically logic relating to recursively hiding/showing next blockquote until text is found
             let dustElement = document.createElement('div');
+            dustElement.id = 'dustElement';
             dustElement.style.display = 'none';
             blockquote.appendChild(dustElement)
         }
     });
-    addClassesToChildElements();
     enableDesktopModeIfNestedBlockquotes();
+
+    addReplyLinks();
+    addClassesToChildElements();
+    const replyId = resolveReplyIdFromHashtag();
+    if (replyId) {
+        unhideMatchingReplyAndContext(replyId);
+    }
 });
+
+function addReplyLinks() {
+    const blockquotes = document.querySelectorAll('blockquote');
+    blockquotes.forEach(parentBlockquote => {
+        const nestedBlockquotes = Array.from(parentBlockquote.children).filter(child => child.tagName === 'BLOCKQUOTE');
+        nestedBlockquotes.forEach(nestedBlockquote => {
+            let lastElement = nestedBlockquote.nextElementSibling;
+            lastElement = lastElement.id === 'dustElement' ? null : lastElement;
+            while (lastElement) {
+                nextElement = lastElement.nextElementSibling;
+                if (nextElement.tagName === 'BUTTON' || nextElement.tagName === 'BLOCKQUOTE') {
+                    break;
+                }
+                lastElement = lastElement.nextElementSibling;
+            }
+
+            if (lastElement && lastElement.tagName !== 'BUTTON' && lastElement.tagName !== 'BLOCKQUOTE') {
+                const replyText = lastElement.textContent.trim();
+                const replyId = replyText.split(' ').slice(0, 5).join('-');
+                lastElement.id = replyId;
+
+                const linkElement = document.createElement('a');
+                linkElement.href = `#${replyId}`;
+                linkElement.textContent = 'Link to this reply';
+                nestedBlockquote.insertAdjacentElement('afterend', linkElement);
+            }
+            else {
+                console.log(lastElement);
+            }
+        });
+    });
+}
+
+function resolveReplyIdFromHashtag() {
+    const hashtag = window.location.hash.slice(1);
+    if (hashtag) {
+        const elements = document.querySelectorAll('*');
+        for (const element of elements) {
+            if (element.id === hashtag) {
+                return element.id;
+            }
+        }
+    }
+    return null;
+}
+
+function unhideMatchingReplyAndContext(replyId) {
+    const replyElement = document.getElementById(replyId);
+    if (replyElement) {
+        const replyBlockquote = replyElement.closest('blockquote');
+        const replyDepth = parseInt(replyBlockquote.id.match(/depth(\d+)-/)[1]);
+
+        let latestDepth = replyDepth;
+        const blockquotes = document.querySelectorAll('blockquote');
+        for (const blockquote of blockquotes) {
+            const blockquoteDepth = parseInt(blockquote.id.match(/depth(\d+)-/)[1]);
+            if (blockquoteDepth < latestDepth) {
+                const childElements = blockquote.querySelectorAll(`:scope > *:not(blockquote)`);
+                for (let i = childElements.length - 1; i >= 0; i--) {
+                    const element = childElements[i];
+                    element.style.display = '';
+                    if (element.previousElementSibling && element.previousElementSibling.tagName === 'BLOCKQUOTE') {
+                        break;
+                    }
+                }
+                latestDepth = blockquoteDepth;
+            }
+        }
+    }
+}
+
 
 // Function to create buttons
 function createButton(text, clickHandler, id) {
@@ -108,7 +186,7 @@ function toggleVisibility(event, className) {
     }
 }
 
-function assignDepthLevelClassesToBlockquotes() {
+function assignDepthLevelClassesAndIdsToBlockquotes() {
     const blockquotes = Array.from(document.querySelectorAll('blockquote'));
     const depthLevels = new Map();
 
