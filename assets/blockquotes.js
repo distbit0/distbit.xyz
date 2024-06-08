@@ -29,6 +29,7 @@ function findDirectBlockquotes(element) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    moveNestedBlockquotes();
     document.querySelectorAll('blockquote').forEach(blockquote => {
         if (blockquote.parentNode.closest('blockquote')) {
             const parentElement = blockquote.parentElement;
@@ -44,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
             parentElement.insertBefore(breakElement2, blockquote);
         }
     });
-    moveNestedBlockquotes();
     enableDesktopModeIfNestedBlockquotes();
     addReplyLinks();
     hideNestedBlockquoteElements();
