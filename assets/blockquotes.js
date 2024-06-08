@@ -111,12 +111,10 @@ function resolveReplyIdFromHashtag() {
 
 function findReplyLink(startElement) {
     let currentElement = startElement;
-    console.log("startElement: ", startElement);
     while (currentElement) {
         currentElement = currentElement.previousElementSibling;
 
         if (currentElement && currentElement.innerHTML === 'Link to this reply') {
-            console.log("found reply link: ", currentElement);
             return currentElement;
         }
     }
@@ -125,10 +123,8 @@ function findReplyLink(startElement) {
 }
 
 function unhideMatchingReplyAndContext(replyId) {
-    console.log("unhideMatchingReplyAndContext: ");
     const replyElement = document.getElementById(replyId);
     if (replyElement) {
-        console.log("replyElement: ", replyElement);
         const replyBlockquote = replyElement.closest('blockquote');
         const replyLink = findReplyLink(replyElement);
         const replyDepth = parseInt(replyBlockquote.id.match(/depth(\d+)-/)[1]);
@@ -173,12 +169,11 @@ function unhideMatchingReplyAndContext(replyId) {
             }
         }
         highlightReply(replyBlockquote);
-        console.log("blockquotesAboveReply: ", blockquotesAboveReply);
-        replyLink.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-            inline: 'center'
-        });
+        console.log(replyLink)
+        // wait 5 seconds
+        setTimeout(() => {
+            replyLink.scrollIntoView();
+        }, 1500);
     }
 }
 
