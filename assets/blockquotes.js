@@ -168,7 +168,7 @@ function unhideMatchingReplyAndContext(replyId) {
                 latestDepth = blockquoteDepth;
             }
         }
-        highlightReply(replyBlockquote);
+        highlightReply(replyBlockquote, replyElement);
         console.log(replyLink)
         // wait 5 seconds
         setTimeout(() => {
@@ -177,7 +177,7 @@ function unhideMatchingReplyAndContext(replyId) {
     }
 }
 
-function highlightReply(blockquote) {
+function highlightReply(blockquote, replyElement) {
     // Get all child elements of the blockquote
     const elements = blockquote.getElementsByTagName('*');
 
@@ -188,6 +188,9 @@ function highlightReply(blockquote) {
         // Check if the closest blockquote ancestor is the original blockquote
         if (element.closest('blockquote') === blockquote && element.tagName !== "BUTTON") {
             element.style.color = '#00ff00';
+        }
+        if (element === replyElement) {
+            break;
         }
     }
 }
