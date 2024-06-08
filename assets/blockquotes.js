@@ -111,24 +111,34 @@ function resolveReplyIdFromHashtag() {
     return null;
 }
 
+// console.log("replyBlockquote: ", replyBlockquote);
+// console.log("replyDepth: ", replyDepth);
+// console.log("replyElement: ", replyElement);
 function unhideMatchingReplyAndContext(replyId) {
     const replyElement = document.getElementById(replyId);
     if (replyElement) {
         const replyBlockquote = replyElement.closest('blockquote');
         const replyDepth = parseInt(replyBlockquote.id.match(/depth(\d+)-/)[1]);
-        console.log("replyBlockquote: ", replyBlockquote);
         console.log("replyDepth: ", replyDepth);
-        console.log("replyElement: ", replyElement);
         let latestDepth = replyDepth;
-        const blockquotes = document.querySelectorAll('blockquote');
-        for (const blockquote of blockquotes) {
+
+        const blockquotes = Array.from(document.querySelectorAll('blockquote'));
+        const blockquotesAboveReply = blockquotes.filter(blockquote => {
+            return isElementAbove(blockquote, replyElement) || blockquote === replyBlockquote;
+        });
+        blockquotesAboveReply.sort((a, b) => {
+            return getElementYCoord(b) - getElementYCoord(a);
+        });
+        for (const blockquote of blockquotesAboveReply) {
             const blockquoteDepth = parseInt(blockquote.id.match(/depth(\d+)-/)[1]);
-            if (blockquoteDepth < latestDepth) {
-                const childElements = blockquote.querySelectorAll(`:scope > *:not(blockquote)`);
-                for (let i = childElements.length - 1; i >= 0; i--) {
-                    const element = childElements[i];
-                    element.style.display = '';
-                    if (element.previousElementSibling && element.previousElementSibling.tagName === 'BLOCKQUOTE') {
+            console.log("blockquoteDepth: ", blockquoteDepth, blockquote);
+            if (blockquoteDepth > latestDepth) {
+                const childElements = Array.from(blockquote.children).reverse();
+                for (const element of childElements) {
+                    if (element.tagName !== 'BLOCKQUOTE') {
+                        element.style.display = '';
+                        console.log("unhiding element: ", element);
+                    } else {
                         break;
                     }
                 }
@@ -136,6 +146,26 @@ function unhideMatchingReplyAndContext(replyId) {
             }
         }
     }
+}
+
+function isElementAbove(elementA, elementB) {
+    const originalDisplayA = elementA.style.display;
+    const originalDisplayB = elementB.style.display;
+    elementA.style.display = 'block';
+    elementB.style.display = 'block';
+    const rectA = elementA.getBoundingClientRect();
+    const rectB = elementB.getBoundingClientRect();
+    elementA.style.display = originalDisplayA;
+    elementB.style.display = originalDisplayB;
+    return rectA.bottom <= rectB.top;
+}
+
+function getElementYCoord(element) {
+    const originalDisplay = element.style.display;
+    element.style.display = 'block';
+    const rect = element.getBoundingClientRect();
+    element.style.display = originalDisplay;
+    return rect.bottom;
 }
 
 
