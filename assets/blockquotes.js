@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
             parentElement.insertBefore(breakElement2, blockquote);
         }
     });
-    // enableDesktopModeIfNestedBlockquotes();
     addReplyLinks();
     hideNestedBlockquoteElements();
     unhideMatchingReplyAndContext();
@@ -221,27 +220,3 @@ function toggleVisibility(event, replyId) {
 }
 
 
-
-function isMobileBrowser() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-function enableDesktopModeIfNestedBlockquotes() {
-    const nestedBlockquotesExist = document.querySelector('blockquote blockquote') !== null;
-    if (nestedBlockquotesExist && isMobileBrowser()) {
-        enableDesktopMode();
-    }
-}
-
-function enableDesktopMode() {
-    const metaViewport = document.querySelector('meta[name="viewport"]');
-
-    if (metaViewport) {
-        metaViewport.setAttribute('content', 'width=1024');
-    } else {
-        const newMetaViewport = document.createElement('meta');
-        newMetaViewport.setAttribute('name', 'viewport');
-        newMetaViewport.setAttribute('content', 'width=1024');
-        document.head.appendChild(newMetaViewport);
-    }
-}
