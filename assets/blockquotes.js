@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
     addReplyLinks();
     addClassesToChildElements();
     const replyId = resolveReplyIdFromHashtag();
-    console.log("replyId: ", replyId);
     if (replyId) {
         unhideMatchingReplyAndContext(replyId);
     }
@@ -83,10 +82,9 @@ function addReplyLinks() {
                 }
                 lastElement = lastElement.nextElementSibling;
             }
-
             if (lastElement && lastElement.tagName !== 'BUTTON' && lastElement.tagName !== 'BLOCKQUOTE') {
                 const replyText = lastElement.textContent.trim();
-                const replyId = replyText.split(' ').slice(0, 5).join('-');
+                const replyId = replyText.split(' ').slice(0, 6).join('-');
                 lastElement.id = replyId;
 
                 const linkElement = document.createElement('a');
@@ -111,16 +109,30 @@ function resolveReplyIdFromHashtag() {
     return null;
 }
 
-// console.log("replyBlockquote: ", replyBlockquote);
-// console.log("replyDepth: ", replyDepth);
-// console.log("replyElement: ", replyElement);
+function findReplyLink(startElement) {
+    let currentElement = startElement;
+    console.log("startElement: ", startElement);
+    while (currentElement) {
+        currentElement = currentElement.previousElementSibling;
+
+        if (currentElement && currentElement.innerHTML === 'Link to this reply') {
+            console.log("found reply link: ", currentElement);
+            return currentElement;
+        }
+    }
+
+    return null;
+}
+
 function unhideMatchingReplyAndContext(replyId) {
+    console.log("unhideMatchingReplyAndContext: ");
     const replyElement = document.getElementById(replyId);
     if (replyElement) {
+        console.log("replyElement: ", replyElement);
         const replyBlockquote = replyElement.closest('blockquote');
+        const replyLink = findReplyLink(replyElement);
         const replyDepth = parseInt(replyBlockquote.id.match(/depth(\d+)-/)[1]);
-        console.log("replyDepth: ", replyDepth);
-        let latestDepth = replyDepth;
+        let latestDepth = replyDepth - 1;
 
         const blockquotes = Array.from(document.querySelectorAll('blockquote'));
         const blockquotesAboveReply = blockquotes.filter(blockquote => {
@@ -131,19 +143,53 @@ function unhideMatchingReplyAndContext(replyId) {
         });
         for (const blockquote of blockquotesAboveReply) {
             const blockquoteDepth = parseInt(blockquote.id.match(/depth(\d+)-/)[1]);
-            console.log("blockquoteDepth: ", blockquoteDepth, blockquote);
             if (blockquoteDepth > latestDepth) {
                 const childElements = Array.from(blockquote.children).reverse();
+                let reachedReply = false;
                 for (const element of childElements) {
+                    if (element !== replyElement && reachedReply === false && blockquotesAboveReply[0] === blockquote) {
+                        if (!(element.tagName === 'button' && element.previousElementSibling === replyElement)) {
+                            continue;
+                        }
+                    }
+                    if (element === replyElement) {
+                        reachedReply = true;
+                    }
+
                     if (element.tagName !== 'BLOCKQUOTE') {
                         element.style.display = '';
-                        console.log("unhiding element: ", element);
+                        const children = element.querySelectorAll('*');
+                        for (const child of children) {
+                            child.style.display = '';
+                        }
                     } else {
                         break;
                     }
                 }
                 latestDepth = blockquoteDepth;
             }
+        }
+        highlightReply(replyBlockquote);
+        console.log("blockquotesAboveReply: ", blockquotesAboveReply);
+        replyLink.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'center'
+        });
+    }
+}
+
+function highlightReply(blockquote) {
+    // Get all child elements of the blockquote
+    const elements = blockquote.getElementsByTagName('*');
+
+    // Iterate over each child element
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+
+        // Check if the closest blockquote ancestor is the original blockquote
+        if (element.closest('blockquote') === blockquote && element.tagName !== "button") {
+            element.style.color = '#00ff00';
         }
     }
 }
