@@ -148,7 +148,10 @@ function unhideMatchingReplyAndContext(replyId) {
                 let reachedReply = false;
                 for (const element of childElements) {
                     if (element !== replyElement && reachedReply === false && blockquotesAboveReply[0] === blockquote) {
-                        if (!(element.tagName === 'button' && element.previousElementSibling === replyElement)) {
+                        prevElement = element.previousElementSibling;
+                        prevPrevElement = prevElement.previousElementSibling;
+                        isButtonBelowReply = element.tagName === 'BUTTON' && (prevElement === replyElement || prevPrevElement === replyElement);
+                        if (!(element.tagName === 'BUTTON' && isButtonBelowReply)) {
                             continue;
                         }
                     }
@@ -188,7 +191,7 @@ function highlightReply(blockquote) {
         const element = elements[i];
 
         // Check if the closest blockquote ancestor is the original blockquote
-        if (element.closest('blockquote') === blockquote && element.tagName !== "button") {
+        if (element.closest('blockquote') === blockquote && element.tagName !== "BUTTON") {
             element.style.color = '#00ff00';
         }
     }
