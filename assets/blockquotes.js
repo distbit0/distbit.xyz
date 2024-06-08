@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const lastElement = blockquote.lastElementChild;
         // don't add buttons to blockquotes that do not actually have any text in them
         if (lastElement && lastElement.tagName !== 'BLOCKQUOTE') {
-            const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id));
-            const toggleNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id));
+            const toggleNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id), "firstButton");
+            const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), "secondButton");
             blockquote.appendChild(toggleNextReply);
             blockquote.appendChild(showAllReplies);
         }
@@ -62,11 +62,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Function to create buttons
-function createButton(text, clickHandler) {
+function createButton(text, clickHandler, id) {
     const button = document.createElement('button');
     button.textContent = text;
     button.addEventListener('click', clickHandler);
+    button.classList.add(id);
     return button;
+}
+
+function toggleButtonText(button, visible) {
+    if (button.classList.contains("firstButton")) {
+        button.textContent = visible ? 'Hide All Replies' : 'Show Next Reply';
+    }
+    else if (button.classList.contains("secondButton")) {
+        button.textContent = visible ? 'Hide All Replies' : 'Show All Replies';
+    }
 }
 
 // Function to toggle visibility of elements based on classes
@@ -83,14 +93,9 @@ function toggleVisibility(event, className) {
         if (!element.textContent.includes('#draft')) {
             element.style.display = targetDisplay;
         }
-        // if (element.matches("button") && !("childOf_" in className) && element !== clickedButton) {
-        //     if (visible) {
-        //         element.textContent = element.textContent.replace('Show Next Reply', 'Hide All Replies');
-        //     }
-        //     else {
-        //         element.textContent = element.textContent.replace('Hide All Replies', 'Show Next Reply');
-        //     }
-        // }
+        if (element.matches("button") && !className.includes("childOf_") && element !== clickedButton) {
+            toggleButtonText(element, visible);
+        }
     });
     // keep toggling visibility of elements until come across one which actually contains text, to save user from having to successively toggle until they find a blockquote with text
     const modifiedElements = Array.from(elements).filter(element => element.style.display == targetDisplay);
@@ -99,9 +104,8 @@ function toggleVisibility(event, className) {
         toggleVisibility(event, closestBlockquoteClass);
     }
     else {
-        clickedButton.textContent = visible ? clickedButton.textContent.replace('Show Next Reply', 'Hide All Replies') : clickedButton.textContent.replace('Hide All Replies', 'Show Next Reply');
+        toggleButtonText(clickedButton, visible);
     }
-    clickedButton.textContent = visible ? clickedButton.textContent.replace('Show All Replies', 'Hide All Replies') : clickedButton.textContent.replace('Hide All Replies', 'Show All Replies');
 }
 
 function assignDepthLevelClassesToBlockquotes() {
