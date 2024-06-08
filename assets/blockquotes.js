@@ -44,12 +44,25 @@ document.addEventListener('DOMContentLoaded', function () {
             parentElement.insertBefore(breakElement2, blockquote);
         }
     });
-
+    moveNestedBlockquotes();
     enableDesktopModeIfNestedBlockquotes();
     addReplyLinks();
     hideNestedBlockquoteElements();
     unhideMatchingReplyAndContext();
 });
+
+function moveNestedBlockquotes() {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        const closestBlockquoteAncestor = blockquote.parentNode.closest('blockquote');
+        if (closestBlockquoteAncestor) {
+            let seniorAncestor = blockquote;
+            while (seniorAncestor.parentNode !== closestBlockquoteAncestor) {
+                seniorAncestor = seniorAncestor.parentNode;
+            }
+            closestBlockquoteAncestor.insertBefore(blockquote, seniorAncestor.nextSibling);
+        }
+    });
+}
 
 function addReplyLinks() {
     document.querySelectorAll('blockquote').forEach(blockquote => {
@@ -74,10 +87,14 @@ function addReplyLinks() {
                 replyId = replyId.replace(/[^a-zA-Z0-9]/g, '');
                 lastElement.id = replyId;
 
-                const linkElement = document.createElement('a');
-                linkElement.onclick = () => unhideMatchingReplyAndContext();
+                let linkElement = document.createElement('a');
                 linkElement.href = `#${replyId}`;
                 linkElement.textContent = 'Link to this reply';
+                linkElement.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    window.location.href = this.getAttribute('href');
+                    window.location.reload();
+                });
                 blockquote.prepend(linkElement);
             }
         };
@@ -126,7 +143,9 @@ function unHideAncestors(element) {
 }
 
 function unhideMatchingReplyAndContext() {
-    const replyId = resolveReplyIdFromHashtag();
+    setTimeout(() => {
+    }, 100);
+    replyId = resolveReplyIdFromHashtag();
     if (!replyId) {
         return;
     }
