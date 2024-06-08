@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     addReplyLinks();
     addClassesToChildElements();
     const replyId = resolveReplyIdFromHashtag();
+    console.log("replyId: ", replyId);
     if (replyId) {
         unhideMatchingReplyAndContext(replyId);
     }
@@ -93,9 +94,6 @@ function addReplyLinks() {
                 linkElement.textContent = 'Link to this reply';
                 nestedBlockquote.insertAdjacentElement('afterend', linkElement);
             }
-            else {
-                console.log(lastElement);
-            }
         });
     });
 }
@@ -118,7 +116,9 @@ function unhideMatchingReplyAndContext(replyId) {
     if (replyElement) {
         const replyBlockquote = replyElement.closest('blockquote');
         const replyDepth = parseInt(replyBlockquote.id.match(/depth(\d+)-/)[1]);
-
+        console.log("replyBlockquote: ", replyBlockquote);
+        console.log("replyDepth: ", replyDepth);
+        console.log("replyElement: ", replyElement);
         let latestDepth = replyDepth;
         const blockquotes = document.querySelectorAll('blockquote');
         for (const blockquote of blockquotes) {
