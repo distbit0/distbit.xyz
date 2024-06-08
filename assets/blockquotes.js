@@ -9,7 +9,6 @@ window.onload = function () {
         }
 
         const nestedBlockquotes = findDirectBlockquotes(blockquote);
-        console.log("children of blockquote", blockquote, ":scope > blockquote", nestedBlockquotes)
         for (nestedBlockquote of nestedBlockquotes) {
             colorize(nestedBlockquote, depth + 1);
         }
@@ -30,15 +29,19 @@ function findDirectBlockquotes(element) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const blockquotes = document.querySelectorAll('blockquote');
-    blockquotes.forEach(blockquote => {
-        const lastElement = blockquote.lastElementChild;
-        // don't add buttons to blockquotes that do not actually have any text in them
-        if (lastElement && lastElement.tagName !== 'BLOCKQUOTE') {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        if (blockquote.parentNode.closest('blockquote')) {
+            const parentElement = blockquote.parentElement;
+            let randomId = Math.floor(Math.random() * 100000);
+            blockquote.id = `blockquote-${randomId}`;
             const toggleNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id), "firstButton");
             const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), "secondButton");
-            blockquote.appendChild(toggleNextReply);
-            blockquote.appendChild(showAllReplies);
+            const breakElement = document.createElement('br');
+            const breakElement2 = document.createElement('br');
+            parentElement.insertBefore(breakElement, blockquote);
+            parentElement.insertBefore(toggleNextReply, blockquote);
+            parentElement.insertBefore(showAllReplies, blockquote);
+            parentElement.insertBefore(breakElement2, blockquote);
         }
     });
 
@@ -50,33 +53,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// function addReplyLinks() {
-//     const blockquotes = document.querySelectorAll('blockquote');
-//     blockquotes.forEach(parentBlockquote => {
-//         const nestedBlockquotes = Array.from(parentBlockquote.children).filter(child => child.tagName === 'BLOCKQUOTE');
-//         nestedBlockquotes.forEach(nestedBlockquote => {
-//             let lastElement = nestedBlockquote.nextElementSibling;
-//             lastElement = lastElement.id === 'dustElement' ? null : lastElement;
-//             while (lastElement) {
-//                 nextElement = lastElement.nextElementSibling;
-//                 if (nextElement.tagName === 'BUTTON' || nextElement.tagName === 'BLOCKQUOTE') {
-//                     break;
-//                 }
-//                 lastElement = lastElement.nextElementSibling;
-//             }
-//             if (lastElement && lastElement.tagName !== 'BUTTON' && lastElement.tagName !== 'BLOCKQUOTE') {
-//                 const replyText = lastElement.textContent.trim();
-//                 const replyId = replyText.split(' ').slice(0, 6).join('-');
-//                 lastElement.id = replyId;
+function addReplyLinks() {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        if (blockquote.parentNode.closest('blockquote')) {
+            let lastElement = blockquote.firstChild;
+            while (true) {
+                nextElement = lastElement.nextSibling;
+                if (nextElement) {
+                    if (nextElement.tagName === 'BUTTON') {
+                        break;
+                    }
+                    lastElement = nextElement;
+                }
+                else {
+                    break;
+                }
+            }
 
-//                 const linkElement = document.createElement('a');
-//                 linkElement.href = `#${replyId}`;
-//                 linkElement.textContent = 'Link to this reply';
-//                 nestedBlockquote.insertAdjacentElement('afterend', linkElement);
-//             }
-//         });
-//     });
-// }
+            if (lastElement && lastElement.tagName !== 'BUTTON') {
+                const replyText = lastElement.textContent.trim();
+                const replyId = replyText.split(' ').slice(0, 6).join('-');
+                lastElement.id = replyId;
+
+                const linkElement = document.createElement('a');
+                linkElement.href = `#${replyId}`;
+                linkElement.textContent = 'Link to this reply';
+                blockquote.prepend(linkElement);
+            }
+            else {
+                console.log("error", lastElement, blockquote)
+            }
+        };
+    })
+}
+
 
 function resolveReplyIdFromHashtag() {
     const hashtag = window.location.hash.slice(1);
@@ -87,62 +97,44 @@ function resolveReplyIdFromHashtag() {
 }
 
 
-// function unhideMatchingReplyAndContext(replyId) {
-//     const replyElement = document.getElementById(replyId);
-//     if (replyElement) {
-//         const replyBlockquote = replyElement.closest('blockquote');
-//         const replyLink = findReplyLink(replyElement);
-//         const replyDepth = parseInt(replyBlockquote.id.match(/depth(\d+)-/)[1]);
-//         let latestDepth = replyDepth - 1;
+function unHideAncestors(element) {
+    // Find all blockquote ancestors
+    let current = element;
+    while (current = current.closest('blockquote')) {
+        // Process each child element of the current blockquote
+        Array.from(current.children).forEach(child => {
+            // Apply the display style only if the child's closest blockquote is the current blockquote
+            if (child.closest('blockquote') === current) {
+                setDisplayRecursively(child);
+            }
+        });
+    }
+    function setDisplayRecursively(elem) {
+        elem.style.display = "";
+        Array.from(elem.children).forEach(setDisplayRecursively);
+    }
+}
 
-//         const blockquotes = Array.from(document.querySelectorAll('blockquote'));
-//         const blockquotesAboveReply = blockquotes.filter(blockquote => {
-//             return isElementAbove(blockquote, replyElement) || blockquote === replyBlockquote;
-//         });
-//         blockquotesAboveReply.sort((a, b) => {
-//             return getElementYCoord(b) - getElementYCoord(a);
-//         });
-//         for (const blockquote of blockquotesAboveReply) {
-//             const blockquoteDepth = parseInt(blockquote.id.match(/depth(\d+)-/)[1]);
-//             if (blockquoteDepth > latestDepth) {
-//                 const childElements = Array.from(blockquote.children).reverse();
-//                 let reachedReply = false;
-//                 for (const element of childElements) {
-//                     if (element !== replyElement && reachedReply === false && blockquotesAboveReply[0] === blockquote) {
-//                         prevElement = element.previousElementSibling;
-//                         prevPrevElement = prevElement.previousElementSibling;
-//                         isButtonBelowReply = element.tagName === 'BUTTON' && (prevElement === replyElement || prevPrevElement === replyElement);
-//                         if (!(element.tagName === 'BUTTON' && isButtonBelowReply)) {
-//                             continue;
-//                         }
-//                     }
-//                     if (element === replyElement) {
-//                         reachedReply = true;
-//                     }
+function unhideMatchingReplyAndContext(replyId) {
+    const replyElement = document.getElementById(replyId);
+    if (replyElement) {
+        const replyBlockquote = replyElement.closest('blockquote');
+        let replyChildElements = Array.from(blockquote.querySelectorAll('*')).filter(el =>
+            el.closest('blockquote') === blockquote
+        );
+        replyChildElements.forEach(element => {
+            element.style.display = '';
+        });
+        unHideAncestors(replyBlockquote);
+        highlightReply(replyBlockquote);
+        console.log(replyLink)
+        setTimeout(() => {
+            replyLink.scrollIntoView();
+        }, 1500);
+    }
+}
 
-//                     if (element.tagName !== 'BLOCKQUOTE') {
-//                         element.style.display = '';
-//                         const children = element.querySelectorAll('*');
-//                         for (const child of children) {
-//                             child.style.display = '';
-//                         }
-//                     } else {
-//                         break;
-//                     }
-//                 }
-//                 latestDepth = blockquoteDepth;
-//             }
-//         }
-//         highlightReply(replyBlockquote, replyElement);
-//         console.log(replyLink)
-//         // wait 5 seconds
-//         setTimeout(() => {
-//             replyLink.scrollIntoView();
-//         }, 1500);
-//     }
-// }
-
-function highlightReply(blockquote, replyElement) {
+function highlightReply(blockquote) {
     // Get all child elements of the blockquote
     const elements = blockquote.getElementsByTagName('*');
     for (let i = 0; i < elements.length; i++) {
@@ -153,7 +145,6 @@ function highlightReply(blockquote, replyElement) {
         }
     }
 }
-
 
 
 // Function to create buttons
@@ -174,26 +165,28 @@ function toggleButtonText(button, visible) {
     }
 }
 
-// // Function to toggle visibility of elements based on classes
-// function toggleVisibility(event, className) {
-//     const clickedButton = event.target;
-//     if (clickedButton.textContent.includes('Next')) {
-//         className = "childOf_" + className;
-//     }
-//     const elements = document.querySelectorAll(`.${className}`);
-//     const visible = clickedButton.textContent.includes('Show');
+// Function to toggle visibility of elements based on classes
+function toggleVisibility(event, replyId) {
+    const clickedButton = event.target;
+    let recursive = false;
+    if (clickedButton.textContent.includes('Next')) {
+        recursive = true;
+    }
+    const replyElement = document.getElementById(replyId);
+    let childElements = Array.from(replyElement.querySelectorAll('*')).filter(el =>
+        el.closest('blockquote') === replyElement || recursive
+    );
+    const visible = clickedButton.textContent.includes('Show');
 
-//     let targetDisplay = visible ? '' : 'none';
-//     elements.forEach(element => {
-//         if (!element.textContent.includes('#draft')) {
-//             element.style.display = targetDisplay;
-//         }
-//         if (element.matches("button") && !className.includes("childOf_") && element !== clickedButton) {
-//             toggleButtonText(element, visible);
-//         }
-//     });
-//         toggleButtonText(clickedButton, visible);
-// }
+    let targetDisplay = visible ? '' : 'none';
+    childElements.forEach(element => {
+        element.style.display = targetDisplay;
+        if (element.matches("button") && recursive) {
+            toggleButtonText(element, visible);
+        }
+    });
+    toggleButtonText(clickedButton, visible);
+}
 
 
 
