@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             parentElement.insertBefore(breakElement2, blockquote);
         }
     });
-    enableDesktopModeIfNestedBlockquotes();
+    // enableDesktopModeIfNestedBlockquotes();
     addReplyLinks();
     hideNestedBlockquoteElements();
     unhideMatchingReplyAndContext();
