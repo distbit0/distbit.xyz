@@ -1,44 +1,35 @@
-// window.onload = function () {
-//     const allBlockquotes = document.querySelectorAll('blockquote');
-//     let maxDepth = 0;
-//     const topBlockquotes = document.querySelectorAll('.post > blockquote');
+window.onload = function () {
+    const topBlockquotes = document.querySelectorAll('.post > blockquote');
 
-//     // Function to calculate the maximum depth of blockquote nesting
-//     function calculateDepth(blockquote, depth) {
-//         if (depth > maxDepth) {
-//             maxDepth = depth;
-//         }
-//         const nestedBlockquotes = blockquote.querySelectorAll(':scope > blockquote');
-//         for (let i = 0; i < nestedBlockquotes.length; i++) {
-//             calculateDepth(nestedBlockquotes[i], depth + 1);
-//         }
-//     }
+    function colorize(blockquote, depth) {
+        if (depth % 2 === 0) {
+            blockquote.style.backgroundColor = '#1f1f1f';
+        } else {
+            blockquote.style.backgroundColor = 'black';
+        }
 
-//     for (let i = 0; i < allBlockquotes.length; i++) {
-//         calculateDepth(allBlockquotes[i], 0);
-//     }
+        const nestedBlockquotes = findDirectBlockquotes(blockquote);
+        console.log("children of blockquote", blockquote, ":scope > blockquote", nestedBlockquotes)
+        for (nestedBlockquote of nestedBlockquotes) {
+            colorize(nestedBlockquote, depth + 1);
+        }
+    }
 
-//     function colorize(blockquote, depth) {
-//         if ((maxDepth - depth) % 2 === 0) {
-//             blockquote.style.backgroundColor = '#1f1f1f';
-//         } else {
-//             blockquote.style.backgroundColor = 'black';
-//         }
+    for (let i = 0; i < topBlockquotes.length; i++) {
+        colorize(topBlockquotes[i], 0);
+    }
+};
 
-//         const nestedBlockquotes = blockquote.querySelectorAll(':scope > blockquote');
-//         for (let i = 0; i < nestedBlockquotes.length; i++) {
-//             colorize(nestedBlockquotes[i], depth + 1);
-//         }
-//     }
-
-//     for (let i = 0; i < topBlockquotes.length; i++) {
-//         colorize(topBlockquotes[i], 0);
-//     }
-// };
-
+function findDirectBlockquotes(element) {
+    const allBlockquotes = element.querySelectorAll('blockquote');
+    const directBlockquotes = Array.from(allBlockquotes).filter(blockquote => {
+        const closestBlockquote = blockquote.parentNode.closest('blockquote');
+        return closestBlockquote === element
+    });
+    return directBlockquotes;
+}
 
 document.addEventListener('DOMContentLoaded', function () {
-    assignDepthLevelClassesAndIdsToBlockquotes();
     const blockquotes = document.querySelectorAll('blockquote');
     blockquotes.forEach(blockquote => {
         const lastElement = blockquote.lastElementChild;
@@ -49,19 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
             blockquote.appendChild(toggleNextReply);
             blockquote.appendChild(showAllReplies);
         }
-        else {
-            // so that logic works which relies on each blockquote having at least one child element
-            // specifically logic relating to recursively hiding/showing next blockquote until text is found
-            let dustElement = document.createElement('div');
-            dustElement.id = 'dustElement';
-            dustElement.style.display = 'none';
-            blockquote.appendChild(dustElement)
-        }
     });
-    enableDesktopModeIfNestedBlockquotes();
 
+    enableDesktopModeIfNestedBlockquotes();
     addReplyLinks();
-    addClassesToChildElements();
     const replyId = resolveReplyIdFromHashtag();
     if (replyId) {
         unhideMatchingReplyAndContext(replyId);
@@ -210,15 +192,7 @@ function toggleButtonText(button, visible) {
 //             toggleButtonText(element, visible);
 //         }
 //     });
-//     // keep toggling visibility of elements until come across one which actually contains text, to save user from having to successively toggle until they find a blockquote with text
-//     const modifiedElements = Array.from(elements).filter(element => element.style.display == targetDisplay);
-//     if (!modifiedElements.some(element => element.textContent.trim().length > 0 && !element.matches("button"))) {
-//         const closestBlockquoteClass = modifiedElements[0].closest('blockquote').id;
-//         toggleVisibility(event, closestBlockquoteClass);
-//     }
-//     else {
 //         toggleButtonText(clickedButton, visible);
-//     }
 // }
 
 
