@@ -1,34 +1,6 @@
-window.onload = function () {
-    const topBlockquotes = document.querySelectorAll('.post > blockquote');
-
-    function colorize(blockquote, depth) {
-        if (depth % 2 === 0) {
-            blockquote.style.backgroundColor = '#1f1f1f';
-        } else {
-            blockquote.style.backgroundColor = 'black';
-        }
-
-        const nestedBlockquotes = findDirectBlockquotes(blockquote);
-        for (nestedBlockquote of nestedBlockquotes) {
-            colorize(nestedBlockquote, depth + 1);
-        }
-    }
-
-    for (let i = 0; i < topBlockquotes.length; i++) {
-        colorize(topBlockquotes[i], 0);
-    }
-};
-
-function findDirectBlockquotes(element) {
-    const allBlockquotes = element.querySelectorAll('blockquote');
-    const directBlockquotes = Array.from(allBlockquotes).filter(blockquote => {
-        const closestBlockquote = blockquote.parentNode.closest('blockquote');
-        return closestBlockquote === element
-    });
-    return directBlockquotes;
-}
 
 document.addEventListener('DOMContentLoaded', function () {
+    alternateBlockquoteColors();
     moveNestedBlockquotes();
     document.querySelectorAll('blockquote').forEach(blockquote => {
         if (blockquote.parentNode.closest('blockquote')) {
@@ -50,6 +22,35 @@ document.addEventListener('DOMContentLoaded', function () {
     unhideMatchingReplyAndContext();
 });
 
+function alternateBlockquoteColors() {
+    const topBlockquotes = document.querySelectorAll('.post > blockquote');
+
+    function colorize(blockquote, depth) {
+        if (depth % 2 === 0) {
+            blockquote.style.backgroundColor = '#1f1f1f';
+        } else {
+            blockquote.style.backgroundColor = 'black';
+        }
+
+        const nestedBlockquotes = findDirectBlockquotes(blockquote);
+        for (nestedBlockquote of nestedBlockquotes) {
+            colorize(nestedBlockquote, depth + 1);
+        }
+    }
+
+    for (let i = 0; i < topBlockquotes.length; i++) {
+        colorize(topBlockquotes[i], 0);
+    }
+}
+
+function findDirectBlockquotes(element) {
+    const allBlockquotes = element.querySelectorAll('blockquote');
+    const directBlockquotes = Array.from(allBlockquotes).filter(blockquote => {
+        const closestBlockquote = blockquote.parentNode.closest('blockquote');
+        return closestBlockquote === element
+    });
+    return directBlockquotes;
+}
 function moveNestedBlockquotes() {
     document.querySelectorAll('blockquote').forEach(blockquote => {
         const closestBlockquoteAncestor = blockquote.parentNode.closest('blockquote');
