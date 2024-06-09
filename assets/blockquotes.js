@@ -143,8 +143,6 @@ function unHideAncestors(element) {
 }
 
 function unhideMatchingReplyAndContext() {
-    setTimeout(() => {
-    }, 100);
     replyId = resolveReplyIdFromHashtag();
     if (!replyId) {
         return;
