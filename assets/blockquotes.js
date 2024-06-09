@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const parentElement = blockquote.parentElement;
             let randomId = Math.floor(Math.random() * 100000);
             blockquote.id = `blockquote-${randomId}`;
-            const toggleNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id), "firstButton");
-            const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), "secondButton");
+            const showNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id), ["firstButton", blockquote.id]);
+            const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), ["secondButton", blockquote.id]);
             const breakElement = document.createElement('br');
             const breakElement2 = document.createElement('br');
             parentElement.insertBefore(breakElement, blockquote);
-            parentElement.insertBefore(toggleNextReply, blockquote);
+            parentElement.insertBefore(showNextReply, blockquote);
             parentElement.insertBefore(showAllReplies, blockquote);
             parentElement.insertBefore(breakElement2, blockquote);
         }
@@ -153,9 +153,11 @@ function resolveReplyIdFromHashtag() {
 
 
 function unHideAncestors(element) {
-    let current = element;
+    let current = element.closest('blockquote');
     while (true) {
+        let lastElement = current;
         current = current.parentNode.closest('blockquote')
+        console.log(lastElement.id, lastElement)
         if (current === null) {
             break;
         }
@@ -165,7 +167,7 @@ function unHideAncestors(element) {
         current.style.display = "";
         childElements.forEach(element => {
             element.style.display = '';
-            if (element.matches("button")) {
+            if (element.matches("button") && lastElement.id in element.classList) {
                 toggleButtonText(element, true);
             }
         });
@@ -187,11 +189,13 @@ function highlightReply(blockquote) {
 
 
 // Function to create buttons
-function createButton(text, clickHandler, id) {
+function createButton(text, clickHandler, classes) {
     const button = document.createElement('button');
     button.textContent = text;
+    button.backgroundColor = "black";
+    button.color = "#00ff00";
     button.addEventListener('click', clickHandler);
-    button.classList.add(id);
+    classes.forEach(className => button.classList.add(className));
     return button;
 }
 
@@ -202,12 +206,18 @@ function toggleButtonText(button, visible) {
     else if (button.classList.contains("secondButton")) {
         button.textContent = visible ? 'Hide All Replies' : 'Show All Replies';
     }
+    button.style.color = visible ? "black" : "#00ff00";
+    button.style.backgroundColor = visible ? "white" : "black";
 }
 
 // Function to toggle visibility of elements based on classes
 function toggleVisibility(event, replyId) {
     const clickedButton = event.target;
-    const recursive = !clickedButton.textContent.includes('Next')
+    const otherButton = [
+        clickedButton.previousElementSibling,
+        clickedButton.nextElementSibling
+    ].find(sibling => sibling && sibling.tagName === 'BUTTON');
+    const recursive = clickedButton.textContent.includes('All')
     const visible = clickedButton.textContent.includes('Show');
     let targetDisplay = visible ? '' : 'none';
 
@@ -224,4 +234,7 @@ function toggleVisibility(event, replyId) {
         }
     });
     toggleButtonText(clickedButton, visible);
+    if (!(visible && !recursive)) {
+        toggleButtonText(otherButton, visible);
+    }
 }
