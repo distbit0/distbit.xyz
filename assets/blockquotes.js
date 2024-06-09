@@ -218,5 +218,3 @@ function toggleVisibility(event, replyId) {
     });
     toggleButtonText(clickedButton, visible);
 }
-
-
