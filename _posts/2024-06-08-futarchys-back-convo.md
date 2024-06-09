@@ -38,6 +38,9 @@ title: Futarchys back convo
 >=======================
 >
 >Fungible subcurrencies are easier to program in the blockchain setting than reversible swaps would be. There are some simplifying principles used in blockchain design, based on loose assumptions about what is and is not enforceable.
+
+
+
 >The fact that people can sell their private keys makes it seem like it would be impossible to enforce a reversible swap. In order to be reversible, there needs to be a period of time where you cannot sell your stake in the swap that you had made. Because if you did sell
 >That hackers would find a way to sell their coins, even when it is in a supposedly untradeable state.
 >
