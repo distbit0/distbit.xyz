@@ -414,7 +414,8 @@ Distbit = Black, Zack = Grey
 >```
 >(defenders have) < (defenders need)
 >(S * L) < (X / P)
->- (S * P) < (X / L)
+>-> (S * P) < (X / L)
+>
 >```
 >
 >The S is because we are expecting the defenders to use a profit maximizing strategy. They want to hedge against the risk that the result of the market is determined by something other than the decision futarchy is making. Kelly's criterion says that investing only S portion of their funds is the most profitable strategy for defenders https://en.wikipedia.org/wiki/Kelly_criterion
@@ -515,7 +516,8 @@ Distbit = Black, Zack = Grey
 >```
 >S * P > I
 >0.3 * 0.009 > 0.1
->- 0.0027 > 0.1
+>-> 0.0027 > 0.1
+>
 >```
 >
 >So what this shows is that during a manipulation, you would be losing money to try and bet against the manipulator.
