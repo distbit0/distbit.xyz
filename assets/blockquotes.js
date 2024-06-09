@@ -161,7 +161,11 @@ function unhideMatchingReplyAndContext() {
         unHideAncestors(replyBlockquote);
         highlightReply(replyBlockquote);
         setTimeout(() => {
-            replyBlockquote.scrollIntoView();
+            replyBlockquote.scrollIntoView({
+                behavior: 'auto',
+                block: 'center',
+                inline: 'center'
+            });
         }, 1000);
     }
 }
