@@ -22,6 +22,43 @@ document.addEventListener('DOMContentLoaded', function () {
     unhideMatchingReplyAndContext();
 });
 
+function hideNestedBlockquoteElements() {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        if (blockquote.parentNode.closest('blockquote')) {
+            let childElements = blockquote.querySelectorAll('*');
+            for (childElement of childElements) {
+                childElement.style.display = 'none';
+            }
+        }
+    })
+}
+
+function unhideMatchingReplyAndContext() {
+    replyId = resolveReplyIdFromHashtag();
+    if (!replyId) {
+        return;
+    }
+    const replyElement = document.getElementById(replyId);
+    if (replyElement) {
+        const replyBlockquote = replyElement.closest('blockquote');
+        let replyChildElements = Array.from(replyBlockquote.querySelectorAll('*')).filter(el =>
+            el.closest('blockquote') === replyBlockquote
+        );
+        replyChildElements.forEach(element => {
+            element.style.display = '';
+        });
+        replyBlockquote.style.display = '';
+        unHideAncestors(replyBlockquote);
+        highlightReply(replyBlockquote);
+        setTimeout(() => {
+            replyBlockquote.scrollIntoView({
+                behavior: 'auto',
+                block: 'center',
+                inline: 'center'
+            });
+        }, 1000);
+    }
+}
 function alternateBlockquoteColors() {
     const topBlockquotes = document.querySelectorAll('.post > blockquote');
 
@@ -101,16 +138,6 @@ function addReplyLinks() {
     })
 }
 
-function hideNestedBlockquoteElements() {
-    document.querySelectorAll('blockquote').forEach(blockquote => {
-        if (blockquote.parentNode.closest('blockquote')) {
-            let childElements = blockquote.querySelectorAll('*');
-            for (childElement of childElements) {
-                childElement.style.display = 'none';
-            }
-        }
-    })
-}
 
 
 function resolveReplyIdFromHashtag() {
@@ -138,36 +165,13 @@ function unHideAncestors(element) {
         current.style.display = "";
         childElements.forEach(element => {
             element.style.display = '';
+            if (element.matches("button")) {
+                toggleButtonText(element, true);
+            }
         });
     }
 }
 
-function unhideMatchingReplyAndContext() {
-    replyId = resolveReplyIdFromHashtag();
-    if (!replyId) {
-        return;
-    }
-    const replyElement = document.getElementById(replyId);
-    if (replyElement) {
-        const replyBlockquote = replyElement.closest('blockquote');
-        let replyChildElements = Array.from(replyBlockquote.querySelectorAll('*')).filter(el =>
-            el.closest('blockquote') === replyBlockquote
-        );
-        replyChildElements.forEach(element => {
-            element.style.display = '';
-        });
-        replyBlockquote.style.display = '';
-        unHideAncestors(replyBlockquote);
-        highlightReply(replyBlockquote);
-        setTimeout(() => {
-            replyBlockquote.scrollIntoView({
-                behavior: 'auto',
-                block: 'center',
-                inline: 'center'
-            });
-        }, 1000);
-    }
-}
 
 function highlightReply(blockquote) {
     // Get all child elements of the blockquote
