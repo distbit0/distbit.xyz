@@ -167,7 +167,7 @@ function unHideAncestors(element) {
         current.style.display = "";
         childElements.forEach(element => {
             element.style.display = '';
-            if (element.matches("button") && lastElement.id in element.classList) {
+            if (element.matches("button") && element.classList.contains(lastElement.id)) {
                 toggleButtonText(element, true);
             }
         });
@@ -192,22 +192,24 @@ function highlightReply(blockquote) {
 function createButton(text, clickHandler, classes) {
     const button = document.createElement('button');
     button.textContent = text;
-    button.backgroundColor = "black";
-    button.color = "#00ff00";
+    // button.style.borderColor = "#00ff00";
+    // button.style.borderWidth = "2px";
+    button.style.color = "#00ff00";
+    button.style.backgroundColor = "black";
     button.addEventListener('click', clickHandler);
     classes.forEach(className => button.classList.add(className));
     return button;
 }
 
 function toggleButtonText(button, visible) {
+    console.log("toggleButtonText", button, visible)
     if (button.classList.contains("firstButton")) {
         button.textContent = visible ? 'Hide All Replies' : 'Show Next Reply';
     }
     else if (button.classList.contains("secondButton")) {
         button.textContent = visible ? 'Hide All Replies' : 'Show All Replies';
     }
-    button.style.color = visible ? "black" : "#00ff00";
-    button.style.backgroundColor = visible ? "white" : "black";
+    button.style.color = visible ? "white" : "#00ff00";
 }
 
 // Function to toggle visibility of elements based on classes
