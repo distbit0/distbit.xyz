@@ -125,6 +125,7 @@ function addReplyLinks() {
                 lastElement.id = replyId;
 
                 let linkElement = document.createElement('a');
+                linkElement.style.color = "white";
                 linkElement.href = `#${replyId}`;
                 linkElement.textContent = 'Link to this reply';
                 linkElement.addEventListener('click', function (event) {
@@ -236,5 +237,8 @@ function toggleVisibility(event, replyId) {
     toggleButtonText(clickedButton, visible);
     if (!(visible && !recursive)) {
         toggleButtonText(otherButton, visible);
+    }
+    else {
+        otherButton.style.color = visible ? "white" : "#00ff00";
     }
 }
