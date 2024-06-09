@@ -157,7 +157,6 @@ function unHideAncestors(element) {
     while (true) {
         let lastElement = current;
         current = current.parentNode.closest('blockquote')
-        console.log(lastElement.id, lastElement)
         if (current === null) {
             break;
         }
@@ -202,7 +201,6 @@ function createButton(text, clickHandler, classes) {
 }
 
 function toggleButtonText(button, visible) {
-    console.log("toggleButtonText", button, visible)
     if (button.classList.contains("firstButton")) {
         button.textContent = visible ? 'Hide All Replies' : 'Show Next Reply';
     }
