@@ -173,7 +173,7 @@ function highlightReply(blockquote) {
         const element = elements[i];
         // Check if the closest blockquote ancestor is the original blockquote
         if (element.closest('blockquote') === blockquote && element.tagName !== "BUTTON") {
-            element.style.color = '#00ff00';
+            element.style.color = 'blue';
         }
     }
 }
