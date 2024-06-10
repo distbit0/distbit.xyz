@@ -216,7 +216,7 @@ function unhideMatchingReplyAndContext() {
                 block: 'center',
                 inline: 'center'
             })
-        }, 1000); // not sure why this is necessary, but it is, for scrollIntoView to work
+        }, 1500); // not sure why this is necessary, but it is, for scrollIntoView to work
     }
 }
 
