@@ -33,7 +33,7 @@ function hideNestedBlockquoteElements() {
         }
     })
 }
-
+// todo make each blockquote have id which is also used for function arg of buttons above it and which it based on the text of the first element above the blockquote that contains text, for link persistence. also put dashes between words. 
 function unhideMatchingReplyAndContext() {
     replyId = resolveReplyIdFromHashtag();
     if (!replyId) {
@@ -72,7 +72,7 @@ function alternateBlockquoteColors() {
         }
 
         const nestedBlockquotes = findDirectBlockquotes(blockquote);
-        for (nestedBlockquote of nestedBlockquotes) {
+        for (let nestedBlockquote of nestedBlockquotes) {
             colorize(nestedBlockquote, depth + 1);
         }
     }
