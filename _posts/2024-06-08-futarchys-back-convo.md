@@ -44,16 +44,16 @@ title: Futarchys back convo
 >>How has this issue been addressed by contemporary reversible futarchy implementations?  
 >>  
 >>What implications does it have for security/incentives if not addressed?  
->>>
+>>>  
 >>>This isn't an attack.   
 >>>That you can sell private keys was more like, a fact of the situation that misguided people into thinking that reversibility isn't important.  
 >>>Since you can sell private keys, it means you can sell any shares you have. So the naive perspective is that making everything fungible wont matter.  
->>>
+>>>  
 >>>But what is important is the liquidity efficiency of taking the different positions. With reversible prediction markets, the two decision markets are totally independent, so even if one decision is much less likely, it doesn't become any more liquidity efficient to buy that decision.  
->>>
+>>>  
 >>>Buying shares of True-Yes does not impact the price of False-Yes.  
 >>>Even if True is very unlikely, the combination of True-Yes with True-No will still cost the same as the combination of False-Yes with False-No.  
->>>
+>>>  
 >  
 >Paul Sztorc fully embraced the fungible subcurrency model, you can see Paul Sztorc's recommended design here https://bitcoinhivemind.com/papers/3_PM_Applications.pdf  
 >A 2x2 prediction market, with 4 fungible assets. I will call them "combinatorial markets".  
@@ -127,7 +127,7 @@ title: Futarchys back convo
 >```  
 >>  
 >>shouldn't the second operation here be multiplication instead of division?  
->>>
+>>>  
 >>>yes, looks like it should have been multiplication instead of division  
 >>  
 >
@@ -143,7 +143,7 @@ title: Futarchys back convo
 >```  
 >>  
 >>also shouldn't the last operation here be multiplication instead of division?  
->>>
+>>>  
 >>>probably.  
 >>>I guess I was using "1/prob" in my equations, and when I switched out words for letters I wrote "prob" instead of "1/prob"  
 >  

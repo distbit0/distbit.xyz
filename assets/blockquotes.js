@@ -108,20 +108,6 @@ function toggleVisibility(event, replyId) {
     }
 }
 
-function getPrevSiblingText(parentElement, childElement) {
-    let currentChild = parentElement.lastChild;
-    let seenChild = false;
-    while (currentChild) {
-        if (currentChild.textContent.trim() !== '' && seenChild && !currentChild.matches("blockquote")) {
-            return currentChild.textContent.trim();
-        }
-        if (currentChild === childElement) {
-            seenChild = true;
-        }
-        currentChild = currentChild.previousSibling;
-    }
-    return '';
-}
 
 
 function alternateBlockquoteColors() {
@@ -234,20 +220,60 @@ function unhideMatchingReplyAndContext() {
     }
 }
 
+function getBlockquoteAncestorCount(blockquote) {
+    let count = 0;
+    let ancestor = blockquote.parentElement.closest("blockquote");
+    while (ancestor) {
+        count++;
+        ancestor = ancestor.parentElement.closest("blockquote");
+    }
+    return count;
+}
+function getPrevSiblingText(parentElement, childElement) {
+    let currentChild = parentElement.lastChild;
+    let seenChild = false;
+    while (currentChild) {
+        if (currentChild.textContent.trim() !== '' && seenChild && !currentChild.matches("blockquote")) {
+            return currentChild.textContent.trim();
+        }
+        if (currentChild === childElement) {
+            seenChild = true;
+        }
+        currentChild = currentChild.previousSibling;
+    }
+    return '';
+}
+
+function generateHash(text, length) {
+    let hash = 0;
+    for (let i = 0; i < text.length; i++) {
+        hash = ((hash << 5) - hash) + text.charCodeAt(i);
+        hash = hash & hash;
+    }
+    return Math.abs(hash).toString(16).substring(0, length);
+}
 
 function addIdsToBlockquotes() {
-    document.querySelectorAll('blockquote').forEach(blockquote => {
+    const blockquotes = Array.from(document.querySelectorAll('blockquote'));
+    blockquotes.sort((a, b) => getBlockquoteAncestorCount(a) - getBlockquoteAncestorCount(b));
+
+    blockquotes.forEach(blockquote => {
         if (blockquote.parentNode.closest('blockquote')) {
             const parentElement = blockquote.parentElement;
-            let lastTextElementInParent = getPrevSiblingText(parentElement, blockquote); // make id based on most recent text in parent so that it doesn't change if reply is edited
-            console.log(lastTextElementInParent);
-            let blockquoteId = lastTextElementInParent.split(' ').slice(-6).join('-');
-            blockquoteId = blockquoteId.replace(/[^a-zA-Z0-9-]/g, '');
+            let lastTextElementInParent = getPrevSiblingText(parentElement, blockquote);
+            let words = lastTextElementInParent.split(' ');
+            let blockquoteId;
+            let wordCount = 6;
+
+            do {
+                blockquoteId = "h" + generateHash(words.slice(-wordCount).join('-'), 8);
+                wordCount++;
+            } while (document.getElementById(blockquoteId) && wordCount <= words.length);
+
             blockquote.id = blockquoteId;
         }
     });
 }
-
 document.addEventListener('DOMContentLoaded', function () {
     alternateBlockquoteColors();
     moveNestedBlockquotes();
