@@ -146,11 +146,11 @@ function moveNestedBlockquotes() {
 function addButtons() {
     document.querySelectorAll('blockquote').forEach(blockquote => {
         if (blockquote.parentNode.closest('blockquote')) {
-            const parentElement = blockquote.parentElement;
             const showNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id), ["firstButton", blockquote.id]);
             const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), ["secondButton", blockquote.id]);
             const breakElement = document.createElement('br');
             const breakElement2 = document.createElement('br');
+            const parentElement = blockquote.parentElement;
             parentElement.insertBefore(breakElement, blockquote);
             parentElement.insertBefore(showNextReply, blockquote);
             parentElement.insertBefore(showAllReplies, blockquote);
@@ -255,6 +255,7 @@ function generateHash(text, length) {
 
 function addIdsToBlockquotes() {
     const blockquotes = Array.from(document.querySelectorAll('blockquote'));
+    // calc id for most senior comments first to prevent later comments from altering id of earlier comments
     blockquotes.sort((a, b) => getBlockquoteAncestorCount(a) - getBlockquoteAncestorCount(b));
 
     blockquotes.forEach(blockquote => {
@@ -264,7 +265,7 @@ function addIdsToBlockquotes() {
             let words = lastTextElementInParent.split(' ');
             let blockquoteId;
             let wordCount = 6;
-
+            // generate id for blockquote until it is unique
             do {
                 blockquoteId = "h" + generateHash(words.slice(-wordCount).join('-'), 8);
                 wordCount++;
