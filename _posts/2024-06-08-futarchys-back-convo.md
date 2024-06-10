@@ -59,8 +59,6 @@ title: Futarchys back convo
 >  
 >One of the two markets will get reversed.  
 >If a market gets reversed, then everyone who had bet in that market, their bets are undone. The participants get their money back, no matter which outcome they had bet in.  
->>
->>what does it mean exactly for a bet to be undone?  
 >  
 >The other market is no longer reversible. Now that they can't be reversed, the shares have become fungible. It is now possible to re-sell your shares in this market to other users, or use them as collateral in other contracts.  
 >  

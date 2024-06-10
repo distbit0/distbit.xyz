@@ -351,7 +351,8 @@ Distbit = Black, Zack = Grey
 >>>>>So, the attackers average bet is expected to lose 10%. (S/2)  
 >>>>>If denfenders do the opposite bets to defend, then their average bet is expected to earn 10%. (S/2)  
 >>>>>>
->>>>>>could you modify this to demonstrate the effects of p being above or below 0.5?  
+>>>>>>could you modify this to demonstrate how a `p` value significantly below 0.5 asymmetrically improves capital efficiency for the attacker vs the defender?  
+>>>>>>
 >>>>>
 >>>>>So, if a 10% prize is enough incentive to leave veo locked up in the market for a while, then it works as a prediction market.  
 >>>>>If S was 2x bigger, the defenders could earn twice as much on their average bet.  
