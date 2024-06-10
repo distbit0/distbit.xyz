@@ -115,6 +115,10 @@ title: Futarchys back convo
 >veo * (odds that we made the true decision) /  
 >(odds that it achieves our goal conditional on making the true decision)  
 >```  
+>>
+>>shouldn't the second operation here be multiplication instead of division?  
+>>
+>
 >If the odds of making the true decision are very low, then this share type is going to be much cheaper than other share types.  
 >  
 >in the reversible swap market context, here is the price of a share betting that we made the true decision, and it achieves our goal.  
