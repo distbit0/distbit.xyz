@@ -25,8 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
 function hideNestedBlockquoteElements() {
     document.querySelectorAll('blockquote').forEach(blockquote => {
         if (blockquote.parentNode.closest('blockquote')) {
+            blockquote.style.display = 'none';
             let childElements = blockquote.querySelectorAll('*');
-            for (childElement of childElements) {
+            for (let childElement of childElements) {
                 childElement.style.display = 'none';
             }
         }
