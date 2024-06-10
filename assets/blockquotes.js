@@ -56,10 +56,11 @@ function unhideMatchingReplyAndContext() {
                 behavior: 'auto',
                 block: 'center',
                 inline: 'center'
-            });
-        }, 1000);
+            })
+        }, 800);
     }
 }
+
 function alternateBlockquoteColors() {
     const topBlockquotes = document.querySelectorAll('.post > blockquote');
 

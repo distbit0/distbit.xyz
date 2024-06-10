@@ -129,6 +129,8 @@ title: Futarchys back convo
 > ((odds that we make the true decision) /  
 >  (odds that it achieves our goal conditional on making the true decision)))  
 >```  
+>>
+>>also shouldn't the last operation here be multiplication instead of division?  
 >  
 >Focusing on the case when the odds of a true decision are very low, because this is when the market is usually sensitive to price manipulation from someone buying shares of true.  
 >  
