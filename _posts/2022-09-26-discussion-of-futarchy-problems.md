@@ -1,7 +1,7 @@
 ---
 articleUrl: https://distbit.xyz/discussion-of-futarchy-problems
 author: distbit
-category: blog
+category: ''
 date: 2022-09-26 00:00
 description: An on-going discussion with @zack_bitcoin about the security of Futarchy
   against price manipulation attacks
@@ -16,7 +16,7 @@ title: Discussion of futarchy problems
 ---
 
 
- 
+
 source document: [futarchys_failure.md](https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_failure.md)  
 relevant: [futarchys_back.md](https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_back.md)  
 
@@ -364,9 +364,13 @@ Distbit = Black, Zack = Grey
 >>>>>>>in this situation, if we are using a 4 way LMSR for example, it would be very cheap to buy Musk-bad or Musk-good.  
 >>>>>>>a defender trying to put the prices back would need to buy a lot of shares of biden for every single share of musk that the attacker buys.  
 >>>>>>>shares of musk are more liquidity efficient.  
->>>>>>>>
+>>>>>>>>  
 >>>>>>>>Why can't the defender just buy musk-good if the attacker bought musk-bad?  
->>>>>>>>
+>>>>>>>>>
+>>>>>>>>>In an lmsr, because the price of musk good is already higher than the probability of that outcome.  
+>>>>>>>>>You are expected to lose money if you buy more musk good.  
+>>>>>>>>>And we aren't assuming an altruistic defender.  
+>>>>>>>>  
 >>>>>>  
 >>>>>
 >>>>>So, if a 10% prize is enough incentive to leave veo locked up in the market for a while, then it works as a prediction market.  
