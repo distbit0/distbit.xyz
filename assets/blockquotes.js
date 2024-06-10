@@ -1,7 +1,15 @@
+// todo make each blockquote have id which is also used for function arg of buttons above it and which it based on the text of the first element above the blockquote that contains text, for link persistence. also put dashes between words. 
+
 
 document.addEventListener('DOMContentLoaded', function () {
     alternateBlockquoteColors();
     moveNestedBlockquotes();
+    addReplyLinks();
+    hideNestedBlockquoteElements();
+    unhideMatchingReplyAndContext();
+});
+
+function addButtons() {
     document.querySelectorAll('blockquote').forEach(blockquote => {
         if (blockquote.parentNode.closest('blockquote')) {
             const parentElement = blockquote.parentElement;
@@ -17,10 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             parentElement.insertBefore(breakElement2, blockquote);
         }
     });
-    addReplyLinks();
-    hideNestedBlockquoteElements();
-    unhideMatchingReplyAndContext();
-});
+}
 
 function hideNestedBlockquoteElements() {
     document.querySelectorAll('blockquote').forEach(blockquote => {
@@ -33,7 +38,7 @@ function hideNestedBlockquoteElements() {
         }
     })
 }
-// todo make each blockquote have id which is also used for function arg of buttons above it and which it based on the text of the first element above the blockquote that contains text, for link persistence. also put dashes between words. 
+
 function unhideMatchingReplyAndContext() {
     replyId = resolveReplyIdFromHashtag();
     if (!replyId) {
@@ -57,7 +62,7 @@ function unhideMatchingReplyAndContext() {
                 block: 'center',
                 inline: 'center'
             })
-        }, 1000);
+        }, 1000); // not sure why this is necessary, but it is for scrollIntoView to work
     }
 }
 
