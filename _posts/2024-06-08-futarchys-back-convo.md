@@ -38,12 +38,8 @@ title: Futarchys back convo
 >=======================  
 >  
 >Fungible subcurrencies are easier to program in the blockchain setting than reversible swaps would be. There are some simplifying principles used in blockchain design, based on loose assumptions about what is and is not enforceable.  
->>
->>test   
->>
->
->The fact that people can sell their private keys makes it seem like it would be impossible to enforce a reversible swap. In order to be reversible, there needs to be a period of time where you cannot sell your stake in the swap that you had made. Because if you did sell   
->That hackers would find a way to sell their coins, even when it is in a supposedly untradeable state.  
+>  
+>The fact that people can sell their private keys makes it seem like it would be impossible to enforce a reversible swap. In order to be reversible, there needs to be a period of time where you cannot sell your stake in the swap that you had made. Because if you did sell That hackers would find a way to sell their coins, even when it is in a supposedly untradeable state.  
 >  
 >Paul Sztorc fully embraced the fungible subcurrency model, you can see Paul Sztorc's recommended design here https://bitcoinhivemind.com/papers/3_PM_Applications.pdf  
 >A 2x2 prediction market, with 4 fungible assets. I will call them "combinatorial markets".  
@@ -61,6 +57,8 @@ title: Futarchys back convo
 >  
 >One of the two markets will get reversed.  
 >If a market gets reversed, then everyone who had bet in that market, their bets are undone. The participants get their money back, no matter which outcome they had bet in.  
+>>
+>>what does it mean exactly for a bet to be undone?  
 >  
 >The other market is no longer reversible. Now that they can't be reversed, the shares have become fungible. It is now possible to re-sell your shares in this market to other users, or use them as collateral in other contracts.  
 >  
