@@ -239,7 +239,7 @@ function addIdsToBlockquotes() {
     document.querySelectorAll('blockquote').forEach(blockquote => {
         if (blockquote.parentNode.closest('blockquote')) {
             const parentElement = blockquote.parentElement;
-            let lastTextElementInParent = getPrevSiblingText(parentElement, blockquote);
+            let lastTextElementInParent = getPrevSiblingText(parentElement, blockquote); // make id based on most recent text in parent so that it doesn't change if reply is edited
             console.log(lastTextElementInParent);
             let blockquoteId = lastTextElementInParent.split(' ').slice(-6).join('-');
             blockquoteId = blockquoteId.replace(/[^a-zA-Z0-9-]/g, '');
