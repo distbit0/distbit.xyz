@@ -1,92 +1,3 @@
-// todo make each blockquote have id which is also used for function arg of buttons above it and which it based on the text of the first element above the blockquote that contains text, for link persistence. also put dashes between words. 
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    alternateBlockquoteColors();
-    moveNestedBlockquotes();
-    addReplyLinks();
-    hideNestedBlockquoteElements();
-    unhideMatchingReplyAndContext();
-});
-
-function addButtons() {
-    document.querySelectorAll('blockquote').forEach(blockquote => {
-        if (blockquote.parentNode.closest('blockquote')) {
-            const parentElement = blockquote.parentElement;
-            let randomId = Math.floor(Math.random() * 100000);
-            blockquote.id = `blockquote-${randomId}`;
-            const showNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id), ["firstButton", blockquote.id]);
-            const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), ["secondButton", blockquote.id]);
-            const breakElement = document.createElement('br');
-            const breakElement2 = document.createElement('br');
-            parentElement.insertBefore(breakElement, blockquote);
-            parentElement.insertBefore(showNextReply, blockquote);
-            parentElement.insertBefore(showAllReplies, blockquote);
-            parentElement.insertBefore(breakElement2, blockquote);
-        }
-    });
-}
-
-function hideNestedBlockquoteElements() {
-    document.querySelectorAll('blockquote').forEach(blockquote => {
-        if (blockquote.parentNode.closest('blockquote')) {
-            blockquote.style.display = 'none';
-            let childElements = blockquote.querySelectorAll('*');
-            for (let childElement of childElements) {
-                childElement.style.display = 'none';
-            }
-        }
-    })
-}
-
-function unhideMatchingReplyAndContext() {
-    replyId = resolveReplyIdFromHashtag();
-    if (!replyId) {
-        return;
-    }
-    const replyElement = document.getElementById(replyId);
-    if (replyElement) {
-        const replyBlockquote = replyElement.closest('blockquote');
-        let replyChildElements = Array.from(replyBlockquote.querySelectorAll('*')).filter(el =>
-            el.closest('blockquote') === replyBlockquote
-        );
-        replyChildElements.forEach(element => {
-            element.style.display = '';
-        });
-        replyBlockquote.style.display = '';
-        unHideAncestors(replyBlockquote);
-        highlightReply(replyBlockquote);
-        setTimeout(() => {
-            replyBlockquote.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center',
-                inline: 'center'
-            })
-        }, 1000); // not sure why this is necessary, but it is for scrollIntoView to work
-    }
-}
-
-function alternateBlockquoteColors() {
-    const topBlockquotes = document.querySelectorAll('.post > blockquote');
-
-    function colorize(blockquote, depth) {
-        if (depth % 2 === 0) {
-            blockquote.style.backgroundColor = '#1f1f1f';
-        } else {
-            blockquote.style.backgroundColor = 'black';
-        }
-
-        const nestedBlockquotes = findDirectBlockquotes(blockquote);
-        for (let nestedBlockquote of nestedBlockquotes) {
-            colorize(nestedBlockquote, depth + 1);
-        }
-    }
-
-    for (let i = 0; i < topBlockquotes.length; i++) {
-        colorize(topBlockquotes[i], 0);
-    }
-}
-
 function findDirectBlockquotes(element) {
     const allBlockquotes = element.querySelectorAll('blockquote');
     const directBlockquotes = Array.from(allBlockquotes).filter(blockquote => {
@@ -95,62 +6,6 @@ function findDirectBlockquotes(element) {
     });
     return directBlockquotes;
 }
-function moveNestedBlockquotes() {
-    document.querySelectorAll('blockquote').forEach(blockquote => {
-        const closestBlockquoteAncestor = blockquote.parentNode.closest('blockquote');
-        if (closestBlockquoteAncestor) {
-            let seniorAncestor = blockquote;
-            while (seniorAncestor.parentNode !== closestBlockquoteAncestor) {
-                seniorAncestor = seniorAncestor.parentNode;
-            }
-            closestBlockquoteAncestor.insertBefore(blockquote, seniorAncestor.nextSibling);
-        }
-    });
-}
-
-function addReplyLinks() {
-    document.querySelectorAll('blockquote').forEach(blockquote => {
-        if (blockquote.parentNode.closest('blockquote')) {
-            let lastElement = blockquote.firstChild;
-            while (true) {
-                nextElement = lastElement.nextElementSibling;
-                if (nextElement) {
-                    if (nextElement.tagName === 'BUTTON' || nextElement.tagName === 'BLOCKQUOTE' || nextElement.tagName === "BR") {
-                        break;
-                    }
-                    lastElement = nextElement;
-                }
-                else {
-                    break;
-                }
-            }
-
-            if (lastElement) {
-                const replyText = lastElement.textContent.trim();
-                replyId = replyText.split(' ').slice(0, 6).join('-');
-                replyId = replyId.replace(/[^a-zA-Z0-9]/g, '');
-                lastElement.id = replyId;
-
-                let linkElement = document.createElement('a');
-                linkElement.style.color = "white";
-                linkElement.href = `#${replyId}`;
-                if (window.location.protocol === 'http:') {
-                    linkElement.href = 'https://distbit.xyz' + window.location.pathname + `#${replyId}`;
-                }
-                linkElement.textContent = 'Link to this reply';
-                linkElement.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    let hashtag = "#" + this.getAttribute('href').split('#')[1];
-                    window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + hashtag;
-                    window.location.reload();
-                });
-                blockquote.prepend(linkElement);
-            }
-        };
-    })
-}
-
-
 
 function resolveReplyIdFromHashtag() {
     const hashtag = window.location.hash.slice(1);
@@ -162,7 +17,6 @@ function resolveReplyIdFromHashtag() {
     }
     return hashtag;
 }
-
 
 function unHideAncestors(element) {
     let current = element.closest('blockquote');
@@ -253,3 +107,153 @@ function toggleVisibility(event, replyId) {
         otherButton.style.color = visible ? "white" : "#00ff00";
     }
 }
+
+function getPrevSiblingText(parentElement, childElement) {
+    let currentChild = parentElement.lastChild;
+    let seenChild = false;
+    while (currentChild) {
+        if (currentChild.textContent.trim() !== '' && seenChild && !currentChild.matches("blockquote")) {
+            return currentChild.textContent.trim();
+        }
+        if (currentChild === childElement) {
+            seenChild = true;
+        }
+        currentChild = currentChild.previousSibling;
+    }
+    return '';
+}
+
+
+function alternateBlockquoteColors() {
+    const topBlockquotes = document.querySelectorAll('.post > blockquote');
+
+    function colorize(blockquote, depth) {
+        if (depth % 2 === 0) {
+            blockquote.style.backgroundColor = '#1f1f1f';
+        } else {
+            blockquote.style.backgroundColor = 'black';
+        }
+
+        const nestedBlockquotes = findDirectBlockquotes(blockquote);
+        for (let nestedBlockquote of nestedBlockquotes) {
+            colorize(nestedBlockquote, depth + 1);
+        }
+    }
+
+    for (let i = 0; i < topBlockquotes.length; i++) {
+        colorize(topBlockquotes[i], 0);
+    }
+}
+
+function moveNestedBlockquotes() {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        const closestBlockquoteAncestor = blockquote.parentNode.closest('blockquote');
+        if (closestBlockquoteAncestor) {
+            let seniorAncestor = blockquote;
+            while (seniorAncestor.parentNode !== closestBlockquoteAncestor) {
+                seniorAncestor = seniorAncestor.parentNode;
+            }
+            closestBlockquoteAncestor.insertBefore(blockquote, seniorAncestor.nextSibling);
+        }
+    });
+}
+function addButtons() {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        if (blockquote.parentNode.closest('blockquote')) {
+            const parentElement = blockquote.parentElement;
+            const showNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id), ["firstButton", blockquote.id]);
+            const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), ["secondButton", blockquote.id]);
+            const breakElement = document.createElement('br');
+            const breakElement2 = document.createElement('br');
+            parentElement.insertBefore(breakElement, blockquote);
+            parentElement.insertBefore(showNextReply, blockquote);
+            parentElement.insertBefore(showAllReplies, blockquote);
+            parentElement.insertBefore(breakElement2, blockquote);
+        }
+    });
+}
+
+function addReplyLinks() {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        if (blockquote.parentNode.closest('blockquote')) {
+            let replyId = blockquote.id;
+            let linkElement = document.createElement('a');
+            linkElement.style.color = "white";
+            linkElement.href = `#${replyId}`;
+            if (window.location.protocol === 'http:') {
+                linkElement.href = 'https://distbit.xyz' + window.location.pathname + `#${replyId}`;
+            }
+            linkElement.textContent = 'Link to this reply';
+            linkElement.addEventListener('click', function (event) {
+                event.preventDefault();
+                let hashtag = "#" + this.getAttribute('href').split('#')[1];
+                window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + hashtag;
+                window.location.reload();
+            });
+            blockquote.prepend(linkElement);
+        };
+    })
+}
+
+function hideNestedBlockquoteElements() {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        if (blockquote.parentNode.closest('blockquote')) {
+            blockquote.style.display = 'none';
+            let childElements = blockquote.querySelectorAll('*');
+            for (let childElement of childElements) {
+                childElement.style.display = 'none';
+            }
+        }
+    })
+}
+
+function unhideMatchingReplyAndContext() {
+    replyId = resolveReplyIdFromHashtag();
+    if (!replyId) {
+        return;
+    }
+    const replyElement = document.getElementById(replyId);
+    if (replyElement) {
+        const replyBlockquote = replyElement.closest('blockquote');
+        let replyChildElements = Array.from(replyBlockquote.querySelectorAll('*')).filter(el =>
+            el.closest('blockquote') === replyBlockquote
+        );
+        replyChildElements.forEach(element => {
+            element.style.display = '';
+        });
+        replyBlockquote.style.display = '';
+        unHideAncestors(replyBlockquote);
+        highlightReply(replyBlockquote);
+        setTimeout(() => {
+            replyBlockquote.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'center'
+            })
+        }, 1000); // not sure why this is necessary, but it is, for scrollIntoView to work
+    }
+}
+
+
+function addIdsToBlockquotes() {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        if (blockquote.parentNode.closest('blockquote')) {
+            const parentElement = blockquote.parentElement;
+            let lastTextElementInParent = getPrevSiblingText(parentElement, blockquote);
+            console.log(lastTextElementInParent);
+            let blockquoteId = lastTextElementInParent.split(' ').slice(-6).join('-');
+            blockquoteId = blockquoteId.replace(/[^a-zA-Z0-9-]/g, '');
+            blockquote.id = blockquoteId;
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    alternateBlockquoteColors();
+    moveNestedBlockquotes();
+    addIdsToBlockquotes();
+    addButtons();
+    addReplyLinks();
+    hideNestedBlockquoteElements();
+    unhideMatchingReplyAndContext();
+});
