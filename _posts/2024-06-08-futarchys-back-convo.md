@@ -41,7 +41,7 @@ title: Futarchys back convo
 >  
 >The fact that people can sell their private keys makes it seem like it would be impossible to enforce a reversible swap. In order to be reversible, there needs to be a period of time where you cannot sell your stake in the swap that you had made. Because if you did sell That hackers would find a way to sell their coins, even when it is in a supposedly untradeable state.  
 >>
->>how has this issue been addressed by contemporary reversible futarchy implementations?  
+>>how has this issue been addressed by contemporary reversible futarchy implementations? test  
 >  
 >Paul Sztorc fully embraced the fungible subcurrency model, you can see Paul Sztorc's recommended design here https://bitcoinhivemind.com/papers/3_PM_Applications.pdf  
 >A 2x2 prediction market, with 4 fungible assets. I will call them "combinatorial markets".  
