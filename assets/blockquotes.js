@@ -53,11 +53,11 @@ function unhideMatchingReplyAndContext() {
         highlightReply(replyBlockquote);
         setTimeout(() => {
             replyBlockquote.scrollIntoView({
-                behavior: 'auto',
+                behavior: 'smooth',
                 block: 'center',
                 inline: 'center'
             })
-        }, 800);
+        }, 1000);
     }
 }
 
@@ -129,10 +129,14 @@ function addReplyLinks() {
                 let linkElement = document.createElement('a');
                 linkElement.style.color = "white";
                 linkElement.href = `#${replyId}`;
+                if (window.location.protocol === 'http:') {
+                    linkElement.href = 'https://distbit.xyz' + window.location.pathname + `#${replyId}`;
+                }
                 linkElement.textContent = 'Link to this reply';
                 linkElement.addEventListener('click', function (event) {
                     event.preventDefault();
-                    window.location.href = this.getAttribute('href');
+                    let hashtag = "#" + this.getAttribute('href').split('#')[1];
+                    window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + hashtag;
                     window.location.reload();
                 });
                 blockquote.prepend(linkElement);
