@@ -79,11 +79,15 @@ function toggleButtonText(button, visible) {
 // Function to toggle visibility of elements based on classes
 function toggleVisibility(event, replyId) {
     const clickedButton = event.target;
-    const otherButton = [
-        clickedButton.previousElementSibling,
-        clickedButton.nextElementSibling
-    ].find(sibling => sibling && sibling.tagName === 'BUTTON');
-    const recursive = clickedButton.textContent.includes('All')
+    let otherButton;
+    const isGlobalButton = clickedButton.closest('blockquote');
+    if (!isGlobalButton) {
+        otherButton = [
+            clickedButton.previousElementSibling,
+            clickedButton.nextElementSibling
+        ].find(sibling => sibling && sibling.tagName === 'BUTTON');
+    }
+    const recursive = clickedButton.textContent.includes('All');
     const visible = clickedButton.textContent.includes('Show');
     let targetDisplay = visible ? '' : 'none';
 
@@ -92,7 +96,9 @@ function toggleVisibility(event, replyId) {
     let childElements = Array.from(replyBlockquote.querySelectorAll('*')).filter(el =>
         el.closest('blockquote') === replyBlockquote || recursive
     );
-    replyBlockquote.style.display = targetDisplay;
+    if (!isGlobalButton) {
+        replyBlockquote.style.display = targetDisplay;
+    }
     childElements.forEach(element => {
         element.style.display = targetDisplay;
         if (element.matches("button") && recursive) {
@@ -103,7 +109,7 @@ function toggleVisibility(event, replyId) {
     if (!(visible && !recursive)) {
         toggleButtonText(otherButton, visible);
     }
-    else {
+    else if (!isGlobalButton) {
         otherButton.style.color = visible ? "white" : "#00ff00";
     }
 }
@@ -145,17 +151,22 @@ function moveNestedBlockquotes() {
 }
 function addButtons() {
     document.querySelectorAll('blockquote').forEach(blockquote => {
+        let buttonsToAdd = []
         if (blockquote.parentNode.closest('blockquote')) {
-            const showNextReply = createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id), ["firstButton", blockquote.id]);
-            const showAllReplies = createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), ["secondButton", blockquote.id]);
-            const breakElement = document.createElement('br');
-            const breakElement2 = document.createElement('br');
-            const parentElement = blockquote.parentElement;
-            parentElement.insertBefore(breakElement, blockquote);
-            parentElement.insertBefore(showNextReply, blockquote);
-            parentElement.insertBefore(showAllReplies, blockquote);
-            parentElement.insertBefore(breakElement2, blockquote);
+            buttonsToAdd.push(createButton('Show Next Reply', (event) => toggleVisibility(event, blockquote.id), ["firstButton", blockquote.id]));
+            buttonsToAdd.push(createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), ["secondButton", blockquote.id]));
         }
+        else {
+            buttonsToAdd.push(createButton('Show All Replies', (event) => toggleVisibility(event, blockquote.id), ["secondButton", blockquote.id]));
+        }
+        const breakElement = document.createElement('br');
+        const breakElement2 = document.createElement('br');
+        const parentElement = blockquote.parentElement;
+        parentElement.insertBefore(breakElement, blockquote);
+        buttonsToAdd.forEach(button => {
+            parentElement.insertBefore(button, blockquote);
+        });
+        parentElement.insertBefore(breakElement2, blockquote);
     });
 }
 
@@ -229,6 +240,7 @@ function getBlockquoteAncestorCount(blockquote) {
     }
     return count;
 }
+
 function getPrevSiblingText(parentElement, childElement) {
     let currentChild = parentElement.lastChild;
     let seenChild = false;
@@ -259,20 +271,18 @@ function addIdsToBlockquotes() {
     blockquotes.sort((a, b) => getBlockquoteAncestorCount(a) - getBlockquoteAncestorCount(b));
 
     blockquotes.forEach(blockquote => {
-        if (blockquote.parentNode.closest('blockquote')) {
-            const parentElement = blockquote.parentElement;
-            let lastTextElementInParent = getPrevSiblingText(parentElement, blockquote);
-            let words = lastTextElementInParent.split(' ');
-            let blockquoteId;
-            let wordCount = 6;
-            // generate id for blockquote until it is unique
-            do {
-                blockquoteId = "h" + generateHash(words.slice(-wordCount).join('-'), 8);
-                wordCount++;
-            } while (document.getElementById(blockquoteId) && wordCount <= words.length);
+        const parentElement = blockquote.parentElement;
+        let lastTextElementInParent = getPrevSiblingText(parentElement, blockquote);
+        let words = lastTextElementInParent.split(' ');
+        let blockquoteId;
+        let wordCount = 6;
+        // generate id for blockquote until it is unique
+        do {
+            blockquoteId = "h" + generateHash(words.slice(-wordCount).join('-'), 8);
+            wordCount++;
+        } while (document.getElementById(blockquoteId) && wordCount <= words.length);
 
-            blockquote.id = blockquoteId;
-        }
+        blockquote.id = blockquoteId;
     });
 }
 document.addEventListener('DOMContentLoaded', function () {
