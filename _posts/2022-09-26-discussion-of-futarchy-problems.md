@@ -352,18 +352,21 @@ Distbit = Black, Zack = Grey
 >>>>>If denfenders do the opposite bets to defend, then their average bet is expected to earn 10%. (S/2)  
 >>>>>>  
 >>>>>>could you modify this to demonstrate how a `p` value significantly below 0.5 asymmetrically improves capital efficiency for the attacker vs the defender?  
->>>>>>>
->>>>>>>
+>>>>>>>  
+>>>>>>>  
 >>>>>>>with a lower P. so the election is Biden vs Elon Musk.  
 >>>>>>>Looks like biden will win.  
->>>>>>>
+>>>>>>>  
 >>>>>>>economy good - bad  
 >>>>>>>Biden      20  70   
 >>>>>>>Musk       8    2  
->>>>>>>
+>>>>>>>  
 >>>>>>>in this situation, if we are using a 4 way LMSR for example, it would be very cheap to buy Musk-bad or Musk-good.  
 >>>>>>>a defender trying to put the prices back would need to buy a lot of shares of biden for every single share of musk that the attacker buys.  
 >>>>>>>shares of musk are more liquidity efficient.  
+>>>>>>>>
+>>>>>>>>Why can't the defender just buy musk-good if the attacker bought musk-bad?  
+>>>>>>>>
 >>>>>>  
 >>>>>
 >>>>>So, if a 10% prize is enough incentive to leave veo locked up in the market for a while, then it works as a prediction market.  
