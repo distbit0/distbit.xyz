@@ -352,6 +352,8 @@ Distbit = Black, Zack = Grey
 >>>>>If denfenders do the opposite bets to defend, then their average bet is expected to earn 10%. (S/2)  
 >>>>>So, if a 10% prize is enough incentive to leave veo locked up in the market for a while, then it works as a prediction market.  
 >>>>>If S was 2x bigger, the defenders could earn twice as much on their average bet.  
+>>>>>>could you modify this to demonstrate the effects of p being above or below 0.5?  
+>>>>>>
 >>>>>>  
 >>>>>>It is also possible though that the attacker actually manipulates the price in the other direction, rather than stopping their manipulation once they reach 50/50 or 25/25/25/25.  
 >>>>>>  
