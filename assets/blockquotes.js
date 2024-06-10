@@ -80,7 +80,7 @@ function toggleButtonText(button, visible) {
 function toggleVisibility(event, replyId) {
     const clickedButton = event.target;
     let otherButton;
-    const isGlobalButton = clickedButton.closest('blockquote');
+    const isGlobalButton = clickedButton.closest('blockquote') === null ? true : false;
     if (!isGlobalButton) {
         otherButton = [
             clickedButton.previousElementSibling,
@@ -100,17 +100,21 @@ function toggleVisibility(event, replyId) {
         replyBlockquote.style.display = targetDisplay;
     }
     childElements.forEach(element => {
-        element.style.display = targetDisplay;
+        if ((isGlobalButton && element.closest('blockquote') !== replyBlockquote) || !isGlobalButton) {
+            element.style.display = targetDisplay;
+        }
         if (element.matches("button") && recursive) {
             toggleButtonText(element, visible);
         }
     });
     toggleButtonText(clickedButton, visible);
-    if (!(visible && !recursive)) {
-        toggleButtonText(otherButton, visible);
-    }
-    else if (!isGlobalButton) {
-        otherButton.style.color = visible ? "white" : "#00ff00";
+    if (!isGlobalButton) { // only one global button. no global "other button"
+        if (!(visible && !recursive)) {
+            toggleButtonText(otherButton, visible);
+        }
+        else {
+            otherButton.style.color = visible ? "white" : "#00ff00";
+        }
     }
 }
 
@@ -285,11 +289,34 @@ function addIdsToBlockquotes() {
         blockquote.id = blockquoteId;
     });
 }
+
+
+function addNoReplyIndicators() {
+    document.querySelectorAll('blockquote').forEach(blockquote => {
+        const hasChildBlockquote = blockquote.querySelector('blockquote');
+        const containsEndText = blockquote.textContent.includes('#end');
+        if (!hasChildBlockquote && !containsEndText) {
+            const notRepliedSpan = document.createElement('p');
+            notRepliedSpan.style.color = 'red';
+            notRepliedSpan.style.fontFamily = 'monospace';
+            notRepliedSpan.style.position = 'absolute';
+            notRepliedSpan.style.top = '0';
+            notRepliedSpan.style.right = '0';
+            notRepliedSpan.style.margin = '5px';
+            const notRepliedText = document.createTextNode('no replies');
+            notRepliedSpan.appendChild(notRepliedText);
+            blockquote.style.position = 'relative';
+            blockquote.insertBefore(notRepliedSpan, blockquote.firstChild);
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     alternateBlockquoteColors();
     moveNestedBlockquotes();
     addIdsToBlockquotes();
     addButtons();
+    addNoReplyIndicators();
     addReplyLinks();
     hideNestedBlockquoteElements();
     unhideMatchingReplyAndContext();
