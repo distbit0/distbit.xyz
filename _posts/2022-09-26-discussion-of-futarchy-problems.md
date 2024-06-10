@@ -350,9 +350,21 @@ Distbit = Black, Zack = Grey
 >>>>>25 25  
 >>>>>So, the attackers average bet is expected to lose 10%. (S/2)  
 >>>>>If denfenders do the opposite bets to defend, then their average bet is expected to earn 10%. (S/2)  
->>>>>>
+>>>>>>  
 >>>>>>could you modify this to demonstrate how a `p` value significantly below 0.5 asymmetrically improves capital efficiency for the attacker vs the defender?  
->>>>>>
+>>>>>>>
+>>>>>>>
+>>>>>>>with a lower P. so the election is Biden vs Elon Musk.  
+>>>>>>>Looks like biden will win.  
+>>>>>>>
+>>>>>>>economy good - bad  
+>>>>>>>Biden      20  70   
+>>>>>>>Musk       8    2  
+>>>>>>>
+>>>>>>>in this situation, if we are using a 4 way LMSR for example, it would be very cheap to buy Musk-bad or Musk-good.  
+>>>>>>>a defender trying to put the prices back would need to buy a lot of shares of biden for every single share of musk that the attacker buys.  
+>>>>>>>shares of musk are more liquidity efficient.  
+>>>>>>  
 >>>>>
 >>>>>So, if a 10% prize is enough incentive to leave veo locked up in the market for a while, then it works as a prediction market.  
 >>>>>If S was 2x bigger, the defenders could earn twice as much on their average bet.  
@@ -617,9 +629,10 @@ Distbit = Black, Zack = Grey
 >```  
 >  
 >So there is not enough money available to stop manipulations, if they do occur.  
-
-
-
+>>  
+>>  
+>>  
+>>futarchy, prediction markets, capital efficiency  
 
 
 If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)
