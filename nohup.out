@@ -2888,3 +2888,5 @@ tracing_subscriber - init success
 [2102431:2102431:0611/163519.862478:ERROR:atom_cache.cc(229)] Add chromium/from-privileged to kAtomsToCache
 [2102431:2102431:0611/204249.522911:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
 [2102431:2102431:0611/204249.522925:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[2102478:2102478:0611/233704.975359:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2102478:2102478:0611/233704.975794:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
