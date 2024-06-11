@@ -2865,3 +2865,6 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [2102478:2102478:0611/112909.260109:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [2102478:2102478:0611/112909.260670:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 Fontconfig error: Cannot load default config file: No such file: (null)
+[2102431:2102431:0611/121309.234106:ERROR:atom_cache.cc(229)] Add chromium/x-window-drag to kAtomsToCache
+[2102478:2102478:0611/125220.043480:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2102478:2102478:0611/125220.043772:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
