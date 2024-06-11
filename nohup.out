@@ -2886,3 +2886,5 @@ tracing_subscriber - init success
 [2102480:2102493:0611/162942.811572:ERROR:ssl_client_socket_impl.cc(879)] handshake failed; returned -1, SSL error code 1, net_error -200
 [2102478:2102478:0611/163206.415816:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [2102431:2102431:0611/163519.862478:ERROR:atom_cache.cc(229)] Add chromium/from-privileged to kAtomsToCache
+[2102431:2102431:0611/204249.522911:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[2102431:2102431:0611/204249.522925:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
