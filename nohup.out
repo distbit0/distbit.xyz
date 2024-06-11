@@ -2869,3 +2869,10 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [2102478:2102478:0611/125220.043480:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [2102478:2102478:0611/125220.043772:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [2102478:2102478:0611/131817.522947:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+[2102478:2102478:0611/145302.344663:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2102478:2102478:0611/145302.345286:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2102478:2102478:0611/145324.916065:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2102478:2102478:0611/145324.916431:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
