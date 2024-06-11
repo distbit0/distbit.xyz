@@ -2843,3 +2843,25 @@ todo string:        1)  CHECK HOW MANY! non-
 [2102478:2102478:0611/105837.721724:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
 [2102478:2102478:0611/105838.925472:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
 [2102478:2102478:0611/105842.694580:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+[2102431:2102448:0611/111508.779307:ERROR:cert_verify_proc_builtin.cc(1051)] CertVerifyProcBuiltin for unsafe.robosats.com failed:
+----- Certificate i=0 (CN=localhost) -----
+ERROR: No matching issuer found
+
+
+[2102480:2102493:0611/111508.779408:ERROR:ssl_client_socket_impl.cc(879)] handshake failed; returned -1, SSL error code 1, net_error -202
+[2102478:2102478:0611/111626.834358:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2102478:2102478:0611/111626.834740:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+Fontconfig error: Cannot load default config file: No such file: (null)
+[2102480:2102493:0611/111952.596319:ERROR:ssl_client_socket_impl.cc(879)] handshake failed; returned -1, SSL error code 1, net_error -202
+[2102478:2102478:0611/112546.941334:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2102478:2102478:0611/112546.941740:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+Fontconfig error: Cannot load default config file: No such file: (null)
+[2102480:2102493:0611/112703.410613:ERROR:ssl_client_socket_impl.cc(879)] handshake failed; returned -1, SSL error code 1, net_error -202
+[2102478:2102478:0611/112706.655681:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2102478:2102478:0611/112706.655970:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+Fontconfig error: Cannot load default config file: No such file: (null)
+[2102431:2102431:0611/112850.048696:ERROR:interface_endpoint_client.cc(722)] Message 2 rejected by interface blink.mojom.Widget
+[2102480:2102493:0611/112856.622704:ERROR:ssl_client_socket_impl.cc(879)] handshake failed; returned -1, SSL error code 1, net_error -202
+[2102478:2102478:0611/112909.260109:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2102478:2102478:0611/112909.260670:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+Fontconfig error: Cannot load default config file: No such file: (null)
