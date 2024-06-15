@@ -7,12 +7,12 @@ description: null
 gist_url: https://gist.github.com/6d38be953048532538fc9929932b5b61
 headerImage: false
 layout: post
-tag:
-- oracles
+tag: []
 title: Short twap periods hinder correction of erroneous samples
 ---
 
- i defi  i twap  
+
+i oracles i defi  i twap  
 
 
 

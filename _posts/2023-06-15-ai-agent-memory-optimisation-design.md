@@ -6,13 +6,12 @@ date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
-tag:
-- memory
+tag: []
 title: AI agent memory optimisation design
 ---
 
 
-i ai  i agents   
+i ai  i agents   i memory  
  
 
 Ideas might be saved in the agi memory which turn out to not be very useful. This might initially seem harmless. What could be the problem with storing ideas which aren't that useful? It is not as if we are constrained by storage.  

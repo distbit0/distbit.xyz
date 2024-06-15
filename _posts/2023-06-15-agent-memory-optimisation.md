@@ -7,12 +7,12 @@ description: null
 gist_url: https://gist.github.com/130579c91265f97f7c8480c4abcfe95b
 headerImage: false
 layout: post
-tag:
-- memory
+tag: []
 title: Agent memory optimisation
 ---
 
-  i ai  i agents   
+
+i memory  i ai  i agents   
 
 
 If an LLM decides that an idea or piece of information it has recently acquired will be useful in the future, and is therefore worth saving to its memory, it will need to ensure that it is saved in a format which will be understandable to its future self.  

@@ -7,12 +7,12 @@ description: null
 headerImage: false
 layout: post
 tag:
-- oracles
 - censorship-resistance
 title: Risks associated with centralised price oracles
 ---
 
- i defi  
+
+i oracles i defi  
  
 
 

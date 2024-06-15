@@ -10,7 +10,6 @@ layout: post
 tag:
 - WoT
 - idea-composition
-- project
 title: LLM idea workbench
 ---
 
@@ -18,7 +17,8 @@ title: LLM idea workbench
 i ai  i epistemology  
 
 
-related product: [Brainstorming](https://fermat.ws/brainstorming)   
+related product: [Brainstorming](https://fermat.ws/brainstorming)  
+ i project   
 
 - relates to convergence of tools for thought and agi  
 - a web app for using LLMs to compose and modify ideas  

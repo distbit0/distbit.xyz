@@ -6,8 +6,7 @@ date: 2023-08-09 00:00
 description: ''
 headerImage: false
 layout: post
-tag:
-- oracles
+tag: []
 tags:
 - defi
 - oracles
@@ -15,7 +14,7 @@ title: DRAFT Making price manipulation attacks un-profitable
 ---
 
 
- i defi  i collateral   
+ i defi  i oracles  i collateral   
 # Making price manipulation attacks unprofitable  
 
 Introduction  

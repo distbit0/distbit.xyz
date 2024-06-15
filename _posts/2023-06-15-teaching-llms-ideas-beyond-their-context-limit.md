@@ -7,13 +7,12 @@ description: null
 gist_url: https://gist.github.com/1dfe31a847e15ef1a0b5d7759d868248
 headerImage: false
 layout: post
-tag:
-- memory
+tag: []
 title: Teaching LLMs ideas beyond their context limit
 ---
 
 
-i agents   i ai  i epistemology  
+i agents   i ai  i memory  i epistemology  
 
 
 In order to understand new complex topics, often hundreds or even thousands of new ideas need to be learned. Not all of these ideas are needed when making most decisions. However, it seems dozens or more may be used subconsciously while reasoning or formulating new ideas, to both act as constraints and guide the idea creation process.  
