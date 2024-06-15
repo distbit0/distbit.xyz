@@ -7,6 +7,7 @@ description: ''
 gist_url: https://gist.github.com/3ea69d569d4038ef1af82c2b5a7ffa6a
 headerImage: false
 layout: post
+live: false
 tag: []
 title: Hurdles to Tor hidden services for physical goods
 ---

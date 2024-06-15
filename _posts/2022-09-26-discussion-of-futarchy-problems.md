@@ -8,6 +8,7 @@ description: An on-going discussion with @zack_bitcoin about the security of Fut
 gist_url: https://gist.github.com/a2fd9c531e822f7645eb065d2508ebca
 headerImage: false
 layout: post
+live: false
 tag: []
 title: Discussion of futarchy problems
 ---

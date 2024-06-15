@@ -8,6 +8,7 @@ description: A response to a blog post analysing the value lost resulting from t
 gist_url: https://gist.github.com/b7eec1e84560aa06a8fca50f51b4e705
 headerImage: false
 layout: post
+live: false
 tag: []
 title: Meaning of market capitalisation
 ---

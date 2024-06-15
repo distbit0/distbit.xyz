@@ -7,6 +7,7 @@ description: null
 gist_url: https://gist.github.com/5d2ca09c1d101cfabda1ac1eac95ec1e
 headerImage: false
 layout: post
+live: false
 tag: []
 title: Deflationary spirals
 ---

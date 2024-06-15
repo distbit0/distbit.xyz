@@ -7,6 +7,7 @@ description: null
 gist_url: https://gist.github.com/edae999f34072fbae9ac119a495c8040
 headerImage: false
 layout: post
+live: true
 tag: []
 title: General intelligence does not necessitate complete architectural flexibility
 ---

@@ -7,6 +7,7 @@ description: null
 gist_url: https://gist.github.com/638909a6712a8cde348a2935167d40cd
 headerImage: false
 layout: post
+live: true
 tag: []
 title: Implications of mind evolution vs idea evolution
 ---

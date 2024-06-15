@@ -7,6 +7,7 @@ description: null
 gist_url: https://gist.github.com/01ae2224d7f1f88423bf105568c83515
 headerImage: false
 layout: post
+live: false
 tag: []
 title: The collateral price reflexivity continuum
 ---

@@ -7,6 +7,7 @@ description: null
 gist_url: https://gist.github.com/021c813687d73b758b35c4e717691f40
 headerImage: false
 layout: post
+live: true
 tag: []
 title: Error detection and falsification strategies for AI agents
 ---

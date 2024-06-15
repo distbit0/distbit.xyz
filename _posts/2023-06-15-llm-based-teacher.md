@@ -7,6 +7,7 @@ description: null
 gist_url: https://gist.github.com/6c229722d985d55f416a4af91577d88f
 headerImage: false
 layout: post
+live: false
 tag: []
 title: LLM-based teacher
 ---

@@ -7,6 +7,7 @@ description: null
 gist_url: https://gist.github.com/78d2f5da4a7606e62d0b30b922d57793
 headerImage: false
 layout: post
+live: false
 tag: []
 title: Say's law of markets
 ---

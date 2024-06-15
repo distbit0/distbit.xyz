@@ -7,8 +7,9 @@ description: null
 gist_url: https://gist.github.com/a25dc14a531460d5c82fe1711f731400
 headerImage: false
 layout: post
+live: false
 tag: []
-title: Use of Zettelkasten for agent memory
+title: Use of zettelkasten for agent memory
 ---
 
 
