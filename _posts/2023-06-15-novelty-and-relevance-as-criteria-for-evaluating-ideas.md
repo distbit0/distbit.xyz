@@ -11,7 +11,6 @@ title: Novelty and relevance as criteria for evaluating ideas
 ---
 
 
-i ai  i agents   i epistemology  
  
 
 Below are some potential heuristics for determining how much attention, thought and memory to allocate to to an idea, especially in the context of agents:  

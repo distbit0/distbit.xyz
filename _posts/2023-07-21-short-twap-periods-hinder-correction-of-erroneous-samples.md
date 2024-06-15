@@ -12,7 +12,6 @@ title: Short twap periods hinder correction of erroneous samples
 ---
 
 
-i oracles i defi  i twap  
 
 
 

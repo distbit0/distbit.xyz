@@ -12,7 +12,6 @@ title: Use of Zettelkasten for agent memory
 ---
 
 
-i zettelkasten  i memory  i ai  i agents   
 
 
 zettelkasten may be useful for agent idea retrieval and agent idea relation representation for agi memory  

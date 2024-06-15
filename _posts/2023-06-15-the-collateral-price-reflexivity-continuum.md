@@ -12,7 +12,6 @@ title: The collateral price reflexivity continuum
 ---
 
 
-i defi  i stablecoins  i collateral  i reflexivity  
 
 
 Previously algo stables have failed as a result of the fact that [algorithmic stables employ collateral that derives its value from TVL growth](/algorithmic-stables-employ-collateral-that-derives-its-value-from-tvl-growth). Such algo stables however simply exist on one end of a continuum, across which many designs exist at various points.  

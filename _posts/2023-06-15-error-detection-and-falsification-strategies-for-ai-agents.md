@@ -11,7 +11,6 @@ title: Error detection and falsification strategies for AI agents
 ---
 
 
-i ai  i agents   i epistemology  
  
 
 Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents:   

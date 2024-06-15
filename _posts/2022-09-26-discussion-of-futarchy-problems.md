@@ -13,7 +13,6 @@ title: Discussion of futarchy problems
 ---
 
 
-i futarchy  i derivatives  i finance i defi  
 
 source document: [futarchys_failure.md](https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_failure.md)  
 relevant: [futarchys_back.md](https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_back.md)  

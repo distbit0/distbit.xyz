@@ -6,13 +6,11 @@ date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
-tag:
-- learning
-- idea-composition
+tag: []
 title: Learning as adding new functions to a concept network
 ---
 
-  i ai  i agents   i zettelkasten  
+
  
 
 In concept-network mediums such as the human brain, a zettelkasten, or an artificial neural network (ANN), learning entails integrating new ideas into an existing network.  

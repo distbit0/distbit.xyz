@@ -11,7 +11,6 @@ title: Agents can decide what to remember
 ---
 
 
-i ai  i agents   i memory  
  
 
 Some ideas which an Agentic AI considers while carrying out a task or solving a problem will be useful in the course of future tasks.  

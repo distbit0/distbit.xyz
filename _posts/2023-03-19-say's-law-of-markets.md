@@ -7,14 +7,11 @@ description: null
 gist_url: https://gist.github.com/78d2f5da4a7606e62d0b30b922d57793
 headerImage: false
 layout: post
-tag:
-- keynesianism
-- inflation
+tag: []
 title: Say's law of markets
 ---
 
 
-i econ  
 
 
 In which I defend the statement that: "goods never remain unsold as a result of insufficient aggregate demand, but rather always because of a misallocation of production or a result of government intervention."  

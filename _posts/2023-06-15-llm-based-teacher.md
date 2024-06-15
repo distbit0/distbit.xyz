@@ -7,13 +7,11 @@ description: null
 gist_url: https://gist.github.com/6c229722d985d55f416a4af91577d88f
 headerImage: false
 layout: post
-tag:
-- learning
+tag: []
 title: LLM-based teacher
 ---
 
 
-i ai   
 
 
 An AI teacher can employ a user's notes and other material to understand their existing ideas so as to best teach them new ideas.  

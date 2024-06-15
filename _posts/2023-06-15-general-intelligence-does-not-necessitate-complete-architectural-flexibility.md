@@ -12,7 +12,6 @@ title: General intelligence does not necessitate complete architectural flexibil
 ---
 
 
-i ai  i agents   i epistemology  
 
 
 

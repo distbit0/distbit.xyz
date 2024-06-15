@@ -11,7 +11,6 @@ title: Algorithmic stables employ collateral that derives its value from TVL gro
 ---
 
 
-i stablecoins i defi  
  
 
 Terra Luna and other algo stables failed as a result of being collateralised by tokens who's value was derived from the growth of the stablecoin itself.  

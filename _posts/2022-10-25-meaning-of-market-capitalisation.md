@@ -13,7 +13,6 @@ title: Meaning of market capitalisation
 ---
 
 
-i finance  i econ  
 
 
 The following is a response to [this](https://elmwealth.com/hassan-and-ali-on-terra-luna-crash/) blog post. Below I discuss:  

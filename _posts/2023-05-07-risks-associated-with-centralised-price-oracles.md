@@ -6,13 +6,11 @@ date: 2023-05-07 00:00
 description: null
 headerImage: false
 layout: post
-tag:
-- censorship-resistance
+tag: []
 title: Risks associated with centralised price oracles
 ---
 
 
-i oracles i defi  
  
 
 
