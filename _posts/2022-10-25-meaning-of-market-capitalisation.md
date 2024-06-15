@@ -9,7 +9,9 @@ gist_url: https://gist.github.com/b7eec1e84560aa06a8fca50f51b4e705
 headerImage: false
 layout: post
 live: false
-tag: []
+tag:
+- finance
+- econ
 title: Meaning of market capitalisation
 ---
 

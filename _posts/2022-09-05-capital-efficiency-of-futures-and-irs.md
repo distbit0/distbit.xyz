@@ -6,7 +6,10 @@ date: 2022-09-05 00:00
 description: Analysis of collateral required by IRS contracts
 headerImage: false
 layout: post
-tag: []
+tag:
+- defi
+- derivatives
+- interest-rate-swaps
 title: Capital efficiency of futures and IRS
 ---
 

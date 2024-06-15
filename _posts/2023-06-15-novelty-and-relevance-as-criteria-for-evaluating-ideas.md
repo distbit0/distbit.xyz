@@ -8,7 +8,10 @@ gist_url: https://gist.github.com/2392d0702e6cb5e86214940814d7a470
 headerImage: false
 layout: post
 live: true
-tag: []
+tag:
+- ai
+- agents
+- epistemology
 title: Novelty and relevance as criteria for evaluating ideas
 ---
 

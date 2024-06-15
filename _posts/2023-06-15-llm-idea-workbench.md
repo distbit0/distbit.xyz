@@ -8,7 +8,11 @@ gist_url: https://gist.github.com/73e7ccffcb0e1215a24aa12313321945
 headerImage: false
 layout: post
 live: true
-tag: []
+tag:
+- ai
+- epistemology
+- WoT
+- idea-composition
 title: LLM idea workbench
 ---
 

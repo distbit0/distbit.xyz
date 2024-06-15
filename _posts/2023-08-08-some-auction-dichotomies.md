@@ -6,12 +6,15 @@ date: 2023-08-08 00:00
 description: ''
 headerImage: false
 layout: post
-tag: []
+tag:
+- finance
+- auctions
+- defi
 title: Some auction dichotomies
 ---
 
 
- 
+  
 
 ### Distinctions between types of auctions/competitions.  
 #### Whether auction has reserve price (`reservePrice`=true/false)  

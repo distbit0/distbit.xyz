@@ -8,7 +8,11 @@ gist_url: https://gist.github.com/a25dc14a531460d5c82fe1711f731400
 headerImage: false
 layout: post
 live: false
-tag: []
+tag:
+- zettelkasten
+- memory
+- ai
+- agents
 title: Use of zettelkasten for agent memory
 ---
 

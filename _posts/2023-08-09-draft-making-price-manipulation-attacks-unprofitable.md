@@ -6,7 +6,10 @@ date: 2023-08-09 00:00
 description: ''
 headerImage: false
 layout: post
-tag: []
+tag:
+- defi
+- oracles
+- collateral
 tags:
 - defi
 - oracles

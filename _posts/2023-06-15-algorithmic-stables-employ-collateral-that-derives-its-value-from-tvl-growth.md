@@ -6,7 +6,9 @@ date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
-tag: []
+tag:
+- stablecoins
+- defi
 title: Algorithmic stables employ collateral that derives its value from TVL growth
 ---
 

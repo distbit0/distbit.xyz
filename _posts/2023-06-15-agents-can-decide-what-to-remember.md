@@ -6,7 +6,10 @@ date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
-tag: []
+tag:
+- ai
+- agents
+- memory
 title: Agents can decide what to remember
 ---
 

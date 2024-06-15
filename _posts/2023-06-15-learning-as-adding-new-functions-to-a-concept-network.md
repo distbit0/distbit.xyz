@@ -6,7 +6,12 @@ date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
-tag: []
+tag:
+- learning
+- ai
+- agents
+- zettelkasten
+- idea-composition
 title: Learning as adding new functions to a concept network
 ---
 
