@@ -8,15 +8,12 @@ description: An on-going discussion with @zack_bitcoin about the security of Fut
 gist_url: https://gist.github.com/a2fd9c531e822f7645eb065d2508ebca
 headerImage: false
 layout: post
-tag:
-- futarchy
-- derivatives
-- finance
-- defi
+tag: []
 title: Discussion of futarchy problems
 ---
 
 
+i futarchy  i derivatives  i finance i defi  
 
 source document: [futarchys_failure.md](https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_failure.md)  
 relevant: [futarchys_back.md](https://github.com/zack-bitcoin/amoveo-docs/blob/master/blog_posts/futarchys_back.md)  

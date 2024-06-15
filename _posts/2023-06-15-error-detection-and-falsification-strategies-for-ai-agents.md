@@ -6,14 +6,12 @@ date: 2023-06-15 00:00
 description: null
 headerImage: false
 layout: post
-tag:
-- ai
-- agents
-- epistemology
+tag: []
 title: Error detection and falsification strategies for AI agents
 ---
 
 
+i ai  i agents   i epistemology  
  
 
 Strategies for error-correction/error-detection/falsification for use when creating LLM-based Agents:   

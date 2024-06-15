@@ -7,14 +7,12 @@ description: ''
 headerImage: false
 layout: post
 tag:
-- defi
 - oracles
-- collateral
 title: LP token price manipulation attacks
 ---
 
 
- 
+ i defi  i collateral   
 
 The below are some notes on various types of LP token price manipulation attacks. Some of this may assume certain background knowledge, most of which can be found in the linked attack explanations.  
 

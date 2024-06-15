@@ -9,12 +9,11 @@ headerImage: false
 layout: post
 tag:
 - onion-routing
-- agorism
 - WoT
 title: Hurdles to Tor hidden services for physical goods
 ---
 
-
+  i agorism  
 
 
 THS = Tor hidden services  
