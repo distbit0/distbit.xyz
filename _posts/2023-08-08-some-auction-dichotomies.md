@@ -11,7 +11,7 @@ title: Some auction dichotomies
 ---
 
 
-  i finance  i auctions i defi  
+ 
 
 ### Distinctions between types of auctions/competitions.  
 #### Whether auction has reserve price (`reservePrice`=true/false)  

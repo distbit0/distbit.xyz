@@ -60,7 +60,7 @@ title: Futarchys back convo
 >  
 >This same design mistake was carried over into Augur and Amoveo.  
 >  
->In the [futarchys failure](futarchys_failure.md) document, I explain why combinatorial markets does not work as a prediction markets, using cryptoeconomic analysis.  
+>In the futarchys_failure.md document, I explain why combinatorial markets does not work as a prediction markets, using cryptoeconomic analysis.  
 >  
 >What do I mean by reversible swap prediction markets  
 >=================  
