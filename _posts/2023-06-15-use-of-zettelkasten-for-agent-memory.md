@@ -8,12 +8,12 @@ gist_url: https://gist.github.com/a25dc14a531460d5c82fe1711f731400
 headerImage: false
 layout: post
 tag:
-- zettelkasten
 - memory
 title: Use of Zettelkasten for agent memory
 ---
 
-  i ai  i agents   
+
+i zettelkasten  i ai  i agents   
 
 
 zettelkasten may be useful for agent idea retrieval and agent idea relation representation for agi memory  

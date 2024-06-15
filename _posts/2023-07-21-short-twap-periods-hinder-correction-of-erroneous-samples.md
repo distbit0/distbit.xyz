@@ -9,11 +9,10 @@ headerImage: false
 layout: post
 tag:
 - oracles
-- twap
 title: Short twap periods hinder correction of erroneous samples
 ---
 
- i defi  
+ i defi  i twap  
 
 
 
