@@ -14,7 +14,7 @@ title: DRAFT Making price manipulation attacks un-profitable
 ---
 
 
- i defi  i oracles  i collateral   
+ 
 # Making price manipulation attacks unprofitable  
 
 Introduction  

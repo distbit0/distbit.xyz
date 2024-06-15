@@ -12,7 +12,6 @@ title: Importance of recursive memory retrieval for AI agents
 ---
 
 
-i ai  i agents   i memory  
 
 
 An AGI should be designed to recursively retrieve ideas from its memory, allowing for the depth and duration of the search to be modulated based on the complexity or relevance of the discovered information. Initially, the AGI might only intend to conduct a brief search for pertinent material. However, upon encountering notably complex or relevant ideas, it should have the flexibility to extend the search depth.  
