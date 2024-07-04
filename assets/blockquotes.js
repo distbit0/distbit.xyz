@@ -7,16 +7,6 @@ function findDirectBlockquotes(element) {
     return directBlockquotes;
 }
 
-function resolveReplyIdFromHashtag() {
-    const hashtag = window.location.hash.slice(1);
-    if (hashtag === "") {
-        return null;
-    }
-    if (document.querySelector(`#${hashtag}`) === null) {
-        return null;
-    }
-    return hashtag;
-}
 
 function unHideAncestors(element) {
     let current = element.closest('blockquote');
@@ -180,9 +170,9 @@ function addReplyLinks() {
             let replyId = blockquote.id;
             let linkElement = document.createElement('a');
             linkElement.style.color = "white";
-            linkElement.href = `#${replyId}`;
+            linkElement.href = `#id-${replyId}`;
             if (window.location.protocol === 'http:') {
-                linkElement.href = 'https://distbit.xyz' + window.location.pathname + `#${replyId}`;
+                linkElement.href = 'https://distbit.xyz' + window.location.pathname + `#id-${replyId}`;
             }
             linkElement.textContent = 'Link to this reply';
             linkElement.addEventListener('click', function (event) {
@@ -195,6 +185,22 @@ function addReplyLinks() {
         };
     })
 }
+
+function resolveReplyIdFromHashtag() {
+    const hashtag = window.location.hash.slice(1);
+    if (hashtag === "") {
+        return null;
+    }
+    if (hashtag.startsWith('id-')) {
+        const actualId = hashtag.slice(3);
+        if (document.querySelector(`#${actualId}`) === null) {
+            return null;
+        }
+        return actualId;
+    }
+    return null;
+}
+
 
 function hideNestedBlockquoteElements() {
     document.querySelectorAll('blockquote').forEach(blockquote => {
