@@ -15,6 +15,9 @@ title: Correlation vs causation in futarchy
 
 
 
+# Potential futarchy strategies and their implications  
+
+
 ### sometimes take action which futarchy recommends, due to futarchy results not being binding  
 - goal: use futarchy to inform how one should attempt to influence a decision making process, such as an election, to achieve a desired outcome  
 - problems  
