@@ -36,7 +36,8 @@ title: Correlation vs causation in futarchy
 ### always take action which futarchy recommends  
 - goal: prevent a third factor from existing which influences both p(action) and p(outcome), by making p(action) solely a function of futarchy prices  
 - problems  
-    - creates little incentive to bet that an action will cause a bad outcome, hence biasing prices to be more optimistic than is warranted  
+    - traders have no incentive to bet than an action will have <50% probability of causing a bad outcome, hence causing   
+    - traders have little incentive to bet that an action will cause a bad outcome, hence biasing prices to be more optimistic than is warranted  
         - this is because:  
         -  if you bet that an action will have a negative effect, and the market ends up agreeing with you, the action will not be taken and hence you will not make any profit. You also had to lock up your capital for no return.  
             - whereas if the market ends up disagreeing with you, implying you are probably wrong, the action will be taken and you will probably make a loss  
