@@ -41,7 +41,7 @@ title: Correlation vs causation in futarchy
         -  if you bet that an action will have a negative effect, and the market ends up agreeing with you, the action will not be taken and hence you will not make any profit. You also had to lock up your capital for no return.  
             - whereas if the market ends up disagreeing with you, implying you are probably wrong, the action will be taken and you will probably make a loss  
         - hence creating negative convexity (due to the action being more likely to be taken when you are wrong) and low capital efficiency (due to not making any return when the market ends up agreeing with them) for buyers of "bad outcome"  
-    - however, the negative convexity effect applies to both actions, i.e. including the "do nothing" action  
+    - however, the negative convexity effect impacts price of positive/negative shares for both actions, i.e. including the "do nothing" action  
         - does this mean the effect cancels out, or does it just mean the price of both sides is distorted in some hard to difficult-to-isolate way, therefore reducing signal:noise ratio?  
         - the distortion is caused by holders of "good outcome" shares for a given action having a higher p(action is taken) than holders of the "bad outcome" shares. (given that this scenario is "always take action which futarchy recommends")  
             - this increases their valuation of "action taken & good outcome" shares, given that said shares' price is a function of p(action is taken)  
@@ -51,7 +51,7 @@ title: Correlation vs causation in futarchy
         - if distortion of both "action" and "no action" good/bad share prices cancels out, then:  
             - there will be no scenario where the market's p(good|action) > p(good|no action) and where price(good&action)/price(bad&action) < price(good&no action)/price(bad&no action) are true simultaneously  
                 - how do we know whether this holds?  
-    - the convexity effect only applies as long as there is a meaningful duration until the action is taken  
+    - the strength of both the convexity and capital efficiency asymmetry effects is a function of time remaining until the action is taken  
         - because it is caused by trader expectations that the market will converge to the correct answer (i.e. converge closer to what said trader believes the correct answer is)  
             - however this expectation diminishes as the market nears the date at which the action is taken, as there is less time remaining for it to converge to the correct answer, so traders have less to worry about  
             
