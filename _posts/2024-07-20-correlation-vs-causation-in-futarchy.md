@@ -54,6 +54,7 @@ title: Correlation vs causation in futarchy
     - the strength of both the convexity and capital efficiency asymmetry effects is a function of time remaining until the action is taken  
         - because it is caused by trader expectations that the market will converge to the correct answer (i.e. converge closer to what said trader believes the correct answer is)  
             - however this expectation diminishes as the market nears the date at which the action is taken, as there is less time remaining for it to converge to the correct answer, so traders have less to worry about  
+                - as a result, the price becomes more accurate/less distorted as the date at which the action is taken approaches  
             
 
 
