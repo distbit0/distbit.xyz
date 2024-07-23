@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Correlation vs causation in futarchy
+title: Futarchy strategies convexity  capital efficiency and confounding
 ---
 
 
