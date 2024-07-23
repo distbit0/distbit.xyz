@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Futarchy strategies convexity  capital efficiency and confounding
+title: Convexity, capital efficiency and confounding in futarchy
 ---
 
 
