@@ -77,7 +77,7 @@ It's important to note that these scenarios assume the existence of a prediction
 
 2. The reason why "good outcome" share holders have a higher p(action is taken) than bad outcome share holders is because they expect the market to converge to their expectation of the probability of "good outcome". Hence, they expect the action is more likely to be taken, given that whether it's taken is determined by the price of "good outcome" shares.  
 
-3. The negative convexity effect impacts the price of positive/negative shares of both actions, including the "do nothing" action. Point 4. below attempts to understand under what conditions this causes the distortion to cancel as opposed to adding some hard-to-isolate noise to the price signal.  
+3. The negative convexity effect impacts the price of positive/negative shares of both actions, including the "do nothing" action. Point 4. below attempts to understand under what conditions this causes the distortions to cancel out, as opposed to adding some hard-to-isolate noise to the price signal.  
 
 4. If the distortion of both "action" and "no action" good/bad share prices cancels out, then there will be no scenario where the market's expectation of p(good|action) > p(good|no action) and where price(good&action)/price(bad&action) < price(good&no action)/price(bad&no action) are true simultaneously. It's unclear how we can determine whether this holds.  
 
