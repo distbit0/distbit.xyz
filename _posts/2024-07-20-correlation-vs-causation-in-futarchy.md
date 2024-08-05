@@ -62,8 +62,9 @@ It's important to note that these scenarios assume the existence of a prediction
     - Or perhaps this is incorrect, as traders can not collude to keep the price of their action's child market shares above the decision threshold, and hence it is not in the interest of any particular trader to so. This is because no trader is capable of single-handedly determining whether a forecast remains above or falls below a decision threshold, thereby influencing whether an action is taken or not.  
 
 3. The prediction market price is biased in favor of being optimistic, due to optimistic traders having higher expected returns than those who are pessimistic. This is because "good outcome" shares will be priced higher than warranted by an action's expected impact, because a trader's expectation of a proposal's p(pass) is correlated with whether they think said proposal is beneficial. This effect is akin to "convexity" in the context of options.   
+    - The magnitude of this effect depends on the degree to which traders consider how their (a) beliefs regarding the impact of action should affect their (b) beliefs about the probability of the action being chosen.  
+        - The more they consider the implications of (a) beliefs on their (b) beliefs, the more significant this effect becomes.  
     - Perhaps this can be mitigated by counter-speculators who profit by adjusting the price of "good outcome" downwards by what they expect the average upwards bias to be of other traders, resulting from the above effect.  
-        - However this significantly complicates the   
 
 
 ## Strategy 3: Occasionally Take Actions Expected to Cause Bad Outcomes  
