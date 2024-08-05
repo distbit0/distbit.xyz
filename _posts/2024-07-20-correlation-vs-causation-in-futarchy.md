@@ -21,6 +21,33 @@ This post explores various strategies for implementing futarchy and their implic
 
 It's important to note that these scenarios assume the existence of a prediction market for whether an action will be taken, along with two child prediction markets on the effect (on a target variable such as GDP) of taking the action versus not taking it.  
 
+# Terminology Definitions  
+
+- **Futarchy**: A proposed method of governance where elected officials define measures of national wellbeing, and prediction markets are used to determine which policies will best achieve these goals.  
+
+- **Prediction market**: A speculative market created for the purpose of making predictions. Participants trade contracts whose payoff depends on unknown future events.  
+
+- **Child prediction markets**: Subsidiary markets created to predict outcomes of specific scenarios within the main prediction market.  
+
+- **Target variable**: The metric used to measure the success or failure of a policy in futarchy (e.g., GDP, unemployment rate, happiness index).  
+
+- **Confounding factors**: Variables that influence both the independent variable (e.g., policy implementation) and dependent variable (e.g., target metric), potentially leading to incorrect conclusions about their relationship.  
+
+- **Convexity/Negative convexity**: In this context, refers to how the expected return on an investment changes as market conditions change. Positive convexity means potential gains increase more than potential losses, while negative convexity is the opposite.  
+
+- **Capital efficiency**: The effectiveness with which financial resources are used to generate value. In prediction markets, it refers to how well traders can use their funds to profit from their predictions.  
+
+- **"Good outcome" shares vs "Bad outcome" shares**: In prediction markets, contracts that pay out if the implemented policy leads to a positive or negative outcome, respectively.  
+
+- **Decision threshold**: The point at which the prediction market's forecast is considered strong enough to influence or determine the policy decision.  
+
+- **Free-option dynamic**: A situation where traders can potentially profit without risk, often due to market structure or rules.  
+
+- **Price discovery process**: The method by which a market determines the price of an asset through the interactions of buyers and sellers.  
+
+- **p(action) and p(outcome)**: Notations representing the probability of an action being taken and the probability of a specific outcome occurring, respectively.  
+
+
 ## Strategy 1: Partial Implementation  
 
 **Goal:** Use futarchy to inform how one should attempt to influence a decision-making process, given a desired outcome. This strategy applies when one can only partially influence rather than decide the action that will be taken.  
@@ -34,10 +61,10 @@ It's important to note that these scenarios assume the existence of a prediction
 
 ## Strategy 2: Always Take Recommended Action  
 
-**Goal:** Prevent a third factor from influencing both p(action) and p(outcome) by making p(action) solely a function of futarchy prices.  
+**Goal:** Prevent a third factor from influencing both p(action) and p(outcome), by making deciding what action to take solely based on futarchy prices.  
 
 **Problems:**  
-1. The prediction market will not predict a negative outcome, as traders have no incentive to bet that an action will have a >50% probability of a negative outcome. This is because the market will revert/not resolve if the action is expected to be detrimental, due to the action not being taken. Hence, there is no incentive to bet that the action will be taken, even at the very last moment before the action is taken.  
+1. Traders have little incentive to move the expected share price of a decision such that it becomes below the decision threshold, as doing so causes said decision not to be taken and hence for the trader's shares to become worthless. The magnitude of this effect increases as the decision deadline approaches, as the chance of the price moving back above the decision threshold decreases as less time remains until the action is taken.  
 
 2. The prediction market price is biased in favor of being optimistic, due to optimistic traders having higher expected returns than those who are pessimistic. If you bet that an action will have a negative effect and the market ends up agreeing with you, the action will not be taken, and you will not make any profit. You also had to lock up your capital for no return. However, if the market ends up disagreeing with you (implying you are probably wrong), the action will be taken, and you will probably make a loss.  
 
