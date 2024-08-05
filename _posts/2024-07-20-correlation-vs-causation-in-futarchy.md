@@ -37,6 +37,8 @@ It's important to note that these scenarios assume the existence of a prediction
 
 - "good outcome" shares and "bad outcome" shares: For each child market, contracts that pay out if the action of said child market leads to a positive or negative outcome, respectively.   
 
+- Pivotal:   
+
 
 ## Strategy 1: Partial Implementation  
 
@@ -54,11 +56,15 @@ It's important to note that these scenarios assume the existence of a prediction
 **Goal:** Prevent a third factor from influencing both p(action) and p(outcome), by making deciding what action to take solely based on futarchy prices.  
 
 **Problems:**  
-1. Traders have little incentive to make pessimistic bets on the outcome of an action. This is because they have little incentive to sell "good outcome" for "bad outcome" shares, if doing so causes the forecast of an action's outcome to fall below the decision threshold. If the forecast is below the decision threshold, the action will not be taken, therefore making the trader's shares worthless. The magnitude of this effect increases as the decision deadline approaches, as there is less time remaining in which, and hence a lower probability that, the price will move back above the decision threshold.  
+1. The prediction market price is biased in favor of being optimistic, due to optimistic traders having higher expected returns than those who are pessimistic. This is because it is less capital efficient to hold "bad outcome" shares than "good outcome" shares, given that if the market ends up agreeing with the holder of a "bad outcome" share, the action will not be taken, preventing them from capitalising on their insights re: the effect of the action.  
 
-2. The prediction market price is biased in favor of being optimistic, due to optimistic traders having higher expected returns than those who are pessimistic. This is because "good outcome" shares will be priced higher than warranted by an action's expected impact, because a trader's expectation of a proposal's p(pass) is correlated with whether they think said proposal is beneficial.   
+2. Traders have little incentive to make pessimistic bets on the outcome of an action. This is because they have little incentive to sell "good outcome" for "bad outcome" shares, if doing so causes the forecast of an action's outcome to fall below the decision threshold. If the forecast is below the decision threshold, the action will not be taken, therefore making the trader's shares worthless. The magnitude of this effect increases as the decision deadline approaches, as there is less time remaining in which, and hence a lower probability that, the price will move back above the decision threshold.  
+    - Or perhaps this is incorrect, as traders can not collude to keep the price of their action's child market shares above the decision threshold, and hence it is not in the interest of any particular trader to so. This is because no trader is capable of single-handedly determining whether a forecast remains above or falls below a decision threshold, thereby influencing whether an action is taken or not.  
 
-3. This creates negative convexity (due to the action being more likely to be taken when you are wrong) and low capital efficiency (due to not making any return when the market ends up agreeing with them) for buyers of "bad outcome" shares, and positive convexity and higher capital efficiency for buyers of "good outcome" shares.  
+3. The prediction market price is biased in favor of being optimistic, due to optimistic traders having higher expected returns than those who are pessimistic. This is because "good outcome" shares will be priced higher than warranted by an action's expected impact, because a trader's expectation of a proposal's p(pass) is correlated with whether they think said proposal is beneficial. This effect is akin to "convexity" in the context of options.   
+    - Perhaps this can be mitigated by counter-speculators who profit by adjusting the price of "good outcome" downwards by what they expect the average upwards bias to be of other traders, resulting from the above effect.  
+        - However this significantly complicates the   
+
 
 ## Strategy 3: Occasionally Take Actions Expected to Cause Bad Outcomes  
 
@@ -71,7 +77,7 @@ It's important to note that these scenarios assume the existence of a prediction
 
 ## Strategy 4: Always Choose Action Randomly  
 
-**Goal:** Prevent the free-option dynamic by causing the probability of the action being taken to be independent of the price of the futarchy market.  
+**Goal:** Prevent the convexity referred to in Strategy 2 by causing the probability of the action being taken to be independent of the price of the futarchy market.  
 
 **Problems:**  
 1. This strategy makes insights provided from futarchy non-actionable, hence defeating the purpose of futarchy.  
@@ -90,15 +96,11 @@ It's important to note that these scenarios assume the existence of a prediction
 ## Additional Notes on Strategy 2  
 
 
-1. The distortion is caused by holders of "good outcome" shares for a given action having a higher p(action is taken) than holders of the "bad outcome" shares. This increases their valuation of "action taken & good outcome" shares, given that said shares' price is a function of p(action is taken).  
+1. The capital efficiency asymmetry effect impacts the price of positive/negative shares of both actions, including the "do nothing" action. Point 2. below attempts to understand under what conditions this causes the distortions to cancel out, as opposed to adding some hard-to-isolate noise to the price signal.  
 
-2. The reason why "good outcome" share holders have a higher p(action is taken) than bad outcome share holders is because they expect the market to converge to their expectation of the probability of "good outcome". Hence, they expect the action is more likely to be taken, given that whether it's taken is determined by the price of "good outcome" shares.  
+2. If the distortion of both "action" and "no action" good/bad share prices cancels out, then there will be no scenario where the market's expectation of p(good|action) > p(good|no action) and where price(good&action)/price(bad&action) < price(good&no action)/price(bad&no action) are true simultaneously. It's unclear how we can determine whether this holds.  
 
-3. The negative convexity effect impacts the price of positive/negative shares of both actions, including the "do nothing" action. Point 4. below attempts to understand under what conditions this causes the distortions to cancel out, as opposed to adding some hard-to-isolate noise to the price signal.  
-
-4. If the distortion of both "action" and "no action" good/bad share prices cancels out, then there will be no scenario where the market's expectation of p(good|action) > p(good|no action) and where price(good&action)/price(bad&action) < price(good&no action)/price(bad&no action) are true simultaneously. It's unclear how we can determine whether this holds.  
-
-5. The strength of both the convexity and capital efficiency asymmetry effects decreases as the action deadline approaches. This is because:  
+3. The strength of both the convexity and capital efficiency asymmetry effects (described in Strategy 2) decreases as the action deadline approaches. This is because:  
    - The convexity effect is caused by trader expectations that the market will converge to the correct answer. However, this expectation diminishes as the market nears the date at which the action is taken, as there is less time remaining for it to converge to the correct answer.  
    - The capital efficiency asymmetry effect is caused by the cost of having to lock up one's capital for the remainder of the market until the action is taken. As the action date approaches, this cost decreases.  
 
