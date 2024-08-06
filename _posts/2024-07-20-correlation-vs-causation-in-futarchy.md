@@ -94,15 +94,17 @@ It's important to note that these scenarios assume the existence of a prediction
 ## Additional Notes on Strategy 2  
 
 
-1. The capital efficiency asymmetry effect impacts the price of positive/negative shares of both actions, including the "do nothing" action. Point 2. below attempts to understand under what conditions this causes the distortions to cancel out, as opposed to adding some hard-to-isolate noise to the price signal.  
+1. Both the capital efficiency asymmetry and convexity effect impact the price of positive/negative shares of both actions, including the "do nothing" action. Point 2. below attempts to understand under what conditions this causes the distortions to cancel out, as opposed to adding some hard-to-isolate noise to the price signal.  
 
 2. If the distortion of both "action" and "no action" good/bad share prices cancels out, then there will be no scenario where the market's expectation of p(good|action) > p(good|no action) and where price(good&action)/price(bad&action) < price(good&no action)/price(bad&no action) are true simultaneously. It's unclear how we can determine whether this holds.  
 
+3. Tentatively, it seems both these effects add noise to the price, proportional to the magnitude of the effect size. They may partially cancel out but it is not clear why they should be expected to fully cancel out between the child markets for each action.  
+
 3. The strength of both the convexity and capital efficiency asymmetry effects (described in Strategy 2) decreases as the action deadline approaches. This is because:  
-   - The convexity effect is caused by trader expectations that the market will converge to the correct answer. However, this expectation diminishes as the market nears the date at which the action is taken, as there is less time remaining for it to converge to the correct answer.  
+   - The convexity effect is caused by the risk of new information becoming available. However, this risk diminishes as the market nears the date at which the action is taken, as less time remains for new information to emerge.  
    - The capital efficiency asymmetry effect is caused by the cost of having to lock up one's capital for the remainder of the market until the action is taken. As the action date approaches, this cost decreases.  
 
-In conclusion, futarchy's implementation faces several challenges caused by confounders, convexity and capital inefficiency. Each strategy attempts to address specific issues, but introduces new complications.  
+4. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take.  
 
 - related links  
     - https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the  
