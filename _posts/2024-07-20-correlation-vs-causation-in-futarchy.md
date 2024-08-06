@@ -37,8 +37,6 @@ It's important to note that these scenarios assume the existence of a prediction
 
 - "good outcome" shares and "bad outcome" shares: For each child market, contracts that pay out if the action of said child market leads to a positive or negative outcome, respectively.   
 
-- Pivotal:   
-
 
 ## Strategy 1: Partial Implementation  
 
