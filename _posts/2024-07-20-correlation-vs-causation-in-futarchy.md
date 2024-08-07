@@ -106,7 +106,7 @@ It's important to note that these scenarios assume the existence of a prediction
 
 - related links  
     - https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the  
-    - https://www.overcomingbias.com/p/conditional-close-election-marketshtml  
     - https://dynomight.net/prediction-market-causation/  
+    - https://www.overcomingbias.com/p/conditional-close-election-marketshtml  
 
 If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)
