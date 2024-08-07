@@ -56,7 +56,7 @@ It's important to note that these scenarios assume the existence of a prediction
 **Problems:**  
 1. The prediction market price is biased in favor of being optimistic, due to optimistic traders having higher expected returns than those who are pessimistic. This is because it is less capital efficient to hold "bad outcome" shares than "good outcome" shares, given that if the market ends up agreeing with the holder of a "bad outcome" share, the action will not be taken, preventing them from capitalising on their insights re: the effect of the action.  
 
-2. In futarchy markets, new information asymmetrically affects bet values. Negative information can nullify the value of "bad outcome" shares by canceling the proposed action, while positive information increases the value of "good outcome" shares without limit. This asymmetry inherently favors optimistic betting, skewing futarchy forecasts. This effect is akin to "convexity" in the context of options.  
+2. In futarchy markets, new information asymmetrically affects bet values. Negative information can nullify the value of "bad outcome" shares by canceling the proposed action, while positive information increases the value of "good outcome" shares without limit. This asymmetry favors "good outcome" shares, skewing futarchy forecasts. This effect is akin to "convexity" in the context of options.  
     - The magnitude of this effect is a function of the amount of new information expected to come to light before the decision deadline. As a result, an attacker could exploit this to increase the value of "good outcome" shares for their desired action, by selecting an action with outsized uncertainty/expected volatility. One naive way of achieving this is to announce that important information relating to the proposal will be announced at some time over the course of the futarchy market.  
         - The attacker can potentially do this while maintaining plausible deniability, as many legitimate actions naturally have high uncertainty due to e.g. the action's full implications only being realised during the course of the futarchy market.  
         - Transparent attempts to create uncertainty could be prevented via use of a social backstop mechanism, to filter actions recommended by futarchy, before they are executed.  
@@ -99,7 +99,7 @@ It's important to note that these scenarios assume the existence of a prediction
    - The convexity effect is caused by the risk of new information becoming available. However, this risk diminishes as the market nears the date at which the action is taken, as less time remains for new information to emerge.  
    - The capital efficiency asymmetry effect is caused by the cost of having to lock up one's capital for the remainder of the market until the action is taken. As the action date approaches, this cost decreases.  
 
-4. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take.  
+2. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take.  
 
 - related links  
     - https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the  
