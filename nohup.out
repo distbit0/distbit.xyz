@@ -2890,3 +2890,160 @@ tracing_subscriber - init success
 [2102431:2102431:0611/204249.522925:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
 [2102478:2102478:0611/233704.975359:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [2102478:2102478:0611/233704.975794:ERROR:shared_image_manager.cc(225)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+Opening in existing browser session.
+Opening in existing browser session.
+Opening in existing browser session.
+Opening in existing browser session.
+[3520876:3520876:0808/225622.072485:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.ScreenSaver.GetActive: object_path= /org/freedesktop/ScreenSaver: org.freedesktop.DBus.Error.NotSupported: This method is not part of the idle inhibition specification: https://specifications.freedesktop.org/idle-inhibit-spec/latest/
+Opening in existing browser session.
+Opening in existing browser session.
+Opening in existing browser session.
+Opening in existing browser session.
+Opening in existing browser session.
+[3520914:3520914:0808/225624.913136:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[3520876:3520954:0808/225625.784846:ERROR:gcm_store_impl.cc(943)] Failed to restore security token.
+[3520914:3520914:0808/225628.789976:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[3520914:3520914:0808/225636.358771:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+Killing process: pkill --signal 2 brave
+
+
+
+About to execute command: pkill --signal 2 brave
+
+
+
+Killing process: pkill Telegram
+
+
+
+About to execute command: pkill Telegram
+
+
+
+Killing process: pkill --signal 2 code
+
+
+
+About to execute command: pkill --signal 2 code
+
+
+
+Found workspace config dir: /home/pimania/.config/Code/User/workspaceStorage/45c0011df96db78fb48c8c2920d428fd/workspace.json {'folder': 'file:///home/pimania/notes'}
+Found workspace config dir: /home/pimania/.config/Code/User/workspaceStorage/7caa657a80bf9d454b9b37bd41d7a41e/workspace.json {'folder': 'file:///home/pimania/notes%20%28Copy%29'}
+Found workspace config dir: /home/pimania/.config/Code/User/workspaceStorage/b05f8dcdcc9a2dabdd39fdc5d1b0936a/workspace.json {'folder': 'file:///home/pimania/notes'}
+Found workspace config dir: /home/pimania/.config/Code/User/workspaceStorage/b5133dee224a2fd92e676dba827ae0dc/meta.json {'id': 'b5133dee224a2fd92e676dba827ae0dc', 'name': 'notes'}
+No memento/workbench.parts.editor row found in database: /home/pimania/.config/Code/User/workspaceStorage/45c0011df96db78fb48c8c2920d428fd/state.vscdb
+No memento/workbench.parts.editor row found in database: /home/pimania/.config/Code/User/workspaceStorage/7caa657a80bf9d454b9b37bd41d7a41e/state.vscdb
+Removed backup database: /home/pimania/.config/Code/User/workspaceStorage/b05f8dcdcc9a2dabdd39fdc5d1b0936a/state.vscdb.backup
+deleted all tabs in workspace: /home/pimania/.config/Code/User/workspaceStorage/b05f8dcdcc9a2dabdd39fdc5d1b0936a/ memento/workbench.parts.editor
+No memento/workbench.parts.editor row found in database: /home/pimania/.config/Code/User/workspaceStorage/b5133dee224a2fd92e676dba827ae0dc/state.vscdb
+
+
+
+About to execute command: brave-browser --profile-directory=Default --app=https://web.whatsapp.com/ &
+
+
+
+
+
+
+About to execute command: brave-browser --new-window "https://docs.google.com/document/d/1gadrH6tXzlJmwcGUInSolYhtdRG5X_mNRJCgfROjCAk/edit" &
+
+
+
+
+
+
+About to execute command: brave-browser "https://app.slack.com/client/T02GBA68K43/C06CQCH1CQ0" &
+
+
+
+
+
+
+About to execute command: brave-browser "https://app.slack.com/client/T02A8UTG7FA/C03D0A943JR" &
+
+
+
+
+
+
+About to execute command: brave-browser "https://bigarcade.grafana.net/a/k6-app/tests/891210" &
+
+
+
+
+
+
+About to execute command: brave-browser "https://dash.cloudflare.com/25f550002dc51c9fc7e7ccef049a4079/bigarcade.org/dns/records" &
+
+
+
+
+
+
+About to execute command: brave-browser "https://big-arcade.sentry.io/auth/login/big-arcade/" &
+
+
+
+
+
+
+About to execute command: brave-browser "https://ap-southeast-2.console.aws.amazon.com/ec2/home?region=ap-southeast-2#Instances:instanceState=running" &
+
+
+
+
+
+
+About to execute command: brave-browser "https://us-east-1.console.aws.amazon.com/iam/home?region=ap-southeast-2#/users/create" &
+
+
+
+
+
+
+About to execute command: brave-browser "https://cloud.mongodb.com/v2/6639e73d257ce3218c86a227#/metrics/replicaSet/66430e18cff2c240bb7a71f0/queryInsights/namespace" &
+
+
+
+
+
+
+About to execute command: code "/home/pimania/notes" &
+
+
+
+
+
+
+About to execute command: code -r "/home/pimania/notes/zk/load test biga arcade.md" &
+
+
+
+
+
+
+About to execute command: code -r "/home/pimania/notes/zk/paul tmp.md" &
+
+
+
+
+
+
+About to execute command: code -r "/home/pimania/notes/zk/paul todo.md" &
+
+
+
+
+
+
+About to execute command: code "/home/pimania/dev/biga/load" &
+
+
+
+todo string:        1)  write new stoshi rew
+[3520876:3520876:0808/225649.897030:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3524514:22:0808/225707.703529:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520876:0808/225921.448215:ERROR:atom_cache.cc(229)] Add chromium/x-source-url to kAtomsToCache
+[3520876:3520876:0808/225949.957628:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
