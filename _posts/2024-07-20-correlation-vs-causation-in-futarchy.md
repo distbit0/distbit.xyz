@@ -58,6 +58,7 @@ It's important to note that these scenarios assume the existence of a prediction
 
 2. In futarchy markets, new information asymmetrically affects bet values. Negative information can nullify the value of "bad outcome" shares by canceling the proposed action, while positive information increases the value of "good outcome" shares without limit. This asymmetry favors "good outcome" shares, skewing futarchy forecasts. This effect is akin to "convexity" in the context of options.  
     - The magnitude of this effect is a function of the amount of new information expected to come to light before the decision deadline. As a result, an attacker could exploit this to increase the value of "good outcome" shares for their desired action, by selecting an action with outsized uncertainty/expected volatility. One naive way of achieving this is to announce that important information relating to the proposal will be announced at some time over the course of the futarchy market.  
+        - The reason the magnitude of the effect is a function of amt of new info expected to come to light, is that new info increases expected volatility, and since "good outcome" shares have positive gamma, they also have positive vega. Hence their price is positively correlated with expected volatility.  
         - The attacker can potentially do this while maintaining plausible deniability, as many legitimate actions naturally have high uncertainty due to e.g. the action's full implications only being realised during the course of the futarchy market.  
         - Transparent attempts to create uncertainty could be prevented via use of a social backstop mechanism, to filter actions recommended by futarchy, before they are executed.  
     - [Spreadsheet with relevant example](https://docs.google.com/spreadsheets/d/1TNM85DoQqOvlQFZJQ20yEaK6QsS33ZIo3fcyws5X124/edit?gid=0#gid=0)  
@@ -101,6 +102,9 @@ It's important to note that these scenarios assume the existence of a prediction
    - The capital efficiency asymmetry effect is caused by the cost of having to lock up one's capital for the remainder of the market until the action is taken. As the action date approaches, this cost decreases.  
 
 2. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take.  
+
+
+Thanks to [Zack Amoveo](https://x.com/zack_bitcoin) and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
 
 - related links  
     - https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the  
