@@ -3047,3 +3047,50 @@ todo string:        1)  write new stoshi rew
 [3524514:22:0808/225707.703529:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
 [3520876:3520876:0808/225921.448215:ERROR:atom_cache.cc(229)] Add chromium/x-source-url to kAtomsToCache
 [3520876:3520876:0808/225949.957628:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520898:0808/230622.057172:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3537493:31:0808/230629.377031:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3537493:31:0808/230629.377206:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3537493:31:0808/230629.377314:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3537493:31:0808/230629.377411:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3537493:31:0808/230629.377533:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3537493:31:0808/230629.377646:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0808/230650.702986:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/230740.774334:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3537493:31:0808/230840.198275:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520876:0808/230919.518063:ERROR:atom_cache.cc(229)] Add chromium/from-privileged to kAtomsToCache
+[3520876:3520898:0808/230920.041015:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520876:0808/231051.567715:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520898:0808/231259.196801:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/231934.909323:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520876:0808/232815.209843:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0808/232816.939175:ERROR:interface_endpoint_client.cc(722)] Message 2 rejected by interface blink.mojom.Widget
+[3520876:3520876:0808/233236.503020:ERROR:atom_cache.cc(229)] Add chromium/x-window-drag to kAtomsToCache
+[3520876:3520898:0808/233434.139818:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/233456.035759:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520876:0808/233522.441203:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[3520876:3520898:0808/233540.313586:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/233552.974261:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/233606.946446:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3574396:30:0808/233614.664647:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0808/233648.078174:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/233742.222146:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/233804.783005:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/233825.278293:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/233831.745319:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520914:3520914:0808/233854.074733:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0808/233854.075258:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520876:3520898:0808/233924.384639:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/234102.963030:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/234112.148019:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/234213.559928:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/234357.658454:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520876:0808/234449.718232:ERROR:CONSOLE(1)] "Failed to handle media duration metadata: missing publisher key for media key youtube_uwmjboRBFsI", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[3520876:3520876:0808/234515.196966:ERROR:CONSOLE(1)] "Failed to handle media duration metadata: missing publisher key for media key youtube_K2OsKE8ZdI0", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[3520876:3520876:0808/234555.194405:ERROR:CONSOLE(1)] "Failed to handle media duration metadata: missing publisher key for media key youtube_K2OsKE8ZdI0", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[3520876:3520876:0808/234635.197848:ERROR:CONSOLE(1)] "Failed to handle media duration metadata: missing publisher key for media key youtube_K2OsKE8ZdI0", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[3520876:3520876:0808/234715.197374:ERROR:CONSOLE(1)] "Failed to handle media duration metadata: missing publisher key for media key youtube_K2OsKE8ZdI0", source: chrome-extension://mnojpmjdmbbfmejpflffifhffcmidifd/out/brave_extension_background.bundle.js (1)
+[3520876:3520898:0808/234756.494488:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/234834.015575:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0808/235026.738948:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520914:3520914:0808/235431.596340:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0808/235431.596619:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
