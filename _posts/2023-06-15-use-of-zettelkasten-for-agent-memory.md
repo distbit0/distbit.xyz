@@ -41,4 +41,4 @@ If a zettelkasten is employed:
 		- allows for more efficiently finding relevant ideas when solving problem/carrying out a task  
 - more thoughts on this topic can be found in [learning as adding new functions to a concept network](/learning-as-adding-new-functions-to-a-concept-network) and [AI agent memory optimisation design](/ai-agent-memory-optimisation-design)  
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)

@@ -29,4 +29,4 @@ Below are some potential heuristics for determining how much attention, thought 
 - Novelty of the idea  
 	- relates to the extent to which the idea does not overlap with existing ideas and hence is likely to provide new knowledge  
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)

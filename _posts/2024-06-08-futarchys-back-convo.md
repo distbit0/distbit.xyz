@@ -168,4 +168,4 @@ title: Futarchys back convo
 >The combinatorial market is insecure because there isn't a profit motive to fix an incorrect price in some situations. So, arbiteragers wouldn't have a profit motive to fix a discrepancy between the 2 markets.  
 
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)

@@ -104,11 +104,12 @@ It's important to note that these scenarios assume the existence of a prediction
 2. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take.  
 
 
-Thanks to [Zack Amoveo](https://x.com/zack_bitcoin) and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
-
 - related links  
     - [https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the](https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the)  
     - [https://dynomight.net/prediction-market-causation/](https://dynomight.net/prediction-market-causation/)  
     - [https://www.overcomingbias.com/p/conditional-close-election-marketshtml](https://www.overcomingbias.com/p/conditional-close-election-marketshtml)  
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)
+
+Thanks to [Zack Amoveo](https://x.com/zack_bitcoin) and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
+
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)

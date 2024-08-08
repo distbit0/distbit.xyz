@@ -61,4 +61,4 @@ However, as more economic activity is conducted by Agentic AIs, humans will also
 • Enhanced ability for citizens to make informed decisions and hold governments accountable  
 • Potential for increased transparency in state activities  
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 30 min call](https://cal.com/distbit/30min)
+If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)
