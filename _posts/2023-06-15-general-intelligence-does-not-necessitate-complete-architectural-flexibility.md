@@ -29,4 +29,4 @@ In order for this to occur though, the initial architecture must be designed to 
 
 The ability of the AutoGPT to store new ideas in its memory is critical to it being able to improve itself, given that what really constitutes and distinguishes one instance of an AutoGPT from another are the ideas in their memory.  
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)
+If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)

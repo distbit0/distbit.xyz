@@ -112,4 +112,4 @@ It's important to note that these scenarios assume the existence of a prediction
 
 Thanks to [Zack Amoveo](https://x.com/zack_bitcoin) and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
 
-If you found this interesting, have feedback or are working on something related, let's get in touch: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)
+If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)
