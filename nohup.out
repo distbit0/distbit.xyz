@@ -3179,3 +3179,4 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520914:3520914:0809/145333.687955:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [3520914:3520914:0809/145333.688320:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [3520876:3520898:0809/145428.201088:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520876:0809/150044.171833:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost

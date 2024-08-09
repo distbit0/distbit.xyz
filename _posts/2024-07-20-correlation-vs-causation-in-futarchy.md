@@ -101,9 +101,9 @@ It's important to note that these scenarios assume the existence of a prediction
 
 2. It causes there to be a trade-off between how often you can use the knowledge gained from the futarchy market (and how often you do not have to take action at random, which may be very costly) versus the minimum signal which the futarchy market prices can detect.  
 
-- related links  
-    - [https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the](https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the)  
+- related links (especially the first)  
     - [https://dynomight.net/prediction-market-causation/](https://dynomight.net/prediction-market-causation/)  
+    - [https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the](https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the)  
     - [https://www.overcomingbias.com/p/conditional-close-election-marketshtml](https://www.overcomingbias.com/p/conditional-close-election-marketshtml)  
 
 
