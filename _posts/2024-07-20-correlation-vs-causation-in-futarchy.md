@@ -63,9 +63,6 @@ It's important to note that these scenarios assume the existence of a prediction
         - Transparent attempts to create uncertainty could be prevented via use of a social backstop mechanism, to filter actions recommended by futarchy, before they are executed.  
     - [Spreadsheet with relevant example](https://docs.google.com/spreadsheets/d/1TNM85DoQqOvlQFZJQ20yEaK6QsS33ZIo3fcyws5X124/edit?gid=0#gid=0)  
 
-3. Traders have little incentive to make pessimistic bets on the outcome of an action. This is because they have little incentive to sell "good outcome" for "bad outcome" shares, if doing so causes the forecast of an action's outcome to fall below the decision threshold. If the forecast is below the decision threshold, the action will not be taken, therefore making the trader's shares worthless. The magnitude of this effect increases as the decision deadline approaches, as there is less time remaining for, and hence a lower probability of, the price moving back above the decision threshold.  
-    - Or perhaps this is incorrect, as traders can not collude to keep the price of their action's child market shares above the decision threshold, and hence it is not in the interest of any particular trader to so. This is because no trader is capable of single-handedly determining whether a forecast remains above or falls below a decision threshold, thereby influencing whether an action is taken or not.  
-
 
 Mitigations:  
 1. The strength of both the convexity and capital efficiency asymmetry effects decreases as the action deadline approaches. This is because:  
