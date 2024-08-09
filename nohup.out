@@ -3193,3 +3193,6 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [4022215:43:0809/165852.545131:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
 [4022215:43:0809/165852.545220:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
 [4022215:43:0809/165852.787979:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520876:0809/171315.339861:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+tracing_subscriber - init success
+Fontconfig error: Cannot load default config file: No such file: (null)
