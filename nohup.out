@@ -3202,3 +3202,10 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520876:3520898:0809/182837.745546:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
 [3520876:3520876:0809/182926.549398:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
 [3520876:3520898:0809/183629.907724:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+[3520914:3520914:0809/185333.775364:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520924:3520934:0809/185718.917216:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/185718.960502:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/185721.388982:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/185721.392637:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/185721.655631:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/185721.655863:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
