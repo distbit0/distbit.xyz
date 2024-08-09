@@ -71,7 +71,7 @@ It's important to note that these scenarios assume the existence of a prediction
    - The convexity effect is caused by the risk of new information becoming available. However, this risk diminishes as the market nears the date at which the action is taken, as less time remains for new information to emerge.  
    - The capital efficiency asymmetry effect is caused by the cost of having to lock up one's capital for the remainder of the market until the action is taken. As the action date approaches, this cost decreases.  
 
-5. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take.  
+5. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take. A requirement could also be enforced that the price has been relatively stable for a certain amount of time before the action is taken, to ensure time decay due to the convexity is not impacting the price.  
 
 
 ## Strategy 3: Occasionally Take Actions Expected to Cause Bad Outcomes  
@@ -99,7 +99,9 @@ It's important to note that these scenarios assume the existence of a prediction
 **Problems:**  
 1. This significantly reduces capital efficiency for traders, and hence also reduces the precision/sensitivity of the futarchy price discovery process to small signals. This is a result of the fact that in the vast majority of cases, all trades will be reverted, preventing traders from converting their information edge into returns on their capital.  
 
-2. It causes there to be a trade-off between how often you can use the knowledge gained from the futarchy market (and how often you do not have to take action at random, which may be very costly) versus the minimum signal which the futarchy market prices can detect.  
+2. Creates trade-off between how often you can use the knowledge gained from the futarchy market (and how often you do not have to take action at random, which may be very costly) versus the minimum signal which the futarchy market prices can detect.  
+
+This approach is best suited to contexts where the cost of randomly executing a (likely) sub-optimal action is bounded, non-existential and less than the value of the insights produced by the other reverted futarchy markets.  
 
 - related links (especially the first)  
     - [https://dynomight.net/prediction-market-causation/](https://dynomight.net/prediction-market-causation/)  
@@ -107,6 +109,6 @@ It's important to note that these scenarios assume the existence of a prediction
     - [https://www.overcomingbias.com/p/conditional-close-election-marketshtml](https://www.overcomingbias.com/p/conditional-close-election-marketshtml)  
 
 
-Thanks to [Zack Amoveo](https://x.com/zack_bitcoin) and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
+Thanks to [Zack](https://x.com/zack_bitcoin) and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
 
 If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)
