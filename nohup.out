@@ -3209,3 +3209,11 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520924:3520934:0809/185721.392637:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
 [3520924:3520934:0809/185721.655631:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
 [3520924:3520934:0809/185721.655863:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/190322.814670:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/190322.925216:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/190323.079844:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/190323.177969:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/190326.340834:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/190326.348240:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/190326.611294:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200
+[3520924:3520934:0809/190326.612546:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -200

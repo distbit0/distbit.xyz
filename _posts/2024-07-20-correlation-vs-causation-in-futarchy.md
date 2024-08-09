@@ -67,11 +67,12 @@ It's important to note that these scenarios assume the existence of a prediction
     - Or perhaps this is incorrect, as traders can not collude to keep the price of their action's child market shares above the decision threshold, and hence it is not in the interest of any particular trader to so. This is because no trader is capable of single-handedly determining whether a forecast remains above or falls below a decision threshold, thereby influencing whether an action is taken or not.  
 
 
-4. The strength of both the convexity and capital efficiency asymmetry effects decreases as the action deadline approaches. This is because:  
+Mitigations:  
+1. The strength of both the convexity and capital efficiency asymmetry effects decreases as the action deadline approaches. This is because:  
    - The convexity effect is caused by the risk of new information becoming available. However, this risk diminishes as the market nears the date at which the action is taken, as less time remains for new information to emerge.  
    - The capital efficiency asymmetry effect is caused by the cost of having to lock up one's capital for the remainder of the market until the action is taken. As the action date approaches, this cost decreases.  
 
-5. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take. A requirement could also be enforced that the price has been relatively stable for a certain amount of time before the action is taken, to ensure time decay due to the convexity is not impacting the price. This may result in the action being delayed until the uncertainty has been reduced sufficiently.  
+2. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take. A requirement could also be enforced that the price has been relatively stable for a certain amount of time before the action is taken, to ensure time decay due to the convexity is not impacting the price. This may result in the action being delayed until the uncertainty has been reduced sufficiently.  
 
 
 ## Strategy 3: Occasionally Take Actions Expected to Cause Bad Outcomes  
