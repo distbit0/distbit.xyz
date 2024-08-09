@@ -3247,3 +3247,9 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520876:3520898:0809/195209.312331:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
 [3520876:3520898:0809/195230.059437:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
 [3520876:3520898:0809/195926.243252:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+Fontconfig error: Cannot load default config file: No such file: (null)
+[275585:23:0809/202617.616424:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+[3520876:3520876:0809/203537.207620:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0809/203537.208737:ERROR:interface_endpoint_client.cc(722)] Message 2 rejected by interface blink.mojom.Widget
