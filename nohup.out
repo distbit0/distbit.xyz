@@ -3282,3 +3282,26 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520876:3520898:0809/225528.661422:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
 [3520876:3520898:0809/225620.850861:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
 [3520876:3520898:0809/225744.795623:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[414193:34:0809/230040.056281:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230040.056447:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230040.056544:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230040.056661:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230040.056953:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230040.057103:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0809/230110.921801:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[414193:34:0809/230137.355754:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230137.355998:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230137.356172:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230137.356319:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230137.356489:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230150.724883:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230150.725081:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230150.725228:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230150.725343:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230150.725490:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[414193:34:0809/230151.494546:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0809/230905.086339:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[420519:23:0809/231649.746556:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520924:3520934:0809/231916.172090:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -100
+[3520924:3520934:0809/231917.300500:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -100
+[3520924:3520934:0809/232355.597119:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -100
