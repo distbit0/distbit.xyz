@@ -3180,3 +3180,16 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520914:3520914:0809/145333.688320:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [3520876:3520898:0809/145428.201088:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
 [3520876:3520876:0809/150044.171833:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0809/161251.919796:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520898:0809/163917.369844:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/163944.242932:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/164032.820226:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/164154.091243:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/164546.758108:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/165258.014642:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[4022215:43:0809/165852.544773:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[4022215:43:0809/165852.544936:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[4022215:43:0809/165852.545038:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[4022215:43:0809/165852.545131:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[4022215:43:0809/165852.545220:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[4022215:43:0809/165852.787979:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
