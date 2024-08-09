@@ -96,9 +96,6 @@ It's important to note that these scenarios assume the existence of a prediction
 
 **Implementation:** Choose the action to execute completely at random, irrespective of futarchy prices in a small percentage of cases. In all other cases, revert all trades and execute the action recommended by futarchy. The rationale for choosing the action at random in the minority of cases is to prevent the convexity effects described in Strategy 2 from biasing prices in favour of the more uncertain action.  
 
-
-This strategy is also useful in contexts where the cost of running an experiment to test the effectiveness of an action is higher than just   
-
 **Problems:**  
 1. This significantly reduces capital efficiency for traders, and hence also reduces the precision/sensitivity of the futarchy price discovery process to small signals. This is a result of the fact that in the vast majority of cases, all trades will be reverted, preventing traders from converting their information edge into returns on their capital.  
 

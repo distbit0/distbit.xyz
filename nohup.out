@@ -3168,3 +3168,14 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 Fontconfig error: Cannot load default config file: No such file: (null)
 [3520914:3520914:0809/132504.582564:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [3520914:3520914:0809/132504.582924:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520876:3520876:0809/142816.567490:ERROR:interface_endpoint_client.cc(722)] Message 2 rejected by interface blink.mojom.Widget
+[3520876:3520898:0809/144025.808180:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/144055.380439:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/144147.308016:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/144342.176669:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/144643.494109:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520914:3520914:0809/145306.968714:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/145306.969184:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/145333.687955:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/145333.688320:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520876:3520898:0809/145428.201088:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
