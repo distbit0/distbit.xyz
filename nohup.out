@@ -3163,3 +3163,8 @@ todo string:        1)  write new stoshi rew
 Fontconfig error: Cannot load default config file: No such file: (null)
 [3520914:3520914:0809/124817.954402:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [3894898:23:0809/125545.362224:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520914:3520914:0809/130550.000824:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/130550.001217:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+Fontconfig error: Cannot load default config file: No such file: (null)
+[3520914:3520914:0809/132504.582564:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/132504.582924:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
