@@ -3253,3 +3253,11 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 Fontconfig error: Cannot load default config file: No such file: (null)
 [3520876:3520876:0809/203537.207620:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
 [3520876:3520876:0809/203537.208737:ERROR:interface_endpoint_client.cc(722)] Message 2 rejected by interface blink.mojom.Widget
+[3520876:3520876:0809/213025.340201:ERROR:interface_endpoint_client.cc(722)] Message 2 rejected by interface blink.mojom.Widget
+[3520876:3520876:0809/214152.733192:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+[3520876:3520876:0809/215421.857963:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0809/215421.857994:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0809/215749.131015:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0809/215749.131072:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost

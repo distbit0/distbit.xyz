@@ -64,7 +64,7 @@ It's important to note that these scenarios assume the existence of a prediction
     - [Spreadsheet with relevant example](https://docs.google.com/spreadsheets/d/1TNM85DoQqOvlQFZJQ20yEaK6QsS33ZIo3fcyws5X124/edit?gid=0#gid=0)  
 
 
-Mitigations:  
+**Mitigations:**  
 1. The strength of both the convexity and capital efficiency asymmetry effects decreases as the action deadline approaches. This is because:  
    - The convexity effect is caused by the risk of new information becoming available. However, this risk diminishes as the market nears the date at which the action is taken, as less time remains for new information to emerge.  
    - The capital efficiency asymmetry effect is caused by the cost of having to lock up one's capital for the remainder of the market until the action is taken. As the action date approaches, this cost decreases.  
