@@ -3159,3 +3159,5 @@ todo string:        1)  write new stoshi rew
 [3622070:31:0809/104436.724188:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
 [3622070:31:0809/104436.724295:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
 [3622070:31:0809/104436.724415:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3803047:22:0809/115111.824226:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+Fontconfig error: Cannot load default config file: No such file: (null)
