@@ -71,7 +71,7 @@ It's important to note that these scenarios assume the existence of a prediction
    - The convexity effect is caused by the risk of new information becoming available. However, this risk diminishes as the market nears the date at which the action is taken, as less time remains for new information to emerge.  
    - The capital efficiency asymmetry effect is caused by the cost of having to lock up one's capital for the remainder of the market until the action is taken. As the action date approaches, this cost decreases.  
 
-5. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take. A requirement could also be enforced that the price has been relatively stable for a certain amount of time before the action is taken, to ensure time decay due to the convexity is not impacting the price.  
+5. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take. A requirement could also be enforced that the price has been relatively stable for a certain amount of time before the action is taken, to ensure time decay due to the convexity is not impacting the price. This may result in the action being delayed until the uncertainty has been reduced sufficiently.  
 
 
 ## Strategy 3: Occasionally Take Actions Expected to Cause Bad Outcomes  

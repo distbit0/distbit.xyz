@@ -3200,3 +3200,5 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520914:3520914:0809/182746.906896:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [3520914:3520914:0809/182746.907201:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [3520876:3520898:0809/182837.745546:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+[3520876:3520876:0809/182926.549398:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520898:0809/183629.907724:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
