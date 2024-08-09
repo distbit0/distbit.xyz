@@ -3094,3 +3094,47 @@ todo string:        1)  write new stoshi rew
 [3520876:3520898:0808/235026.738948:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
 [3520914:3520914:0808/235431.596340:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [3520914:3520914:0808/235431.596619:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520876:3520898:0809/000801.302976:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3616975:24:0809/000810.702719:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622569:22:0809/000826.974900:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0809/000830.433206:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/000904.156080:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+[3520876:3520898:0809/092155.067296:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/092345.608348:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/092634.774938:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3622070:31:0809/093127.015271:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/093127.015683:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/093127.015880:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/093127.016050:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/093127.016225:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/093127.174060:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0809/093341.833679:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3643193:22:0809/093520.079724:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3643193:22:0809/093521.548974:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3643193:22:0809/093523.065791:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3643193:22:0809/093529.770172:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095408.818555:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095408.818718:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095408.818814:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095408.818899:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095408.818983:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095409.180086:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095412.718436:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095412.718600:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095412.718705:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095412.718803:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.985959:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.986208:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.986327:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.986825:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.987005:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.987247:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.987595:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.987852:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.988962:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.989147:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095413.990867:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095417.742663:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095417.754791:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095417.754962:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3622070:31:0809/095417.755059:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
