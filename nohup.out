@@ -3261,3 +3261,24 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520876:3520876:0809/215421.857994:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
 [3520876:3520876:0809/215749.131015:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
 [3520876:3520876:0809/215749.131072:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[3520914:3520914:0809/220220.208349:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520876:3520876:0809/220619.078677:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0809/220619.509508:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0809/220710.372140:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0809/220710.544604:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+[3520914:3520914:0809/220814.458033:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/220814.458439:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/220814.458688:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/220814.459043:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+Fontconfig error: Cannot load default config file: No such file: (null)
+[3520914:3520914:0809/224429.169719:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/224429.170034:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/224429.170203:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/224429.170407:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/224705.412150:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/224705.412486:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520876:3520898:0809/225507.503702:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[414112:23:0809/225515.367531:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0809/225528.661422:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/225620.850861:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0809/225744.795623:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
