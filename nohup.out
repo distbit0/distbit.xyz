@@ -3352,3 +3352,25 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520914:3520914:0810/085913.661736:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 [3520914:3520914:0810/085913.662167:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
 Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+[3520876:3520876:0810/092534.703285:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0810/092710.909197:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520876:0810/092931.427624:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[642167:22:0810/093425.438502:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[642167:22:0810/093426.938145:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[642167:22:0810/093849.189476:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520914:3520914:0810/093943.168623:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0810/093943.169087:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0810/094002.328057:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0810/094002.331974:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[653250:22:0810/094243.555487:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520914:3520914:0810/095029.900396:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0810/095029.900900:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[670560:21:0810/095633.340740:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0810/095642.149861:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0810/095704.641172:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[670560:21:0810/095752.998977:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[670560:21:0810/095754.458258:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[670560:21:0810/095801.936904:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0810/095802.033459:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0810/095926.070200:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
