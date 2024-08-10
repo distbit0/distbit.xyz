@@ -3305,3 +3305,20 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [3520924:3520934:0809/231916.172090:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -100
 [3520924:3520934:0809/231917.300500:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -100
 [3520924:3520934:0809/232355.597119:ERROR:ssl_client_socket_impl.cc(883)] handshake failed; returned -1, SSL error code 1, net_error -100
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+[3520914:3520914:0809/232832.766365:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/232832.766676:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/233059.145218:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0809/233059.145774:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[429489:22:0809/233115.413099:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0809/233148.575226:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+[3520876:3520898:0809/233148.791333:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+[3520876:3520898:0809/233940.090285:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+[3520876:3520898:0809/233940.232243:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: Cannot load default config file: No such file: (null)
+[3520876:3520876:0810/064531.810950:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
