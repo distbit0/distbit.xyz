@@ -3322,3 +3322,24 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 Fontconfig error: Cannot load default config file: No such file: (null)
 Fontconfig error: Cannot load default config file: No such file: (null)
 [3520876:3520876:0810/064531.810950:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Fontconfig error: Cannot load default config file: No such file: (null)
+[3520914:3520914:0810/071502.362412:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0810/071502.362699:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0810/071736.557232:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0810/071736.557520:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520914:3520914:0810/072634.094959:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[3520876:3520898:0810/073255.218560:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520876:0810/073304.490578:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[3520876:3520898:0810/073325.090935:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0810/073407.527203:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0810/073607.327553:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520914:3520914:0810/073650.465112:ERROR:shared_image_manager.cc(223)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[492767:5:0810/073741.885373:ERROR:mojo_audio_output_ipc.cc(186)] MojoAudioOutputIPC failed to acquire factory
+[3520876:3520898:0810/073857.881236:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0810/074532.560373:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520876:0810/074536.334537:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+[503363:22:0810/074539.559955:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0810/075738.160632:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[518994:24:0810/075739.721396:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
+[3520876:3520898:0810/075802.471806:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
+[3520876:3520898:0810/075846.006415:ERROR:registration_request.cc(305)] Registration HTTP response code not OK: 404
