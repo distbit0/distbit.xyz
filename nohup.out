@@ -3381,3 +3381,39 @@ Fontconfig error: Cannot load default config file: No such file: (null)
 [755659:22:0810/113041.094467:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
 [767571:22:0810/114244.950741:ERROR:ffmpeg_common.cc(965)] Unsupported pixel format: -1
 Fontconfig error: Cannot load default config file: No such file: (null)
+[3520876:3520876:0810/150648.438572:FATAL:partition_alloc_support.cc(830)] Detected dangling raw_ptr in unretained with id=0x000002b00eeb83fc:
+
+Task trace:
+#0 0x56243585ecc4 <unknown>
+
+Stack trace:
+#0 0x56242b349b4a <unknown>
+#1 0x562431446de9 <unknown>
+#2 0x56242d280045 <unknown>
+#3 0x562429edef5b <unknown>
+#4 0x562429ee2c9d <unknown>
+#5 0x7f2cb16e6e8c <unknown>
+#6 0x7f2cb1748c98 <unknown>
+#7 0x7f2cb16e8383 g_main_context_iteration
+#8 0x562429ee51f5 <unknown>
+#9 0x56242b008ee5 <unknown>
+#10 0x56242b008565 <unknown>
+#11 0x56242c432596 <unknown>
+#12 0x56242c432310 <unknown>
+#13 0x56242c430eb5 <unknown>
+#14 0x56242c041fec <unknown>
+#15 0x56242c041598 ChromeMain
+#16 0x7f2cb0993088 __libc_start_call_main
+#17 0x7f2cb099314b __libc_start_main_alias_2
+#18 0x56242dc6e2ba _start
+
+
+Please check for more information on:
+https://chromium.googlesource.com/chromium/src/+/main/docs/unretained_dangling_ptr_guide.md
+
+[0810/150649.172011:ERROR:elf_dynamic_array_reader.h(64)] tag not found
+[0810/150649.172361:ERROR:elf_dynamic_array_reader.h(64)] tag not found
+[0810/150649.173623:ERROR:elf_dynamic_array_reader.h(64)] tag not found
+[0810/150649.174084:ERROR:elf_dynamic_array_reader.h(64)] tag not found
+[0810/150649.197499:ERROR:directory_reader_posix.cc(43)] opendir /home/pimania/.config/BraveSoftware/Brave-Browser/Crash Reports/attachments/b0c86b17-7d7d-4e10-bfa6-be72e5c11127: No such file or directory (2)
+/usr/bin/brave-browser: line 39: 3520876 Trace/breakpoint trap   (core dumped) "$HERE/brave" "$@"
