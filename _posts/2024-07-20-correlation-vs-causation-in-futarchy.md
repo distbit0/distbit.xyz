@@ -97,6 +97,8 @@ It's important to note that these scenarios assume the existence of a prediction
 **Problems:**  
 1. This significantly reduces capital efficiency for traders, and hence also reduces the precision/sensitivity of the futarchy price discovery process to small signals. This is a result of the fact that in the vast majority of cases, all trades will be reverted, preventing traders from converting their information edge into returns on their capital.  
 
+2. There is still a potential confounding factors, despite the action being chosen at random. This is because the futarchy mechanism is not only predicting the future value of the governance token, but also the future value of the "quote asset" i.e. the asset in which the gov token's value is being measured. As a result, distortions could arise if the value, marginal utility or interest rate of the quote asset (e.g. USD) is expected to be correlated with the probability of a certain outcome. An example might be that an action that is more likely to succeed in a financial crisis may be priced over-optimistically by futarchy, as a result of traders being risk averse and viewing this as a hedge.  
+
 2. Creates trade-off between how often you can use the knowledge gained from the futarchy market (and how often you do not have to take action at random, which may be very costly) versus the minimum signal which the futarchy market prices can detect.  
 
 This approach is best suited to contexts where the cost of randomly executing a (likely) sub-optimal action is bounded, non-existential and less than the value of the insights produced by the other reverted futarchy markets.  
@@ -107,6 +109,6 @@ This approach is best suited to contexts where the cost of randomly executing a 
     - [https://www.overcomingbias.com/p/conditional-close-election-marketshtml](https://www.overcomingbias.com/p/conditional-close-election-marketshtml)  
 
 
-Thanks to [Zack](https://x.com/zack_bitcoin) and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
+Thanks to [Zack](https://x.com/zack_bitcoin), Joe and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
 
 If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)
