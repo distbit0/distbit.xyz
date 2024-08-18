@@ -35,8 +35,9 @@ It's important to note that these scenarios assume the existence of a prediction
 
 - **p(action) and p(outcome)**: Notations representing the probability of an action being taken and the probability of a specific outcome occurring, respectively.  
 
-- "good outcome" shares and "bad outcome" shares: For each child market, contracts that pay out if the action of said child market leads to a positive or negative outcome, respectively.   
+- **"good outcome" shares and "bad outcome" shares**: For each child market, contracts that pay out if the action of said child market leads to a positive or negative outcome, respectively.   
 
+- **Vega**: In prediction markets, vega represents the sensitivity of a share's price to changes in the perceived uncertainty of the outcome. Higher vega means the share price is more positively impacted by higher expected volatility/uncertainty.  
 
 ## Strategy 1: Partial Implementation  
 
@@ -58,7 +59,7 @@ It's important to note that these scenarios assume the existence of a prediction
 
 2. In futarchy markets, new information asymmetrically affects bet values. Negative information can nullify the value of "bad outcome" shares by canceling the proposed action, while positive information increases the value of "good outcome" shares without limit. This asymmetry favors "good outcome" shares, skewing futarchy forecasts. This effect is akin to "convexity" in the context of options.  
     - The magnitude of this effect is a function of the amount of new information expected to come to light before the decision deadline. As a result, an attacker could exploit this to increase the value of "good outcome" shares for their desired action, by selecting an action with outsized uncertainty/expected volatility. One naive way of achieving this is to announce that important information relating to the proposal will be announced at some time over the course of the futarchy market.  
-        - The reason the magnitude of the effect is a function of amt of new info expected to come to light, is that new info increases expected volatility, and since "good outcome" shares have positive gamma, they also have positive vega. Hence their price is positively correlated with expected volatility.  
+        - The reason the magnitude of the effect is a function of amt of new info expected to come to light, is that new info increases expected volatility, and "good outcome" shares have positive vega, meaning their price is positively impacted by higher expected uncertainty/volatility. Hence their price is positively correlated with expected volatility.  
         - The attacker can potentially do this while maintaining plausible deniability, as many legitimate actions naturally have high uncertainty due to e.g. the action's full implications only being realised during the course of the futarchy market.  
         - Transparent attempts to create uncertainty could be prevented via use of a social backstop mechanism, to filter actions recommended by futarchy, before they are executed.  
     - [Spreadsheet with relevant example](https://docs.google.com/spreadsheets/d/1TNM85DoQqOvlQFZJQ20yEaK6QsS33ZIo3fcyws5X124/edit?gid=0#gid=0)  
