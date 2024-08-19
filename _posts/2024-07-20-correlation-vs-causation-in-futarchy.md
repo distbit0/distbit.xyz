@@ -21,7 +21,7 @@ This post explores various strategies for implementing futarchy and their implic
 
 It's important to note that these scenarios assume the existence of a prediction market for whether an action will be taken, along with two child prediction markets on the effect (on a target variable such as GDP) of taking the action versus not taking it.  
 
-# Terminology Definitions  
+# Terminology  
 
 - **Futarchy**: A proposed method of governance where prediction markets are used to determine which actions/policies will best achieve selected goals.  
 
