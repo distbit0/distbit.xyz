@@ -15,101 +15,127 @@ title: Convexity, capital efficiency and confounding in futarchy
 
 
 
-# Futarchy Strategies: Implications and Trade-offs  
+Prediction markets are an increasingly popular primitive, currently being used to facilitate speculation on the probability of various political, geopolitical and economic events. While this use case is promising, as demonstrated by the increasingly high TVL of protocols such as Polymarket, it only unlocks a fraction of what prediction markets have to offer.   
 
-This post explores various strategies for implementing futarchy and their implications, with each successive strategy attempting to address the issues of the previous one. However, as we'll see, each strategy comes with its own set of trade-offs.  
+Decision markets are how prediction markets become useful for making decisions. The event probabilities which prediction markets currently elicit can sometimes be useful for informing decisions, however they are not optimised for this purpose.  
 
-It's important to note that these scenarios assume the existence of a prediction market for whether an action will be taken, along with two child prediction markets on the effect (on a target variable such as GDP) of taking the action versus not taking it.  
+Prediction markets only reveal the probability of an event, whereas decision markets reveal how different actions would impact the outcome being predicted. For example, a prediction market might reveal that p(GDP increasing year over year) = 0.4 (where p() denotes probability), whereas a decision market could tell us that conditional on electing Ron Paul, p(GDP increasing) = 0.9, whereas only 0.06 if Kamala Harris were to be elected (figures are for illustrative purposes only).   
 
-# Terminology  
+While the output of a prediction market can be useful, the conditional probabilities provided by conditional prediction markets are much more actionable. In this case, they could be used to conclude that voting for Ron Paul is the superior action, if one's goal is a higher GDP.  
 
-- **Futarchy**: A proposed method of governance where prediction markets are used to determine which actions/policies will best achieve selected goals.  
+All the above however is still framed in the context of politics, which despite being the domain in which prediction markets have excelled, is unlikely to be where decision markets create the most value. Politics-focused prediction markets are popular because people enjoy betting on matters which they have tribal or ideological connections to, given that the target customer base of prediction markets, such as Polymarket, is speculators. The target customer base of decision markets, however, will be information buyers; those willing to pay to discover which action the market believes they should take in order to maximise success according to a given metric.   
 
-- **Child prediction markets**: Subsidiary markets created to predict outcomes of specific scenarios within the main prediction market.  
+The goal of decision markets is to elicit from market participants what the expected impact of an action is on a selected metric. While this might seem simple, given the below high level outline, there are several confounding, alignment and manipulation risks which are important to consider and potentially mitigate and which are the focus of this article.  
 
-- **Target variable**: The metric used to measure the success or failure of a policy in futarchy (e.g., GDP, governance token price)  
+# Mechanism overview  
 
-- **Confounding factors**: Variables that influence both the independent variable (e.g., policy implementation) and dependent variable (e.g., target metric), potentially leading to incorrect conclusions about their relationship.  
+Here's how decision markets work in the context of a DAO evaluating funding proposals (where funding a proposal is considered an action):  
 
-- **Decision threshold**: The threshold at which the futarchy forecast of the positive impact of an action is considered strong enough to justify taking said action.  
+For each funding action, we create two prediction markets:  
 
-- **p(action) and p(outcome)**: Notations representing the probability of an action being taken and the probability of a specific outcome occurring, respectively.  
+1. A "Yes" market that predicts the outcome if the action is taken  
+2. A "No" market that predicts the outcome if the action is not taken  
 
-- **"good outcome" shares and "bad outcome" shares**: For each child market, contracts that pay out if the action of said child market leads to a positive or negative outcome, respectively.   
+These markets use a scalar design where the payout of tokens is proportional to the value of a composite metric. The key tokens to understand are:  
 
-- **Vega**: In prediction markets, vega represents the sensitivity of a share's price to changes in the perceived uncertainty of the outcome. Higher vega means the share price is more positively impacted by higher expected volatility/uncertainty.  
+- $\textsf{Long}^{\text{yes}}$: Redeems for a share value proportional to the metric's value if the action is taken  
+- $\textsf{Long}^{\text{no}}$: Redeems for a share value proportional to the metric's value if the action is not taken  
 
-## Strategy 1: Partial Implementation  
+The relative price of $\textsf{Long}^{\text{no}}$ and $\textsf{Long}^{\text{yes}}$ reveal what the market expects each action's impact to be on the selected metric (subject to caveats, analysis of which will constitute the remainder of this report). These prices can be used to select which actions to take, on the basis of the ratio between each action's cost and its predicted impact, i.e. its cost:benefit ratio.  
 
-**Goal:** Use futarchy to inform how one should attempt to influence a decision-making process, given a desired outcome. This strategy applies when one can only partially influence rather than decide the action that will be taken.  
+Implementation of the above requires selection of an AMM design or other mechanism for facilitating the exchange of shares and construction of the composite metric on which to evaluate actions. A decision rule also must be selected, which is an algorithm for deciding which actions to take, given the predicted impact on the metric and magnitude of each action's respective cost.  
 
-**Problems:**  
-1. Futarchy results are subject to confounding factors. This can occur when both the probability of the action (p(action)) and the probability of the outcome (p(outcome)) are influenced by a third factor, or when the direction of the causal relationship between the action and outcome is unclear or counterintuitive.  
+For some further reading on decision market design, see:  
 
-2. Implications of confounding factors:  
-   - An external factor may be causally relevant to both the action and outcome. This causes the probability of the outcome conditional on the action to reflect both the probability of the external factor (and its impact on the probabilities of both action and outcome) and the impact of taking the action on the outcome. The former is noise for the purpose of using prices to inform decisions.  
-   - The outcome might impact the probability of the action, rather than the action impacting the probability of the outcome. This causes the conditional probability of the outcome to not only reflect the impact of taking the action.  
+- https://community.ggresear.ch/t/conditional-funding-markets/27  
+- https://github.com/zack-bitcoin/amoveo-docs/blob/3747c9c7b330a03531da0cbeb111fafac6839f81/basics/msrs_and_prediction_markets.md  
+- https://ethresear.ch/t/prediction-market-design-for-betting-on-many-highly-improbable-events/8280  
+- https://ethresear.ch/t/practical-futarchy-setup/10339  
+- https://timroughgarden.github.io/fob21/reports/ZLRL.pdf  
+- https://ethresear.ch/t/possible-futarchy-setups/1820  
+- https://mason.gmu.edu/~rhanson/combobet.pdf  
+- https://github.com/metaDAOproject/Manifesto/blob/main/Manifesto.pdf  
 
-## Strategy 2: Always Take Recommended Action  
+# Confounding  
 
-**Goal:** Prevent a third factor from influencing both p(action) and p(outcome), by deciding what action to take solely based on futarchy prices.  
+Decision markets can suffer from confounding because they are trying to use market-implied conditional probabilities as a proxy for measuring the impact of an action on the value of a metric. Decisions are made based on the relative prices of $\textsf{Long}^{\text{yes}}$ and $\textsf{Long}^{\text{no}}$ shares, in each action's market. Any factors which speculators consider when pricing these shares, aside from their expectations of an action's impact, are confounding variables. Confounding variables distort the price with information which is irrelevant to maximising the value of the metric, hence making the decision market prices less useful.  
 
-**Problems:**  
-1. The prediction market price is biased in favor of being optimistic, due to optimistic traders having higher expected returns than those who are pessimistic. This is because it is less capital efficient to hold "bad outcome" shares than "good outcome" shares, given that if the market ends up agreeing with the holder of a "bad outcome" share, the action will not be taken, preventing them from capitalising on their insights re: the effect of the action.  
+Confounding occurs when the variable you are measuring the impact on (the dependent variable) is affected by variables other than the variable you are actually trying to measure the impact of (the independent variable). You might want to measure the effect of A on B but end up accidentally measuring two types of confounds: hidden variable confounds (the effect that C has on both A and B) or reverse causality confounds (the effect of B on A). Ice cream sales are correlated with shark attacks, but one should be careful not to conclude from this that recently having ingested ice cream causes sharks to pay them special attention.  
 
-2. In futarchy markets, new information asymmetrically affects bet values. Negative information can nullify the value of "bad outcome" shares by canceling the proposed action, while positive information increases the value of "good outcome" shares without limit. This asymmetry favors "good outcome" shares, skewing futarchy forecasts. This effect is akin to "convexity" in the context of options.  
-    - The magnitude of this effect is a function of the amount of new information expected to come to light before the decision deadline. As a result, an attacker could exploit this to increase the value of "good outcome" shares for their desired action, by selecting an action with outsized uncertainty/expected volatility. One naive way of achieving this is to announce that important information relating to the proposal will be announced at some time over the course of the futarchy market.  
-        - The reason the magnitude of the effect is a function of amt of new info expected to come to light, is that new info increases expected volatility, and "good outcome" shares have positive vega, meaning their price is positively impacted by higher expected uncertainty/volatility. Hence their price is positively correlated with expected volatility.  
-        - The attacker can potentially do this while maintaining plausible deniability, as many legitimate actions naturally have high uncertainty due to e.g. the action's full implications only being realised during the course of the futarchy market.  
-        - Transparent attempts to create uncertainty could be prevented via use of a social backstop mechanism, to filter actions recommended by futarchy, before they are executed.  
-    - [Spreadsheet with relevant example](https://docs.google.com/spreadsheets/d/1TNM85DoQqOvlQFZJQ20yEaK6QsS33ZIo3fcyws5X124/edit?gid=0#gid=0)  
+## Strategy: Decision randomisation  
+
+So how do we ensure confounding doesn't occur? Confounding can be eliminated by simply selecting which actions to take at random. The reason this works is akin to the reason patients are randomly selected to be in either the experimental or control arms of a study. It ensures no confounding differences between participants in the two arms of the study remain, so the only difference is that participants of the experimental arm received the intervention while those in control did not.  
+
+The problem with this approach is that it is very expensive, because it requires actions to be taken at random regardless of their expected outcome. It is ironic that for decision market prices to not be confounded, they must not be used to make decisions, as the actions must be taken at random. Fortunately it is possible to avoid almost all confounding, while still being able to use decision market prices to inform decisions.  
+
+## Strategy: Market-directed decisions  
+
+The most straightforward solution is to base action decisions directly on the decision market's output and decision rule. This approach is typically what people mean when they refer to "decision markets." It has two major advantages:  
+
+1. Decisions actually incorporate the information generated by the prediction markets.  
+2. It mitigates hidden variable confounds and reverse causality.  
+
+At a high level, this setup achieves these benefits by forcing all potential confounds through a single, narrow bottleneck: ev(metric|action is taken), where ev(A|B) denotes expected value of A, conditional on B occurring. This value's importance stems from it being the sole means by which a confounding factor can influence action selection.  
+
+As a result, this setup only differs slightly from a scenario where action selection is entirely random and thus impossible to influence. The key difference is that confounds can now affect decisions, but only through their impact on ev(metric|action is taken).  
+
+### Third variable confounding  
+
+Third variable confounding is possible in this setup if a variable exists which influences both p(action is taken) and ev(metric), and hence distorts ev(metric|action is taken) due to modifying their statistical relationship. A notable example is ev(metric|action is taken) itself! An action is more likely to be taken if decision market participants expect it to be beneficial, hence its expected impact on the metric, conditional on being chosen, is biased upwards. Phrased differently, ev(metric|action is taken) positively influences both p(action is taken) and ev(metric), hence makes them artificially positively correlated, increasing the value of ev(metric|action is taken), which, in a sense, measures their correlation.  
+
+This tendency for non-randomised decision markets to overestimate the benefit of an action would be of minimal concern if it applied to all actions equally, as it would then at least preserve the ranking of actions according to their expected benefit. Unfortunately however, this distortion affects some markets more than others, and hence can meaningfully impact the relative attractiveness of actions, according to their decision market scores.   
+
+### Impact of new information  
+
+The reason for this asymmetry is that the magnitude of the distortion expected to result from a confounding variable is proportional to its expected variance over the period of the market. If the confounding variable is not expected to change, it is consequently also not expected to increase the correlation between ev(metric) and p(action is taken), and hence will not impact ev(metric|action is taken). As a result, the more variance expected in the value of ev(metric|action is taken) for a given action, the more the decision market will optimistically bias its estimate of the action's benefit.   
+In other words, the more new information expected to be revealed about an action, the more positively biased its decision market score will be. This can also be thought of as the result of shares conditional on an action being taken having a convex payoff, like options, [resulting in positive gamma](https://blog.moontower.ai/jensens-inequality-as-an-intuition-tool/), and hence positive vega (volatility increases probability of reaching higher points on the convex payoff function), which signifies a positive sensitivity to changes in volatility.   
+
+### Manipulation risk  
+
+This is challenging, as it makes it difficult to compare market prices for different actions, due to them potentially being distorted to different degrees by this optimism bias. An economic vulnerability also potentially arises, if malicious proposal creators exploit this to increase the decision market score of their proposal, by attempting to create an expectation that new information pertinent to it will soon be revealed.   
+
+For example, consider a proposal for developing an improved risk modeling suite for the DAO's treasury management. The proposal creator might strategically mention that they are working on a new approach to risk assessment, the details of which will be finalized during the initial phase of the project. They might hint at preliminary tests showing promising results in predicting market volatility, without providing specific data. This creates an expectation of important new information to be revealed, potentially inflating their decision market score due to the optimism bias.  
+
+Mitigation strategies may involve any of the following:  
+
+1. Measuring the expected (or perhaps even the actual) variance of each market, then arithmetically adjusting each market's price to control for this variable, using techniques from option pricing.  
+2. Equalising/limiting variance across markets by penalising or rejecting proposals from creators who claim that important information is yet to be revealed by the time their proposal's decision market has begun.  
+3. Automatically extending markets if their volatility soon before resolution is above a certain threshold, so that the decision market price used for action selection is free from the optimistic bias present prior to the revelation of new information.  
+4. Ensuring traders are aware of the economic vulnerability, so they are attuned to and can discount markets where they perceive the creator to be trying to create artificial uncertainty around the impact of the proposal.  
+5. Limiting the duration of markets such that it is implausible a meaningful amount of new information will be revealed over the period of the market.  
+
+### Reverse causality  
+
+Reverse causality is also only partially mitigated by this default decision market configuration. Specifically, reverse causality remains possible via the same channel through which third variable confounding is possible: ev(metric|action is taken). If there is a causal path from the metric's value to p(action is selected), confounding due to reverse causality can occur. Analysis into what may cause reverse causality in decision markets is left for future research.  
+
+## Strategy: Decision randomisation, some of the times  
+
+An alternate strategy for mitigating confounding is to randomise decisions sometimes, at random. What this involves is cancelling the market e.g. 90% of the time, causing all shares to be worth $0, while in the remaining 10% of cases you decide which action to take at random, resolve the markets according to results of the randomly selected actions, and multiply trader rewards by 10 to account for the losses in the other 90% of cases.  
+
+This strategy has two notable advantages:  
+
+1. 90% (or some other high proportion) of the time, you can take the action which the decision markets predict will most positively impact the metric. We cancel the market in these cases to prevent the non-random action selection process from contaminating the price.  
+2. No confounding is possible, because traders price the decision market shares only according to the scenario where the action is selected at random, because in all other cases, the market is cancelled.  
+3. The variance of returns is higher which, according to the Kelly criterion, means each trader's optimal allocation to decision market shares will be lower. This can also be seen as manifestation of volatility drag. As a result, information is less efficiently elicited from informed market participants, due to their optimal position size being lower, causing them to less quickly correct mispricings.  
+
+It however also has the following challenges:  
+
+1. Trading in these decision markets will be relatively capital inefficient, because 90% of the time, a trader with an information edge will not make any return on their capital, due to the market being cancelled. The significance of capital inefficiency is that it reduces the accuracy of a decision market by making it unprofitable for traders to correct the price of shares where the mispricing % is less than the trader's % opportunity cost of capital until market resolution.  
+2. 10% of the time, we will need to select an action at random which means this strategy is limited to cases where taking the worst possible action wouldn't pose an existential risk to the entity using decision markets to make decisions. In some cases, it may be possible to eliminate a large amount of downside risk from this strategy by vetting actions for obvious issues before they are traded on, however false positives and false negatives are inevitable, and the trust assumptions required to implement vetting may be prohibitive for some use cases.  
+
+Given the above three discussed decision market strategies, a continuous trade-off space emerges between 1) the need to sometimes choose actions at random 2) having to accept a small amount of confounding and 3) market accuracy (due to capital inefficiency).  
+
+**Note:**  
+
+At the beginning of this article a decision market was referenced with the goal of determining the impact of various presidential candidates on GDP. In practice, though, this market is problematic and more so a conditional prediction market than a decision market, as it doesn't attempt to isolate causality by avoiding confounding. The democratic process used to elect presidents makes no attempt to avoid third variable confounding or reverse causality, as it simply was not designed with decision markets in mind.  
+
+### Further reading  
+
+- https://dynomight.substack.com/p/prediction-market-causation  
+- https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the  
+- https://www.overcomingbias.com/p/conditional-close-election-marketshtml  
 
 
-**Mitigations:**  
-1. The strength of both the convexity and capital efficiency asymmetry effects decreases as the action deadline approaches. This is because:  
-   - The convexity effect is caused by the risk of new information becoming available. However, this risk diminishes as the market nears the date at which the action is taken, as less time remains for new information to emerge.  
-   - The capital efficiency asymmetry effect is caused by the cost of having to lock up one's capital for the remainder of the market until the action is taken. As the action date approaches, this cost decreases.  
-
-2. As a result of these distortions diminishing towards the decision deadline, futarchy mechanisms may benefit from placing a greater weight on more recent market prices when deciding what action to take. A requirement could also be enforced that the price has been relatively stable for a certain amount of time before the action is taken, to ensure time decay due to the convexity is not impacting the price. This may result in the action being delayed until the uncertainty has been reduced sufficiently.  
-
-
-## Strategy 3: Occasionally Take Actions Expected to Cause Bad Outcomes  
-
-**Goal:** Make it profitable to bet that an action will cause a bad outcome. If you never take actions which are expected to cause bad outcomes, then traders will never profit from betting on them. So they need to sometimes be randomly chosen despite being expected to cause a bad outcome.  
-
-**Problems:**  
-1. "Bad outcome" shares are still less capital efficient than "good outcome" shares because they will less often be redeemable, due to bad actions only rarely being taken. This usually causes the market to revert, which effectively locks up their capital with no return, hence biasing the price in favor of "good outcome" because it has greater capital efficiency than "bad outcome" shares.  
-
-2. The price is still biased in favor of "good outcome" due to convexity, as described in Strategy 2. This is only somewhat mitigated by occasionally taking actions expected to cause bad outcomes.  
-
-## Strategy 4: Always Choose Action Randomly  
-
-**Goal:** Prevent the convexity referred to in Strategy 2 by causing the probability of the action being taken to be independent of the price of the futarchy market.  
-
-**Problems:**  
-1. This strategy makes insights provided from futarchy non-actionable, hence defeating the purpose of futarchy.  
-
-## Strategy 5: Hybrid Approach  
-
-**Goal:** Allow futarchy insights to be used to inform which action to take, while also not distorting futarchy returns and providing optionality/convexity to owners of "good outcome" shares.  
-
-**Implementation:** Choose the action to execute completely at random, irrespective of futarchy prices in a small percentage of cases. In all other cases, revert all trades and execute the action recommended by futarchy. The rationale for choosing the action at random in the minority of cases is to prevent the convexity effects described in Strategy 2 from biasing prices in favour of the more uncertain action.  
-
-**Problems:**  
-1. This significantly reduces capital efficiency for traders, and hence also reduces the precision/sensitivity of the futarchy price discovery process to small signals. This is a result of the fact that in the vast majority of cases, all trades will be reverted, preventing traders from converting their information edge into returns on their capital.  
-
-2. There is still a potential confounding factors, despite the action being chosen at random. This is because the futarchy mechanism is not only predicting the future value of the governance token, but also the future value of the "quote asset" i.e. the asset in which the gov token's value is being measured. As a result, distortions could arise if the value, marginal utility or interest rate of the quote asset (e.g. USD) is expected to be correlated with the probability of a certain outcome. An example might be that an action that is more likely to succeed in a financial crisis may be priced over-optimistically by futarchy, as a result of traders being risk averse and viewing this as a hedge.  
-
-2. Creates trade-off between how often you can use the knowledge gained from the futarchy market (and how often you do not have to take action at random, which may be very costly) versus the minimum signal which the futarchy market prices can detect.  
-
-This approach is best suited to contexts where the cost of randomly executing a (likely) sub-optimal action is bounded, non-existential and less than the value of the insights produced by the other reverted futarchy markets.  
-
-- related links (especially the first)  
-    - [https://dynomight.net/prediction-market-causation/](https://dynomight.net/prediction-market-causation/)  
-    - [https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the](https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the)  
-    - [https://www.overcomingbias.com/p/conditional-close-election-marketshtml](https://www.overcomingbias.com/p/conditional-close-election-marketshtml)  
-
-
-Thanks to [Zack](https://x.com/zack_bitcoin), Joe and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
+Thanks to [Zack](https://x.com/zack_bitcoin), Joe, Lajarre and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
 
 If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@0xdist)](https://twitter.com/0xdist) or [schedule a 20 min call](https://cal.com/distbit/20min)
