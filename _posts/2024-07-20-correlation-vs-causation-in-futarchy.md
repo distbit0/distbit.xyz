@@ -9,14 +9,13 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Convexity, capital efficiency and confounding in futarchy
+title: Challenges of decision markets
 ---
 
 
 
 
 Prediction markets are an increasingly popular primitive, currently being used to facilitate speculation on the probability of various political, geopolitical and economic events. While this use case is promising, as demonstrated by the increasingly high TVL of protocols such as Polymarket, it only unlocks a fraction of what prediction markets have to offer.  
-
 
 Decision markets are how prediction markets become useful for making decisions. The event probabilities which prediction markets currently elicit can sometimes be useful for informing decisions, however they are not optimised for this purpose.  
 
