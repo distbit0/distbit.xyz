@@ -17,6 +17,7 @@ title: Convexity, capital efficiency and confounding in futarchy
 
 Prediction markets are an increasingly popular primitive, currently being used to facilitate speculation on the probability of various political, geopolitical and economic events. While this use case is promising, as demonstrated by the increasingly high TVL of protocols such as Polymarket, it only unlocks a fraction of what prediction markets have to offer.  
 
+
 Decision markets are how prediction markets become useful for making decisions. The event probabilities which prediction markets currently elicit can sometimes be useful for informing decisions, however they are not optimised for this purpose.  
 
 Prediction markets only reveal the probability of an event, whereas decision markets reveal how different actions would impact the outcome being predicted. For example, a prediction market might reveal that p(GDP increasing year over year) = 0.4 (where p() denotes probability), whereas a decision market could tell us that conditional on electing Ron Paul, p(GDP increasing) = 0.9, whereas only 0.06 if Kamala Harris were to be elected (figures are for illustrative purposes only).  
