@@ -71,7 +71,7 @@ The most straightforward setup is to base action decisions directly on the decis
 
 At a high level, this setup achieves these benefits by forcing all potential confounds through a single, narrow bottleneck: EV(metric|action is taken), where EV(A|B) denotes expected value of A, conditional on B occurring. This value's importance stems from it being the sole means by which a confounding factor can influence action selection.  
 
-As a result, this setup only differs slightly from a scenario where action selection is entirely random and thus impossible to influence. The key difference is that confounds can now affect decisions, but only through their impact on EV(metric|action is taken).  
+As a result, this setup only differs slightly from a scenario where action selection is entirely random and thus impossible to influence. The key difference is that confounds can now affect decisions, but only to the extent they impact EV(metric|action is taken).  
 
 ### Third variable confounding  
 
