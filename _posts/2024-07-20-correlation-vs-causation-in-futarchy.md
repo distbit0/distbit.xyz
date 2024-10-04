@@ -108,12 +108,16 @@ metric
 ↓                     <-------- confounding reverse causal pathway  
 expectedImpact  
 ↓                     
-action is taken  
+choice of action  
 
 
 ### Third variable confounding  
 
-Third variable confounding is possible in this setup if a variable exists which influences both `expectedImpact` and the value of `metric`, as depicted in the above diagram. Such a variable would change the statistical relationship between metric and therefore impacting `expectedImpact` which measures this relationship. A notable example is expectedImpact itself! An action is more likely to be taken if decision market participants expect it to be beneficial, hence its expected impact on the metric, conditional on being chosen, is biased upwards. Phrased differently, EV(metric|action is taken) positively influences both p(action is taken) and EV(metric), hence makes them artificially positively correlated, increasing the value of EV(metric|action is taken), which, in a sense, measures their correlation.  
+Third variable confounding is possible in this setup if a variable exists which influences both `choice of action` and the value of `metric`, changing their statistical relationship, as depicted in the above diagram. This is because doing so would distort `expectedImpact`, which effectively measures the statistical relationship between metric and `choice of action`. We do not need to look far to find such a variable, as expectedImpact itself is one! Check the above causal diagrams to verify that expectedImpact influences both metric and choice of action.  
+
+
+
+An action is more likely to be taken if decision market participants expect it to be beneficial, hence its expected impact on the metric, conditional on being chosen, is biased upwards. Phrased differently, EV(metric|action is taken) positively influences both p(action is taken) and EV(metric), hence makes them artificially positively correlated, increasing the value of EV(metric|action is taken), which, in a sense, measures their correlation.  
 
 
 
