@@ -304,7 +304,7 @@ Given the above three discussed decision market strategies, a continuous trade-o
 
 At the beginning of this article a decision market was referenced with the goal of determining the impact of various presidential candidates on GDP. In practice, though, this market is problematic and more so a conditional prediction market than a decision market, as it doesn't attempt to isolate causality by avoiding confounding. The democratic process used to elect presidents makes no attempt to avoid common cause confounding or reverse causality, as it simply was not designed with decision markets in mind.  
 
-### Further reading  
+# Further reading  
 
 - https://dynomight.substack.com/p/prediction-market-causation  
 - https://www.greaterwrong.com/posts/xnC68ZfTkPyzXQS8p/prediction-markets-are-confounded-implications-for-the  
