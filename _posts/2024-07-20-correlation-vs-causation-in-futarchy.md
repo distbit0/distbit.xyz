@@ -258,7 +258,7 @@ The problem with this approach is that it is very expensive, because it requires
 
 ## Strategy: Randomise, sometimes  
 
-The "randomise, sometimes" strategy addresses confounding in decision markets by occasionally selecting actions at random. It works by cancelling the market 90% of the time, making all shares worth $0. In the remaining 10% of cases, an action is randomly selected and the markets are resolved based on the results of these random actions. Trader rewards are then multiplied by 10 to compensate for the 90% cancellation rate.  
+The "randomise, sometimes" strategy addresses confounding in decision markets by occasionally selecting actions at random. It works by cancelling the market 90% of the time, making all shares worth $0. In the remaining 10% of cases, an action is randomly selected and the markets are resolved based on the results of these random actions. Trader payouts are then multiplied by 10 to compensate for the 90% cancellation rate.  
 
 This approach eliminates confounding because traders price shares solely based on the random selection scenario, while the non-random 90% doesn't affect pricing due to market cancellation. Importantly, this strategy allows decision-makers to use market predictions to inform choices 90% of the time, while still maintaining unbiased market prices. It effectively separates the price formation process from actual decision-making, preserving the market's informational value while preventing feedback loops that could distort prices.  
 
