@@ -125,7 +125,7 @@ $$
 $$  
 A positive $\Delta$ means the chosen proposals look “too good” compared to the unconditional average, purely because they were selected in states of the world favoring them. This can happen even if $\mu_c$ < $\mu$ in a bigger, unconditional sense, but the market only sees the slice where the internal signal favored choosing it.  
 
-> **Saturation Effect:** As the skew grows, $\Delta$ grows, but if the decision mechanism starts randomly selecting or fails to cross thresholds, you dilute how often you land in the strongly favorable subset. Hence, the overall decision selection bias saturates rather than growing linearly with the skew.  
+As the skew grows, $\Delta$ grows. Proposals can be adversarially constructed to have a high skew by e.g. having a bi-modal distribution of outcomes selected from using a random variable  
 
 ---  
 
