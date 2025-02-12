@@ -67,6 +67,7 @@ Confounding occurs when the variable you are measuring the impact on (the depend
 - due to the effect that C has on both A and B  
 - where C is what is known as a "common cause" variable, due to it influencing both A and B, making it seem as though they are causally connected  
 
+
 An illustration of common cause confounding is that ice cream sales are correlated with shark attacks, but one should be careful not to conclude from this that recently having ingested ice cream causes sharks to pay them special attention:  
 
 ```  
