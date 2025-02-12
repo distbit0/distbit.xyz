@@ -7,8 +7,9 @@ description: ''
 gist_url: https://gist.github.com/52dc926814a1f93ce4d2f263efcc6fbb
 headerImage: false
 layout: post
-live: false
-tag: []
+live: true
+tag:
+- share
 title: Work in progress decision selection bias
 ---
 
