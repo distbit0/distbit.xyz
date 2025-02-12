@@ -134,3 +134,7 @@ compress_html:
             - stage
 
 exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vendor", node_modules]
+
+
+kramdown:
+  math_engine: mathjax
