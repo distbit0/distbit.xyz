@@ -10,7 +10,7 @@ hidden: false
 layout: post
 live: true
 tag: []
-title: Decision market challenges
+title: Decision market challenges blog post
 ---
 
 
