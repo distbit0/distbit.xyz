@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/the-different-types-of-futarchy
+articleUrl: https://distbit.xyz/kpi-vs-asset-futarchy
 author: distbit
 category: blog
 date: 2025-05-03 00:00
