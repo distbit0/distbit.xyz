@@ -26,7 +26,7 @@ There are two primary ways to set up these prediction markets:
 
     *   *Example:* Imagine a KPI for 'monthly active users' with a target range of 0 to 300. If the actual users at resolution are 200, the 'long' tokens might redeem for 200/300 = 0.66 USDC each, and 'short' tokens for (300-200)/300 = 0.33 USDC each (assuming $1 total collateral per long/short pair).  
 
-You can view Asset Futarchy as a specific type of KPI Futarchy. In this perspective, the KPI is essentially the project's long-term revenue, based on the assumption that revenue is the main driver of demand for the asset.  
+Asset Futarchy is in some sense a specific type of KPI Futarchy. In this perspective, the KPI is essentially the project's long-term revenue, denominated in USD, based on the assumption that revenue is the main driver of the asset's demand.  
 
 What's the high-level takeaway? KPI Futarchy generally offers more flexibility, while Asset Futarchy provides greater robustness. Neither approach is automatically superior in terms of overall efficiency. Let's dive into the details.  
 
