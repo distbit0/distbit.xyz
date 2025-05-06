@@ -26,11 +26,13 @@ There are two primary ways to set up these prediction markets:
 
     *   *Example:* Imagine a KPI for 'monthly active users' with a target range of 0 to 300. If the actual users at resolution are 200, the 'long' tokens might redeem for 200/300 = 0.66 USDC each, and 'short' tokens for (300-200)/300 = 0.33 USDC each (assuming $1 total collateral per long/short pair).  
   
-The price of each proposal's long token conveys the market's prediction of the KPI's value at resolution, conditional on that proposal being accepted. I.e. it is the market's prediction of how the proposal's impact on the KPI (subject to some caveats). We can therefore decide which proposals to accept on the basis of which are expected to yield the greatest monthly active users, by selective whichever proposal has the highest long token price. A similar principle holds for asset futarchy, however instead of selecting proposals according to their long token price, we select them according to their asset price, denominated in USD.  
+Each proposal's "KPI market" is made conditional on that proposal being accepted, by only resolving it if the proposal is accepted, otherwise cancelling it. The price of each proposal's long token therefore conveys the market's prediction of the KPI's value at resolution, conditional on that proposal being accepted. I.e. it is the market's prediction of how the proposal's impact on the KPI (subject to some caveats).  
+
+We can therefore decide which proposals to accept on the basis of which are expected to yield the highest KPI value (e.g. monthly active users), by accepting proposals has the highest long token price (this is a slight simplification). A similar principle holds for asset futarchy, however instead of selecting proposals according to their long token price, as we do in KPI futarchy, we select them according to their asset price, denominated in a USD stablecoin.  
 
 Asset Futarchy is in some sense a specific type of KPI Futarchy. In this perspective, the KPI is essentially the project's long-term revenue, denominated in USD, based on the assumption that revenue is the main driver of the asset's demand.  
 
-What's the high-level takeaway? KPI Futarchy generally offers more flexibility, while Asset Futarchy provides greater robustness. Neither approach is automatically superior in terms of overall efficiency.   
+What's the high-level takeaway? While neither KPI nor Asset futarchy are strictly superior in terms of efficiency, KPI Futarchy generally offers greater flexibility to align with diverse objectives and requirements, while Asset Futarchy provides greater robustness, reliability and manipulation resistance.  
 
 ## Asset vs KPI Futarchy: The Comparison  
 
@@ -48,13 +50,14 @@ KPI Futarchy is more capital efficient than Asset Futarchy *if* one of two condi
 
 1.  **Low Expected Asset Price Variation:** If the asset's price isn't expected to move dramatically during the Futarchy market's duration – specifically, if the total expected range (upside + downside) is less than 100% of the starting price.  
 
-    *   *Example:* If a token trades at $10 and is only expected to move between $9.50 (95%) and $10.50 (105%) during the market, Asset Futarchy is less efficient. It implicitly requires capital backing the potential price range all the way down to $0, even though the 0% to 95% range is considered irrelevant for this specific prediction. A KPI Futarchy could be designed to focus *only* on the 95%-105% range, requiring less collateral.  
+    *   *Example:* If a token trades at $10 and is only expected to move between $9.50 (95%) and $10.50 (105%) during the market, Asset Futarchy is less efficient. It implicitly requires capital backing the potential price range all the way down to $0, even though the 0% to 95% range is considered irrelevant for this specific prediction. A KPI Futarchy could be designed to focus *only* on the 95%-105% range, requiring less collateral, by setting the lower bound of the KPI range to $9.50 and the upper bound to $10.50. I.e. in asset futarchy the lower bound is always 0, whereas in KPI futarchy it can be set to any value.  
     *   Conversely, if the price could swing widely, say between $7 (70%) and $18 (180%), Asset Futarchy becomes *more* capital efficient. It provides exposure to potential upside "for free" without needing additional collateral locked specifically for that higher range.  
 
 2.  **Availability of a Less Noisy KPI:** If a KPI can be chosen that better isolates the proposal's specific impact from external 'noise' compared to the asset price.  
 
     *   Asset prices react to many factors beyond the proposal in question: overall market sentiment, competitor actions, unrelated news, etc. This makes the asset price a 'noisy' indicator of the proposal's specific effect.  
     *   KPI Futarchy allows selecting or constructing a KPI specifically designed to filter out most of this irrelevant noise. By reducing the KPI's variance caused by external factors, less collateral is needed to cover potential fluctuations. The collateral mainly needs to cover the variance expected from the proposal itself.  
+        *   *Example:* Instead of using a KPI for "total revenue" (which behaves much like the asset price), one could use a KPI tracking only "revenue generated directly by the proposal under consideration," thus isolating the PnL more closely to the trader's prediction about that specific proposal.  
     *   The capital efficiency of KPI Futarchy also depends on the chosen upper and lower bounds for the KPI. If the KPI is heavily influenced by external factors (high noise), wider bounds are needed, which reduces capital efficiency compared to bounds covering only the proposal's expected impact range. These bounds also determine which outcomes are captured; narrow bounds might distort the market price if the actual outcome falls outside the defined range.  
 
 #### Capital Efficiency (With Liquidations/Leverage)  
@@ -97,8 +100,6 @@ In Asset Futarchy, a trader's PnL is only loosely tied to the proposal's specifi
 *   *Trader Pool:* While Asset Futarchy benefits from a natural pool of participants (existing asset holders already exposed to the price), this doesn't necessarily help attract *outside* informed actors who aren't already holders but might have valuable specific knowledge about the proposal.  
 
 KPI Futarchy is generally superior in this regard. The KPI can be specifically designed to reduce (though perhaps not always eliminate) confounding from external factors.  
-
-*   *Example:* Instead of using a KPI for "total revenue" (which behaves much like the asset price), one could use a KPI tracking only "revenue generated directly by the proposal under consideration," thus isolating the PnL more closely to the trader's prediction about that specific proposal.  
 
 #### Trader PnL Confounding caused by Long Time Horizons  
 
