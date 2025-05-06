@@ -28,9 +28,9 @@ There are two primary ways to set up these prediction markets:
   
 Each proposal's "KPI market" is made conditional on that proposal being accepted, by only resolving it if the proposal is accepted, otherwise cancelling it. The price of each proposal's long token therefore conveys the market's prediction of the KPI's value at resolution, conditional on that proposal being accepted. I.e. it is the market's prediction of how the proposal's impact on the KPI (subject to some caveats).  
 
-We can therefore decide which proposals to accept on the basis of which are expected to yield the highest KPI value (e.g. monthly active users), by accepting proposals wit the highest long token price (this is a slight simplification). A similar principle holds for asset futarchy, however instead of selecting proposals according to their long token price, as we do in KPI futarchy, we select them according to their asset price, denominated in a USD stablecoin.  
+We can therefore decide which proposals to accept on the basis of which are expected to yield the highest KPI value (e.g. monthly active users), by accepting proposals that have the highest long token price (this is a slight simplification). A similar principle holds for asset futarchy, however instead of selecting proposals according to their long token price, as we do in KPI futarchy, we select them according to their asset price, denominated in a USD stablecoin.  
 
-Asset Futarchy is in some sense a specific type of KPI Futarchy. In this perspective, the KPI is essentially the project's long-term revenue, denominated in USD, based on the assumption that revenue is the main driver of the asset's demand.  
+Asset Futarchy can be viewed as a specific type of KPI Futarchy where the KPI is essentially the project's long-term revenue, denominated in USD, based on the assumption that revenue is the main driver of the asset's demand.  
 
 What's the high-level takeaway? While neither KPI nor Asset futarchy are strictly superior in terms of efficiency, KPI Futarchy generally offers greater flexibility to align with diverse objectives and requirements, while Asset Futarchy provides greater robustness, reliability and manipulation resistance.  
 
