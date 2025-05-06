@@ -25,10 +25,12 @@ There are two primary ways to set up these prediction markets:
 2.  **KPI Futarchy:** Creates markets predicting the future value of a specific Key Performance Indicator (KPI) the organization wants to optimize. This requires creating synthetic tokens – 'long' and 'short' – representing the KPI's value. These tokens eventually redeem for collateral (usually a stablecoin) based on the final KPI value at a set resolution date.  
 
     *   *Example:* Imagine a KPI for 'monthly active users' with a target range of 0 to 300. If the actual users at resolution are 200, the 'long' tokens might redeem for 200/300 = 0.66 USDC each, and 'short' tokens for (300-200)/300 = 0.33 USDC each (assuming $1 total collateral per long/short pair).  
+  
+The price of each proposal's long token conveys the market's prediction of the KPI's value at resolution, conditional on that proposal being accepted. I.e. it is the market's prediction of how the proposal's impact on the KPI (subject to some caveats). We can therefore decide which proposals to accept on the basis of which are expected to yield the greatest monthly active users, by selective whichever proposal has the highest long token price. A similar principle holds for asset futarchy, however instead of selecting proposals according to their long token price, we select them according to their asset price, denominated in USD.  
 
 Asset Futarchy is in some sense a specific type of KPI Futarchy. In this perspective, the KPI is essentially the project's long-term revenue, denominated in USD, based on the assumption that revenue is the main driver of the asset's demand.  
 
-What's the high-level takeaway? KPI Futarchy generally offers more flexibility, while Asset Futarchy provides greater robustness. Neither approach is automatically superior in terms of overall efficiency. Let's dive into the details.  
+What's the high-level takeaway? KPI Futarchy generally offers more flexibility, while Asset Futarchy provides greater robustness. Neither approach is automatically superior in terms of overall efficiency.   
 
 ## Asset vs KPI Futarchy: The Comparison  
 
