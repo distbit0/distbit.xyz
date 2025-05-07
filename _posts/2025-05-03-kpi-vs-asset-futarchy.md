@@ -157,7 +157,7 @@ Asset Futarchy is primarily suited for one goal: maximizing the value of the tar
 
 KPI Futarchy is much better suited for contexts where the goal is something other than maximizing long-term shareholder value. This includes pursuing specific political, social, technical, or scientific objectives – goals often found in non-profits or public goods projects. As long as the goal can be quantified into a measurable KPI, Futarchy can target it.  
 
-*   The KPI could even be the output of a retroactive evaluation committee, allowing Futarchy to target goals that are difficult to measure objectively via a KPI.  
+*   The KPI could even be the output of a retroactive evaluation committee, allowing Futarchy to target goals that are difficult to measure objectively.  
 *   KPI futarchy supports composite KPIs, allowing for the combination of multiple KPIs into a single KPI, with each assigned a different weight. This allows more complex goals to be expressed, while also potentially mitigating the manipulation risk of any single KPI.  
 *   KPI Futarchy also enables novel forms of inter-organizational cooperation. An organization governed by KPI Futarchy could incorporate another organization's utility function into its own KPI definition as part of a negotiated agreement. This allows for binding treaties between organizations without needing external legal enforcement. See: [Futarchy of mutating preferences](https://thequantummilkman.substack.com/p/futarchy-of-mutating-preferences).  
 
