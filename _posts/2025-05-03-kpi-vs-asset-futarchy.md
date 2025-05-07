@@ -17,7 +17,7 @@ title: The different types of futarchy
 
 ## Asset vs KPI Futarchy: The Comparison  
 
-Futarchy is a governance mechanism which employs prediction markets to make decisions. Instead of voting, participants trade in markets designed to forecast the outcome of choosing one path versus another. The core idea is to harness the diverse specialised knowledge latent among market actors to predict the *impact* of decisions before they are made.  
+Futarchy is a governance mechanism proposed by Robin Hanson which employs prediction markets to make decisions. Instead of voting, participants trade in markets designed to forecast the outcome of choosing one path versus another. The core idea is to harness the diverse specialised knowledge latent among market actors to predict the *impact* of decisions before they are made.  
 
 There are two primary ways to set up these prediction markets:  
 
@@ -26,7 +26,7 @@ There are two primary ways to set up these prediction markets:
 
     *   *Example:* Imagine a KPI for 'monthly active users' with a target range of 0 to 300. If the actual users at resolution are 200, the 'long' tokens might redeem for 200/300 = 0.66 USDC each, and 'short' tokens for (300-200)/300 = 0.33 USDC each (assuming $1 total collateral per long/short pair).  
   
-Each proposal's "KPI market" is made conditional on that proposal being accepted, by only resolving it if the proposal is accepted, otherwise cancelling it. The price of each proposal's long token therefore conveys the market's prediction of the KPI's value at resolution, conditional on that proposal being accepted. I.e. it is the market's prediction of how the proposal's impact on the KPI (subject to some caveats).  
+Each proposal's "KPI market" is made conditional on that proposal being accepted, by only resolving it if the proposal is accepted, otherwise cancelling it. The price of each proposal's long token therefore conveys the market's prediction of the KPI's value at resolution, conditional on that proposal being accepted. I.e. it is the market's prediction of the proposal's impact on the KPI (subject to some caveats).  
 
 We can therefore decide which proposals to accept on the basis of which are expected to yield the highest KPI value (e.g. monthly active users), by accepting proposals that have the highest long token price (this is a slight simplification). A similar principle holds for asset futarchy, however instead of selecting proposals according to their long token price, as we do in KPI futarchy, we select them according to their asset price, denominated in a USD stablecoin.  
 
@@ -76,17 +76,17 @@ Leverage offers a specific benefit to KPI Futarchy: it helps overcome the trade-
 
 Before the organization makes its final decision based on the market prices, liquidity is needed for the Futarchy markets themselves.  
 
-Asset Futarchy has a potential advantage here. By employing a novel DEX design, it can potentially leverage the existing liquidity found in the spot market for the underlying asset. This reduces the need for the organization to spend resources subsidizing liquidity specifically for the Futarchy markets.  
+Asset Futarchy has a potential advantage here. By employing a novel DEX design, it can leverage the existing liquidity found in the asset's spot market. This reduces the amount which the organization needs to spend subsidizing Futarchy market liquidity.   
 
-KPI Futarchy cannot tap into existing spot markets because none exist for a custom KPI. It must build liquidity from scratch, likely requiring subsidies.  
+KPI Futarchy cannot tap into existing spot markets because none exist for a custom KPI. It must build liquidity from scratch, hence requiring subsidies.  
 
 #### Liquidity (Post-Decision)  
 
 After the decision is made but before the final outcome resolves (e.g., the KPI is measured or the long-term price impact is clear), traders might still want to trade.  
 
-In Asset Futarchy, the conditional tokens effectively become claims on the underlying spot asset once the decision is locked in. Traders can then use the asset's regular spot market liquidity to enter or exit positions. No separate liquidity subsidy is needed for this period (between decision and final resolution). This makes Asset Futarchy more attractive if information continues to emerge during this time, allowing traders to adjust positions without dedicated Futarchy market liquidity.  
+In Asset Futarchy, the conditional tokens effectively become claims on the underlying spot asset once the decision is locked in. Traders can then use the asset's regular spot market liquidity to enter or exit positions. No separate liquidity subsidy is needed for this period (between decision and proposal impact). This makes Asset Futarchy more attractive if information continues to emerge during this time, allowing traders to adjust positions without dedicated Futarchy market liquidity.  
 
-In KPI Futarchy, there's no underlying spot market to fall back on. To allow traders to exit their positions *after* the decision but *before* the final KPI resolution date, the market creator must continue providing liquidity, likely through subsidies. Without this, traders' capital remains locked until the resolution date, which degrades the user experience.  
+In KPI Futarchy, there's no underlying spot market to fall back on. To allow traders to exit their positions *after* the decision but *before* the final KPI resolution date, the market creator must ensure the availability of liquidity, likely through subsidies. Without this, traders' capital remains locked until the resolution date, which degrades trader experience.  
 
 #### Trader PnL Confounding  
 
@@ -157,7 +157,7 @@ Asset Futarchy is primarily suited for one goal: maximizing the value of the tar
 
 KPI Futarchy is much better suited for contexts where the goal is something other than maximizing long-term shareholder value. This includes pursuing specific political, social, technical, or scientific objectives – goals often found in non-profits or public goods projects. As long as the goal can be quantified into a measurable KPI, Futarchy can target it.  
 
-*   The KPI could even be the output of a retroactive evaluation committee, allowing Futarchy to target goals that are difficult to measure objectively in real-time.  
+*   The KPI could even be the output of a retroactive evaluation committee, allowing Futarchy to target goals that are difficult to measure objectively via a KPI.  
 *   KPI Futarchy also enables novel forms of inter-organizational cooperation. An organization governed by KPI Futarchy could incorporate another organization's utility function into its own KPI definition as part of a negotiated agreement. This allows for binding treaties between organizations without needing external legal enforcement. See: [Futarchy of mutating preferences](https://thequantummilkman.substack.com/p/futarchy-of-mutating-preferences).  
 
 ### Robustness  
@@ -221,17 +221,15 @@ Both systems introduce dependencies:
 *   **Asset Futarchy** enshrines a quote asset (e.g., a fiat stablecoin) and depends on its continued availability and solvency.  
 *   **KPI Futarchy** enshrines a KPI oracle (the data source) and depends on its durability and honesty. It *also* often enshrines a stablecoin as the collateral for outcome tokens.  
 
-Thus, KPI Futarchy typically relies on both an oracle *and* a quote/collateral asset, while Asset Futarchy relies only on a quote asset.  
+Ultimately, Asset Futarchy's dependency on a specific stablecoin isn't strictly necessary. A more censorship-resistant native asset (like ETH) could be used as the quote asset, although this introduces price volatility as a confounding factor.  
+
+Therefore, only KPI Futarchy necessarily retains a dependency in the form of its KPI oracle (unless the KPI can be computed trustlessly on-chain). Furthermore, even honest KPIs are prone to degradation over long time scales due to Goodhart's Law/metric gaming.  
 
 If either the oracle or the critical stablecoin becomes unavailable or fails, the Futarchy could become inoperable, potentially freezing all assets under its control unless a recovery mechanism is in place.  
 
 Worse, if the KPI oracle or the stablecoin issuer becomes compromised or malicious, they could potentially steal all assets governed by the Futarchy. By controlling a key input to the resolution process, they can manipulate outcomes to pass arbitrary proposals that benefit them.  
 
 *   *Examples:* A malicious stablecoin operator could commit to increasing the stablecoin's value conditional on their proposal *failing* (in Asset Futarchy) or commit to making the stablecoin collateral worthless conditional on their proposal *failing* (in KPI Futarchy), both biasing the market towards passing their proposal.  
-
-Ultimately, Asset Futarchy's dependency on a specific stablecoin isn't strictly necessary. A more censorship-resistant native asset (like ETH) could be used as the quote asset, although this introduces price volatility as a confounding factor.  
-
-Therefore, only KPI Futarchy necessarily retains a dependency in the form of its KPI oracle (unless the KPI can be computed trustlessly on-chain). Furthermore, even honest KPIs are prone to degradation over long time scales due to Goodhart's Law/metric gaming.  
 
 This doesn't mean KPI Futarchy is unsuitable for long-running governance. It just means that if used this way, robust mechanisms are essential to recover from faulty or malicious oracles (or collateral failures), potentially requiring delegation of emergency powers to a trusted entity. Crucially, if the organization's goal *is* to optimize a non-asset-price KPI, Asset Futarchy simply isn't a substitute, despite its robustness advantages.  
 
