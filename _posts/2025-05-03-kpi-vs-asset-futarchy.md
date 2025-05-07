@@ -168,8 +168,7 @@ KPI Futarchy is much better suited for contexts where the goal is something othe
 *   KPI Futarchy also enables novel forms of inter-organizational cooperation. An organization governed by KPI Futarchy could incorporate another organization's utility function into its own KPI definition as part of a negotiated agreement. This allows for binding treaties between organizations without needing external legal enforcement. See: [Futarchy of mutating preferences](https://thequantummilkman.substack.com/p/futarchy-of-mutating-preferences).  
 
 ## Asset Futarchy Offers Superior Robustness  
-➜ Generally, Asset Futarchy has superior properties in robustness due to the nature of asset markets.  
-Robustness relates to resistance against manipulation and distortion, alignment with stakeholder interests, and reliability over time.  
+➜ Generally, Asset Futarchy has superior properties in robustness due to the nature of asset markets. Robustness relates to resistance against manipulation and distortion, alignment with stakeholder interests, and reliability over time.  
 
 ### Both Face Distortion Risks, but from Different Sources  
 ➜ KPI Futarchy can suffer impact distortion from pre-set KPI bounds affecting capital efficiency and neutrality, while Asset Futarchy can be distorted by changes in the quote asset's value.  
