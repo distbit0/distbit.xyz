@@ -19,7 +19,7 @@ title: Use of zettelkasten for agent memory
 
 
 
-zettelkasten may be useful for agent idea retrieval and agent idea relation representation for agi memory  
+zettelkasten strat index may be useful for agent idea retrieval and agent idea relation representation for agi memory  
 
 The benefits of using zettelkasten for agent memory are that:  
 - it is human interprable  

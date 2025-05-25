@@ -8,7 +8,7 @@ gist_url: https://gist.github.com/aad1e5df4a169eb13ed4b8dc0c3ce117
 headerImage: false
 hidden: false
 layout: post
-live: true
+live: false
 tag: []
 title: Decision market challenges
 ---
