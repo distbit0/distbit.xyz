@@ -77,12 +77,6 @@ Leverage offers a specific benefit to KPI Futarchy: it helps overcome the trade-
 *   *Mechanism:* Leverage enables the minting of 'long KPI' tokens independently from 'short KPI' tokens. If the 'long KPI' token trades at `5 cents` (implying a low expected outcome), a trader wanting to short it doesn't need to provide the full `$1` of collateral (`95 cents` of which would normally back the corresponding 'short KPI' token). This decoupling makes trading more efficient.  
 *   *Trader Experience:* This improves the user experience for KPI Futarchy traders. Standard KPI Futarchy often must limit the potential upside (constrain the KPI range) to maintain capital efficiency. Leverage allows for higher potential returns, which is important to compensate traders for locking up capital, potentially for months, until the KPI resolves.  
 
-### Asset Futarchy May Offer Improved Pre-Decision Liquidity by Leveraging Spot Markets  
-➜ Asset Futarchy has a potential advantage in pre-decision liquidity by leveraging existing spot market liquidity, reducing subsidy needs.  
-
-Before the organization makes its final decision based on the market prices, liquidity is needed for the Futarchy markets themselves. Asset Futarchy has a potential advantage here. By employing a novel DEX design, it can leverage the existing liquidity found in the asset's spot market. This reduces the amount which the organization needs to spend subsidizing Futarchy market liquidity.   
-
-KPI Futarchy cannot tap into existing spot markets because none exist for a custom KPI. It must build liquidity from scratch, hence requiring subsidies.  
 
 ### Asset Futarchy Simplifies Post-Decision Liquidity Through Spot Market Integration  
 ➜ In Asset Futarchy, conditional tokens effectively become claims on the underlying spot asset post-decision, utilizing its liquidity, while KPI Futarchy requires continued liquidity subsidization.  
@@ -134,7 +128,7 @@ In Asset Futarchy, making such an adjustment is not straightforward because the 
 ### KPI Futarchy Can Offer Higher Proposal Impact Sensitivity  
 ➜ KPI Futarchy can enhance proposal impact-sensitivity, allowing detection of smaller impacts, by focusing the KPI on the specific area affected by a decision.  
 
-Impact sensitivity refers to the smallest percentage impact on the asset price or KPI that the Futarchy market can reliably detect and price. Think of it as the system's "resolution."  
+Impact sensitivity refers to the smallest percentage impact on the asset price or KPI that the Futarchy market can reliably detect and price. Think of it as the futarchy's "resolution."  
 
 Sensitivity depends on two main factors:  
 
@@ -147,6 +141,7 @@ Several approaches can increase sensitivity:
 
 *   Supporting leveraged positions (boosts capital efficiency, making small gains more attractive).  
 *   Employing yield-bearing collateral assets (reduces trader opportunity costs, as proposed by Seer: [Capital efficiency](https://seer-2.gitbook.io/seer/seer-solution/capital-efficency) ).  
+*   Prohibiting redemption of short & long tokens until the resolution date, rather than at any point over the market's duration as is usally permitted.  
 *   Using a non-linear KPI mapping function in KPI Futarchy that magnifies the payout differences at the low end of the KPI range, making small impacts more significant to trader returns. However this has the risk of unintentionally distorting futarchy decisions in the direction of lower risk tolerance.  
 
 Asset Futarchy is typically sensitive enough for major, top-level decisions that will clearly move the overall asset price. However, it is often *insufficiently* sensitive for more granular decisions whose impact on the total asset value is likely to be small or imperceptible.  
