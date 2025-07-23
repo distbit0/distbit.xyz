@@ -99,7 +99,7 @@ In KPI Futarchy, there's no underlying spot market to fall back on. To allow tra
 In Asset Futarchy, a trader's PnL is only loosely tied to the proposal's specific impact. It's heavily distorted by *all other factors* influencing the asset price: general market conditions, demand changes, management decisions, other proposals, etc.  
 
 > *Trader Experience:* This means traders are forced to take on exposure to these unrelated factors. They might correctly predict a proposal's positive impact but still lose money if the broader market tanks before they close their position. This increases uncertainty and risk; traders prefer predictable returns linked to their specific insight.  
-*   *Hedging:* Hedging these external factors is difficult and often imperfect. It typically requires dynamic rebalancing, which introduces its own costs and risks (e.g., negative gamma exposure).  
+*   *Hedging:* Hedging these external factors is `difficult` and often imperfect. It typically requires dynamic rebalancing, which introduces its own costs and risks (e.g., negative gamma exposure).  
 *   *Trader Pool:* While Asset Futarchy benefits from a natural pool of participants (existing asset holders already exposed to the price), this doesn't necessarily help attract *outside* informed actors who aren't already holders but might have valuable specific knowledge about the proposal.  
 
 KPI Futarchy is generally superior in this regard. The KPI can be specifically designed to reduce (though perhaps not always eliminate) distortion from external factors.  
@@ -189,7 +189,7 @@ However, Asset Futarchy is not immune to a different type of distortion. Its pre
 A similar attack vector exists for KPI Futarchy through its *collateral asset*. A malicious stablecoin operator could credibly commit to devaluing the stablecoin collateral *if* their preferred proposal fails, thus artificially inflating the market's estimate of that proposal's benefit.  
 
 ### Asset Futarchy Aligns Manipulation Cost with Value Increase; KPI Metric Manipulation is Often Cheaper  
-➜ Manipulating Asset Futarchy outcomes to pass a proposal requires genuinely increasing expected asset value, aligning with goals, whereas manipulating KPI metrics is often cheaper and may not achieve true objectives.  
+➜ Manipulating Asset Futarchy outcomes to pass a proposal requires genuinely increasing expected asset value, aligning with goals, whereas manipulating KPI metrics is often cheaper and less aligned with the Futarchy's true objectives.  
 
 Consider manipulation of the *ground truth* or *resolution source*, not direct manipulation of the prediction market prices (which informed traders can counter).  
 
@@ -211,6 +211,11 @@ Consequently, traders will tend to avoid Futarchy markets where the metric's man
 Traders generally fear KPI manipulation more than asset-price manipulation. Asset prices, being widely traded and observed, are perceived as more *credibly neutral*. Understanding the potential manipulation surfaces of a custom KPI requires significant extra due diligence, deterring participation. The risk of *information asymmetry* (insiders knowing more about manipulation potential) is higher in KPI Futarchies. There's simply more room for debate, interpretation, and hidden manipulation vectors with bespoke KPIs.  
 
 KPI-based Futarchies thus possess lower inherent credible neutrality from a trader's viewpoint. It's crucial for designers to select KPIs with transparent, well-understood, and high manipulation costs, and communicate these properties clearly.  
+
+An subtle point is that if the cost for traders to decrease the ground truth value of a metric is similar to a Futarchy's proposal's `cost / expected metric increase`, then one or more of the following will be true:  
+- either the proposal creator will find it profitable to manipulate their own proposal's futarchy markets  
+- or traders will find it profitable to manipulate the ground truth value of the metric  
+This is because a futarchy market's liquidity is ultimately limited by the manipulation cost of the metric, or else the market risks becoming a metric "manipulation bounty" in the eyes of sophisticated traders. However liquidity must also be sufficient to deter a proposal creator from trying to manipulate their own futarchy markets.  
 
 ### Asset Futarchy Protects Minority Owners from Expropriation  
 ➜ Asset Futarchy inherently protects minority owners by aligning decisions with overall token value, while KPI Futarchy, focused on specific KPIs, does not offer this same protection against value expropriation.  
