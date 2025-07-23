@@ -155,8 +155,8 @@ However, KPI Futarchy can run into sensitivity issues if the chosen KPI is too h
 
 Asset Futarchy is ideal for the top-level governance of organizations whose main objective is to increase value for shareholders or token holders.  
 *   It can be adapted somewhat, for instance, by tokenizing the projected revenue stream of *each individual proposal* and running Futarchy on those specific tokens. This, however, blurs the line into a hybrid KPI/Asset approach.  
-
-KPI Futarchy is much better suited for contexts where the goal is something other than maximizing long-term shareholder value. This includes pursuing specific political, social, technical, or scientific objectives – goals often found in non-profits or public goods projects. As long as the goal can be quantified into a measurable KPI, Futarchy can target it.  
+  
+KPI Futarchy is also suited to contexts where the goal is something other than maximizing long-term shareholder value. This includes pursuing specific political, social, technical, or scientific objectives – goals often found in non-profits or public goods projects. As long as the goal can be quantified into a measurable KPI, Futarchy can target it.  
 
 *   The KPI could even be the output of a retroactive evaluation committee, allowing Futarchy to target goals that are difficult to measure objectively.  
 *   KPI futarchy supports composite KPIs, allowing for the combination of multiple KPIs into a single KPI, with each assigned a different weight. This allows more complex goals to be expressed, while also potentially mitigating the manipulation risk of any single KPI.  
