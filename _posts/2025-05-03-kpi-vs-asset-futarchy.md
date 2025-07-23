@@ -21,7 +21,7 @@ title: The different types of futarchy
 This article compares two forms of Futarchy, a governance mechanism using prediction markets: Asset Futarchy (predicting project token value) and KPI Futarchy (predicting a Key Performance Indicator).  
 
 *   **Outline:** The comparison covers three main areas:  
-    *   **Efficiency:** Examines capital efficiency (with and without leverage), liquidity (pre and post-decision), and how trader PnL (Profit and Loss) can be confounded by external factors or time horizons.  
+    *   **Efficiency:** Examines capital efficiency (with and without leverage), liquidity (pre and post-decision), and how trader PnL (Profit and Loss) can be distorted by external factors or time horizons.  
     *   **Flexibility:** Discusses alignment with organizational risk tolerance, sensitivity to proposal impacts, and adaptability to diverse organizational goals.  
     *   **Robustness:** Analyzes proposal impact distortion, manipulation impact for organizations and traders, alignment with minority owner interests, and third-party dependency risks.  
    
@@ -93,23 +93,23 @@ In Asset Futarchy, the conditional tokens effectively become claims on the under
 
 In KPI Futarchy, there's no underlying spot market to fall back on. To allow traders to exit their positions *after* the decision but *before* the final KPI resolution date, the market creator must ensure the availability of liquidity, likely through subsidies. Without this, traders' capital remains locked until the resolution date, which degrades trader experience.  
 
-### KPI Futarchy Generally Reduces Trader PnL Confounding from External Factors  
-➜ KPI Futarchy generally ensures a trader's PnL more accurately reflects their prediction about a proposal's specific impact, unlike Asset Futarchy where PnL is confounded by broader market factors.  
+### KPI Futarchy Can Increase the Predictability of Trader Returns  
+➜ KPI Futarchy generally ensures a trader's PnL more accurately reflects their prediction about a proposal's specific impact, unlike Asset Futarchy where PnL is distorted by broader market factors.  
 
-In Asset Futarchy, a trader's PnL is only loosely tied to the proposal's specific impact. It's heavily confounded by *all other factors* influencing the asset price: general market conditions, demand changes, management decisions, other proposals, etc.  
+In Asset Futarchy, a trader's PnL is only loosely tied to the proposal's specific impact. It's heavily distorted by *all other factors* influencing the asset price: general market conditions, demand changes, management decisions, other proposals, etc.  
 
 > *Trader Experience:* This means traders are forced to take on exposure to these unrelated factors. They might correctly predict a proposal's positive impact but still lose money if the broader market tanks before they close their position. This increases uncertainty and risk; traders prefer predictable returns linked to their specific insight.  
 *   *Hedging:* Hedging these external factors is difficult and often imperfect. It typically requires dynamic rebalancing, which introduces its own costs and risks (e.g., negative gamma exposure).  
 *   *Trader Pool:* While Asset Futarchy benefits from a natural pool of participants (existing asset holders already exposed to the price), this doesn't necessarily help attract *outside* informed actors who aren't already holders but might have valuable specific knowledge about the proposal.  
 
-KPI Futarchy is generally superior in this regard. The KPI can be specifically designed to reduce (though perhaps not always eliminate) confounding from external factors.  
+KPI Futarchy is generally superior in this regard. The KPI can be specifically designed to reduce (though perhaps not always eliminate) distortion from external factors.  
 
-### Asset Futarchy's Infinite Horizon Confounds PnL for Time-Specific Impacts  
-➜ Asset Futarchy's implicit infinite time horizon confounds PnL by incorporating long-term factors irrelevant to short-term proposal impacts, while KPI Futarchy allows for time-specific impact measurement.  
+### Asset Futarchy's Infinite Horizon Distorts PnL for Time-Specific Impacts  
+➜ Asset Futarchy's implicit infinite time horizon distorts PnL by incorporating long-term factors irrelevant to short-term proposal impacts, while KPI Futarchy allows for time-specific impact measurement.  
 
 Asset Futarchy implicitly operates with an infinite time horizon because asset prices reflect expectations far into the future. This means changes in long-term factors like discount rates or investor risk premiums have a greater impact on trader payouts, as these factors compound over longer periods.  
 
-Importantly, this happens even if the proposal's impact is known to be short-term. Asset Futarchy cannot easily focus *only* on impacts over a specific, limited time period. Traders are affected by factors influencing the asset price far beyond the relevant timeframe for the proposal. This further confounds PnL and degrades the trader experience.  
+Importantly, this happens even if the proposal's impact is known to be short-term. Asset Futarchy cannot easily focus *only* on impacts over a specific, limited time period. Traders are affected by factors influencing the asset price far beyond the relevant timeframe for the proposal. This further distorts PnL and degrades the trader experience.  
 
 KPI Futarchy provides much greater flexibility here.  
 
@@ -120,16 +120,16 @@ KPI Futarchy provides much greater flexibility here.
 ➜ Generally, KPI Futarchy offers more flexibility to adapt to different goals, sensitivities, and organizational needs.  
 
 ### KPI Futarchy Accounts for Risk Aversion via Payoff Modulation  
-➜ KPI Futarchy allows direct alignment with an organization's risk aversion by modulating trader payoffs, unlike Asset Futarchy which predicts expected value by default.  
+➜ KPI Futarchy facilites alignment with a given level of risk aversion by modulating trader payoffs, whereas Asset Futarchy maximises expected asset value by default.  
 
-By default, Futarchy markets predict the *expected* outcome (a probability-weighted average). However, most organizations are risk-averse; they care more about avoiding large losses than achieving proportionally large gains. They value outcomes based on *utility*, not just expected value.  
+By default, Futarchy markets predict the *expected* outcome (a probability-weighted average). However, in many contexts decision makers are risk-averse; hence they care more about avoiding large losses than achieving proportionally large gains. Put differently, their "utility" is not a linear function of the metric which they are optimising.  
 
-> *Example:* A proposal has a `50%` chance of causing bankruptcy (token price -> `$0`) and a `50%` chance of tripling the price from `$1` to `$3`. The expected value is `(0.5 * $0) + (0.5 * $3) = $1.50`, a `50%` gain over the current `$1`. A naive Futarchy focused only on expected value would approve this proposal.  
-*   *Organization's View:* Most organizations would find this gamble highly unappealing due to the bankruptcy risk.  
+> *Example:* A proposal has a `50%` chance of causing a company's monthly active users (MAUs) to fall to 0 and a `50%` chance of increasing MAUs by 200%. The expected impact on MAUs is `(0.5 * -100%) + (0.5 * +200%) = +50%`, a `50%` expected gain over the current level of MAUs. A naive Futarchy focused only on expected value would approve this proposal.  
+*   *Organization's View:* Most organizations would find this gamble highly unappealing due to the 50% risk it entails of losing all their users.  
 
 In KPI Futarchy, this risk aversion can be directly addressed by modulating the trader payoff function. The mapping from the final KPI value to the collateral payout can be made non-linear to reflect the organization's aversion to specific outcomes (e.g., heavily penalizing low KPI values).  
 
-In Asset Futarchy, this is not straightforward because the markets simply price the asset. To account for risk aversion, one might need to implement complex secondary markets, like option markets, to estimate the *distribution* of potential price outcomes. The organization could then use this distribution to calculate a utility-weighted expected price offline to inform its decision.  
+In Asset Futarchy, making such an adjustment is not straightforward because the markets simply price the asset, however fortunately it is also not necesasry in the context of asset futarchy, given that companies should be trying to maximise the simple expected value of their share price anyway.  
 
 ### KPI Futarchy Can Offer Higher Proposal Impact Sensitivity  
 ➜ KPI Futarchy can enhance proposal impact-sensitivity, allowing detection of smaller impacts, by focusing the KPI on the specific area affected by a decision.  
