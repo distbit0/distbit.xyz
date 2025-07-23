@@ -83,9 +83,9 @@ Leverage offers a specific benefit to KPI Futarchy: it helps overcome the trade-
 
 After the decision is made but before the final outcome resolves (e.g., the KPI is measured or the long-term price impact is clear), traders might still want to trade.  
 
-In Asset Futarchy, the conditional tokens effectively become claims on the underlying spot asset once the decision is locked in. Traders can then use the asset's regular spot market liquidity to enter or exit positions. No separate liquidity subsidy is needed for this period (between decision and proposal impact). This makes Asset Futarchy more attractive if information continues to emerge during this time, allowing traders to adjust positions without dedicated Futarchy market liquidity.  
+In Asset Futarchy, the conditional tokens become claims on the underlying spot asset once the decision is locked in. Traders can then use the asset's regular spot market liquidity to enter or exit positions. No separate liquidity subsidy is needed for this period (between decision and proposal impact). This makes Asset Futarchy more attractive if information continues to emerge during this time, allowing traders to adjust positions without dedicated Futarchy market liquidity.  
 
-In KPI Futarchy, there's no underlying spot market to fall back on. To allow traders to exit their positions *after* the decision but *before* the final KPI resolution date, the market creator must ensure the availability of liquidity, likely through subsidies. Without this, traders' capital remains locked until the resolution date, which degrades trader experience.  
+In KPI Futarchy, there's no underlying spot market to fall back on. To allow traders to exit their positions *after* the decision but *before* the final KPI resolution date, the market creator must ensure the availability of liquidity, e.g. through liquidity subsidies. Without this, traders' capital remains locked until the resolution date, which degrades trader experience.  
 
 ### KPI Futarchy Can Increase the Predictability of Trader Returns  
 ➜ KPI Futarchy generally ensures a trader's PnL more accurately reflects their prediction about a proposal's specific impact, unlike Asset Futarchy where PnL is distorted by broader market factors.  
