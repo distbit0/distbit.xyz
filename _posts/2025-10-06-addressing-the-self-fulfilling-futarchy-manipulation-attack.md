@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/the-reality-distortion-futarchy-manipulation-attack
+articleUrl: https://distbit.xyz/addressing-the-self-fulfilling-futarchy-manipulation-attack
 author: distbit
 category: blog
 date: 2025-10-06 00:00
@@ -10,7 +10,7 @@ layout: post
 live: true
 tag:
 - share
-title: The reality-distortion futarchy manipulation attack
+title: Addressing the self-fulfilling futarchy manipulation attack
 ---
 
 
