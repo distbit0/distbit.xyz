@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/shadow-market-ideas
+articleUrl: https://distbit.xyz/shadow-markets
 author: distbit
 category: blog
 date: 2025-10-06 00:00
@@ -10,7 +10,7 @@ layout: post
 live: true
 tag:
 - share
-title: Shadow market ideas
+title: Shadow market
 ---
 
 
