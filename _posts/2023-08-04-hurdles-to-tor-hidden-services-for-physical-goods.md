@@ -53,4 +53,4 @@ A physical instantiation of THS would be a protocol which allows for physical go
 			- so that the previous transporter can be given a bad reputation  
 	- To facilitate agorism index.  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/20min)
+If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

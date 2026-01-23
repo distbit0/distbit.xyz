@@ -38,4 +38,4 @@ related product: [Brainstorming](https://fermat.ws/brainstorming)
 
 Contact me at adp01@pm.me or if you are interested in working on this!  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/20min)
+If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

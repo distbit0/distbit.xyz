@@ -314,4 +314,4 @@ At the beginning of this article a decision market was referenced with the goal 
 
 Thanks to [Zack](https://x.com/zack_bitcoin), Joe, [Lajarre](https://x.com/lajarre), Brian, [Metaproph3t](https://x.com/metaproph3t), Claude and [Markus](https://x.com/markus0x1) for helpful discussions and feedback on this article.  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/20min)
+If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

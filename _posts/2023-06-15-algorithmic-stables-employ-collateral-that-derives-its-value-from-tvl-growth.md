@@ -29,4 +29,4 @@ Therefore if long term expected growth rate of the stablecoin becomes negative (
 
 Algorithmic stablecoins are on the most reflexive end of [the collateral price reflexivity continuum](/the-collateral-price-reflexivity-continuum).  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/20min)
+If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

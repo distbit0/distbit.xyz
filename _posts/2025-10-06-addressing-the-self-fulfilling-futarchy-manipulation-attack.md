@@ -66,4 +66,4 @@ Asset futarchy demonstrates greater resistance to the adverse selection attack d
 
 - Run futures markets on the metric before and alongside futarchy markets, giving traders opportunities to exploit cheap metric manipulation opportunities and hardening the metric against manipulation by the time futarchy markets use it.  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/20min)
+If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

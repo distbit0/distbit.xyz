@@ -43,4 +43,4 @@ Key points:
     1. it represents a misallocation by the business which made good x.   
     2. the business did not expect bob to become unemployed and demand less as a result. They produced something which turned out not to be wanted.  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/20min)
+If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
