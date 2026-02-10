@@ -21,7 +21,7 @@ Impact is how much the market expects an event to change an asset’s price.
 
 It is the market-implied delta between the asset’s price if the event occurs and the asset’s price if it does not occur.  
 
-Standard conditional futures do not isolate impact. A long YES and short NO position becomes a bet on which outcome occurs, because one leg settles to the spot price and the other leg settles to 0. Impact exposure instead targets the conditional spread `price_yes - price_no`. Unconditional outcome futures isolate that spread by making both legs settle to prices in both outcomes, so long YES and short NO settles to `impact_TWAP` regardless of which outcome occurs. The multiverse or universe token framing is standard conditional futures with different labels.  
+Standard conditional futures do not isolate impact. A long YES and short NO position becomes a bet on which outcome occurs, because one leg settles to the spot price and the other leg settles to 0. Impact exposure instead targets the conditional spread `price_yes - price_no`. Unconditional outcome futures isolate that spread by making both legs settle to prices in both outcomes, so long YES and short NO settles to `impact_TWAP` regardless of which outcome occurs.   
 
 ## Definitions  
 
