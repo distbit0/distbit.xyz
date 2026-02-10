@@ -73,6 +73,4 @@ A long YES position and a short NO position of equal size therefore does not set
 
 Defining impact as `price_yes - spot` also does not isolate impact. If spot is priced as a probability-weighted average of conditional prices, `spot(t) = p_yes(t)·price_yes(t) + (1-p_yes(t))·price_no(t)`, then `price_yes(t) - spot(t) = (1-p_yes(t))·(price_yes(t) - price_no(t))`. The multiplier `(1-p_yes(t))` collapses as `p_yes(t)` approaches 1, so this definition collapses toward 0 as one outcome becomes near-certain.  
 
-## Scratchpad  
-
 If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
