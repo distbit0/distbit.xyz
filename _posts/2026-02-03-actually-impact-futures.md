@@ -6,8 +6,10 @@ date: 2026-02-03 00:00
 description: ''
 gist_url: https://gist.github.com/1906750660be85a0f69290899104bb11
 headerImage: false
+hidden: true
 layout: post
 live: false
+published: false
 tag: []
 title: Actually impact futures
 ---
