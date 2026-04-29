@@ -8,7 +8,7 @@ gist_url: https://gist.github.com/0263d017c78742811c501cd46939429f
 headerImage: false
 hidden: true
 layout: post
-live: false
+live: true
 published: false
 tag: []
 title: Decision selection bias fix?
