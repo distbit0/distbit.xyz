@@ -10,7 +10,7 @@ tag:
 - defi
 - derivatives
 - interest-rate-swaps
-title: Capital efficiency of futures and IRS
+title: Capital efficiency of futures and irs
 ---
 
 

@@ -12,7 +12,7 @@ tag:
 - ai
 - agents
 - memory
-title: Importance of recursive memory retrieval for AI agents
+title: Importance of recursive memory retrieval for ai agents
 ---
 
 

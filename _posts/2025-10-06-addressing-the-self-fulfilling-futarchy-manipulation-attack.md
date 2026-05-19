@@ -10,7 +10,7 @@ layout: post
 live: true
 tag:
 - share
-title: Addressing the self-fulfilling futarchy manipulation attack
+title: Addressing the self fulfilling futarchy manipulation attack
 ---
 
 

@@ -10,7 +10,7 @@ tag:
 - ai
 - agents
 - liberty
-title: AI Agent sovereignty and its impact on human liberty
+title: Ai agent sovereignty and its impact on human liberty
 ---
 
 

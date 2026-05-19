@@ -12,7 +12,7 @@ tag:
 - onion-routing
 - agorism
 - WoT
-title: Hurdles to Tor hidden services for physical goods
+title: Hurdles to tor hidden services for physical goods
 ---
 
 

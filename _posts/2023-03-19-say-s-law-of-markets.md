@@ -12,7 +12,7 @@ tag:
 - econ
 - keynesianism
 - inflation
-title: Say's law of markets
+title: Say s law of markets
 ---
 
 

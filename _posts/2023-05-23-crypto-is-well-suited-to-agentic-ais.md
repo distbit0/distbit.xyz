@@ -13,7 +13,7 @@ tag:
 - agents
 - ai
 - liberty
-title: Crypto is well suited to agentic AIs
+title: Crypto is well suited to agentic ais
 ---
 
 

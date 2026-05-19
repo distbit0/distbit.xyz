@@ -13,7 +13,7 @@ tag:
 - ai
 - memory
 - epistemology
-title: Teaching LLMs ideas beyond their context limit
+title: Teaching llms ideas beyond their context limit
 ---
 
 

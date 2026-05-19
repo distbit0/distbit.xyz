@@ -10,7 +10,7 @@ tag:
 - ai
 - agents
 - memory
-title: AI agent memory optimisation design
+title: Ai agent memory optimisation design
 ---
 
 

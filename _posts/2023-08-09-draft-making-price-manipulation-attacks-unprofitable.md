@@ -13,7 +13,7 @@ tag:
 tags:
 - defi
 - oracles
-title: DRAFT Making price manipulation attacks un-profitable
+title: Draft making price manipulation attacks un profitable
 ---
 
 

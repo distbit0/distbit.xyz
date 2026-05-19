@@ -12,7 +12,7 @@ tag:
 - defi
 - oracles
 - collateral
-title: LP token price manipulation attacks
+title: Lp token price manipulation attacks
 ---
 
  

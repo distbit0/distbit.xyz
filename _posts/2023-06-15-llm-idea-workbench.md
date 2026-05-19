@@ -13,7 +13,7 @@ tag:
 - epistemology
 - WoT
 - idea-composition
-title: LLM idea workbench
+title: Llm idea workbench
 ---
 
 

@@ -11,7 +11,7 @@ live: true
 tag:
 - stablecoins
 - defi
-title: Algorithmic stables employ collateral that derives its value from TVL growth
+title: Algorithmic stables employ collateral that derives its value from tvl growth
 ---
 
 
