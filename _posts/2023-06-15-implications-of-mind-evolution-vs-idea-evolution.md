@@ -18,7 +18,7 @@ title: Implications of mind evolution vs idea evolution
 
 
 
-Agents have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This is relevant to whether the impact of agi will be larger than brain count increase suggests.  
+Agents have the advantage over humans that they are able to employ evolution to improve their minds and not just their ideas. This is relevant to whether the impact-of-agi-will-be-larger-than-brain-count-increase-suggests.  
 
 Why would the ability for evolution to occur at the level of minds have advantages over the evolution at the level of ideas, as is already possible within and between human brains?  
 

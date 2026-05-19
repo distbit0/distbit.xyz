@@ -31,7 +31,7 @@ A proposer with a positive-EV but incomplete proposal can use vagueness to profi
 
 The weakness is that vagueness is cheap to imitate. If too many negative-EV proposals use it, traders should eventually treat vagueness as negative evidence. The strategy works only while "vague because valuable" remains plausible.  
 
-## Decision Selection Bias  
+## (Adversarial) Decision Selection Bias  
 
 Decision selection bias comes from the fact that the market price helps decide whether the proposal executes. If a proposal is more likely to pass in worlds where favorable information arrives, then PASS-ASSET partly prices the proposal conditional on that favorable information.  
 
@@ -65,7 +65,7 @@ The strategy is most concerning because it can be attractive even for proposals 
 
 The key condition is that the buy wall must be cheaper than delivery until the delivery threshold is reached. Once that condition stops holding, the proposer switches to delivery. This gives the proposer a private cost cap: defend passage without delivering while that is cheaper, then deliver once PASS-ASSET exposure makes delivery rational.  
 
-The buy wall must track the PASS/FAIL spread, not a fixed PASS-ASSET price. Delivery must make the defended PASS-ASSET price justified, not merely less wrong.   
+The buy wall must track the PASS/FAIL spread, not a fixed PASS-ASSET price. Delivery must make the defended PASS-ASSET price justified, not merely less wrong.  
 
 This can be used by any proposal with optional value-creating work, including proposals that are positive-EV if delivered honestly. The harmful version is clearest when the proposal is only positive-EV in the delivery branch. In that case, counter-manipulation either fails to stop passage or helps create the branch where the proposal becomes worth passing.  
 

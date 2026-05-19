@@ -47,10 +47,10 @@ A physical instantiation of THS would be a protocol which allows for physical go
 		- using  
 			- dead drops  
 			- postage systems  
-		- web of trust index reputation system  
+		- web-of-trust-index reputation system  
 		- every hop is managed by the sender of the item  
 		- transporters specify if the item is in a good state when they pick it up  
 			- so that the previous transporter can be given a bad reputation  
-	- To facilitate agorism index.  
+	- To facilitate agorism-index.  
 
 If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

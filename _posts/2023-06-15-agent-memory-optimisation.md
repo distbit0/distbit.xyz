@@ -30,6 +30,6 @@ Questions about the idea can be asked to this blank instance of itself to test i
 
 The agent may need to carry out several attempts/iterations before it finds a representation of a new idea which is reliably understood by a blank instance of itself.  
 
-This is a strategy for agi memory  
+This is a strategy for agi-memory  
 
 If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
