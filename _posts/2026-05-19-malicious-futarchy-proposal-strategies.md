@@ -77,7 +77,7 @@ That matters because many holders are not choosing between "proposal passes" and
 
 Many holders may think:  
 
-> This proposal is slightly negative-EV, but I would still rather hold ASSET after it passes than hold USD.  
+"This proposal is slightly negative-EV, but I would still rather hold ASSET after it passes than hold USD."  
 
 So they do not sell PASS-ASSET near the threshold. Their unwillingness to sell is not approval of the proposal. It means the proposal's harm is smaller than their reservation value for staying exposed to ASSET.  
 
