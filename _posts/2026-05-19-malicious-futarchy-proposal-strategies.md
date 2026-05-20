@@ -7,7 +7,7 @@ description: ''
 gist_url: https://gist.github.com/db7422f8704b0638eaf9469f1af239cd
 headerImage: false
 layout: post
-live: true
+live: false
 tag: []
 title: Malicious futarchy proposal strategies
 ---
