@@ -44,8 +44,9 @@
     {% endif %}
 
     {% if site.email %}
-    <a class="link" data-title="{{ site.email }}" href="mailto:{{ site.email }}" rel="noopener">
+    <a class="link email-link" data-title="{{ site.email }}" href="mailto:{{ site.email }}" rel="noopener">
         <i class="fa-regular fa-envelope"></i>
+        <span>{{ site.email }}</span>
     </a>
     {% endif %}
 </div>
