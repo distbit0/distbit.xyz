@@ -76,4 +76,4 @@ Not all of these criteria are necessary, but each enhances the effectiveness of 
 
 **Informed participation and timely decisions.** Decision makers and other informed parties should be able to trade in the market, and decisions should occur relatively soon. These conditions help avoid [decision selection bias](https://www.overcomingbias.com/p/futarchy-for-fundraising).  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

@@ -27,4 +27,4 @@ In addition to using this feedback to weaken the connection's weight, an alterna
 
 E.g. maybe the link has a misleading description x, but the agent rates it badly so it is asked what it should be changed to in order to accurately describe the relationship between the two ideas.  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

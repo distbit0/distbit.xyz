@@ -27,4 +27,4 @@ A limitation of this approach may be that an idea might be relevant to one of th
 As a result, this approach may be improved by first searching for relevant notes/ideas in the agent's memory/task list to provide as additional context when asking the agent whether an idea is worthy of being remembered.   
 
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

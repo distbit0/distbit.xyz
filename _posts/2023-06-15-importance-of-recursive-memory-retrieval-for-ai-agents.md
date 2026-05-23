@@ -22,4 +22,4 @@ An AGI should be designed to recursively retrieve ideas from its memory, allowin
 
 Such a design would ensure the retrieval of even the most intricate ideas, which may involve numerous components or dependencies. A static limit on retrieval duration or depth could hinder the extraction of these complex ideas, therefore an adaptable approach is necessary.  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

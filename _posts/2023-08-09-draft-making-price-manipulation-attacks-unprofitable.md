@@ -336,4 +336,4 @@ The solution to this is that the lending platform can implement a delay on all n
 
 Thanks to [Zack Hess](https://twitter.com/zack_bitcoin), Brian Pasfield and [Max Kaye](https://twitter.com/xertrov?) for the discussions and feedback that contributed to this post!  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

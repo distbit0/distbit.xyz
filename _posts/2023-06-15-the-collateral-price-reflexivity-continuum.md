@@ -40,4 +40,4 @@ Hence there is some need for DAI to maintain higher than otherwise necessary ove
 
 This is especially important when the marketcap of the collateral asset is low relative to the TVL of the protocol in which it is used as collateral.  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

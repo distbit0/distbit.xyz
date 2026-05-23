@@ -32,4 +32,4 @@ In order to ensure that the bots reaction time, and the manipulation attack dura
 Hence, a TWAP period should not only be defined by the maximum age of the a sample in the TWAP series, but also the minimum age of the oldest sample.   
 
 
-If you found this interesting, have feedback or are working on something related, let's chat: [twitter (@distbit0)](https://twitter.com/distbit0) or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
