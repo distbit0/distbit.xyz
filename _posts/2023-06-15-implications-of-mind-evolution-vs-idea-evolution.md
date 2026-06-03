@@ -55,4 +55,4 @@ It seems that all of the following factors contribute to effective evolution:
 	- However due to more efficienct replication and selection (points 1) and 2) above)  
 		- variation of minds should be more targeted than variations of ideas, due to better minds being much more likely to proliferate, and due to better minds having better strategies for varying their ideas.  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

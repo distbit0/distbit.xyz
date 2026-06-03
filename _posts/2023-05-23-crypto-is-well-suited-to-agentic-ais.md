@@ -30,4 +30,4 @@ Additionally, most fiat networks assume all users have a government issued-ident
 As a result, any currency which is subject to state-censorship (i.e. all fiat currencies) will be unsuitable for use by Agentic AIs due to the accompanying risk of censorship. Hence the value of non-state digital money, in the form of crypto.   
 
 
-If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)

@@ -19,7 +19,7 @@ title: Malicious futarchy proposal strategies
 
 Asset futarchy is hardest to attack when traders can cheaply correct incorrect prices. The proposal strategies below work by weakening that correction mechanism. This is not a comprehensive list of attacks or malicious proposal strategies; it focuses on mechanisms that seem especially relevant to proposal-market correction. Some only help -EV proposals. Others also help +EV proposals, which makes them more dangerous because they can become normal behavior rather than obvious abuse.  
 
-By asset futarchy, I mean a governance system where a proposal passes if conditional markets say ASSET will be worth more if the proposal passes than if it fails. PASS-ASSET is ASSET in the world where the proposal passes. FAIL-ASSET is ASSET in the world where it fails. The mechanism need not mean inflating token supply to pay for the proposal; the important feature here is that relative conditional prices decide execution. I use +EV for proposals that increase expected ASSET value and -EV for proposals that decrease it.  
+Asset futarchy here means a governance system where a proposal passes if conditional markets say ASSET will be worth more if the proposal passes than if it fails. PASS-ASSET is ASSET in the world where the proposal passes. FAIL-ASSET is ASSET in the world where it fails. The mechanism need not mean inflating token supply to pay for the proposal; the important feature here is that relative conditional prices decide execution. +EV means a proposal increases expected ASSET value, and -EV means it decreases expected ASSET value.  
 
 ## Vague Proposal Bluff  
 
@@ -61,19 +61,17 @@ Where the sabotage vector exists, the cost is mostly off-path: if the threat wor
 
 ## Knock-In Delivery Buy Wall  
 
-A proposer offers value-creating work, but only intends to perform it if defending the proposal becomes expensive enough that non-delivery no longer pays.  
+A proposer promises value-creating work, but treats delivery as the backup plan. Their first choice is to pass the proposal by defending the PASS/FAIL spread, collect the proposal payout, and skip the work.  
 
 Example: a proposer asks the DAO to approve a distribution deal. The deal is valuable if they actually recruit the distributor and do the integration work, but costly for the proposer to deliver. Instead of doing the work by default, the proposer runs a buy wall that keeps PASS-ASSET above FAIL-ASSET, or above whatever PASS/FAIL spread the decision rule requires.  
 
-If bearish traders sell only a small amount of PASS-ASSET, the proposer absorbs the flow, the proposal passes, and the proposer can skip the work but gets paid anyway. If bearish traders sell heavily, the proposer keeps buying under the assumption that they will not deliver. They stop defending and switch to delivery once total defense costs would offset the amount they get paid if the proposal passes.  
+If bearish traders sell only a small amount of PASS-ASSET, the proposer absorbs the flow, the proposal passes, and the proposer can skip the work but gets paid anyway. If bearish traders sell heavily, the proposer keeps buying PASS-ASSET as long as the total manipulation cost under non-delivery is below the cost of doing the work. Once non-delivery manipulation would cost more than delivery, the proposer delivers. Delivery then makes the defended PASS-ASSET price justified, so the earlier buy-wall purchases are no longer losses from defending an unjustified price.  
 
-This is the attacker's benefit. They preserve passage while replacing an unconditional delivery obligation with a knock-in obligation: deliver only after countertraders force defense costs up to the payout threshold. If the proposer is not capital-constrained and can defend the spread, the strategy reduces how often they need to deliver the proposal's offering without reducing passage.  
-
-The key condition is that defending passage without delivery must remain profitable until the delivery threshold is reached. Once total defense costs would offset the futarchy payout, the proposer switches to delivery. This gives the proposer a private cost cap: defend passage without delivering while that is profitable, then deliver when the defended price becomes justified by the work itself.  
+The proposer has converted delivery from a default obligation into a resistance-triggered backstop. Weak opposition lets them pass and get paid without doing the work. Strong opposition forces them to choose the cheaper path: keep manipulating if manipulation costs less than delivery, or deliver if delivery is cheaper. This gives the proposer a private cost cap: preserve passage by paying the lower of manipulation cost or delivery cost. If the proposer has enough capital to defend the spread, this reduces how often they need to deliver without reducing passage.  
 
 The buy wall must track the PASS/FAIL spread, not a fixed PASS-ASSET price. Delivery must make the defended PASS-ASSET price justified, not merely less wrong.  
 
-This can be used by any proposal, including proposals that are +EV if delivered honestly. It is harmful to the futarchy because the proposal is only +EV in the delivery branch. In that case, the proposer gets paid upon passage, while delivering only when the market has forced their defense costs up to the payout threshold.  
+This can be used by any proposal that is +EV if delivered honestly. The harm is that futarchy approves the proposal as if delivery were unconditional, while the proposer treats delivery as optional. When countertrading is weak, the DAO pays for work that is not done. When countertrading is strong, delivery happens only because manipulation became more expensive than work.  
 
 ## Conditional Exit Squeeze  
 
@@ -85,12 +83,12 @@ Many holders may think:
 
 "This proposal is slightly -EV, but I would still rather hold ASSET after it passes than hold USD."  
 
-So they do not sell PASS-ASSET near the threshold. Their unwillingness to sell is not approval of the proposal. It means the proposal's harm is smaller than their reservation value for staying exposed to ASSET.  
+The attacker is not buying through every holder who thinks the proposal is harmful. They are buying through the subset of holders whose reserve value for ASSET in the pass branch is below the defended PASS-ASSET price. The attack works when that conditional sell flow is too small to make defense cost exceed the proposer's private benefit from passage.  
 
-This creates a much thinner supply curve than the ASSET holder base suggests. The attacker is not buying through every holder. They are buying through the smaller float of holders and traders willing to conditionally exit below the passing threshold.  
+This is not an arbitrary participation assumption: holders have heterogeneous reserve prices, and many would only sell their ASSET exposure at a material premium to spot. A mildly -EV proposal can reduce their pass-branch valuation without making them prefer conditional exit to continued ASSET exposure.  
 
-The attack works when the proposer's private value from passage exceeds the cost of clearing that conditional float. For example, a proposal that transfers value to the proposer may impose a small loss on every holder, while giving the proposer a concentrated payout. Each holder may rationally refuse to sell PASS-ASSET because the loss is not large enough to justify conditional exit, yet the proposer can profit by buying the limited supply that is available and pushing the market above the threshold.  
+For direct transfer proposals, the corrective flow required to block passage can be very large: the proposer internalizes the transfer, while the loss is spread across all holders.  
 
-This is mainly useful for -EV proposals, especially mildly -EV ones. If the proposal is strongly -EV, more holders prefer USD in the PASS world and sell. If it is only slightly -EV, bullish holders may tolerate the harm, leaving too little corrective supply below the pass threshold.  
+This is mainly useful for mildly -EV proposals. If the proposal is strongly -EV, more holders prefer USD in the PASS world and sell. If it is only slightly -EV, bullish holders may tolerate the harm, leaving too little corrective supply below the pass threshold.  
 
-If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
