@@ -15,7 +15,7 @@ title: Malicious futarchy proposal strategies
 
 
 
-# Adversarial Proposal Strategies in Asset Futarchy  
+# Constructing Adversarial Asset Futarchy Proposals   
 
 Asset futarchy is hardest to attack when traders can cheaply correct incorrect prices. The proposal strategies below work by weakening that correction mechanism. Some only help -EV proposals. Others also help +EV proposals, which makes them more dangerous because they can become normal behavior rather than obvious abuse.  
 
@@ -41,7 +41,7 @@ A proposer can exploit the gap between those two questions by timing the proposa
 
 Example: a proposer asks the DAO to pay for a partnership, but the proposal is submitted before the partnership details have been disclosed. The details will be released during the TWAP window. If the details are strong, PASS-ASSET rises and the proposal passes. If the details are weak, PASS-ASSET falls and the proposal fails. The proposal can be -EV before the details are known, because most possible versions of the partnership are weak. But PASS-ASSET still looks good conditional on passing, because the proposal only passes in the subset of worlds where the released partnership details are strong.  
 
-The problem is not that traders are irrational. They are correctly pricing the conditional branch they are in. The problem is that the decision market needed evidence about the proposal's causal effect before selection, but passage was selected for the favorable version of the proposal.  
+The problem is not that traders are irrational. They are correctly pricing the conditional branch they are in. The problem is that the decision market needed evidence about the proposal's causal effect before selection, but passage was selected for the favorable version of the proposal.[^dsb-informed-traders]  
 
 This applies to both +EV and -EV proposals. For +EV proposals, it creates an incentive to add artificial uncertainty that resolves during the TWAP window, because unresolved upside can raise PASS-ASSET before the information is revealed. For -EV proposals, the same structure can make a bad proposal pass by selecting for the subset of worlds where favorable proposal-specific information arrives.  
 
@@ -90,5 +90,7 @@ This is not an arbitrary participation assumption: holders have heterogeneous re
 For direct transfer proposals, the corrective flow required to block passage can be very large: the proposer internalizes the transfer, while the loss is spread across all holders.  
 
 This is mainly useful for mildly -EV proposals. If the proposal is strongly -EV, more holders prefer USD in the PASS world and sell. If it is only slightly -EV, bullish holders may tolerate the harm, leaving too little corrective supply below the pass threshold.  
+
+[^dsb-informed-traders]: Informed traders do not fully remove this problem. A trader who thinks they understand the proposal better than the market can still have a reason to buy PASS-ASSET instead of correcting the bias. If the decision market is liquid, and passage is more likely to be selected by upward movement in PASS-ASSET than by downward movement in FAIL-ASSET, buying PASS-ASSET carries a resale option. The trader can buy PASS-ASSET while it trades below FAIL-ASSET, then automatically sell if PASS-ASSET approaches the passing threshold. In pass worlds produced by that path, the trader had a chance to exit above their entry price before settlement if their order executed. This incentive is strongest when proposal-specific volatility in PASS-ASSET exceeds the ordinary ASSET volatility reflected in FAIL-ASSET. Short proposal windows make that condition easier to satisfy, because they concentrate trading around proposal-relevant information and reduce unrelated volatility costs for conditional-market traders.  
 
 If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
