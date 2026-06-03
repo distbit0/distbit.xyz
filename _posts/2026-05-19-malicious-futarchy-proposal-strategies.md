@@ -15,9 +15,9 @@ title: Adversarial futarchy proposals
 
 
 
-# Constructing Adversarial Asset Futarchy Proposals   
+# Constructing Adversarial Asset Futarchy Proposals  
 
-Asset futarchy is hardest to attack when traders can cheaply correct incorrect prices. The proposal strategies below work by weakening that correction mechanism. Some only help -EV proposals. Others also help +EV proposals, which makes them more dangerous because they can become normal behavior rather than obvious abuse.  
+Asset futarchy is hardest to attack when traders can cheaply correct incorrect prices. The proposal strategies below work by weakening that correction mechanism. Some only help -EV proposals. Others also help +EV proposals, which makes them more dangerous because they can become standard behavior rather than obvious abuse.  
 
 Asset futarchy here means a governance system where a proposal passes if conditional markets predict ASSET will be worth more if the proposal passes than if it fails. PASS-ASSET is ASSET in the world where the proposal passes. FAIL-ASSET is ASSET in the world where it fails. The mechanism need not mean inflating token supply to pay for the proposal; the important feature here is that relative conditional prices decide execution. +EV means a proposal increases expected ASSET value, and -EV means it decreases expected ASSET value.  
 
