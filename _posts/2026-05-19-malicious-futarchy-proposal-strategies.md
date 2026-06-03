@@ -15,17 +15,17 @@ title: Malicious futarchy proposal strategies
 
 
 
-# Malicious Proposal Strategies in Asset Futarchy  
+# Adversarial Proposal Strategies in Asset Futarchy  
 
-Asset futarchy is hardest to attack when traders can cheaply correct incorrect prices. The proposal strategies below work by weakening that correction mechanism. This is not a comprehensive list of attacks or malicious proposal strategies; it focuses on mechanisms that seem especially relevant to proposal-market correction. Some only help -EV proposals. Others also help +EV proposals, which makes them more dangerous because they can become normal behavior rather than obvious abuse.  
+Asset futarchy is hardest to attack when traders can cheaply correct incorrect prices. The proposal strategies below work by weakening that correction mechanism. Some only help -EV proposals. Others also help +EV proposals, which makes them more dangerous because they can become normal behavior rather than obvious abuse.  
 
-Asset futarchy here means a governance system where a proposal passes if conditional markets say ASSET will be worth more if the proposal passes than if it fails. PASS-ASSET is ASSET in the world where the proposal passes. FAIL-ASSET is ASSET in the world where it fails. The mechanism need not mean inflating token supply to pay for the proposal; the important feature here is that relative conditional prices decide execution. +EV means a proposal increases expected ASSET value, and -EV means it decreases expected ASSET value.  
+Asset futarchy here means a governance system where a proposal passes if conditional markets predict ASSET will be worth more if the proposal passes than if it fails. PASS-ASSET is ASSET in the world where the proposal passes. FAIL-ASSET is ASSET in the world where it fails. The mechanism need not mean inflating token supply to pay for the proposal; the important feature here is that relative conditional prices decide execution. +EV means a proposal increases expected ASSET value, and -EV means it decreases expected ASSET value.  
 
 ## Vague Proposal Bluff  
 
 A proposer submits an underspecified proposal, then buys PASS-ASSET.  
 
-This is not an ambiguous oracle question like "will it be nice out on Tuesday?" It is a proposal with missing value-relevant details: exact counterparties, scope, rationale, implementation plan or track record demonstration.  
+The proposal has vague/missing value-relevant details: counterparties, scope, rationale, implementation plan or track record demonstration.  
 
 Vagueness reduces participation. As with bad oracle resolution rules, ambiguity makes traders less willing to trade and can reduce liquidity. The proposer then bids up PASS-ASSET while skeptics hesitate to sell, not because they approve of the proposal, but because the missing details create adverse selection.  
 
