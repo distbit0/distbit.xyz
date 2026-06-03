@@ -17,29 +17,33 @@ title: Malicious futarchy proposal strategies
 
 # Malicious Proposal Strategies in Asset Futarchy  
 
-Asset futarchy is hardest to attack when traders can cheaply correct incorrect prices. The proposal strategies below work by weakening that correction mechanism. This is not a comprehensive list of attacks or malicious proposal strategies; it focuses on mechanisms that seem especially relevant to proposal-market correction. Some only help negative-EV proposals. Others also help positive-EV proposals, which makes them more dangerous because they can become normal behavior rather than obvious abuse.  
+Asset futarchy is hardest to attack when traders can cheaply correct incorrect prices. The proposal strategies below work by weakening that correction mechanism. This is not a comprehensive list of attacks or malicious proposal strategies; it focuses on mechanisms that seem especially relevant to proposal-market correction. Some only help -EV proposals. Others also help +EV proposals, which makes them more dangerous because they can become normal behavior rather than obvious abuse.  
+
+By asset futarchy, I mean a governance system where a proposal passes if conditional markets say ASSET will be worth more if the proposal passes than if it fails. PASS-ASSET is ASSET in the world where the proposal passes. FAIL-ASSET is ASSET in the world where it fails. The mechanism need not mean inflating token supply to pay for the proposal; the important feature here is that relative conditional prices decide execution. I use +EV for proposals that increase expected ASSET value and -EV for proposals that decrease it.  
 
 ## Vague Proposal Bluff  
 
 A proposer submits an underspecified proposal, then buys PASS-ASSET.  
 
-This creates adverse selection for skeptics. Selling PASS-ASSET means betting that the proposal is overvalued, but the proposer's vagueness may signal withheld upside. Maybe they are hiding alpha because they want to buy from doubters before revealing details. Maybe the omitted details are weaknesses. The skeptic cannot easily tell.  
+This is not an ambiguous oracle question like "will it be nice out on Tuesday?" It is a proposal with missing value-relevant details: exact counterparties, scope, rationale, implementation plan or track record demonstration.  
 
-This works for both positive-EV and negative-EV proposals.  
+Vagueness reduces participation. As with bad oracle resolution rules, ambiguity makes traders less willing to trade and can reduce liquidity. The proposer then bids up PASS-ASSET while skeptics hesitate to sell, not because they approve of the proposal, but because the missing details create adverse selection.  
 
-A proposer with a positive-EV but incomplete proposal can use vagueness to profit from skeptics: buy PASS-ASSET while others underprice the proposal, then reveal the information later. A proposer with a negative-EV proposal can use the same pattern to blend in with valuable-but-incomplete proposals, reducing the amount of capital willing to countertrade them.  
+The adverse selection matters because +EV proposers can rationally use vagueness too. A proposer with a good proposal may intentionally hide strong details, buy PASS-ASSET while skeptics underprice the proposal, then reveal those details later. That maximizes their decision-market trading returns. A -EV proposer can imitate the same pattern, making missing details look less damning and reducing the amount of capital willing to countertrade them.  
 
-The weakness is that vagueness is cheap to imitate. If too many negative-EV proposals use it, traders should eventually treat vagueness as negative evidence. The strategy works only while "vague because valuable" remains plausible.  
+The weakness is that vagueness is cheap to imitate. If too many -EV proposals use it, traders should eventually treat vagueness as negative evidence. The strategy works only while "vague because valuable" remains plausible.  
 
 ## (Adversarial) Decision Selection Bias  
 
-Decision selection bias comes from the fact that the market price helps decide whether the proposal executes. If a proposal is more likely to pass in worlds where favorable information arrives, then PASS-ASSET partly prices the proposal conditional on that favorable information.  
+Decision selection bias comes from the fact that the market price decides whether the proposal executes. Asset futarchy wants a causal signal: would executing this proposal make ASSET worth more? But the market measures a correlation: in worlds where this proposal passes, is ASSET worth more than in worlds where it fails?  
 
-A proposer can exploit this by designing a proposal with skewed timing: unresolved catalysts, staged announcements, contingent partnerships, or information expected to arrive during the proposal measurement window. The proposal may be negative-EV unconditionally, but appear positive-EV conditional on passing, because passing is correlated with favorable information arriving in time.  
+A proposer can exploit the gap between those two questions by timing the proposal around unresolved information about the proposal itself.  
 
-This applies to both positive-EV and negative-EV proposals, but it is dangerous for different reasons.  
+Example: a proposer asks the DAO to pay for a partnership, but the proposal is submitted before the partnership details have been disclosed. The details will be released during the TWAP window. If the details are strong, PASS-ASSET rises and the proposal passes. If the details are weak, PASS-ASSET falls and the proposal fails. The proposal can be -EV before the details are known, because most possible versions of the partnership are weak. But PASS-ASSET still looks good conditional on passing, because the proposal only passes in the subset of worlds where the released partnership details are strong.  
 
-Positive-EV proposals may become more catalyst-driven because that improves passage odds. Negative-EV proposals can use the same structure to pass despite having negative unconditional expected value.  
+The problem is not that traders are irrational. They are correctly pricing the conditional branch they are in. The problem is that the decision market needed evidence about the proposal's causal effect before selection, but passage was selected for the favorable version of the proposal.  
+
+This applies to both +EV and -EV proposals. For +EV proposals, it creates an incentive to add artificial uncertainty that resolves during the TWAP window, because unresolved upside can raise PASS-ASSET before the information is revealed. For -EV proposals, the same structure can make a bad proposal pass by selecting for the subset of worlds where favorable proposal-specific information arrives.  
 
 ## Sabotage Commitment  
 
@@ -47,27 +51,29 @@ The proposer commits to making the fail branch worse.
 
 Example: "If this proposal fails, I will stop supporting the protocol, withdraw liquidity, or otherwise take an action that lowers ASSET's price."  
 
-This can make PASS look better than FAIL even if the proposal itself is negative-EV. The proposal passes not because it creates value, but because rejection has been made costly.  
+This can make PASS look better than FAIL even if the proposal itself is -EV. The proposal passes not because it creates value, but because rejection has been made costly.  
 
-This works for both positive-EV and negative-EV proposals where two conditions hold: the proposer has a real sabotage vector, and they do not value the reputational cost enough to avoid using it.  
+This works for both +EV and -EV proposals where two conditions hold: the proposer has a real sabotage vector, and they do not value the reputational cost enough to avoid using it.  
 
-That makes it narrower than the other attacks. New proposers often lack the ability to harm the DAO credibly, and established proposers often care about future business. Still, where the sabotage vector exists, the cost is mostly off-path: if the threat works, the proposer rarely has to carry it out.  
+That makes it narrower than the other attacks. New proposers often lack the ability to harm the DAO credibly, and established proposers often care about future business. But crypto can make this threat stronger than it looks in normal corporate or political settings. Pseudonymous actors, cross-border entities, and unclear legal recourse can make it harder to punish the attacker socially or legally.  
+
+Where the sabotage vector exists, the cost is mostly off-path: if the threat works, the proposer rarely has to carry it out. A sufficiently credible attacker can reuse the threat across proposals.  
 
 ## Knock-In Delivery Buy Wall  
 
-A proposer commits to deliver value only if the market forces them to acquire enough net PASS-ASSET exposure.  
+A proposer offers value-creating work, but only intends to perform it if defending the proposal becomes expensive enough that non-delivery no longer pays.  
 
-The proposer runs a buy wall that keeps PASS-ASSET above FAIL-ASSET, or above whatever PASS/FAIL spread the decision rule requires. If bearish traders sell PASS-ASSET, the proposer absorbs the flow. If the sell pressure is weak, the proposal can pass without the proposer delivering. If sell pressure is strong, the proposer accumulates enough PASS-ASSET that delivery becomes privately rational. At that point, the earlier PASS-ASSET purchases are no longer wasted manipulation; delivery makes those purchases fair or profitable.  
+Example: a proposer asks the DAO to approve a distribution deal. The deal is valuable if they actually recruit the distributor and do the integration work, but costly for the proposer to deliver. Instead of doing the work by default, the proposer runs a buy wall that keeps PASS-ASSET above FAIL-ASSET, or above whatever PASS/FAIL spread the decision rule requires.  
 
-This is not mainly an adverse-selection attack. It is mechanical reflexivity. Selling PASS-ASSET can trigger delivery. Buying PASS-ASSET too early can prevent delivery by reducing the sell pressure needed to force the proposer over the threshold.  
+If bearish traders sell only a small amount of PASS-ASSET, the proposer absorbs the flow, the proposal passes, and the proposer can skip the work but gets paid anyway. If bearish traders sell heavily, the proposer keeps buying under the assumption that they will not deliver. They stop defending and switch to delivery once total defense costs would offset the amount they get paid if the proposal passes.  
 
-The strategy is most concerning because it can be attractive even for proposals that would be positive-EV if delivered honestly. Instead of delivering by default, the proposer gets a knock-in obligation: deliver only if the market forces them to internalize enough upside. If no one challenges the proposal, they preserve the option not to deliver.  
+This is the attacker's benefit. They preserve passage while replacing an unconditional delivery obligation with a knock-in obligation: deliver only after countertraders force defense costs up to the payout threshold. If the proposer is not capital-constrained and can defend the spread, the strategy reduces how often they need to deliver the proposal's offering without reducing passage.  
 
-The key condition is that the buy wall must be cheaper than delivery until the delivery threshold is reached. Once that condition stops holding, the proposer switches to delivery. This gives the proposer a private cost cap: defend passage without delivering while that is cheaper, then deliver once PASS-ASSET exposure makes delivery rational.  
+The key condition is that defending passage without delivery must remain profitable until the delivery threshold is reached. Once total defense costs would offset the futarchy payout, the proposer switches to delivery. This gives the proposer a private cost cap: defend passage without delivering while that is profitable, then deliver when the defended price becomes justified by the work itself.  
 
 The buy wall must track the PASS/FAIL spread, not a fixed PASS-ASSET price. Delivery must make the defended PASS-ASSET price justified, not merely less wrong.  
 
-This can be used by any proposal with optional value-creating work, including proposals that are positive-EV if delivered honestly. The harmful version is clearest when the proposal is only positive-EV in the delivery branch. In that case, counter-manipulation either fails to stop passage or helps create the branch where the proposal becomes worth passing.  
+This can be used by any proposal, including proposals that are +EV if delivered honestly. It is harmful to the futarchy because the proposal is only +EV in the delivery branch. In that case, the proposer gets paid upon passage, while delivering only when the market has forced their defense costs up to the payout threshold.  
 
 ## Conditional Exit Squeeze  
 
@@ -77,35 +83,14 @@ That matters because many holders are not choosing between "proposal passes" and
 
 Many holders may think:  
 
-"This proposal is slightly negative-EV, but I would still rather hold ASSET after it passes than hold USD."  
+"This proposal is slightly -EV, but I would still rather hold ASSET after it passes than hold USD."  
 
 So they do not sell PASS-ASSET near the threshold. Their unwillingness to sell is not approval of the proposal. It means the proposal's harm is smaller than their reservation value for staying exposed to ASSET.  
 
-This creates a much thinner supply curve than the spot market cap suggests. The attacker is not buying through the whole market cap. They are buying through the smaller float of holders and traders willing to conditionally exit below the passing threshold.  
+This creates a much thinner supply curve than the ASSET holder base suggests. The attacker is not buying through every holder. They are buying through the smaller float of holders and traders willing to conditionally exit below the passing threshold.  
 
 The attack works when the proposer's private value from passage exceeds the cost of clearing that conditional float. For example, a proposal that transfers value to the proposer may impose a small loss on every holder, while giving the proposer a concentrated payout. Each holder may rationally refuse to sell PASS-ASSET because the loss is not large enough to justify conditional exit, yet the proposer can profit by buying the limited supply that is available and pushing the market above the threshold.  
 
-This is mainly useful for negative-EV proposals, especially mildly negative ones. If the proposal is strongly negative-EV, more holders prefer USD in the PASS world and sell. If it is only slightly negative-EV, bullish holders may tolerate the harm, leaving too little corrective supply below the pass threshold.  
-
-## Short-Window Squeeze  
-
-This is the simpler version of the conditional exit squeeze.  
-
-Instead of relying on holders' reservation prices, the proposer relies on time. The proposal window is short, attention is scarce, and most holders do not notice or act quickly enough. The proposer buys PASS-ASSET before enough counter-manipulation liquidity arrives.  
-
-This can pass a negative-EV proposal even if holders would have sold PASS-ASSET given enough time. The attack exploits latency in governance attention rather than long-term unwillingness to sell.  
-
-This is mostly useful for negative-EV proposals. A proposer with a positive-EV proposal can also buy PASS-ASSET during a short window, but that is closer to accelerating price discovery than extracting value. The malicious version depends on the market not having enough time to mobilize the correction that would have happened later.  
-
-## Summary  
-
-- Vague proposal bluff: applies to positive-EV and negative-EV proposals.  
-- Decision selection bias: applies to positive-EV and negative-EV proposals.  
-- Sabotage commitment: applies to positive-EV and negative-EV proposals, but only when sabotage is credible and reputation is not valuable.  
-- Knock-in delivery buy wall: applies to proposals with optional value-creating work and enough capital to defend PASS-ASSET until delivery becomes privately rational.  
-- Conditional exit squeeze: mainly applies to negative-EV proposals.  
-- Short-window squeeze: mainly applies to negative-EV proposals.  
-
-These strategies attack different parts of the correction process. Vagueness makes selling PASS-ASSET feel adverse-selected. Decision selection bias changes what PASS-ASSET is pricing by correlating passage with favorable states. Sabotage changes the fail branch. Knock-in delivery makes selling PASS-ASSET self-negating because enough sell pressure can force the proposer into the value-creating branch. Conditional exit squeeze exploits holders who dislike the proposal but still prefer post-passage ASSET to USD. Short-window squeeze exploits delayed attention. In each case, the failure is not that traders cannot see the proposal market price. The failure is that the trade needed to correct it is made risky, unprofitable, self-negating, or too slow to arrive.  
+This is mainly useful for -EV proposals, especially mildly -EV ones. If the proposal is strongly -EV, more holders prefer USD in the PASS world and sell. If it is only slightly -EV, bullish holders may tolerate the harm, leaving too little corrective supply below the pass threshold.  
 
 If you found this interesting, have feedback or are working on something related, let's chat: [email](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
