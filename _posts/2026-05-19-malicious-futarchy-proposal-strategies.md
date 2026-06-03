@@ -79,7 +79,7 @@ The problem is not that traders are irrational. They are correctly pricing the c
 
 This applies to both +EV and -EV proposals. For +EV proposals, it creates an incentive to add artificial uncertainty that resolves during the TWAP window, because unresolved upside can raise PASS-ASSET before the information is revealed. For -EV proposals, the same structure can make a bad proposal pass by selecting for the subset of worlds where favorable proposal-specific information arrives.  
 
-## Strategic Vagueness  
+## Ambiguity-Induced Adverse Selection  
 
 A proposer submits an underspecified proposal, then buys PASS-ASSET.  
 
