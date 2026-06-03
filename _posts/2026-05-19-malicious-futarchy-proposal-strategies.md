@@ -21,20 +21,6 @@ Asset futarchy is hardest to attack when traders can cheaply correct incorrect p
 
 Asset futarchy here means a governance system where a proposal passes if conditional markets predict ASSET will be worth more if the proposal passes than if it fails. PASS-ASSET is ASSET in the world where the proposal passes. FAIL-ASSET is ASSET in the world where it fails. The mechanism need not mean inflating token supply to pay for the proposal; the important feature here is that relative conditional prices decide execution. +EV means a proposal increases expected ASSET value, and -EV means it decreases expected ASSET value.  
 
-## Fail-Branch Sabotage  
-
-The proposer commits to making the fail branch worse.  
-
-Example: "If this proposal fails, I will stop supporting the protocol, withdraw liquidity, or otherwise take an action that lowers ASSET's price."  
-
-This can make PASS look better than FAIL even if the proposal itself is -EV. The proposal passes not because it creates value, but because rejection has been made costly.  
-
-This works for both +EV and -EV proposals where two conditions hold: the proposer has a real sabotage vector, and they do not value the reputational cost enough to avoid using it.  
-
-That makes it narrower than the other attacks. New proposers often lack the ability to harm the DAO credibly, and established proposers often care about future business. But crypto can make this threat stronger than it looks in normal corporate or political settings. Pseudonymous actors, cross-border entities, and unclear legal recourse can make it harder to punish the attacker socially or legally.  
-
-Where the sabotage vector exists, the cost is mostly off-path: if the threat works, the proposer rarely has to carry it out. A sufficiently credible attacker can reuse the threat across proposals.  
-
 ## Resistance-Triggered Delivery  
 
 A proposer promises value-creating work, but treats delivery as the backup plan. Their first choice is to pass the proposal by defending the PASS/FAIL spread, collect the proposal payout, and skip the work.  
@@ -92,5 +78,19 @@ The adverse selection matters because +EV proposers can rationally use vagueness
 The weakness is that vagueness is cheap to imitate. If too many -EV proposals use it, traders should eventually treat vagueness as negative evidence. The strategy works only while "vague because valuable" remains plausible.  
 
 [^dsb-informed-traders]: Decision selection bias is not fully mitigated by highly informed traders. A trader can understand the proposal better than the market, face little adverse-selection risk, and still prefer buying PASS-ASSET over correcting the bias. If the decision market is liquid and passage is more likely to result from PASS-ASSET rising than FAIL-ASSET falling, a PASS-ASSET purchase includes an exit option. The trader can buy while PASS-ASSET trades below FAIL-ASSET, then place an automatic sell order near the passing threshold. If passage happens through a PASS-led price move, that threshold is crossed before settlement, giving the trader an opportunity to sell above their entry price. Buying PASS-ASSET can therefore be privately attractive even when it reinforces the selection bias. The incentive is strongest when proposal-specific volatility in PASS-ASSET exceeds the ordinary ASSET volatility reflected in FAIL-ASSET. Short trading windows make that condition easier to satisfy: they concentrate trading around proposal-relevant information and reduce unrelated volatility costs for conditional-market traders.  
+
+## Fail-Branch Sabotage  
+
+The proposer commits to making the fail branch worse.  
+
+Example: "If this proposal fails, I will stop supporting the protocol, withdraw liquidity, or otherwise take an action that lowers ASSET's price."  
+
+This can make PASS look better than FAIL even if the proposal itself is -EV. The proposal passes not because it creates value, but because rejection has been made costly.  
+
+This works for both +EV and -EV proposals where two conditions hold: the proposer has a real sabotage vector, and they do not value the reputational cost enough to avoid using it.  
+
+That makes it narrower than the other attacks. New proposers often lack the ability to harm the DAO credibly, and established proposers often care about future business. But crypto can make this threat stronger than it looks in normal corporate or political settings. Pseudonymous actors, cross-border entities, and unclear legal recourse can make it harder to punish the attacker socially or legally.  
+
+Where the sabotage vector exists, the cost is mostly off-path: if the threat works, the proposer rarely has to carry it out. A sufficiently credible attacker can reuse the threat across proposals.  
 
 If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
