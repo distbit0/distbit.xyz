@@ -21,30 +21,6 @@ Asset futarchy is hardest to attack when traders can cheaply correct incorrect p
 
 Asset futarchy here means a governance system where a proposal passes if conditional markets predict ASSET will be worth more if the proposal passes than if it fails. PASS-ASSET is ASSET in the world where the proposal passes. FAIL-ASSET is ASSET in the world where it fails. The mechanism need not mean inflating token supply to pay for the proposal; the important feature here is that relative conditional prices decide execution. +EV means a proposal increases expected ASSET value, and -EV means it decreases expected ASSET value.  
 
-## Strategic Vagueness  
-
-A proposer submits an underspecified proposal, then buys PASS-ASSET.  
-
-The proposal has vague/missing value-relevant details: counterparties, scope, rationale, implementation plan or track record demonstration.  
-
-Vagueness reduces participation. As with bad oracle resolution rules, ambiguity makes traders less willing to trade and can reduce liquidity. The proposer then bids up PASS-ASSET while skeptics hesitate to sell, not because they approve of the proposal, but because the missing details create adverse selection.  
-
-The adverse selection matters because +EV proposers can rationally use vagueness too. A proposer with a good proposal may intentionally hide strong details, buy PASS-ASSET while skeptics underprice the proposal, then reveal those details later. That maximizes their decision-market trading returns. A -EV proposer can imitate the same pattern, making missing details look less damning and reducing the amount of capital willing to countertrade them.  
-
-The weakness is that vagueness is cheap to imitate. If too many -EV proposals use it, traders should eventually treat vagueness as negative evidence. The strategy works only while "vague because valuable" remains plausible.  
-
-## Disclosure-Window Optionality  
-
-Decision selection bias arises because the market price decides whether the proposal executes. Asset futarchy wants a causal signal: would executing this proposal make ASSET worth more? But the market measures a correlation: in worlds where this proposal passes, is ASSET worth more than in worlds where it fails?  
-
-A proposer can exploit the gap between those two questions by timing the proposal around unresolved information about the proposal itself.  
-
-Example: a proposer asks the DAO to pay for a partnership, but the proposal is submitted before the partnership details have been disclosed. The details will be released during the TWAP window. If the details are strong, PASS-ASSET rises and the proposal passes. If the details are weak, PASS-ASSET falls and the proposal fails. The proposal can be -EV before the details are known, because most possible versions of the partnership are weak. But PASS-ASSET still looks good conditional on passing, because the proposal only passes in the subset of worlds where the released partnership details are strong.  
-
-The problem is not that traders are irrational. They are correctly pricing the conditional branch they are in. The problem is that the decision market needed evidence about the proposal's causal effect before selection, but passage was selected for the favorable version of the proposal.[^dsb-informed-traders]  
-
-This applies to both +EV and -EV proposals. For +EV proposals, it creates an incentive to add artificial uncertainty that resolves during the TWAP window, because unresolved upside can raise PASS-ASSET before the information is revealed. For -EV proposals, the same structure can make a bad proposal pass by selecting for the subset of worlds where favorable proposal-specific information arrives.  
-
 ## Fail-Branch Sabotage  
 
 The proposer commits to making the fail branch worse.  
@@ -73,7 +49,7 @@ The buy wall must track the PASS/FAIL spread, not a fixed PASS-ASSET price. Deli
 
 This can be used by any proposal that is +EV if delivered honestly. The harm is that futarchy approves the proposal as if delivery were unconditional, while the proposer treats delivery as optional. When countertrading is weak, the DAO pays for work that is not done. When countertrading is strong, delivery happens only because manipulation became more expensive than work.  
 
-## Pass-Branch Exit Squeeze  
+## Committed Holder Extraction  
 
 A proposer buys enough PASS-ASSET to push the proposal above the passing threshold. The key fact is that selling PASS-ASSET is not just "voting against the proposal." For an ASSET holder, it is a conditional exit from ASSET in the world where the proposal passes.  
 
@@ -90,6 +66,30 @@ This is not an arbitrary participation assumption: holders have heterogeneous re
 For direct transfer proposals, the corrective flow required to block passage can be very large: the proposer internalizes the transfer, while the loss is spread across all holders.  
 
 This is mainly useful for mildly -EV proposals. If the proposal is strongly -EV, more holders prefer USD in the PASS world and sell. If it is only slightly -EV, bullish holders may tolerate the harm, leaving too little corrective supply below the pass threshold.  
+
+## Proposal Convexity Maximisation  
+
+Decision selection bias arises because the market price decides whether the proposal executes. Asset futarchy wants a causal signal: would executing this proposal make ASSET worth more? But the market measures a correlation: in worlds where this proposal passes, is ASSET worth more than in worlds where it fails?  
+
+A proposer can exploit the gap between those two questions by timing the proposal around unresolved information about the proposal itself.  
+
+Example: a proposer asks the DAO to pay for a partnership, but the proposal is submitted before the partnership details have been disclosed. The details will be released during the TWAP window. If the details are strong, PASS-ASSET rises and the proposal passes. If the details are weak, PASS-ASSET falls and the proposal fails. The proposal can be -EV before the details are known, because most possible versions of the partnership are weak. But PASS-ASSET still looks good conditional on passing, because the proposal only passes in the subset of worlds where the released partnership details are strong.  
+
+The problem is not that traders are irrational. They are correctly pricing the conditional branch they are in. The problem is that the decision market needed evidence about the proposal's causal effect before selection, but passage was selected for the favorable version of the proposal.[^dsb-informed-traders]  
+
+This applies to both +EV and -EV proposals. For +EV proposals, it creates an incentive to add artificial uncertainty that resolves during the TWAP window, because unresolved upside can raise PASS-ASSET before the information is revealed. For -EV proposals, the same structure can make a bad proposal pass by selecting for the subset of worlds where favorable proposal-specific information arrives.  
+
+## Strategic Vagueness  
+
+A proposer submits an underspecified proposal, then buys PASS-ASSET.  
+
+The proposal has vague/missing value-relevant details: counterparties, scope, rationale, implementation plan or track record demonstration.  
+
+Vagueness reduces participation. As with bad oracle resolution rules, ambiguity makes traders less willing to trade and can reduce liquidity. The proposer then bids up PASS-ASSET while skeptics hesitate to sell, not because they approve of the proposal, but because the missing details create adverse selection.  
+
+The adverse selection matters because +EV proposers can rationally use vagueness too. A proposer with a good proposal may intentionally hide strong details, buy PASS-ASSET while skeptics underprice the proposal, then reveal those details later. That maximizes their decision-market trading returns. A -EV proposer can imitate the same pattern, making missing details look less damning and reducing the amount of capital willing to countertrade them.  
+
+The weakness is that vagueness is cheap to imitate. If too many -EV proposals use it, traders should eventually treat vagueness as negative evidence. The strategy works only while "vague because valuable" remains plausible.  
 
 [^dsb-informed-traders]: Decision selection bias is not fully mitigated by highly informed traders. A trader can understand the proposal better than the market, face little adverse-selection risk, and still prefer buying PASS-ASSET over correcting the bias. If the decision market is liquid and passage is more likely to result from PASS-ASSET rising than FAIL-ASSET falling, a PASS-ASSET purchase includes an exit option. The trader can buy while PASS-ASSET trades below FAIL-ASSET, then place an automatic sell order near the passing threshold. If passage happens through a PASS-led price move, that threshold is crossed before settlement, giving the trader an opportunity to sell above their entry price. Buying PASS-ASSET can therefore be privately attractive even when it reinforces the selection bias. The incentive is strongest when proposal-specific volatility in PASS-ASSET exceeds the ordinary ASSET volatility reflected in FAIL-ASSET. Short trading windows make that condition easier to satisfy: they concentrate trading around proposal-relevant information and reduce unrelated volatility costs for conditional-market traders.  
 
