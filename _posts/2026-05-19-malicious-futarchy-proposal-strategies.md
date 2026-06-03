@@ -33,9 +33,9 @@ The adverse selection matters because +EV proposers can rationally use vagueness
 
 The weakness is that vagueness is cheap to imitate. If too many -EV proposals use it, traders should eventually treat vagueness as negative evidence. The strategy works only while "vague because valuable" remains plausible.  
 
-## (Adversarial) Decision Selection Bias  
+## Disclosure-Window Optionality  
 
-Decision selection bias comes from the fact that the market price decides whether the proposal executes. Asset futarchy wants a causal signal: would executing this proposal make ASSET worth more? But the market measures a correlation: in worlds where this proposal passes, is ASSET worth more than in worlds where it fails?  
+Decision selection bias arises because the market price decides whether the proposal executes. Asset futarchy wants a causal signal: would executing this proposal make ASSET worth more? But the market measures a correlation: in worlds where this proposal passes, is ASSET worth more than in worlds where it fails?  
 
 A proposer can exploit the gap between those two questions by timing the proposal around unresolved information about the proposal itself.  
 
