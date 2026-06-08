@@ -7,7 +7,7 @@ description: ''
 gist_url: https://gist.github.com/db7422f8704b0638eaf9469f1af239cd
 headerImage: false
 layout: post
-live: false
+live: true
 tag: []
 title: Adversarial futarchy proposals
 ---
