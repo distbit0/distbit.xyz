@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Adversarial futarchy proposals
+title: How to pass a malicious futarchy proposal
 ---
 
 
