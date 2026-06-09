@@ -25,7 +25,7 @@ Asset futarchy here means a governance system where a proposal passes if conditi
 
 A proposer promises value-creating work, but treats delivery as the backup plan. Their first choice is to pass the proposal by defending the PASS/FAIL spread, collect the proposal payout, and skip the work.  
 
-Example: a proposer asks the DAO to pay $300k for a wallet distribution partnership. The partnership is valuable if they actually secure the wallet partner and complete the integration work, but delivery costs the proposer $180k. The passing rule requires PASS-ASSET to trade at least 1% above FAIL-ASSET. Instead of doing the work by default, the proposer runs a buy wall that keeps PASS-ASSET at 1.02 while FAIL-ASSET trades at 1.00.  
+Example: a proposer asks the DAO to pay $300k for a wallet distribution partnership. The partnership is +EV to the DAO if they actually secure the wallet partner and complete the integration work, but delivery costs the proposer $180k. The passing rule requires PASS-ASSET to trade at least 1% above FAIL-ASSET. Instead of doing the work by default, the proposer runs a buy wall that keeps PASS-ASSET at 1.02 while FAIL-ASSET trades at 1.00.  
 
 If bearish traders sell only $40k of PASS-ASSET into the wall, the proposer absorbs the flow, the proposal passes, and the proposer can skip the work but gets paid anyway. If bearish traders sell heavily, the proposer keeps buying PASS-ASSET as long as the total manipulation cost under non-delivery is below the $180k cost of doing the work. Once non-delivery manipulation would cost more than delivery, the proposer delivers. Delivery then makes the defended PASS-ASSET price justified, so the earlier buy-wall purchases are no longer losses from defending an unjustified price.  
 
