@@ -25,9 +25,9 @@ Asset futarchy here means a governance system where a proposal passes if conditi
 
 A proposer promises value-creating work, but treats delivery as the backup plan. Their first choice is to pass the proposal by defending the PASS/FAIL spread, collect the proposal payout, and skip the work.  
 
-Example: a proposer asks the org to approve a distribution deal. The deal is valuable if they actually recruit the distributor and do the integration work, but costly for the proposer to deliver. Instead of doing the work by default, the proposer runs a buy wall that keeps PASS-ASSET above FAIL-ASSET, or above whatever PASS/FAIL spread the decision rule requires.  
+Example: a proposer asks the DAO to pay $300k for a wallet distribution partnership. The partnership is valuable if they actually secure the wallet partner and complete the integration work, but delivery costs the proposer $180k. The passing rule requires PASS-ASSET to trade at least 1% above FAIL-ASSET. Instead of doing the work by default, the proposer runs a buy wall that keeps PASS-ASSET at 1.02 while FAIL-ASSET trades at 1.00.  
 
-If bearish traders sell only a small amount of PASS-ASSET, the proposer absorbs the flow, the proposal passes, and the proposer can skip the work but gets paid anyway. If bearish traders sell heavily, the proposer keeps buying PASS-ASSET as long as the total manipulation cost under non-delivery is below the cost of doing the work. Once non-delivery manipulation would cost more than delivery, the proposer delivers. Delivery then makes the defended PASS-ASSET price justified, so the earlier buy-wall purchases are no longer losses from defending an unjustified price.  
+If bearish traders sell only $40k of PASS-ASSET into the wall, the proposer absorbs the flow, the proposal passes, and the proposer can skip the work but gets paid anyway. If bearish traders sell heavily, the proposer keeps buying PASS-ASSET as long as the total manipulation cost under non-delivery is below the $180k cost of doing the work. Once non-delivery manipulation would cost more than delivery, the proposer delivers. Delivery then makes the defended PASS-ASSET price justified, so the earlier buy-wall purchases are no longer losses from defending an unjustified price.  
 
 The proposer has converted delivery from a default obligation into a resistance-triggered backstop. Weak opposition lets them pass and get paid without doing the work. Strong opposition forces them to choose the cheaper path: keep manipulating if manipulation costs less than delivery, or deliver if delivery is cheaper. This gives the proposer a private cost cap: preserve passage by paying the lower of manipulation cost or delivery cost. If the proposer has enough capital to defend the spread, this reduces how often they need to deliver without reducing passage.  
 
@@ -38,6 +38,8 @@ This can be used by any proposal that is +EV if delivered honestly. The harm is 
 ## Committed Holder Extraction  
 
 A proposer buys enough PASS-ASSET to push the proposal above the passing threshold. The key fact is that selling PASS-ASSET is not just "voting against the proposal." For an ASSET holder, it is a conditional exit from ASSET in the world where the proposal passes.  
+
+Example: a proposer requests a $1m treasury payment to their own consulting company for routine ecosystem strategy work that the DAO does not need. The proposal is clearly -EV because it transfers $1m out of the treasury without creating offsetting value for ASSET holders. If ASSET's value is $200m, the direct loss is only 0.5% of ASSET value. The proposer buys enough PASS-ASSET to defend PASS-ASSET at 1.006 while FAIL-ASSET trades at 1.00.  
 
 That matters because many holders are not choosing between "proposal passes" and "proposal fails" in the abstract. They are choosing between holding ASSET after the proposal passes, or holding USD after the proposal passes. A holder can believe the proposal slightly reduces ASSET value while still preferring the post-passage ASSET exposure to USD.  
 
@@ -59,7 +61,7 @@ Decision selection bias arises because the market price decides whether the prop
 
 A proposer can exploit the gap between those two questions by timing the proposal around unresolved information about the proposal itself.  
 
-Example: a proposer asks the org to pay for a partnership, but the proposal is submitted before the partnership details have been disclosed. The details will be released during the TWAP window. If the details are strong, PASS-ASSET rises and the proposal passes. If the details are weak, PASS-ASSET falls and the proposal fails. The proposal can be -EV before the details are known, because most possible versions of the partnership are weak. But PASS-ASSET still looks good conditional on passing, because the proposal only passes in the subset of worlds where the released partnership details are strong.  
+Example: a proposer asks the DAO to spend $600k on a growth campaign before the key campaign detail is known: whether it includes a major exchange co-marketing slot. If the slot is included, the campaign is worth $1.2m to ASSET holders. If it is not included, it is worth $100k. Before the detail is known, the proposal is -EV because most possible versions lack the slot. The detail will be released during the TWAP window. If the slot is announced, PASS-ASSET rises and the proposal passes. If no slot is announced, PASS-ASSET falls and the proposal fails. PASS-ASSET still looks good conditional on passing, because the proposal only passes in the subset of worlds where the released campaign details are strong.  
 
 The problem is not that traders are irrational. They are correctly pricing the conditional branch they are in. The problem is that the decision market needed evidence about the proposal's causal effect before selection, but passage was selected for the favorable version of the proposal.[^dsb-informed-traders]  
 
@@ -70,6 +72,8 @@ This applies to both +EV and -EV proposals. For +EV proposals, it creates an inc
 A proposer submits an underspecified proposal, then buys PASS-ASSET.  
 
 The proposal has vague/missing value-relevant details: counterparties, scope, rationale, implementation plan or track record demonstration.  
+
+Example: a proposer asks the DAO to approve a $750k exchange liquidity and market-maker package. They say the counterparty, venues, fee terms, and performance commitments are confidential until approval. In reality, the package is clearly -EV: it pays an above-market fee for weak, non-binding liquidity commitments on venues that will not materially improve demand for ASSET. The proposer buys PASS-ASSET from 0.99 to 1.01 while skeptics hesitate to sell into the move because a genuinely valuable market-maker package can also be hidden before announcement.  
 
 Vagueness reduces participation. As with bad oracle resolution rules, ambiguity makes traders less willing to trade and can reduce liquidity. The proposer then bids up PASS-ASSET while skeptics hesitate to sell, not because they approve of the proposal, but because the missing details create adverse selection.  
 
@@ -83,7 +87,7 @@ The weakness is that vagueness is cheap to imitate. If too many -EV proposals us
 
 The proposer commits to making the fail branch worse.  
 
-Example: "If this proposal fails, I will stop supporting the protocol, withdraw liquidity, or otherwise take an action that lowers ASSET's price."  
+Example: a liquidity provider asks for a $500k renewal grant that is clearly worth only $100k to the DAO. The proposal itself is -EV. The liquidity provider also credibly threatens to withdraw liquidity and shut down support if the proposal fails. That threat knocks FAIL-ASSET from 1.00 to 0.97, while PASS-ASSET trades at 0.995 after accounting for the overpriced grant.  
 
 This can make PASS look better than FAIL even if the proposal itself is -EV. The proposal passes not because it creates value, but because rejection has been made costly.  
 
