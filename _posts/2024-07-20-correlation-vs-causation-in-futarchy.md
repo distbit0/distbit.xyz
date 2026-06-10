@@ -39,10 +39,10 @@ For a batch of funding proposals, we create conditional tokens:
 
 These tokens use a scalar design where the payout is proportional to the value of a composite metric. The key tokens are:  
 
-- $\textsf{Long}^{\text{yes}}_i$: Redeems for a value proportional to the metric if proposal i is executed  
-- $\textsf{Long}^{\text{no}}$: Redeems for a value proportional to the metric if no proposal in the batch is executed  
+- \(\textsf{Long}^{\text{yes}}_i\): Redeems for a value proportional to the metric if proposal i is executed  
+- \(\textsf{Long}^{\text{no}}\): Redeems for a value proportional to the metric if no proposal in the batch is executed  
 
-The relative price of $\textsf{Long}^{\text{no}}$ and each $\textsf{Long}^{\text{yes}}_i$ reveal what the market expects each action's impact to be on the selected metric (subject to caveats, analysis of which will constitute the remainder of this report). From here onwards `score(action)` will be used to refer to $\frac{\textsf{Long}^{\text{yes}}_i}{\textsf{Long}^{\text{no}}}$ for a given action, where a higher `score(action)` indicates an action is assessed as being more favourable in terms of the metric. The value of `score(action)` can be used to select which actions to take, on the basis of the ratio between each action's cost and its score, i.e. its cost:benefit ratio.  
+The relative price of \(\textsf{Long}^{\text{no}}\) and each \(\textsf{Long}^{\text{yes}}_i\) reveal what the market expects each action's impact to be on the selected metric (subject to caveats, analysis of which will constitute the remainder of this report). From here onwards `score(action)` will be used to refer to \(\frac{\textsf{Long}^{\text{yes}}_i}{\textsf{Long}^{\text{no}}}\) for a given action, where a higher `score(action)` indicates an action is assessed as being more favourable in terms of the metric. The value of `score(action)` can be used to select which actions to take, on the basis of the ratio between each action's cost and its score, i.e. its cost:benefit ratio.  
 
 Implementation of the above requires selection of an AMM design or other mechanism for facilitating the exchange of shares and construction of the composite metric on which to evaluate actions. A decision rule also must be selected, which is an algorithm for deciding which actions to take, given the predicted impact on the metric and magnitude of each action's respective cost.  
 
@@ -59,7 +59,7 @@ For some further reading on decision market design, see:
 
 # Confounding  
 
-Decision markets can suffer from confounding because they are trying to use market-implied conditional probabilities as a proxy for measuring the impact of an action on the value of a metric. Decisions are made based on the relative prices of $\textsf{Long}^{\text{yes}}$ and $\textsf{Long}^{\text{no}}$ shares, in each action's market. Any factors which speculators consider when pricing these shares, aside from their expectations of an action's impact, are confounding variables. Confounding variables distort the price with information which is irrelevant to maximising the value of the metric, hence making the decision market prices less useful.  
+Decision markets can suffer from confounding because they are trying to use market-implied conditional probabilities as a proxy for measuring the impact of an action on the value of a metric. Decisions are made based on the relative prices of \(\textsf{Long}^{\text{yes}}\) and \(\textsf{Long}^{\text{no}}\) shares, in each action's market. Any factors which speculators consider when pricing these shares, aside from their expectations of an action's impact, are confounding variables. Confounding variables distort the price with information which is irrelevant to maximising the value of the metric, hence making the decision market prices less useful.  
 
 Confounding occurs when the variable you are measuring the impact on (the dependent variable) is affected by variables other than the variable you are actually trying to measure the impact of (the independent variable). You might want to measure the effect of A on B but end up accidentally measuring something different due to one or multiple of the below three types of confounding:  
 
@@ -203,7 +203,7 @@ action is (artificially) more likely to be selected
 
 In other words, the more new information expected to be revealed about an action, the more positively biased its decision market score will be. This can also be thought of as the result of shares conditional on an action being taken having a convex payoff, like options, [resulting in positive gamma](https://blog.moontower.ai/jensens-inequality-as-an-intuition-tool/), and hence positive vega (volatility increases probability of reaching higher points on the convex payoff function), which signifies a positive sensitivity to changes in volatility.  
 
-Another framing of this is that if you think an action's market-implied score is too high, you will be less inclined to correct the mispricing, by buying $\textsf{Short}^{\text{yes}}$, if you think the market will converge to your belief prior to the market closing. This is because if the market-implied score converges (downwards) to your belief, the action is less likely to be taken, in which case your position is worth $0 due to being conditional on the action being taken. So the more you expect the market to update towards your belief, hence the higher the volatility, the less attractive your short position will seem and the more attractive a long position will seem.  
+Another framing of this is that if you think an action's market-implied score is too high, you will be less inclined to correct the mispricing, by buying \(\textsf{Short}^{\text{yes}}\), if you think the market will converge to your belief prior to the market closing. This is because if the market-implied score converges (downwards) to your belief, the action is less likely to be taken, in which case your position is worth $0 due to being conditional on the action being taken. So the more you expect the market to update towards your belief, hence the higher the volatility, the less attractive your short position will seem and the more attractive a long position will seem.  
 
 ### Manipulation risk  
 
