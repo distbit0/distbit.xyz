@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Strategies for passing malicious futarchy proposals
+title: Futarchy is not secure without a proposal gatekeeper
 ---
 
 
@@ -119,6 +119,8 @@ Proposal convexity maximisation needs a randomised mechanism that sometimes sepa
 Counter-manipulation deterrence is mainly an admission and enforcement problem. Under-defined proposals should be rejected before trading, and value-relevant commitments should have an available enforcement mechanism.  
 
 Fail-branch sabotage requires refusing threats as proposal inputs. Proposals that make the fail branch worse through explicit or implicit retaliation should be manually gated, slashed, or otherwise penalized.  
+
+Permissioned review is not necessarily the only possible defense capable of addressing all of these attacks, though it is the only one I am aware of capable of doing so. A design that does so without recreating a trusted review layer would be a meaningful improvement over the mitigations described here.  
 
 [^dynomight-futarchy]: The randomisation solution is introduced in Dynomight's [Prediction market does not imply causation](https://dynomight.net/prediction-market-causation/). See also [Futarchy's fundamental flaw](https://dynomight.net/futarchy/) for the related futarchy critique.  
 
