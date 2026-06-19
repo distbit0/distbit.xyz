@@ -17,7 +17,11 @@ title: Strategies for passing malicious futarchy proposals
 
 # Constructing Adversarial Asset Futarchy Proposals  
 
-Asset futarchy is hardest to attack when conditional prices stay tightly coupled to a proposal's real causal effect on ASSET value. The proposal strategies below work by loosening that coupling. Some only help -EV proposals. Others also help +EV proposals, which makes them even more dangerous because they can become standard behavior rather than obvious abuse.  
+Asset futarchy is attractive because it lets markets compare a proposal's expected effect on token value. That comparison is only reliable when conditional prices track the proposal's causal effect rather than strategic behavior around the decision rule.  
+
+The attacks below describe ways a proposer can make PASS-ASSET trade above FAIL-ASSET without creating commensurate value for ASSET holders. They are defensive mechanism-design examples: each one identifies a coupling failure between the conditional market price and the proposal's true expected effect.  
+
+The mitigations also imply a current limitation: robust asset futarchy cannot be fully permissionless and autonomous. Manual gating requires reviewers, and some penalties require them to judge whether proposal terms were abusive. That review layer becomes a trusted governance surface: reviewers can allow their own malicious proposals to pass while blocking counter-proposals. The defenses below therefore replace some market attacks with a centralisation assumption rather than removing governance risk.  
 
 Asset futarchy here means a governance system where a proposal passes if conditional markets predict ASSET will be worth more if the proposal passes than if it fails. PASS-ASSET is ASSET in the world where the proposal passes. FAIL-ASSET is ASSET in the world where it fails. The important feature here is that relative conditional prices decide execution. +EV means a proposal increases expected ASSET value, and -EV means it decreases expected ASSET value. The examples below assume a 2% passage hurdle: PASS-ASSET must trade at least 2% above FAIL-ASSET for the proposal to pass.  
 
@@ -101,6 +105,22 @@ This works for both +EV and -EV proposals where two conditions hold: the propose
 That makes it narrower than the other attacks. New proposers often lack the ability to harm the org credibly, and established proposers often care about future business. But crypto can make this threat stronger than it looks in normal corporate or political settings. Pseudonymous actors, cross-border entities, and unclear legal recourse can make it harder to punish the attacker socially or legally.  
 
 Where the sabotage vector exists, the cost is mostly off-path: if the threat works, the proposer rarely has to carry it out. A sufficiently credible attacker can reuse the threat across proposals. This creates a search incentive: actors who find credible ways to harm the org can convert those vectors into bargaining power and extract resources. The mechanism compensates the discovery of sabotage vectors.  
+
+## Design implications  
+
+These attacks require defenses outside ordinary price discovery. Asset futarchy needs markets that can express negative information, and it needs admission rules that reject proposals whose contracts, omissions, or threats make the PASS-vs-FAIL comparison stop measuring causal value.  
+
+Resistance-contingent delivery is a contract-design problem. Proposers need enforceable delivery obligations, and proposal review should reject or penalize terms that let the proposer deliver only when opposition makes manipulation more expensive than work.  
+
+Bag-holder extraction is a market-access problem. Spot conditional markets limit corrective selling to current holders willing to exit pass-branch ASSET. Synthetic conditional markets let non-holders sell or short PASS exposure, broadening the capital that can oppose mildly negative-EV proposals.  
+
+Proposal convexity maximisation needs a randomised mechanism that sometimes separates market settlement from market-guided execution.[^dynomight-futarchy] In a large randomly selected share of cases, the market should be cancelled and the proposal decision should follow its recommendation. In the remaining cases, the market should settle, but execution should be selected at random rather than by the market. Settled PASS states then no longer consist only of worlds where favorable proposal-specific information caused passage. Proposals that leave material information undisclosed should also be gated or penalized.  
+
+Counter-manipulation deterrence is mainly an admission and enforcement problem. Under-defined proposals should be rejected before trading, and value-relevant commitments should have an available enforcement mechanism.  
+
+Fail-branch sabotage requires refusing threats as proposal inputs. Proposals that make the fail branch worse through explicit or implicit retaliation should be manually gated, slashed, or otherwise penalized.  
+
+[^dynomight-futarchy]: The randomisation solution is introduced in Dynomight's [Prediction market does not imply causation](https://dynomight.net/prediction-market-causation/). See also [Futarchy's fundamental flaw](https://dynomight.net/futarchy/) for the related futarchy critique.  
 
 [^dsb-informed-traders]: Decision selection bias is not fully mitigated by highly informed traders. A trader can understand the proposal better than the market, face little adverse-selection risk, and still prefer buying PASS-ASSET over correcting the bias. If the decision market is liquid and passage is more likely to result from PASS-ASSET rising than FAIL-ASSET falling, a PASS-ASSET purchase includes an exit option. The trader can buy while PASS-ASSET trades below FAIL-ASSET, then place an automatic sell order near the passing threshold. If passage happens through a PASS-led price move, that threshold is crossed before settlement, giving the trader an opportunity to sell above their entry price. Buying PASS-ASSET can therefore be privately attractive even when it reinforces the selection bias. The incentive is strongest when proposal-specific volatility in PASS-ASSET exceeds the ordinary ASSET volatility reflected in FAIL-ASSET. Short trading windows make that condition easier to satisfy: they concentrate trading around proposal-relevant information and reduce unrelated volatility costs for conditional-market traders.  
 
