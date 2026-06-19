@@ -15,7 +15,7 @@ title: Strategies for passing malicious futarchy proposals
 
 
 
-# Constructing Adversarial Asset Futarchy Proposals  
+# Adversarial Futarchy Proposal Strategies   
 
 Asset futarchy is attractive because it lets markets compare a proposal's expected effect on token value. That comparison is only reliable when conditional prices track the proposal's causal effect rather than strategic behavior around the decision rule.  
 
