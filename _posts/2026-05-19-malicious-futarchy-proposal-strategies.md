@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Futarchy is not secure without a proposal gatekeeper
+title: Futarchy is insecure without a proposal gatekeeper
 ---
 
 
