@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Futarchy is insecure without a proposal gatekeeper
+title: Futarchy is not secure without a proposal gatekeeper
 ---
 
 
@@ -33,7 +33,7 @@ Example: a proposer asks the DAO to pay $300k for a wallet distribution partners
 
 If bearish traders sell 4m PASS-ASSET into the wall, manipulation costs 4m * $0.03 = $120k. Because the $300k payout is the same under delivery and non-delivery, the proposer compares the $120k manipulation cost with the $180k delivery cost. Manipulation is cheaper, so the proposer absorbs the flow, the proposal passes, and the proposer can skip the work but gets paid anyway. If bearish traders sell 10m PASS-ASSET, non-delivery manipulation would cost 10m * $0.03 = $300k, which is above the $180k delivery cost. The proposer delivers instead. Delivery makes the defended PASS-ASSET price justified, so the earlier buy-wall purchases are no longer a separate manipulation loss. The proposer pays the lower of manipulation cost or delivery cost, not both.  
 
-If the proposal fails before passage, the proposer owes no delivery and realizes no pass-conditional manipulation loss. Their downside is the proposal creation/submission cost. Ignoring capital costs, this is loosely analogous to selfish mining in proof-of-work mining: the attacker has a privately dominant strategy because weak resistance gives upside, while strong resistance lets them fall back to the honest path without a separate manipulation loss.  
+If the proposal fails before passage, the proposer owes no delivery and realizes no pass-conditional manipulation loss. Their downside is the proposal creation/submission cost. Ignoring capital costs, the attacker has a privately dominant strategy because weak resistance gives upside, while strong resistance lets them fall back to the honest path without a separate manipulation loss.  
 
 The proposer has converted delivery from a default obligation into a resistance-triggered backstop. Weak opposition lets them pass and get paid without doing the work. Strong opposition forces them to choose the cheaper path: keep manipulating if manipulation costs less than delivery, or deliver if delivery is cheaper. This gives the proposer a private cost cap: preserve passage by paying the lower of manipulation cost or delivery cost. If the proposer has enough capital to defend the spread, this reduces how often they need to deliver without reducing passage.  
 
