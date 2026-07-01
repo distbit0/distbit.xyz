@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Price only dsb mitigation impossibility
+title: Impossibility of detecting strategic decision selection bias
 ---
 
 
