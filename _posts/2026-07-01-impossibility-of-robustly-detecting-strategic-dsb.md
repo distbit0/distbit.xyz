@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/impossibility-of-detecting-strategic-decision-selection-bias
+articleUrl: https://distbit.xyz/impossibility-of-robustly-detecting-strategic-dsb
 author: distbit
 category: blog
 date: 2026-07-01 00:00
@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Impossibility of detecting strategic decision selection bias
+title: Impossibility of robustly detecting strategic dsb
 ---
 
 
