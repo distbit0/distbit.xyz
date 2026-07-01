@@ -9,7 +9,7 @@ headerImage: false
 layout: post
 live: true
 tag: []
-title: Impossibility of robustly detecting strategic DSB
+title: Impossibility of robustly detecting strategic dsb
 ---
 
 
