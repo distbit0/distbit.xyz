@@ -1,5 +1,5 @@
 ---
-articleUrl: https://distbit.xyz/price-only-dsb-mitigation-impossibility
+articleUrl: https://distbit.xyz/impossibility-of-detecting-strategic-decision-selection-bias
 author: distbit
 category: blog
 date: 2026-07-01 00:00
