@@ -7,7 +7,7 @@ description: ''
 gist_url: https://gist.github.com/c20e747f0f434a5c76679f661977c2c7
 headerImage: false
 layout: post
-live: true
+live: false
 tag: []
 title: Impossibility of robustly detecting strategic dsb
 ---
