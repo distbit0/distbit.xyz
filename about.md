@@ -4,7 +4,7 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-Hi, I’m Alex, also known online as distbit. I work on mechanisms and software that help people make better decisions under uncertainty. My main interests are prediction markets, futarchy, infofinance, cryptoeconomic security, and AI-assisted epistemic tools.
+Hi, I’m distbit. I work on mechanisms and software which employ incentives to elicit useful information and improve decision making. My main interests are prediction markets, futarchy, infofinance, cryptoeconomic security, and AI-assisted epistemic tools.
 
 ## Current work
 
@@ -14,7 +14,7 @@ I also research how to elicit useful information, allocate resources, and design
 
 ## Background
 
-I previously worked at Butter on conditional funding markets, which use prediction markets to estimate the effect of funding proposals on a chosen metric. I have also consulted for DeFi protocols, including Fringe Finance and Increment Finance, on mechanism design and cryptoeconomic security.
+At Butter, I have worked on conditional funding markets, which use conditional prediction markets to estimate the effect of funding proposals on a chosen metric. I have also consulted for defi protocols, including Fringe Finance and Increment Finance, on mechanism design and cryptoeconomic security.
 
 ## Selected writing
 
