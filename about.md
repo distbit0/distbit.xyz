@@ -10,7 +10,7 @@ Hi, I’m distbit. I work on mechanisms and software which employ incentives to 
 
 I’m building [Truesight](https://truesight.ink), a platform where people contribute evidence and arguments to live issue pages, and AI-assisted synthesis and transparent scoring surface overlooked claims and disagreements.
 
-I also research how to elicit useful information, allocate resources, and design decision systems that remain reliable under adversarial incentives. Alongside that work, I build personal epistemic tools, including [Infolio](https://infolio.distbit.xyz), a semantic reading queue and feed-curation system.
+I also research how to elicit useful information, allocate resources, and design decision systems that remain reliable under adversarial incentives. Alongside that work, I build personal epistemic tools, including [Infolio](https://germane.page), a semantic reading queue and feed-curation system.
 
 ## Background
 
