@@ -23,7 +23,7 @@ Impact is how much the market expects an event to change an asset’s price.
 
 It is the market-implied delta between the asset’s price if the event occurs and the asset’s price if it does not occur.  
 
-Standard conditional futures do not isolate impact. A long YES and short NO position becomes a bet on which outcome occurs, because one leg settles to the spot price and the other leg settles to 0. Impact exposure instead targets the conditional spread `price_yes - price_no`. Unconditional outcome futures isolate that spread by making both legs settle to prices in both outcomes, so long YES and short NO settles to `impact_TWAP` regardless of which outcome occurs.   
+Standard conditional futures do not isolate impact. A long YES and short NO position becomes a bet on which outcome occurs, because one leg settles to the spot price and the other leg settles to 0. Impact exposure instead targets the conditional spread `price_yes - price_no` through a separate cash-settled spread future. Its oracle must read independently formed conditional prices; defining settlement from prices whose own settlement depends on that value is circular.  
 
 ## Definitions  
 
@@ -35,37 +35,45 @@ Impact exposure means profit and loss (PnL) depends on the value of `impact`, no
 
 In standard conditional token designs, one outcome leg becomes worthless at settlement. That property makes a “long one outcome, short the other outcome” position outcome-dependent. Once the payoff depends on which outcome occurs, the position is exposed to event probability in pricing and risk and one half of the position becomes worthless at resolution.  
 
-## Unconditional outcome futures: impact exposure using two markets  
+## A separate impact-spread future  
 
-This mechanism replaces “one leg becomes worthless” with a settlement rule where both outcome markets always settle to a price. It uses `S = spot_at_resolution`, which is the spot asset price at resolution, and it uses `I = impact_TWAP`, which is a pre-resolution time-weighted average of `impact(t) = price_yes(t) - price_no(t)` over an eligibility window.  
+Keep the two standard conditional markets, and add a third cash-settled future. Let `I = impact_TWAP`, a pre-resolution time-weighted average of `impact(t) = price_yes(t) - price_no(t)` over an eligibility window. The third future settles to `I` regardless of which event outcome occurs.  
 
-If YES occurs, the YES leg settles to `S`, and the NO leg settles to `S - I`. If NO occurs, the NO leg settles to `S`, and the YES leg settles to `S + I`. This makes both legs settle in both outcomes, and it pins the YES-NO spread to `I`.  
+The oracle inputs must come from the separate conditional markets rather than the impact future itself. If the conditional products are outcome claims rather than prices already expressed in conditional asset units, the oracle also needs an explicit conversion; it cannot treat raw claim prices as `price_yes` and `price_no`.  
 
-## Why long YES and short NO pays impact  
+## Why a separate market is necessary  
 
-Consider the position “long one YES unit and short one NO unit”. If YES occurs, the payoff is `settle_yes - settle_no = S - (S - I) = I`. If NO occurs, the payoff is `settle_yes - settle_no = (S + I) - S = I`. So “long YES, short NO” pays `I` regardless of which outcome occurs. That is impact exposure by construction.  
+The impact-spread future has terminal value `I`. A long entered at futures price `F_0` earns `I - F_0`, while a short earns `F_0 - I`. Neither PnL depends on which event outcome occurs. The ordinary conditional markets continue to settle under their existing rules, so the impact future does not determine the prices used by its own oracle.  
 
-Reversing the legs gives short impact. “Short YES, long NO” pays `-I` regardless of which outcome occurs.  
-
-## Worked examples  
-
-Let `S = 100,000` and let `I = +10,000`. If YES occurs, then `settle_yes = 100,000` and `settle_no = 90,000`, so long YES and short NO pays `+10,000`. If NO occurs, then `settle_yes = 110,000` and `settle_no = 100,000`, so long YES and short NO pays `+10,000`.  
+Making both outcome legs settle in both worlds is not sufficient. If their settlement values are defined using a spread measured from those same two market prices, the rule becomes self-referential.  
 
 ## How `impact_TWAP` is defined  
 
 Impact settlement needs a stable estimate of `impact(t) = price_yes(t) - price_no(t)`.  
 
-Using conditional prices when the market becomes one-sided does not give a stable estimate. When `p_yes(t)` is near 0% or 100%, the low-probability conditional market becomes thin. Low liquidity and low depth make its price cheap to move. A settlement rule that reads that price makes `impact` easy to manipulate and makes the settled spread unreliable.  
+When `p_yes(t)` is near 0% or 100%, the low-probability conditional market often becomes thin. A probability band excludes that extreme regime, but probability alone does not establish liquidity or make the spread manipulation-resistant.  
 
-The design therefore measures impact only during time where both outcomes have non-trivial probability and both conditional markets carry meaningful liquidity.  
+Eligible observations must satisfy both the probability band and a separately specified minimum-depth or quote-quality rule for the conditional markets. The liquidity rule remains an open design requirement.  
 
 It defines `p_yes(t)` as the YES price in the event market and “in-band time” as time where `p_yes(t) ∈ [5%, 95%]`.  
 
 It defines an end time `t_end` as the event resolution time if `p_yes(t)` never leaves the band before resolution. Otherwise it defines `t_end` as the last time before resolution that `p_yes(t)` leaves the band. This ends the measurement window before the one-sided regime.  
 
-It computes `impact_TWAP` as a 24-hour TWAP of `impact(t)` over 24 hours of cumulative in-band time ending at `t_end`.  
+It computes `impact_TWAP` as a 24-hour TWAP of `impact(t)` over 24 hours of cumulative eligible time ending at `t_end`.  
 
-If there is less than 24 hours of cumulative in-band time prior to `t_end`, it refunds both outcome markets so settlement does not depend on a short, manipulable window.  
+If there is less than 24 hours of cumulative eligible time prior to `t_end`, it refunds the impact-spread future so settlement does not depend on an underspecified observation window. The two conditional markets retain their ordinary settlement rules.  
+
+## Why the endogenous two-market version fails  
+
+An earlier version set both outcome legs to nonzero values and defined their settlement spread as `I`, while also defining `I` as a TWAP of those same two market prices. The payoff difference was algebraically `I` in either outcome, but that did not identify a unique value for `I`.  
+
+The settlement rule made the two prices depend on `I`, while the oracle made `I` depend on the two prices. Under simple no-arbitrage pricing, every constant spread within feasible payoff bounds is a fixed point, and other self-consistent paths may exist. A probability band does not remove this circularity. A separate spread future avoids it because its settlement input comes from conditional markets whose settlement rules do not depend on the spread future.  
+
+## Historical details from the rejected proposal  
+
+The rejected version also specified that reversing the legs, short YES and long NO, would pay `-I`. Its worked example used `S = 100,000` and `I = +10,000`: the terminal YES-minus-NO difference was `+10,000` whether the legs settled to `100,000` and `90,000` after YES or `110,000` and `100,000` after NO.  
+
+It proposed refunding both outcome markets when fewer than 24 hours of in-band observations existed. These details are retained as design history, not as the current mechanism. They show why the payoff identity looked compelling once `I` was assumed, while leaving unanswered how the markets could identify one value of `I` without circularity.  
 
 ## Why standard conditional futures do not give impact exposure  
 
