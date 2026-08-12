@@ -31,4 +31,10 @@ This is not an automated judge of whether a market fits a natural-language theme
 
 The [Polymarket Builders Program](https://builders.polymarket.com/) explicitly invites new analytics and decision tools, while its [2026 Request for Builders](https://builders.polymarket.com/rfb/explore) offers rolling, no-equity grants. A grant would fund the hosted API, reproducible snapshots, and buyer discovery needed to learn whether risk and quantitative teams actually spend meaningful time repairing these inconsistencies.
 
+## Program boundary and submission gate
+
+The analytics grant path is distinct from the operational [Builder Program](https://docs.polymarket.com/programs/builders/overview), which defines builders as products that route user orders. This read-only tool does not claim builder-code volume, fees, or tier rewards.
+
+Polymarket says it selects grants on product innovation and traction. Market Coherence has no users, so its application is deferred until one risk, quantitative, or product user confirms that a recurring coherence failure consumes analyst time or changes a decision. The current audit is sufficient for that test; a hosted service is not.
+
 Working code and the captured audit are available for review. Contact [me@distbit.xyz](mailto:me@distbit.xyz).
