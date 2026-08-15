@@ -57,7 +57,8 @@ giscus:
 
 # if you don't have any of social below, comment the line
 #facebook: myfacebook
-twitter: distbit0
+twitter:
+    username: distbit0
 #instagram: myinstagram
 #linkedin: mylinkedin
 github: distbit0

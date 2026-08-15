@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Market Coherence for prediction-market products
+description: "Executable checks for prediction-market index arithmetic, concentration, expiry, market status, and scoring provenance."
 permalink: /market-coherence/
 ---
 

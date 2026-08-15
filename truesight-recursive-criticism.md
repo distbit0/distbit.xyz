@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Truesight: recursive criticism for public claims"
+description: "How Truesight organizes public claims, sources, criticisms, and replies into deterministic recursive refutation trees."
 permalink: /truesight-recursive-criticism/
 ---
 

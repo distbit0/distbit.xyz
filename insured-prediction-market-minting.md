@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Insurance-backed issuance for long-tail prediction markets
+description: "A one-sided insurance-backed issuance design for long-tail prediction markets, with adverse-selection, solvency, and provider-default constraints."
 permalink: /insured-prediction-market-minting/
 ---
 

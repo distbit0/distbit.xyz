@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Credible commitments against blackmail
+description: "Refusal insurance and anti-compliance bonds can deter blackmail, subject to observability, capital, disclosure, and symmetric attacker commitments."
 permalink: /anti-blackmail-commitments/
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Market systems: selected work and operating thesis"
+description: "Selected mechanism-design and information-system work, plus a measurable operating thesis for market creation, monitoring, and resolution."
 permalink: /market-systems-selected-work/
 ---
 
