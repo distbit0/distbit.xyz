@@ -263,6 +263,8 @@ The "randomise, sometimes" strategy addresses confounding in decision markets by
 
 This approach eliminates confounding because traders price shares solely based on the random selection scenario, while the non-random 90% doesn't affect pricing due to market cancellation. Importantly, this strategy allows decision-makers to use market predictions to inform choices 90% of the time, while still maintaining unbiased market prices. It effectively separates the price formation process from actual decision-making, preserving the market's informational value while preventing feedback loops that could distort prices.  
 
+This causal-identification claim does not by itself guarantee truthful reports from traders who care about which action the cancelled branch implements; see infofi-index#Resolution candidate — 2026-08-25.  
+
 ```  
 expected impact of action  
         ↓  
