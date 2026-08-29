@@ -93,7 +93,7 @@ The design therefore has many self-consistent fixed points rather than one marke
 
 ## A separate impact-spread future  
 
-The circularity disappears if the conditional markets retain settlement rules that do not depend on `I`, while a separate derivative derives the spread from independently formed market prices. Keep the ordinary YES and NO conditional markets, but use only one of their prices in each oracle observation.  
+The circularity disappears if the conditional markets retain settlement rules that do not depend on `I`, while a separate derivative derives the spread from these independently formed market prices. Keep the ordinary YES and NO conditional markets, but use only one of their prices in each oracle observation.  
 
 The oracle uses the spot asset price, the event probability, and one conditional asset price. The relationship between them is:  
 
@@ -115,21 +115,21 @@ A long entered at impact-futures price `F_0` earns `I - F_0`. A short earns `F_0
 
 The payoff provides direct exposure to how the market will come to price the event’s counterfactual effect on the asset. It is a claim on the final market-implied distance between the two possible worlds, rather than a claim on which world occurs.  
 
-The separate future does not determine the settlement values of its source markets. The spot, event-probability, and selected conditional prices therefore provide external inputs to the impact future. The oracle does not subtract the two conditional-market prices directly. Within this architecture, the third derivative is what breaks the circularity.  
+The separate future does not determine the settlement values of its source markets. The spot, event-probability, and selected conditional prices therefore provide external inputs to the impact future. Within this architecture, the third derivative is what breaks the circularity.  
 
 ## Measuring the impact spread  
 
-The baseline design defines `p_yes(t)` as the YES price in the event prediction market. It counts an observation as eligible when `p_yes(t)` lies between 5% and 95% and the event, spot, and selected conditional markets satisfy separate minimum-depth or execution-quality rules.  
+The baseline design defines `p_yes(t)` as the YES price in the event prediction market.  
 
 Extreme probabilities make both the event probability and the low-probability conditional price unreliable. In a standard fully collateralised prediction market, correcting a 5% YES price downward requires buying NO for about `$0.95` to earn at most `$0.05`. Buying YES requires only `$0.05`. As YES approaches 0%, betting against it locks increasingly more capital relative to the available profit. This weakens downward correction and allows the prices of genuinely improbable events to remain too high. Near 100%, the same problem applies to the NO outcome.  
 
 The low-probability conditional market has a related problem: traders receive little expected compensation for committing capital to correct a claim that is unlikely to settle. The oracle therefore uses the higher-probability conditional price when it is available.  
 
-This avoids relying directly on the least liquid conditional market, but it does not remove the extreme-probability problem. When NO is almost certain, `price_no` lies very close to spot, and the oracle divides that small difference by `p_yes`. Pricing or manipulation errors in spot, event probability, or the selected conditional price are therefore magnified.  
+Using the higher-probability conditional price avoids the least reliable branch, but it does not remove the extreme-probability problem. When NO is almost certain, `price_no` lies very close to spot, and the oracle divides that small difference by `p_yes`. Pricing errors in spot, event probability, or the selected conditional price are therefore magnified. Impact-future holders also have an incentive to manipulate these inputs during the settlement window.  
 
-The impact future gives its holders an incentive to manipulate any of those inputs. Using the highest-probability conditional market increases the capital required to manipulate the selected conditional price, while the probability band excludes observations where the derivation is most sensitive to small errors. Neither measure replaces explicit liquidity and manipulation-resistance requirements.  
+The baseline design addresses this problem by accepting observations only while `p_yes(t)` is between 5% and 95%. This interval is the probability band, and an observation inside it is in-band. The band excludes the extreme regimes where event and conditional prices are hardest to correct and where the impact formula most strongly magnifies pricing or manipulation errors. Using the higher-probability conditional market further raises the cost of manipulating the selected price. An in-band observation is eligible only if the event, spot, and selected conditional markets also satisfy minimum-depth or execution-quality requirements.  
 
-The baseline observation rule sets `t_end` to the event resolution time if probability remains in-band. If probability leaves the band, `t_end` is the final pre-resolution exit from the band. It then calculates `impact_TWAP` from 24 hours of cumulative eligible observations ending at `t_end`.  
+If probability never leaves the band, the observation window ends at resolution. Otherwise, it ends at the final pre-resolution exit: the last time `p_yes(t)` crosses from inside the band to outside it. The oracle calculates `impact_TWAP` from the final 24 hours of cumulative eligible observations ending at that point, so later extreme-probability prices cannot affect settlement.  
 
 If fewer than 24 eligible hours exist, the impact future refunds. The ordinary event and conditional markets retain their own settlement rules. The 5% and 95% thresholds, 24-hour duration, and market-quality requirement are design parameters rather than universal constants.  
 
