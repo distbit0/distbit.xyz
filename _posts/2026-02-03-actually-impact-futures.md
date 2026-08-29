@@ -39,8 +39,6 @@ In standard conditional token designs, one outcome leg becomes worthless at sett
 
 Keep the two standard conditional markets, and add a third cash-settled future. Let `I = impact_TWAP`, a pre-resolution time-weighted average of `impact(t) = price_yes(t) - price_no(t)` over an eligibility window. The third future settles to `I` regardless of which event outcome occurs.  
 
-The oracle inputs must come from the separate conditional markets rather than the impact future itself. If the conditional products are outcome claims rather than prices already expressed in conditional asset units, the oracle also needs an explicit conversion; it cannot treat raw claim prices as `price_yes` and `price_no`.  
-
 ## Why a separate market is necessary  
 
 The impact-spread future has terminal value `I`. A long entered at futures price `F_0` earns `I - F_0`, while a short earns `F_0 - I`. Neither PnL depends on which event outcome occurs. The ordinary conditional markets continue to settle under their existing rules, so the impact future does not determine the prices used by its own oracle.  
@@ -53,7 +51,7 @@ Impact settlement needs a stable estimate of `impact(t) = price_yes(t) - price_n
 
 When `p_yes(t)` is near 0% or 100%, the low-probability conditional market often becomes thin. A probability band excludes that extreme regime, but probability alone does not establish liquidity or make the spread manipulation-resistant.  
 
-Eligible observations must satisfy both the probability band and a separately specified minimum-depth or quote-quality rule for the conditional markets. The liquidity rule remains an open design requirement.  
+Eligible observations must satisfy a probability band requirement.  
 
 It defines `p_yes(t)` as the YES price in the event market and “in-band time” as time where `p_yes(t) ∈ [5%, 95%]`.  
 
@@ -65,15 +63,13 @@ If there is less than 24 hours of cumulative eligible time prior to `t_end`, it 
 
 ## Why the endogenous two-market version fails  
 
-An earlier version set both outcome legs to nonzero values and defined their settlement spread as `I`, while also defining `I` as a TWAP of those same two market prices. The payoff difference was algebraically `I` in either outcome, but that did not identify a unique value for `I`.  
+An earlier design set both conditional outcome legs to always settle, and defined their settlement spread as `I`, while also defining `I` as a TWAP of those same two market prices. The payoff difference was algebraically `I` in either outcome, but that did not identify a unique value for `I`.  
 
 The settlement rule made the two prices depend on `I`, while the oracle made `I` depend on the two prices. Under simple no-arbitrage pricing, every constant spread within feasible payoff bounds is a fixed point, and other self-consistent paths may exist. A probability band does not remove this circularity. A separate spread future avoids it because its settlement input comes from conditional markets whose settlement rules do not depend on the spread future.  
 
 ## Historical details from the rejected proposal  
 
 The rejected version also specified that reversing the legs, short YES and long NO, would pay `-I`. Its worked example used `S = 100,000` and `I = +10,000`: the terminal YES-minus-NO difference was `+10,000` whether the legs settled to `100,000` and `90,000` after YES or `110,000` and `100,000` after NO.  
-
-It proposed refunding both outcome markets when fewer than 24 hours of in-band observations existed. These details are retained as design history, not as the current mechanism. They show why the payoff identity looked compelling once `I` was assumed, while leaving unanswered how the markets could identify one value of `I` without circularity.  
 
 ## Why standard conditional futures do not give impact exposure  
 
