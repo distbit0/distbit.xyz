@@ -50,11 +50,11 @@ This instrument prices how the market expects the event to affect the asset. It 
 
 ## Why ordinary conditional futures are not impact futures  
 
-A long YES position and a short NO position of equal size does not settle to impact. The winning conditional future settles to the asset’s spot price `S`, and the losing conditional future settles to 0. If YES occurs, the combined position settles to `+S`. If NO occurs, it settles to `-S`. The position is a directional bet on the outcome and on the spot level, not a bet on the pre-event spread `price_yes - price_no`.  
+A long YES position and a short NO position of equal size does not settle to the event's impact. The winning conditional future settles to the asset’s spot price `S`, and the losing conditional future settles to 0. If YES occurs, the combined position settles to `+S`. If NO occurs, it settles to `-S`. The position is a directional bet on the outcome and on the spot level, not a bet on the pre-event spread `price_yes - price_no`.  
 
-The trader can exit before resolution, but the position remains exposed to changes in event probability and to asset-price movements unrelated to the event until it is closed. For a long-running election market, a Bitcoin move caused by interest rates, regulation, or a large exchange failure can dominate the PnL of a trader who only intended to speculate on the election’s impact.  
+The trader can exit before resolution, but the position remains exposed to changes in event probability and to asset-price movements unrelated to the event until it is closed. For a long-running election market, a Bitcoin move caused by interest rates, regulation, or macro conditions can dominate the PnL of a trader who only intended to speculate on the election’s impact.  
 
-Defining impact as `price_yes - spot` also does not isolate impact. Spot reflects the probability-weighted average of the conditional prices,  
+A trader might instead buy the asset in the YES-conditional market and short an equal amount in the spot market. The resulting spread, `price_yes - spot`, still does not isolate impact. Spot reflects the probability-weighted average of the conditional prices,  
 
 `spot(t) = p_yes(t) · price_yes(t) + (1-p_yes(t)) · price_no(t)`,  
 
