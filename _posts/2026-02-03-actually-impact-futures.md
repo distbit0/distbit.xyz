@@ -131,13 +131,13 @@ The baseline design addresses this problem by accepting observations only while 
 
 If probability never leaves the band, the observation window ends at resolution. Otherwise, it ends at the final pre-resolution exit: the last time `p_yes(t)` crosses from inside the band to outside it. The oracle calculates `impact_TWAP` from the final 24 hours of cumulative eligible observations ending at that point, so later extreme-probability prices cannot affect settlement.  
 
-If fewer than 24 eligible hours exist, the impact future refunds. The ordinary event and conditional markets retain their own settlement rules. The 5% and 95% thresholds, 24-hour duration, and market-quality requirement are design parameters rather than universal constants.  
+If fewer than 24 eligible hours exist, the impact future refunds. The ordinary event and conditional markets retain their own settlement rules. The 5% and 95% thresholds, 24-hour duration, and market-quality requirement are design parameters.  
 
 ## The capital-efficiency limitation  
 
-The separate impact future fixes circularity, but the baseline source-market design still requires one dollar of collateral per dollar of conditional notional for each event or decision. The YES and NO branches of a single event are mutually exclusive and already share that dollar. The inefficiency is therefore not duplicated collateral between branches. It is the need to fully collateralise each separate event or decision, while the impact derivative also requires its own collateral.  
+The separate impact future fixes circularity, but the baseline source-market design still requires one dollar of collateral per dollar of conditional notional for each event or decision. The YES and NO branches of a single event are mutually exclusive and already share that dollar. The inefficiency is therefore not duplicated collateral between branches, but rather is the need to fully collateralise each separate event or decision, while the impact derivative also requires its own collateral.  
 
-Across many markets, most of this collateral can remain idle. Ten separate one-dollar conditional positions across ten events require ten dollars of collateral even if their selected outcomes are all improbable and few are expected to occur. This makes a portfolio of low-probability conditional markets expensive to supply.  
+Across many markets, most of this collateral can remain idle depending. Ten separate one-dollar conditional positions across ten events require ten dollars of collateral even if their selected outcomes are all improbable and few are expected to occur. This makes a portfolio of low-probability conditional markets expensive to supply.  
 
 ## A capital-efficient long-only conditional layer  
 
@@ -166,6 +166,18 @@ This design has constraints:
 - The derivation divides by the probability of the unobserved branch. Extreme probabilities therefore magnify errors even when the higher-probability conditional price is used.  
 - The event, spot, and conditional markets need enough liquidity and cross-market arbitrage to keep their prices consistent.  
 - A cash-settled implementation needs explicit payout bounds and a rule for any aggregate shortfall.  
+
+## A two-instrument anchored alternative  
+
+Another approach keeps the original two outcome instruments and anchors part of their terminal spread to a realised payoff. Fix `anchor_probability` from an independent event market at a defined snapshot. The anchor pays `spot / anchor_probability` after YES and `-spot / (1-anchor_probability)` after NO, giving it an expected value of `price_yes - price_no` at that snapshot. This extends the inverse-probability scaling used in [Securities Based Decision Markets](https://arxiv.org/abs/2103.10011); the paper does not propose this impact-futures design.  
+
+Set the terminal YES-minus-NO spread to:  
+
+`(1-anchor_weight) · impact_TWAP + anchor_weight · realised_anchor`.  
+
+Under simple no-arbitrage pricing, any positive `anchor_weight` makes the conditional spread the unique fixed point, so no third instrument is required.  
+
+The anchor reintroduces outcome risk and requires a manipulation-resistant probability snapshot. A larger weight reduces the influence of the self-referential TWAP and corrects mispricing more strongly, but increases payoff variance, collateral requirements, and incentives to manipulate the anchor inputs. A smaller weight more closely preserves the original outcome-independent payoff but provides a weaker practical anchor. Because inverse-probability payouts become large near 0% or 100%, this approach is most plausible away from extreme probabilities.  
 
 ## Does this apply to futarchy or only event-conditional markets?  
 
