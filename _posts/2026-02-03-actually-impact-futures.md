@@ -203,4 +203,8 @@ Impact futures do not solve slow post-decision information incorporation. They d
 
 Impact futures therefore have no clear role in a decision market when a short market duration is feasible. They become useful if the decision market must remain open long enough for unrelated asset volatility to become material, for example because traders react slowly, proposals require extended evaluation, or liquidity develops gradually. They isolate the conditional spread during that longer pre-decision period. They do not solve decision-selection bias or make the unrealised outcome observable after the decision.  
 
+## Goal-advancement update — 2026-08-30  
+
+The earlier draft above is retained as revision history but is superseded for publication by https://distbit.xyz/actually-impact-futures/. The live version implements the requested causal-language, final-market-estimate, payoff-unit, branch-weighting, and probability-exposure corrections. It also repairs linked specification errors: the pricing identity now states its replication assumptions; sustained exits and re-entry replace the obsolete one-crossing rule; pooled `1 / winner_count` tail claims no longer feed the binary oracle unchanged; and the anchor, margin, event-conditional, and short-decision-market limits are explicit. impact-futures-publication-correction records the concise change set and deployment evidence.  
+
 If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
