@@ -9,7 +9,9 @@ permalink: /market-systems-selected-work/
 
 I work at the seam between mechanism design, adversarial analysis, and product implementation. I start from the information or incentive problem, specify the payoff and resolution structure, identify how strategic actors can break the intended signal, and turn the surviving design into a system that can be tested.
 
-## Decision markets under adversarial incentives
+## Market instruments and adversarial incentives
+
+[Actually impact futures](https://distbit.xyz/actually-impact-futures/) develops a separate scalar derivative on the final pre-resolution market-implied spread between event-conditioned asset prices. It shows why ordinary conditional positions and a self-referential settlement rule fail, then bounds the surviving design by its replication assumptions, precision-weighted oracle, causal-identification limits, probability exposure, margin, and tail-collateral constraints.
 
 [Adversarial Futarchy Proposal Strategies](https://distbit.xyz/malicious-futarchy-proposal-strategies/) identifies five ways a proposer can make the pass branch look better without creating corresponding value: resistance-contingent delivery, conditional-exit extraction, proposal-specific selection, ambiguity that deters corrective trading, and fail-branch sabotage. The proposed contract review and proposal gating replace several market attacks with a trusted governance surface rather than eliminating governance risk.
 
@@ -37,4 +39,4 @@ At Butter, I worked on conditional funding markets, advisory markets, market con
 
 [Curriculum vitae](https://gist.github.com/b8a1358a60d3713cb5652d9038c5c86c) · [GitHub](https://github.com/distbit0) · [Email](mailto:me@distbit.xyz) · [Schedule a 20-minute call](https://cal.com/distbit/call)
 
-*Selected work, 11 August 2026.*
+*Selected work, 30 August 2026.*
