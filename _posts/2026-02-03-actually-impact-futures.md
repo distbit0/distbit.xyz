@@ -54,13 +54,11 @@ A long YES position and a short NO position of equal size does not settle to the
 
 The trader can exit before resolution, but the position remains exposed to changes in event probability and to asset-price movements unrelated to the event until it is closed. For a long-running election market, a Bitcoin move caused by interest rates, regulation, or macro conditions can dominate the PnL of a trader who only intended to speculate on the event spread.  
 
-A trader might instead buy the asset in the YES-conditional market and short an equal amount in the spot market. The resulting spread, `price_yes - spot`, still does not isolate the event spread. Under the pricing assumption used throughout this article, spot reflects the probability-weighted average of the conditional prices:  
+A trader might instead buy the asset in the YES-conditional market and short an equal amount in the spot market. The resulting spread, `price_yes - spot`, still does not isolate the event spread. Let `p_yes(t)` be the YES probability implied by the event market. Under the pricing assumption used throughout this article, spot reflects the probability-weighted average of the conditional prices:  
 
-Let `p_yes(t)` be the YES probability implied by the event market. Then:  
+`spot(t) = p_yes(t) · price_yes(t) + (1-p_yes(t)) · price_no(t)`.  
 
-`spot(t) = p_yes(t) · price_yes(t) + (1-p_yes(t)) · price_no(t)`,  
-
-then:  
+It follows that:  
 
 `price_yes(t) - spot(t) = (1-p_yes(t)) · (price_yes(t) - price_no(t))`.  
 
@@ -95,18 +93,18 @@ The design therefore has many self-consistent fixed points rather than one marke
 
 ## A realised-anchor two-instrument alternative  
 
-The circularity can be removed by averaging an externally determined realised payoff rather than the instruments' own spread. At every observation admitted by the settlement rule, record `p_yes(t)` and `spot(t)` simultaneously. After the event resolves, record `resolution_spot` at the first predefined observation after resolution. For each admitted time, calculate:  
+The circularity can be removed by averaging an externally determined realised payoff rather than the instruments' own spread. At every observation within a predefined probability band, record `p_yes(t)` and `spot(t)` simultaneously. After the event resolves, record `resolution_spot` at the first predefined observation after resolution. For each such time, calculate:  
 
 - after YES, `anchor_slice(t) = (resolution_spot - spot(t)) / p_yes(t)`;  
 - after NO, `anchor_slice(t) = -(resolution_spot - spot(t)) / (1-p_yes(t))`.  
 
 Set the terminal YES-minus-NO spread to the time-weighted average of these `anchor_slice` values. The corresponding settlement values can then be constructed in the same way as in the first design: one leg settles to `resolution_spot` and the other is offset by the realised anchor TWAP.  
 
-At each observation, the expected spot-relative YES payoff is `price_yes(t) - spot(t)`, while the expected spot-relative NO payoff is `-(price_no(t) - spot(t))`. Their sum is therefore:  
+At each observation, probability-weighting the YES payoff gives `price_yes(t) - spot(t)`, while probability-weighting the NO payoff gives `-(price_no(t) - spot(t))`. Their sum is therefore:  
 
 `price_yes(t) - price_no(t)`.  
 
-This gives every observation an externally anchored expected value equal to the event spread. It does not rely on a static fixed-point argument, and using a probability and spot sample from every admitted observation avoids concentrating the calculation in one final probability quote. The payout slices themselves must be averaged; separately averaging their inputs would not preserve this relationship because the inverse-probability terms are nonlinear.  
+This gives every observation an externally anchored expected value equal to the event spread. It does not rely on a static fixed-point argument, and using a probability and spot sample from every observation avoids concentrating the calculation in one final probability quote. The payout slices themselves must be averaged; separately averaging their inputs would not preserve this relationship because the inverse-probability terms are nonlinear.  
 
 The anchor should determine the full terminal spread. Mixing it with a TWAP of the instruments' own quoted spread would reintroduce the dynamic attenuation that the anchor is meant to remove. The cost is outcome-dependent payoff variance, especially near extreme probabilities. The separate future below is therefore the simpler and lower-variance baseline.  
 
@@ -136,7 +134,7 @@ A long entered at `entry_price` earns `impact_TWAP - entry_price`. A short earns
 
 The payoff provides direct exposure to the market’s final pre-resolution estimate of the event spread. A trader profits only if the source markets come to price the outcomes farther apart than the entry price; the instrument does not score the unrealised counterfactual.  
 
-An absolute-dollar spread is useful when the contract will be made event-conditional to hedge a fixed quantity of the asset. For outcome-independent speculation, `log(price_yes / price_no)` has better invariance: it is unchanged when an unrelated factor multiplies both prices by the same amount, and swapping YES and NO simply reverses its sign.  
+An absolute-dollar spread is useful when the contract will be made event-conditional to hedge a fixed quantity of the asset. The same design could instead settle to `log(price_yes / price_no)` for outcome-independent speculation. This is unchanged when an unrelated factor multiplies both prices by the same amount, and swapping YES and NO simply reverses its sign.  
 
 The outcome-independent payoff is useful for pure event-magnitude speculation, relative-value comparisons between events, and separating a view about consequences from a view about probability. It is not the appropriate instrument for hedging a loss that occurs only in one outcome; the event-conditional version below is.  
 
