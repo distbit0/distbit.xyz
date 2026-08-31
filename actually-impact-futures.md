@@ -81,7 +81,7 @@ Instead, [portfolio-insured minting](https://distbit.xyz/insured-prediction-mark
 
 The conditional-asset market remains separate and uses the insured branch claim as collateral. The impact oracle takes `p_yes(t)` from the event claim's executable secondary-market price, not the provider's fee-inclusive mint quote. Because the branch claims retain standard payoffs, the ordinary binary decomposition applies without a `winner_count` adjustment.
 
-Across a portfolio, insured minting can supply these claims without locking a separate fully collateralised dollar behind every low-probability branch. This lets providers make larger corrective trades in the event and conditional markets with the same capital. The resulting depth can improve both inputs to the impact oracle, support a wider probability band, and raise the cost of manipulation.
+Across a portfolio, insured minting can supply these claims without locking a separate fully collateralised dollar behind every low-probability branch. The same provider capital can support more event-market supply and more branch collateral for corrective positions in the separate conditional markets. The resulting depth can improve both inputs to the impact oracle, support a wider probability band, and raise the cost of manipulation.
 
 ## Event-conditional impact futures
 
