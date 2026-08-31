@@ -135,7 +135,7 @@ The baseline design addresses this problem by accepting observations only while 
 
 The oracle calculates `impact_TWAP` from the most recent 24 cumulative eligible hours before resolution. Ineligible periods are skipped, and later eligible observations after re-entry displace earlier ones rather than leaving the window frozen at an obsolete exit.  
 
-If fewer than 24 eligible hours exist, the impact future refunds. The ordinary event and conditional markets retain their own settlement rules. The probability band, duration, and market-quality requirement are design parameters. The shared-collateral design below can support a wider band than separately collateralised markets if its corrected claims produce measurably better prices near the extremes.  
+If fewer than 24 eligible hours exist, the impact future refunds. The ordinary event and conditional markets retain their own settlement rules. The probability band, duration, and market-quality requirement are design parameters. The portfolio-insured design below can support a wider band than separately collateralised markets if its claims produce measurably better prices near the extremes.  
 
 ## The capital-efficiency limitation  
 
@@ -143,25 +143,15 @@ The separate impact future fixes circularity, but the baseline source-market des
 
 Across many markets, much of this collateral can remain idle. Ten separate one-dollar conditional positions across ten events require ten dollars of collateral even if their included branches are all improbable and few are expected to occur. This makes a portfolio of low-probability conditional markets expensive to supply.  
 
-## A shared-collateral design for low-probability branches  
+## Portfolio-insured collateral for low-probability branches  
 
-The event-market layer can instead use the [shared-collateral design for highly improbable events](https://ethresear.ch/t/prediction-market-design-for-betting-on-many-highly-improbable-events/8280/). Combine one low-probability branch from each of several events or decisions in a single pool. If several bundled events occur, each triggered YES token pays `1 / winner_count`. Its raw price is therefore not the probability of that event and cannot enter the binary oracle unchanged.  
+The [shared-collateral design for highly improbable events](https://ethresear.ch/t/prediction-market-design-for-betting-on-many-highly-improbable-events/8280/) illustrates the problem with pooling rare branches directly. If several bundled events occur, each triggered YES token pays `1 / winner_count`. Its raw price is therefore not the probability of that event, a conditional market collateralised by it inherits the same multiplicity exposure, and the bundle cannot settle until its final winner count is known. These claims cannot enter the ordinary binary oracle unchanged.  
 
-Some examples event classes are:  
+Instead, [portfolio-insured minting](https://distbit.xyz/insured-prediction-market-minting/) keeps each event branch as an isolated binary claim and moves diversification to an insurance provider's balance sheet. The provider issues undercollateralised YES claims across a risk-assessed portfolio. Each claim pays one dollar if its own branch occurs and zero otherwise, regardless of other outcomes, so different event markets can resolve independently.  
 
-- Regulatory, legal, and political surprises  
-- Protocol governance and roadmap outcomes  
-- Security and solvency failures  
+The conditional-asset market remains separate and uses the insured branch claim as collateral. The impact oracle takes `p_yes(t)` from the event claim's executable secondary-market price, not the provider's fee-inclusive mint quote. Because the branch claims retain standard payoffs, the ordinary binary decomposition applies without a `winner_count` adjustment.  
 
-A pool should combine branches driven by different causes rather than many events that would occur together during one crypto-wide crisis. Each branch also needs objective resolution, compatible payout bounds and timing, and a liquid spot market for the affected asset.  
-
-The cleanest correction is to pair each diluted event and conditional-asset claim with a co-occurrence top-up that restores its full binary payoff. This moves joint-tail risk into a shared margin or insurance layer, after which the wrapped claims can use the ordinary impact oracle. Correcting the raw pooled quote instead would require additional prices for joint event-count states and their relationship with the asset.  
-
-Because `winner_count` is unknown until every bundled event resolves, the pool needs a common accounting horizon. An event known earlier can end its own impact-observation window, and a false result can reduce required top-up margin, but a winning top-up remains provisional until the horizon fixes the final count. Grouping events into resolution epochs bounds this delay.  
-
-Across a portfolio of these markets, the pool and top-up layer can supply full-payoff branch collateral for multiple events instead of requiring a separate fully collateralised unit for each one. The impact future remains a separate derivative, but its source markets become more capital efficient.  
-
-This capital efficiency directly addresses those pricing failures. Shared collateral lets traders bet against several improbable event outcomes without locking almost one dollar separately behind each small potential profit. It also reduces the capital tied up by corrective trades in the conditional markets. Traders can therefore make larger corrections to both the event probability and the conditional price with the same capital. The resulting depth makes both inputs more accurate, improves the impact oracle, and raises the cost of manipulation.  
+Across a portfolio, insured minting can supply these claims without locking a separate fully collateralised dollar behind every low-probability branch. The same provider capital can support more event-market supply and more branch collateral for corrective positions in the separate conditional markets. The resulting depth can improve both inputs to the impact oracle, support a wider probability band, and raise the cost of manipulation.  
 
 ## Event-conditional impact futures  
 
@@ -175,7 +165,9 @@ The trade-off is renewed exposure to event probability: the position’s dollar 
 
 ## A two-instrument anchored alternative  
 
-Another approach keeps the original two outcome instruments and anchors part of their terminal spread to a realised payoff. Fix `anchor_probability` from an independent event market at a defined snapshot. The anchor pays `spot / anchor_probability` after YES and `-spot / (1-anchor_probability)` after NO, giving it an expected value of `price_yes - price_no` at that snapshot.  
+Another approach keeps the original two outcome instruments and anchors part of their terminal spread to a realised payoff. The numerical `anchor_probability` is not fixed when the instrument opens. The oracle reads it once from the final eligible pre-resolution observation in the independent event market, using the same probability band and market-quality requirements as the impact TWAP. It then reads `anchor_spot` once at the first predefined observation immediately after resolution, minimising unrelated movement while allowing the event to affect the asset price. Neither input is continuously reset.  
+
+The realised anchor pays `anchor_spot / anchor_probability` after YES and `-anchor_spot / (1-anchor_probability)` after NO. At the probability observation, its expected value is `price_yes - price_no`. Sampling spot at that pre-resolution observation instead would make the spot already known and the anchor's expected value zero.  
 
 Set the terminal YES-minus-NO spread to:  
 
@@ -183,7 +175,7 @@ Set the terminal YES-minus-NO spread to:
 
 Under simple no-arbitrage pricing, any positive `anchor_weight` makes the conditional spread the unique fixed point, so no third instrument is required.  
 
-The anchor reintroduces outcome risk and requires a manipulation-resistant probability snapshot. A larger weight reduces the influence of the self-referential TWAP and corrects mispricing more strongly, but increases payoff variance and collateral requirements. A smaller weight more closely preserves the original outcome-independent payoff but provides a weaker practical anchor. Because inverse-probability payouts become large near 0% or 100%, this approach is most plausible away from extreme probabilities.  
+The anchor reintroduces outcome risk. A larger weight reduces the influence of the self-referential TWAP and corrects mispricing more strongly, but increases payoff variance and collateral requirements. A smaller weight more closely preserves the original outcome-independent payoff but provides a weaker practical anchor. Restricting the probability input to eligible observations also prevents inverse-probability payouts from being calculated in the excluded extreme-probability regimes.  
 
 ## Is this relevant to futarchy (decision markets) or only event-conditional markets?  
 
