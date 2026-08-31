@@ -38,23 +38,23 @@ For the midterm example, a `BTC | Republicans lose` claim pays according to Bitc
 
 ## Why impact exposure is useful  
 
-The difference between the two conditional prices is the event’s market-implied counterfactual impact spread on the asset:  
+The difference between the two conditional prices is the market-implied scenario spread used here as the event’s impact estimate:  
 
 `impact(t) = price_yes(t) - price_no(t)`  
 
-It is counterfactual because only one outcome will occur. The market can observe Bitcoin’s eventual price in the realised world, but it can never observe Bitcoin’s price at the same time in the unrealised world. Conditional markets allow traders to estimate both sides before the event occurs.  
+Only one outcome will occur, so the market can observe Bitcoin’s eventual price in the realised world but never its price at the same time in the unrealised world. Conditional markets allow traders to estimate both scenarios before the event occurs.  
 
-Suppose the market prices Bitcoin at `$110,000` if Republicans lose and `$100,000` if they retain control, implying a `+$10,000` impact spread. A trader who expects a Republican loss to cause larger institutional reallocations into Bitcoin than the market currently prices may estimate the spread at `+$15,000`, while having no view on whether Republicans will actually lose. Impact exposure lets them trade that disagreement without betting on the election result or Bitcoin’s unrelated price movements.  
+Suppose the market prices Bitcoin at `$110,000` if Republicans lose and `$100,000` if they retain control, implying a `+$10,000` spread. A trader who expects the market near the election to price the scenarios `$15,000` apart can trade that disagreement without a direct binary payoff on the election result and with reduced exposure to unrelated Bitcoin price movements.  
 
-This instrument prices how the market expects the event to affect the asset. It does not reveal the event’s objectively true causal effect, because the unrealised counterfactual cannot be observed.  
+This instrument prices the market’s estimate of the scenario difference near the event, not an objectively scored causal effect. Common causes can affect both the event and the asset. Absent such confounding, sufficient liquidity should make the spread close to the price impact eventually incorporated into spot, since the same informed traders can trade on the same information in both markets.  
 
 ## Why ordinary conditional futures are not impact futures  
 
 A long YES position and a short NO position of equal size does not settle to the event's impact. The winning conditional future settles to the asset’s spot price `S`, and the losing conditional future settles to 0. If YES occurs, the combined position settles to `+S`. If NO occurs, it settles to `-S`. The position is a directional bet on the outcome and on the spot level, not a bet on the pre-event spread `price_yes - price_no`.  
 
-The trader can exit before resolution, but the position remains exposed to changes in event probability and to asset-price movements unrelated to the event until it is closed. For a long-running election market, a Bitcoin move caused by interest rates, regulation, or macro conditions can dominate the PnL of a trader who only intended to speculate on the election’s impact.  
+The trader can exit before resolution, but the position remains exposed to changes in event probability and to asset-price movements unrelated to the event until it is closed. For a long-running election market, a Bitcoin move caused by interest rates, regulation, or macro conditions can dominate the PnL of a trader who only intended to speculate on the scenario spread.  
 
-A trader might instead buy the asset in the YES-conditional market and short an equal amount in the spot market. The resulting spread, `price_yes - spot`, still does not isolate impact. Spot reflects the probability-weighted average of the conditional prices,  
+A trader might instead buy the asset in the YES-conditional market and short an equal amount in the spot market. The resulting spread, `price_yes - spot`, still does not isolate impact. Assuming the spot-adjusted or maturity-matched base and the conditional prices use the same horizon, numeraire, discounting, and carry, spot reflects the probability-weighted average of the conditional prices,  
 
 `spot(t) = p_yes(t) · price_yes(t) + (1-p_yes(t)) · price_no(t)`,  
 
@@ -87,15 +87,15 @@ The design defines `I` from the pre-resolution spread between the YES and NO pri
 
 Suppose traders coordinate on an expected spread of `$10,000`. The settlement rule then gives the two claims a `$10,000` terminal spread, which validates prices with a `$10,000` spread, so the oracle reports `I = $10,000`.  
 
-The same loop works for `$5,000`, `$20,000`, or any other feasible constant spread. Each expected value can make itself correct because the settlement rule turns that expectation into the claims’ terminal payoff difference. Nothing outside the two markets selects one of those values as the event’s impact.  
+The same loop works for `$5,000`, `$20,000`, or any other feasible constant spread. Each expected value can make itself correct because the settlement rule turns that expectation into the claims’ terminal payoff difference. Nothing outside the two markets selects one of those values as the scenario spread.  
 
 The design therefore has many self-consistent fixed points rather than one market-discovered value. Making both legs settle in both worlds solves the outcome-dependent payoff problem only after `I` is known; it does not provide a non-circular way to determine `I`.  
 
 ## A separate impact-spread future  
 
-The circularity disappears if the conditional markets retain settlement rules that do not depend on `I`, while a separate derivative derives the spread from these independently formed market prices. Keep the ordinary YES and NO conditional markets, but use only one of their prices in each oracle observation.  
+The circularity disappears if the conditional markets retain settlement rules that do not depend on `I`, while a separate derivative derives the spread from these independently formed market prices. Keep the ordinary YES and NO conditional markets and use every branch whose post-normalisation error meets the oracle threshold.  
 
-The oracle uses the spot asset price, the event probability, and one conditional asset price. The relationship between them is:  
+The oracle uses the spot asset price, the event probability, and the usable conditional asset prices. Under the compatible-pricing assumption above, the relationship between them is:  
 
 `spot(t) = p_yes(t) · price_yes(t) + (1-p_yes(t)) · price_no(t)`.  
 
@@ -107,13 +107,17 @@ If the NO conditional price is used, it is:
 
 `impact(t) = (spot(t) - price_no(t)) / p_yes(t)`.  
 
-At each observation, the oracle uses the conditional price for the highest-probability available outcome. Traders have stronger incentives to correct that price because its claim is more likely to pay, which generally makes the market deeper and harder to manipulate than the low-probability branch.  
+When both branches are usable, the oracle combines their implied spreads using weights based on post-normalisation error. The weighting accounts for liquidity, source error, shared-input covariance, and probability amplification rather than selecting a branch solely because it is deeper or has a larger unscaled signal. If only one branch qualifies, the oracle uses it only while its amplified error remains within the threshold.  
 
 Define `I = impact_TWAP`, where `impact_TWAP` is a pre-resolution time-weighted average of this implied spread over an eligible observation window. Add a separate cash-settled impact future whose terminal value is `I` regardless of which event outcome occurs.  
 
 A long entered at impact-futures price `F_0` earns `I - F_0`. A short earns `F_0 - I`. If a trader buys at `$10,000` and the final impact TWAP is `$15,000`, the long earns `$5,000` whether Republicans lose or retain control.  
 
-The payoff provides direct exposure to how the market will come to price the event’s counterfactual effect on the asset. It is a claim on the final market-implied distance between the two possible worlds, rather than a claim on which world occurs.  
+The payoff provides direct exposure to the market’s final pre-resolution estimate of the scenario spread. A trader profits only if the source markets come to price the scenarios farther apart than the entry price; the instrument does not score the unrealised counterfactual.  
+
+An absolute-dollar spread is suited to hedging a fixed quantity of the asset. A percentage spread such as `price_yes / price_no - 1`, or a log-price difference, is likely more suited to speculation when unrelated moves scale both branch prices proportionally, because it remains unchanged if both prices multiply by the same factor.  
+
+The payoff has no direct binary dependence on which outcome occurs, but it is not free of probability exposure. Event probability affects estimator weights and amplification, observation eligibility, and refund risk.  
 
 The separate future does not determine the settlement values of its source markets. The spot, event-probability, and selected conditional prices therefore provide external inputs to the impact future. Within this architecture, the third derivative is what breaks the circularity.  
 
@@ -123,15 +127,15 @@ The baseline design defines `p_yes(t)` as the YES price in the event prediction 
 
 Extreme probabilities make both the event probability and the low-probability conditional price unreliable. In a standard fully collateralised prediction market, correcting a 5% YES price downward requires buying NO for about `$0.95` to earn at most `$0.05`. Buying YES requires only `$0.05`. As YES approaches 0%, betting against it locks increasingly more capital relative to the available profit. This weakens downward correction and allows the prices of genuinely improbable events to remain too high. Near 100%, the same problem applies to the NO outcome.  
 
-The low-probability conditional market has a related problem: traders receive little expected compensation for committing capital to correct a claim that is unlikely to settle. The oracle therefore uses the higher-probability conditional price when it is available.  
+The low-probability conditional market has a related problem: traders receive little expected compensation for committing capital to correct a claim that is unlikely to settle. Its price may therefore be less reliable even though it provides a less amplified estimate of the spread.  
 
-Using the higher-probability conditional price avoids the least reliable branch, but it does not remove the extreme-probability problem. When NO is almost certain, `price_no` lies very close to spot, and the oracle divides that small difference by `p_yes`. Pricing errors in spot, event probability, or the selected conditional price are therefore magnified. Impact-future holders also have an incentive to manipulate these inputs during the settlement window.  
+The higher-probability branch is often deeper, but its price lies closer to spot and the oracle divides that small difference by the low outcome probability. Pricing errors are therefore more strongly amplified. The oracle weighting balances this amplification against each branch’s liquidity and source error. Impact-future holders also have an incentive to manipulate these inputs during the settlement window.  
 
-The baseline design addresses this problem by accepting observations only while `p_yes(t)` is between 5% and 95%. This interval is the probability band, and an observation inside it is in-band. The band excludes the extreme regimes where event and conditional prices are hardest to correct and where the impact formula most strongly magnifies pricing or manipulation errors. Using the higher-probability conditional market further raises the cost of manipulating the selected price. An in-band observation is eligible only if the event, spot, and selected conditional markets also satisfy minimum-depth or execution-quality requirements.  
+The baseline design addresses this problem by accepting observations only while `p_yes(t)` is between 5% and 95%. This interval is the probability band, and an observation inside it is in-band. The band excludes the extreme regimes where event and conditional prices are hardest to correct and where the impact formula most strongly magnifies pricing or manipulation errors. An in-band observation is eligible only if the event, spot, and source conditional markets also satisfy minimum-depth or execution-quality requirements.  
 
-If probability never leaves the band, the observation window ends at resolution. Otherwise, it ends at the final pre-resolution exit: the last time `p_yes(t)` crosses from inside the band to outside it. The oracle calculates `impact_TWAP` from the final 24 hours of cumulative eligible observations ending at that point, so later extreme-probability prices cannot affect settlement.  
+The oracle calculates `impact_TWAP` from the most recent 24 cumulative eligible hours before resolution. Ineligible periods are skipped, and later eligible observations after re-entry displace earlier ones rather than leaving the window frozen at an obsolete exit.  
 
-If fewer than 24 eligible hours exist, the impact future refunds. The ordinary event and conditional markets retain their own settlement rules. The 5% and 95% thresholds, 24-hour duration, and market-quality requirement are design parameters.  
+If fewer than 24 eligible hours exist, the impact future refunds. The ordinary event and conditional markets retain their own settlement rules. The probability band, duration, and market-quality requirement are design parameters. The shared-collateral design below can support a wider band than separately collateralised markets if its corrected claims produce measurably better prices near the extremes.  
 
 ## The capital-efficiency limitation  
 
@@ -141,7 +145,7 @@ Across many markets, much of this collateral can remain idle. Ten separate one-d
 
 ## A shared-collateral design for low-probability branches  
 
-The event-market layer can instead use the [shared-collateral design for highly improbable events](https://ethresear.ch/t/prediction-market-design-for-betting-on-many-highly-improbable-events/8280/). Combine one low-probability branch from each of several events or decisions in a single shared-collateral prediction market. Create a standard conditional market for each included branch, but no corresponding conditional market for its complementary branch. Each conditional market remains two-sided and otherwise works like any other conditional market. The efficiency comes from pooling branches across events when the number included exceeds the number expected to occur.  
+The event-market layer can instead use the [shared-collateral design for highly improbable events](https://ethresear.ch/t/prediction-market-design-for-betting-on-many-highly-improbable-events/8280/). Combine one low-probability branch from each of several events or decisions in a single pool. If several bundled events occur, each triggered YES token pays `1 / winner_count`. Its raw price is therefore not the probability of that event and cannot enter the binary oracle unchanged.  
 
 Some examples event classes are:  
 
@@ -151,17 +155,11 @@ Some examples event classes are:
 
 A pool should combine branches driven by different causes rather than many events that would occur together during one crypto-wide crisis. Each branch also needs objective resolution, compatible payout bounds and timing, and a liquid spot market for the affected asset.  
 
-The impact oracle applies the same spot-and-probability derivation used in the previous design. Because this design normally creates a conditional market only for the low-probability branch, the oracle uses that branch’s price. If a separate conditional market for the complementary, higher-probability branch also exists, the oracle prefers its more reliable price.  
+The cleanest correction is to pair each diluted event and conditional-asset claim with a co-occurrence top-up that restores its full binary payoff. This moves joint-tail risk into a shared margin or insurance layer, after which the wrapped claims can use the ordinary impact oracle. Correcting the raw pooled quote instead would require additional prices for joint event-count states and their relationship with the asset.  
 
-Consider a market that prices a 10% chance that Republicans lose and a spot Bitcoin price of `$102,000`. If the shared pool provides only a YES conditional price of `$120,000`, the implied impact is:  
+Because `winner_count` is unknown until every bundled event resolves, the pool needs a common accounting horizon. An event known earlier can end its own impact-observation window, and a false result can reduce required top-up margin, but a winning top-up remains provisional until the horizon fixes the final count. Grouping events into resolution epochs bounds this delay.  
 
-`($120,000 - $102,000) / 90% = $20,000`.  
-
-If a separate NO conditional market also provides a usable price of `$100,000`, the oracle prefers that higher-probability branch and obtains the same spread:  
-
-`($102,000 - $100,000) / 10% = $20,000`.  
-
-Across a portfolio of these markets, one pool can provide the branch collateral underlying conditional markets for multiple events or decisions instead of requiring a separate fully collateralised unit for each event. The shared collateral applies across the included branches; trading within each branch’s conditional market remains standard. The impact future remains a separate derivative, but the markets supplying its oracle become more capital efficient.  
+Across a portfolio of these markets, the pool and top-up layer can supply full-payoff branch collateral for multiple events instead of requiring a separate fully collateralised unit for each one. The impact future remains a separate derivative, but its source markets become more capital efficient.  
 
 This capital efficiency directly addresses those pricing failures. Shared collateral lets traders bet against several improbable event outcomes without locking almost one dollar separately behind each small potential profit. It also reduces the capital tied up by corrective trades in the conditional markets. Traders can therefore make larger corrections to both the event probability and the conditional price with the same capital. The resulting depth makes both inputs more accurate, improves the impact oracle, and raises the cost of manipulation.  
 
@@ -169,11 +167,11 @@ This capital efficiency directly addresses those pricing failures. Shared collat
 
 The impact future itself can also be conditional on the selected event branch. It uses the same branch-token type as collateral and settlement numeraire as the corresponding conditional asset market. If the branch occurs, a long earns `impact_TWAP - entry_price` and a short earns the inverse. If the complementary branch occurs, the branch token and both impact positions pay zero.  
 
-This structure suits hedgers who face a loss only if the event occurs. For example, a DeFi treasury that expects a stablecoin depeg to reduce ETH more than the market implies could short the depeg-conditional impact future. A more negative impact increases the short’s payoff, and the hedge pays only if the depeg occurs.  
+This structure suits hedgers who face a loss only if the event occurs. For example, a DeFi treasury that expects ETH to be lower in the depeg scenario than the market implies could short the depeg-conditional impact future. A more negative impact increases the short’s payoff, and the hedge pays only if the depeg occurs.  
 
 Because an improbable branch token is worth less in dollar terms than unconditional collateral, the trader can fully collateralise the position in branch tokens without locking the same dollar value. The design also avoids introducing another collateral-token type. It still requires a separate impact market, and tokens locked in one market cannot simultaneously collateralise another.  
 
-The trade-off is renewed exposure to event probability: the position’s dollar price reflects both the expected impact and the chance that the branch occurs. It is therefore less suitable for traders who want pure impact exposure regardless of the realised outcome.  
+The trade-off is renewed exposure to event probability: the position’s dollar price reflects both the expected spread and the chance that the branch occurs. It is therefore less suitable for traders who want outcome-independent spread exposure.  
 
 ## A two-instrument anchored alternative  
 
@@ -189,9 +187,9 @@ The anchor reintroduces outcome risk and requires a manipulation-resistant proba
 
 ## Is this relevant to futarchy (decision markets) or only event-conditional markets?  
 
-Long-duration event markets create the clearest demand for impact futures. An election, court judgment, war, or protocol upgrade may remain unresolved for months. Traders and hedgers plausibly desire impact exposure during that period, while unrelated moves in the underlying asset add noise to an ordinary conditional position.  
+Long-duration event markets create the clearest demand for impact futures. An election, court judgment, war, or protocol upgrade may remain unresolved for months. Traders and hedgers plausibly desire scenario-spread exposure during that period, while unrelated moves in the underlying asset add noise to an ordinary conditional position.  
 
-Decision markets have a different timing constraint. The mechanism chooses when to make the decision, so it can keep the trading period brief. MetaDAO, for example, currently describes a three-day conditional trading period. A shorter period reduces the probability that unrelated asset-price shocks occur while the trader holds the position. It concentrates the decision’s expected impact relative to other sources of volatility.  
+Decision markets have a different timing constraint. The mechanism chooses when to make the decision, so it can keep the trading period brief. MetaDAO, for example, currently describes a three-day conditional trading period. A shorter period reduces the probability that unrelated asset-price shocks occur while the trader holds the position. It concentrates the proposal-related signal relative to other sources of volatility.  
 
 Fast decision markets work best when traders can react quickly and expect the market to incorporate their information quickly. AI agents can make this more practical because they can monitor, analyse, trade, and update quotes with lower latency than human-only markets.  
 
@@ -199,12 +197,12 @@ Under those conditions, a trader can take an unhedged position in whichever cond
 
 This approximation fails when the market needs a long time to understand why a trader acted. A trader may need to hold the position beyond the intended decision time before other participants price in the information which lead them to trade. During that delay, interest rates, market-wide volatility, or asset-specific news can dominate the trade’s PnL and make the original information trade less attractive.  
 
-Impact futures do not solve slow post-decision information incorporation. They depend on two live counterfactual conditional prices and therefore end when the decision is made and one branch becomes unrealised. They cannot continue providing isolated exposure to the decision’s counterfactual impact after the decision has occurred.  
+Impact futures do not solve slow post-decision information incorporation. They depend on live conditional prices and therefore end when the decision is made and one branch becomes unrealised. They cannot continue providing isolated exposure to the scenario spread after the decision has occurred.  
 
 Impact futures therefore have no clear role in a decision market when a short market duration is feasible. They become useful if the decision market must remain open long enough for unrelated asset volatility to become material, for example because traders react slowly, proposals require extended evaluation, or liquidity develops gradually. They isolate the conditional spread during that longer pre-decision period. They do not solve decision-selection bias or make the unrealised outcome observable after the decision.  
 
-## Goal-advancement update — 2026-08-30  
+## Revision status — 2026-08-30  
 
-The earlier draft above is retained as revision history but is superseded for publication by https://distbit.xyz/actually-impact-futures/. The live version implements the requested causal-language, final-market-estimate, payoff-unit, branch-weighting, and probability-exposure corrections. It also repairs linked specification errors: the pricing identity now states its replication assumptions; sustained exits and re-entry replace the obsolete one-crossing rule; pooled `1 / winner_count` tail claims no longer feed the binary oracle unchanged; and the anchor, margin, event-conditional, and short-decision-market limits are explicit. impact-futures-publication-correction records the concise change set and deployment evidence.  
+The draft above and the local publication source incorporate the accepted changes from response-to-critique. A previous automated publication also added collateral, event-conditional, anchored-alternative, and short-decision-market qualifications that the user rejected; those changes have been removed locally but not redeployed. impact-futures-publication-correction records that earlier deployment.  
 
 If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
