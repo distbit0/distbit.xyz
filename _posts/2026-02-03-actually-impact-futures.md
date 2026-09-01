@@ -44,7 +44,7 @@ Only one outcome will be realised, but conditional markets let traders price bot
 
 Suppose the market prices Bitcoin at `$110,000` if Republicans lose and `$100,000` if they retain control, implying a `+$10,000` event spread. A trader who expects the market near the election to price the outcomes `$15,000` apart could trade the change in that gap directly. Because the payoff is indexed to the difference between the conditional prices rather than either price level, it eliminates undesired payoff variance from Bitcoin movements due to factors unrelated to the event in question.  
 
-The primary use is hedging event-related price exposure. An asset holder can combine opposite positions in the two conditional impact futures to offset changes in the event spread while retaining exposure to the asset's other price movements. An outcome-independent version can instead be constructed by bundling same-direction positions in the same contracts, creating a speculative prediction market on the event spread rather than a hedging product.  
+The primary use developed below is hedging event-related price exposure: offsetting changes in the event spread while retaining exposure to the asset's other price movements.  
 
 ## Why ordinary conditional futures do not provide this hedge  
 
@@ -89,31 +89,9 @@ The same loop works for `$5,000`, `$20,000`, or any other feasible constant spre
 
 The design therefore has many self-consistent fixed points rather than one market-discovered value. Making both legs settle in both worlds solves the outcome-dependent payoff problem only after the spread is known; it does not provide a non-circular way to determine it.  
 
-## A realised-anchor two-instrument alternative  
-
-The circularity can be removed by averaging an externally determined realised payoff rather than the instruments' own spread. At every observation within a predefined probability band, record `probability_a(t)` and `spot(t)` simultaneously. After the market resolves, record `resolution_spot` at the first predefined observation after resolution. For each such time, calculate:  
-
-- under outcome A, `anchor_slice(t) = (resolution_spot - spot(t)) / probability_a(t)`;  
-- under outcome B, `anchor_slice(t) = -(resolution_spot - spot(t)) / (1-probability_a(t))`.  
-
-Set the terminal A-minus-B spread to the time-weighted average of these `anchor_slice` values. The corresponding settlement values can then be constructed in the same way as in the first design: one leg settles to `resolution_spot` and the other is offset by the realised anchor TWAP.  
-
-At each observation, probability-weighting the outcome-A payoff gives `price_a(t) - spot(t)`, while probability-weighting the outcome-B payoff gives `-(price_b(t) - spot(t))`. Their sum is therefore:  
-
-`price_a(t) - price_b(t)`.  
-
-The natural A-minus-B position is therefore speculative: its expected exposure to a signed event spread points in the same direction under either outcome. A hedge must instead be short the spread under outcome A and long it under outcome B. Because the anchor slices divide by outcome probability, scaling them to those opposing state exposures gives:  
-
-- under outcome A, `-probability_a(t) · anchor_slice(t) = spot(t) - resolution_spot`;  
-- under outcome B, `(1-probability_a(t)) · anchor_slice(t) = spot(t) - resolution_spot`.  
-
-Both reduce to shorting the asset's entire price change from observation to resolution, including movements unrelated to the event. The realised anchor cannot isolate event-related price exposure. That requires opposite outcome-conditional positions settled from the independently measured event-spread index described below.  
-
-The anchor should determine the full terminal spread. Mixing it with a TWAP of the instruments' own quoted spread would reintroduce the dynamic attenuation that the anchor is meant to remove. The cost is outcome-dependent payoff variance, especially near extreme probabilities. The independently measured index below is therefore the simpler and lower-variance baseline.  
-
 ## An independent impact-spread index  
 
-The circularity also disappears if the conditional markets retain independent settlement rules while an oracle derives an event-spread index from their prices. This index can settle a distinct impact future instrument without feeding back the values of its source markets. The oracle uses spot, outcome probability, and whichever conditional quotes are available.  
+The circularity disappears if the conditional markets retain independent settlement rules while an oracle derives an event-spread index from their prices. This index can settle a distinct impact future instrument without feeding back the values of its source markets. The oracle uses spot, outcome probability, and whichever conditional quotes are available.  
 
 If the outcome-A conditional price is used, its implied event-spread estimate is:  
 
@@ -133,31 +111,29 @@ The oracle uses the most recent 24 cumulative eligible hours before resolution. 
 
 Define `impact_TWAP` as the pre-resolution time-weighted average of the combined implied spread over that eligible observation window. The spot, outcome-probability, and selected conditional prices are external inputs, so the index does not create the settlement fixed point of the first design.  
 
+## Why an unconditional impact future is not a hedge  
+
+The simplest derivative on the index would be an unconditional impact future. A long entered at `entry_price` would earn `impact_TWAP - entry_price` whichever outcome is realised, while a short would earn the inverse. This gives traders a direct way to speculate on how the market-implied event spread will change.  
+
+It does not hedge an asset holder's event-related price exposure. If the A-minus-B spread widens, the asset becomes more valuable under outcome A relative to outcome B. A hedge must therefore lose value under outcome A and gain value under outcome B. An unconditional long or short pays in the same direction under both outcomes, so it cannot offset both sides of this exposure.  
+
 ## Outcome-conditional impact futures  
 
-Outcome-conditional impact futures are what is described above except using outcome-dependent collateral. Each uses the same outcome-claim type as collateral and settlement numeraire as the corresponding conditional asset market. If the market resolves to that outcome, they settle to `impact_TWAP`. Under the other outcome, the collateral claim and any impact positions pay zero.  
+The solution is to create one impact future for each outcome. Each uses the matching outcome claim as collateral and settlement numeraire. If that outcome is realised, a long earns `impact_TWAP - entry_price` and a short earns the inverse. Under the other outcome, the collateral claim and both positions pay zero.  
 
-A single conditional leg suits exposure concentrated in one outcome. For example, a treasury that wants protection against a fall in the A-minus-B spread specifically under outcome A can short the outcome-A conditional impact future. The position gains as the spread falls and pays only under outcome A. An absolute-dollar spread naturally matches a hedge for a fixed quantity of the asset.  
+An asset holder can then short the impact future conditional on outcome A and long the one conditional on outcome B. When the event spread widens, the short reduces the holder's relative gain under outcome A, while the long offsets the relative loss under outcome B. When the spread narrows, the payoffs reverse. The pair therefore isolates changes in the event-related difference between the two asset prices while leaving price movements common to both outcomes unhedged.  
 
-Because a claim for a low-probability outcome is worth less in dollar terms than unconditional collateral, the trader can fully collateralise the position in outcome claims without locking the same dollar value. The design also avoids introducing another collateral-token type. It still requires a separate impact market, and claims locked in one market cannot simultaneously collateralise another.  
+For one unit of asset exposure, a `$1` widening of the spread creates a `$1` increase in the difference between the outcome-A and outcome-B asset values. Each unit short under outcome A removes `$1` from the A side of that change, while each unit long under outcome B adds `$1` to the B side. The two hedge notionals must therefore add to one unit. Half a unit in each market treats the outcomes symmetrically.  
 
-The trade-off is outcome-probability exposure: the position’s dollar price reflects both the expected spread and the probability of the selected outcome. It also retains basis risk because settlement tracks the market's pre-resolution estimate rather than the holder's realised loss.  
+The pricing identity above gives a spot-centred allocation: short `1-probability_a` units under outcome A and long `probability_a` units under outcome B. This follows because `price_a - spot = (1-probability_a) · impact` and `spot - price_b = probability_a · impact`. The weights can be rebalanced as probability changes. A full unit in each market would total two units and reverse the exposure rather than cancel it.  
 
-### Hedging exposure under both outcomes  
+Because each future pays only the change from its entry price, the hedge locks the event spread at entry rather than erasing the spread already priced then. Its dollar value also depends on outcome probability, since each leg pays only under one outcome, and settlement retains basis risk because it tracks the market's pre-resolution estimate rather than the holder's realised loss.  
 
-A holder of one unit of the asset under either outcome needs a hedge that also settles under either outcome. Let `short_notional_a` denote the short notional in the outcome-A conditional impact future and `long_notional_b` the long notional in the outcome-B conditional impact future. For a change in the event spread, the remaining difference between the two outcome-dependent portfolio changes is:  
+## Deriving the unconditional impact future  
 
-`(1 - short_notional_a - long_notional_b) · change_in_impact`.  
+The unconditional instrument does not need its own market. A wrapper can bundle matched same-direction positions in the two outcome-conditional impact futures with the same entry price and notional. Exactly one leg pays after resolution, so a long bundle earns `impact_TWAP - entry_price` under either outcome. A short bundle earns the inverse.  
 
-Any allocation satisfying `short_notional_a + long_notional_b = 1` therefore hedges changes in the asset-price difference between the outcomes. Equal half-unit positions treat the outcomes symmetrically. Under the pricing identity above, the spot-centred allocation shorts `1-probability_a` units under outcome A and longs `probability_a` units under outcome B: at a given probability, these match the asset's respective impact sensitivities around the probability-weighted spot price. The weights use the probability at hedge inception and can be rebalanced as it changes. Because each future pays the change from its entry price, the hedge locks the event spread at entry rather than erasing the spread already priced then.  
-
-The hedge uses one unit of total notional, not one unit in each conditional market. A full-unit short under outcome A combined with a full-unit long under outcome B reverses the asset's sensitivity to changes in the event spread instead of cancelling it. These opposite-direction positions also differ from the same-direction bundle below, which pays the same impact-future PnL under either outcome and therefore does not offset outcome-specific asset movements.  
-
-### Optional outcome-independent bundle  
-
-An outcome-independent impact contract would mainly be a speculative prediction market on the event's impact, rather than a risk-transfer instrument. It need not have an independent market. A wrapper can bundle matched same-direction outcome-A and outcome-B conditional impact futures with the same entry price and notional. One leg pays under each outcome, so a long bundle earns `impact_TWAP - entry_price` regardless of the resolution. It has no direct dependence on which outcome is realised, although outcome probabilities still affect the underlying index.  
-
-Where hedging demand is concentrated in one outcome, the impact future conditional on the other outcome will likely attract little demand in isolation, although two-outcome hedgers still use it as part of the offsetting position above. Bundling both legs reuses the conditional contracts, whereas creating a separate outcome-independent order book would duplicate the payoff and unnecessarily split their liquidity. A scale-invariant bundle could instead use conditional contracts defined on `log(price_a / price_b)`, but it would not consolidate trading with the dollar-denominated contracts used for hedging.  
+This creates a speculative prediction market on the event spread from the contracts already used for hedging. A separate unconditional order book would duplicate the same payoff and split liquidity across markets.  
 
 ## The capital-efficiency limitation  
 
@@ -173,7 +149,7 @@ Instead, [portfolio-insured minting](https://distbit.xyz/insured-prediction-mark
 
 The conditional-asset market remains separate and simply uses the insured outcome claim as collateral. The impact oracle takes `probability_a(t)` from the secondary-market price of the outcome-A claim, not the provider's fee-inclusive mint quote. Because the claims retain standard payoffs, the ordinary two-outcome decomposition applies without a cross-market multiplicity adjustment.  
 
-Across a portfolio, insured minting can supply these claims without locking a separate fully collateralised dollar behind every low-probability outcome. It reduces the capital cost of betting against overpriced low-probability claims and therefore, ceteris paribus, improves their pricing accuracy. It also makes more outcome claims available as collateral for conditional futures. These improvements support a wider eligible probability band than the separately fully collateralised design.  
+Across a portfolio, insured minting can supply these claims without locking a separate fully collateralised dollar behind every low-probability outcome. It reduces the capital cost of betting against overpriced low-probability claims and therefore, ceteris paribus, improves their pricing accuracy. It also makes more outcome claims available as collateral for conditional impact futures. These improvements support a wider eligible probability band than the separately fully collateralised design, and reduce hedging costs.  
 
 ## Is this relevant to futarchy (decision markets) or only outcome-conditional markets?  
 
