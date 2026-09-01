@@ -32,7 +32,7 @@ If the two conditional prices are `$110,000` and `$100,000`, the market is prici
 
 Conditional markets already exist in practice. [MetaDAO](https://docs.metadao.fi/governance/markets) runs pass and fail markets that price a project’s token under each proposal outcome. [Proof](https://www.proof.trade/) describes “Multiverse Markets” that price assets such as BTC, ETH, gold, and crude oil under different outcomes.  
 
-A simple abstraction is to run a standard asset-futures market for each outcome and collateralise it with the matching `$1` outcome claim. The future associated with the realised outcome settles at the asset's nominal price, while the other becomes worthless. Throughout this article, `price_a(t)` and `price_b(t)` refer to those conditional futures quotes. Outcomes A and B are arbitrary labels, not value judgements or shorthand for occurrence and non-occurrence.  
+The article assumes a separate asset-futures market for each outcome, collateralised by claims that pay `$1` only if that outcome occurs. The future associated with the realised outcome settles at the asset's nominal price, while the other becomes worthless. Throughout, `price_a(t)` denotes the asset-futures quote conditional on outcome A at observation time `t`; `price_b(t)` denotes the corresponding quote conditional on outcome B.   
 
 ## Why impact exposure is useful  
 
@@ -40,11 +40,9 @@ The difference between the two conditional prices is the market-implied event sp
 
 `impact(t) = price_a(t) - price_b(t)`  
 
-Only one outcome will be realised, but conditional markets let traders price both possible worlds beforehand. Swapping the A and B labels reverses the sign of the spread without changing its economic meaning.  
+Only one outcome will be realised, but conditional markets let traders price both possible worlds beforehand.   
 
 Suppose the market prices Bitcoin at `$110,000` if Republicans lose and `$100,000` if they retain control, implying a `+$10,000` event spread. A trader who expects the market near the election to price the outcomes `$15,000` apart could trade the change in that gap directly. Because the payoff is indexed to the difference between the conditional prices rather than either price level, it eliminates undesired payoff variance from Bitcoin movements due to factors unrelated to the event in question.  
-
-This spread is not automatically an identified causal effect: common causes can affect both the event and the asset. It is the price difference that traders expect the spot market to incorporate between the two outcomes. Because the same participants can trade the conditional and spot markets using the same information, there is a direct reason for the estimate to track the price effect those participants would incorporate into spot in either world.  
 
 The primary use is hedging event-related price exposure. An asset holder can combine opposite positions in the two conditional impact futures to offset changes in the event spread while retaining exposure to the asset's other price movements. An outcome-independent version can instead be constructed by bundling same-direction positions in the same contracts, creating a speculative prediction market on the event spread rather than a hedging product.  
 
@@ -104,7 +102,12 @@ At each observation, probability-weighting the outcome-A payoff gives `price_a(t
 
 `price_a(t) - price_b(t)`.  
 
-This gives every observation an externally anchored expected value equal to the event spread. The payout slices themselves must be averaged; separately averaging their inputs would not preserve this relationship because the inverse-probability terms are nonlinear.  
+The natural A-minus-B position is therefore speculative: its expected exposure to a signed event spread points in the same direction under either outcome. A hedge must instead be short the spread under outcome A and long it under outcome B. Because the anchor slices divide by outcome probability, scaling them to those opposing state exposures gives:  
+
+- under outcome A, `-probability_a(t) · anchor_slice(t) = spot(t) - resolution_spot`;  
+- under outcome B, `(1-probability_a(t)) · anchor_slice(t) = spot(t) - resolution_spot`.  
+
+Both reduce to shorting the asset's entire price change from observation to resolution, including movements unrelated to the event. The realised anchor cannot isolate event-related price exposure. That requires opposite outcome-conditional positions settled from the independently measured event-spread index described below.  
 
 The anchor should determine the full terminal spread. Mixing it with a TWAP of the instruments' own quoted spread would reintroduce the dynamic attenuation that the anchor is meant to remove. The cost is outcome-dependent payoff variance, especially near extreme probabilities. The independently measured index below is therefore the simpler and lower-variance baseline.  
 
@@ -120,11 +123,11 @@ If the outcome-B conditional price is used, its estimate is:
 
 `outcome_b_implied_spread(t) = (spot(t) - price_b(t)) / probability_a(t)`.  
 
-Under the pricing identity above, these are two estimates of the same event spread. When both quotes are available, the oracle always combines the estimates according to a disclosed rule that weights their relative reliability. Weighting the outcome-A-derived estimate by `1-probability_a` and the outcome-B-derived estimate by `probability_a` exactly produces the direct difference `price_a - price_b`, but those mechanical weights need not be best when one conditional quote is much less reliable than the other. If only one quote is available, the oracle can use the estimate derived from that quote, spot, and probability.  
+Under the pricing identity above, these are two estimates of the same event spread. When both quotes are available, the oracle always combines the estimates according to a disclosed rule that weights their relative reliability. Weighting the outcome-A-derived estimate by `1-probability_a` and the outcome-B-derived estimate by `probability_a` exactly produces the direct difference `price_a - price_b`, but those mechanical weights need not be best when one conditional quote is much less reliable than the other. If only one quote is available, the oracle can use an impact estimate derived from that quote, spot, and probability.  
 
-Probability amplification is the main conceptual trade-off. At `probability_a = 5%`, the outcome-B-derived estimate divides its input difference by `0.05`, so a `$1` input error becomes a `$20` spread error. The outcome-A-derived estimate divides by `0.95`, but its source quote comes from the lower-probability outcome and can be harder to price accurately. The reliability weighting balances these two sources of error rather than selecting an outcome mechanically. Its exact specification is an implementation detail.  
+Probability amplification is the main conceptual trade-off. At `probability_a = 5%`, the outcome-B-derived estimate divides its input difference by `0.05`, so a `$1` input error becomes a `$20` spread error. The outcome-A-derived estimate divides by `0.95`, but its source quote comes from the lower-probability outcome and can be harder to price accurately. The reliability weighting balances these two sources of error rather than selecting an outcome mechanically. Its exact specification is out of scope.  
 
-The baseline accepts observations only while `probability_a(t)` is between 5% and 95%. This is the probability band. An eligible observation is a synchronous sample of probability, spot, and at least one conditional quote taken while probability is in-band. In particular, the spot used for the final eligible observation must be sampled at the same time as its probability, not at a later time.  
+The baseline accepts observations only while `probability_a(t)` is between 5% and 95%. This is the permitted probability band. An eligible observation is a synchronous sample of probability, spot, and at least one conditional quote taken while probability is in-band. In particular, the spot used for the final eligible observation must be sampled at the same time as its probability, not at a later time.  
 
 The oracle uses the most recent 24 cumulative eligible hours before resolution. Ineligible periods are skipped, and later eligible observations after re-entry displace older ones. If fewer than 24 eligible hours exist, contracts using the index refund. The exact safeguards governing disconnected or stale observations remain implementation details to be worked out.  
 
@@ -132,7 +135,7 @@ Define `impact_TWAP` as the pre-resolution time-weighted average of the combined
 
 ## Outcome-conditional impact futures  
 
-The basic instruments are impact futures conditional on each outcome. Each uses the same outcome-claim type as collateral and settlement numeraire as the corresponding conditional asset market. If the market resolves to that outcome, a long earns `impact_TWAP - entry_price` and a short earns the inverse. Under the other outcome, the collateral claim and both impact positions pay zero.  
+Outcome-conditional impact futures are what is described above except using outcome-dependent collateral. Each uses the same outcome-claim type as collateral and settlement numeraire as the corresponding conditional asset market. If the market resolves to that outcome, they settle to `impact_TWAP`. Under the other outcome, the collateral claim and any impact positions pay zero.  
 
 A single conditional leg suits exposure concentrated in one outcome. For example, a treasury that wants protection against a fall in the A-minus-B spread specifically under outcome A can short the outcome-A conditional impact future. The position gains as the spread falls and pays only under outcome A. An absolute-dollar spread naturally matches a hedge for a fixed quantity of the asset.  
 
