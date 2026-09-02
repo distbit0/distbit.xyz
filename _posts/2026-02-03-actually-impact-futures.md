@@ -59,6 +59,8 @@ The event spread is a market-implied comparison between outcomes, not by itself 
 
 An ordinary prediction-market position can approximate the hedge by fixing a payment for one outcome. After observing a `$10,000` event spread in the conditional markets, a holder of one Bitcoin could short `10,000` outcome-A claims or buy `10,000` outcome-B claims, assuming each claim pays `$1`.   
 
+Standard conditional markets are therefore highly complementary with event markets even when the expected impact is stable enough that a fixed event-market position requires little rebalancing. The event market supplies the outcome-contingent payment, while the conditional spread supplies a market-informed hedge ratio for a given amount of asset exposure. Without that spread, the holder must guess the event's expected impact or infer it from historical co-movement between the asset price and outcome probability. The latter is noisy; when the expected impact changes, it is also backward-looking and cannot reflect the revision until it appears in enough new joint price history.  
+
 The required number of claims changes with the impact estimate, not with outcome probability alone. If the position remains sized for a `$10,000` spread after the estimate rises to `$20,000`, it leaves `$10,000` of residual outcome exposure. This difference between the current exposure and the fixed hedge amount is the hedge's rebalancing basis.  
 
 Probability changes while the impact estimate remains stable require no rebalance and create no such basis. Impact changes at a stable probability can be corrected at roughly unchanged prediction-market prices, so the basis can be kept small at little cost apart from spreads, fees, and the delay before the trade. The prediction-market substitute becomes less effective when the impact estimate and outcome probability change together: the required hedge amount changes while the price of correcting it also changes. Its rebalancing cost and risk therefore depend on impact turnover and how strongly impact changes coincide with probability changes.  
@@ -166,7 +168,7 @@ The conditional-asset market remains separate and simply uses the insured outcom
 
 Across a portfolio, insured minting can supply these claims without locking a separate fully collateralised dollar behind every low-probability outcome. It reduces the capital cost of betting against overpriced low-probability claims and therefore, ceteris paribus, improves their pricing accuracy. It also makes more outcome claims available as collateral for conditional impact contracts. These improvements support a wider eligible probability band than the separately fully collateralised design, and reduce hedging costs.  
 
-## Is this relevant to futarchy (decision markets) or only outcome-conditional markets?  
+## Is this relevant to futarchy (decision-markets) or only to passive event markets?  
 
 Long-duration event markets create the clearest demand for impact futures. An election, court judgment, war, or protocol upgrade may remain unresolved for months. Traders may want event-spread exposure during that period, while unrelated moves in the underlying asset add noise to an ordinary conditional position.  
 
