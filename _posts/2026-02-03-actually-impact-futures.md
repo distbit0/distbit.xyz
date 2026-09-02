@@ -30,7 +30,7 @@ Consider the next US midterm elections, with two relevant outcomes. A pair of Bi
 
 If the two conditional prices are `$110,000` and `$100,000`, the market is pricing a `$10,000` difference between those two possible political outcomes.   
 
-Conditional markets already exist in practice. [MetaDAO](https://docs.metadao.fi/governance/markets) runs pass and fail markets that price a project’s token under each proposal outcome. [Proof](https://www.proof.trade/) describes “Multiverse Markets” that price assets such as BTC, ETH, gold, and crude oil under different outcomes.  
+Conditional markets already exist in practice. [Butter](https://butter.markets/) has deployed event-conditional markets that price an asset under specified outcomes. [MetaDAO](https://docs.metadao.fi/governance/markets) runs pass and fail markets that price a project’s token under each proposal outcome. [Proof](https://www.proof.trade/) describes “Multiverse Markets” that price assets such as BTC, ETH, gold, and crude oil under different outcomes.  
 
 The article assumes a separate asset-futures market for each outcome, collateralised by claims that pay `$1` only if that outcome occurs. The future associated with the realised outcome settles at the asset's nominal price, while the other becomes worthless. Throughout, `price_a(t)` denotes the asset-futures quote conditional on outcome A at observation time `t`; `price_b(t)` denotes the corresponding quote conditional on outcome B.   
 
@@ -57,13 +57,15 @@ The event spread is a market-implied comparison between outcomes, not by itself 
 
 ## Why prediction-market positions require rebalancing  
 
-An ordinary prediction-market position can approximate the hedge by fixing a payment for one outcome. After observing a `$10,000` event spread in the conditional markets, a holder of one Bitcoin could short `10,000` outcome-A claims or buy `10,000` outcome-B claims, assuming each claim pays `$1`. These alternatives differ only by a payment that is the same under both outcomes, so splitting the hedge between them is unnecessary. The problem is that the number of claims remains fixed while the estimated impact can change.  
+An ordinary prediction-market position can approximate the hedge by fixing a payment for one outcome. After observing a `$10,000` event spread in the conditional markets, a holder of one Bitcoin could short `10,000` outcome-A claims or buy `10,000` outcome-B claims, assuming each claim pays `$1`.   
 
-Suppose the position is sized for a `$10,000` event spread. If new information later raises the spread to `$20,000`, the original position covers only half of the exposure. The holder must trade again at the new outcome-claim prices. This becomes costly or unreliable when outcome probabilities move materially before the impact estimate changes, or when the impact changes too suddenly to rebalance before resolution.  
+The required number of claims changes with the impact estimate, not with outcome probability alone. If the position remains sized for a `$10,000` spread after the estimate rises to `$20,000`, it leaves `$10,000` of residual outcome exposure. This difference between the current exposure and the fixed hedge amount is the hedge's rebalancing basis.  
 
-This approach is adequate when impact volatility is small, or when most uncertainty about the impact is resolved within a short final interval in which the hedge can be resized once. Impact estimates can instead remain volatile when an election's expected policy consequences change with projected governing margins, a court case's expected remedy changes during proceedings, or analysis of a protocol proposal reveals a bug or previously missed economic interaction.  
+Probability changes while the impact estimate remains stable require no rebalance and create no such basis. Impact changes at a stable probability can be corrected at roughly unchanged prediction-market prices, so the basis can be kept small at little cost apart from spreads, fees, and the delay before the trade. The prediction-market substitute becomes less effective when the impact estimate and outcome probability change together: the required hedge amount changes while the price of correcting it also changes. Its rebalancing cost and risk therefore depend on impact turnover and how strongly impact changes coincide with probability changes.  
 
-An impact-indexed contract adjusts its terminal payment with the spread, avoiding repeated rebalancing and the risk that a sudden revision leaves the holder underhedged. It also gives speculators a direct way to profit from forecasting the impact estimate, allowing them to supply the other side of trades demanded by hedgers.  
+This approach is adequate when impact volatility is small, or when material impact revisions occur during periods of low probability volatility. Concentrating most impact uncertainty in a short final interval helps only if probability is also stable during that interval and the holder has time to resize the hedge. A revision too close to resolution is the same basis problem with too little time to correct it. Impact estimates can remain volatile when an election's expected policy consequences change with projected governing margins, a court case's expected remedy changes during proceedings, or analysis of a protocol proposal reveals a bug or previously missed economic interaction.  
+
+An impact-indexed contract removes this rebalancing basis at settlement by adjusting its payment with the spread. It also gives speculators a direct way to profit from forecasting the impact estimate, allowing them to supply the other side of trades demanded by hedgers.  
 
 ## Why ordinary conditional futures do not provide this exposure  
 
@@ -93,10 +95,10 @@ Let `endogenous_spread_TWAP` be a pre-resolution time-weighted average of:
 
 The proposed settlement rule was:  
 
-- under outcome A, settle the A leg to `settlement_spot` and the B leg to `settlement_spot - endogenous_spread_TWAP`;  
-- under outcome B, settle the B leg to `settlement_spot` and the A leg to `settlement_spot + endogenous_spread_TWAP`.  
+- under outcome A, settle the A leg to `settlement_spot_a` and the B leg to `settlement_spot_a - endogenous_spread_TWAP`;  
+- under outcome B, settle the B leg to `settlement_spot_b` and the A leg to `settlement_spot_b + endogenous_spread_TWAP`.  
 
-These are synthetic contract values, not different settlement prices for Bitcoin. The leg matching the realised outcome is anchored to the observed spot price. Because the other outcome is not observed, the design assigns its leg a synthetic value offset by the spread. The two legs therefore cease to be ordinary conditional futures: each has a terminal value under both outcomes. For example, with `settlement_spot = \\(100,000` and `endogenous_spread_TWAP = +\\)10,000`, outcome A gives the A and B legs values of `$100,000` and `$90,000`; outcome B gives them values of `$110,000` and `$100,000`. The A-minus-B position is worth `+$10,000` in either case.  
+The leg matching the realised outcome is anchored to that outcome's observed spot price. Because the other outcome is not observed, the design assigns its leg a synthetic value offset by the spread. The two legs therefore cease to be ordinary conditional futures: each has a terminal value under both outcomes. For example, suppose Bitcoin settles at `$110,000` if A occurs and at `$100,000` if B occurs, consistent with a `+$10,000` spread. Under A, the A leg is anchored to `$110,000` and the B leg is assigned `$100,000`. Under B, the B leg is anchored to `$100,000` and the A leg is assigned `$110,000`. The A-minus-B position is worth `+$10,000` in either case.  
 
 ## Why the first design is circular  
 
@@ -138,21 +140,19 @@ The simplest derivative on the index would be an unconditional impact claim that
 
 It cannot implement the hedge calculated above. That hedge requires a spread payment under one outcome but not the other. An unconditional position has the same directional payoff under both outcomes, so adding it to the asset does not make the holder's combined payoff outcome-independent.  
 
-## Outcome-conditional impact claims  
-
-The hedging implementation offers one linear impact claim for each outcome. Each settles to the full `impact_TWAP` if its outcome is realised and to zero otherwise. A hedger needs only one: shorting the outcome-A claim preserves the outcome-B asset value, while buying the outcome-B claim preserves the outcome-A value. Settling to the full spread keeps the chosen offset aligned with the estimated exposure and makes the combined asset-and-hedge payoff independent of the outcome.  
-
-The claims' market values before resolution still depend on outcome probability. Settlement also retains basis risk because it follows the market's final pre-resolution estimate rather than the holder's realised loss.  
+The hedging implementation requires one linear impact claim for each outcome. Each settles to the full `impact_TWAP` if its outcome is realised and to zero otherwise. A hedger needs only one: shorting the outcome-A claim preserves the outcome-B asset value, while buying the outcome-B claim preserves the outcome-A value. Settling to the full spread keeps the chosen offset aligned with the estimated exposure and makes the combined asset-and-hedge payoff independent of the outcome.  
 
 ## Deriving the unconditional impact future  
 
-The unconditional instrument does not need its own market. A wrapper can bundle matched same-direction positions in the two outcome-conditional impact claims. Exactly one claim pays after resolution, so a long bundle settles to `impact_TWAP` under either outcome. A short bundle has the inverse payoff.  
+An unconditional impact future is a claim that settles to `impact_TWAP` whichever outcome is realised. It provides a direct way to speculate on the direction and magnitude of the market-implied event spread, but is not useful for transferring the outcome-contingent risk described above.  
 
-This creates a speculative prediction market on the event spread from the contracts already used for hedging. A separate unconditional order book would duplicate the same payoff and split liquidity across markets.  
+The instrument does not need its own market. A wrapper can bundle matched same-direction positions in the two outcome-conditional impact claims. Exactly one claim pays after resolution, so a long bundle settles to `impact_TWAP` under either outcome. A short bundle has the inverse payoff. This creates the unconditional instrument from the contracts already used for hedging; a separate order book would duplicate the same payoff and split liquidity across markets.  
 
 ## The capital-efficiency limitation  
 
-The independent index fixes circularity, but the baseline source-market design still requires one dollar of collateral per dollar of conditional notional for each market question or decision. The two outcome claims are mutually exclusive and already share that dollar. The inefficiency is therefore not duplicated collateral between outcomes, but rather is the need to fully collateralise each separate question or decision, while positions in the conditional asset and impact markets lock outcome collateral separately.  
+The independent index fixes circularity, but the baseline source-market design still requires one dollar of collateral per dollar of conditional notional for each market question or decision. The two outcome claims are mutually exclusive and already share that dollar. The inefficiency is therefore not duplicated collateral between outcomes, but rather is the need to fully collateralise each separate event's conditional markets, even for events with low probability.  
+
+Examples of low-probability outcomes with large potential asset-price spreads include a stablecoin depeg of a specified severity, an exchange insolvency determination, a critical protocol exploit, or a particular judgment in litigation affecting a token. These are valuable impact-hedging candidates precisely because an unlikely outcome could materially change the holder's wealth. Yet a fully collateralised one-dollar claim on an outcome priced at five cents still locks one dollar of collateral.  
 
 Across many markets, much of this collateral can remain idle. Ten separate one-dollar conditional positions across ten questions require ten dollars of collateral even if they use low-probability outcomes and few are expected to be realised. This makes a portfolio of low-probability conditional markets expensive to supply.  
 
