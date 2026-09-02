@@ -40,7 +40,7 @@ An impact future is a derivative whose underlying is the market-implied event sp
 
 `impact(t) = price_a(t) - price_b(t)`  
 
-There are two main use cases: hedging and speculation.  
+For the instruments developed here, the two direct financial uses are hedging and speculation.  
 
 For hedging, consider someone who holds one Bitcoin and wants their payoff to be independent of the election outcome. Let the terminal event spread be `terminal_impact`. One minimal hedge is to short one unit of a full-spread contract conditional on outcome A. The holder's payoff is then:  
 
@@ -65,7 +65,7 @@ The required number of claims changes with the impact estimate, not with outcome
 
 Probability changes while the impact estimate remains stable require no rebalance and create no such basis. Impact changes at a stable probability can be corrected at roughly unchanged prediction-market prices, so the basis can be kept small at little cost apart from spreads, fees, and the delay before the trade. The prediction-market substitute becomes less effective when the impact estimate and outcome probability change together: the required hedge amount changes while the price of correcting it also changes. Its rebalancing cost and risk therefore depend on impact turnover and how strongly impact changes coincide with probability changes.  
 
-This approach is adequate when impact volatility is small, or when material impact revisions occur during periods of low probability volatility. Concentrating most impact uncertainty in a short final interval helps only if probability is also stable during that interval and the holder has time to resize the hedge. A revision too close to resolution is the same basis problem with too little time to correct it. Impact estimates can remain volatile when an election's expected policy consequences change with projected governing margins, a court case's expected remedy changes during proceedings, or analysis of a protocol proposal reveals a bug or previously missed economic interaction.  
+This approach is adequate when impact volatility is small, or when material impact revisions occur during periods of low probability volatility. Impact estimates can remain volatile when an election's expected policy consequences change with projected governing margins, a court case's expected remedy changes during proceedings, or analysis of a protocol proposal reveals a bug or previously missed economic interaction.  
 
 An impact-indexed contract removes this rebalancing basis at settlement by adjusting its payment with the spread. It also gives speculators a direct way to profit from forecasting the impact estimate, allowing them to supply the other side of trades demanded by hedgers.  
 
@@ -86,6 +86,16 @@ It follows that:
 `price_a(t) - spot(t) = (1-probability_a(t)) · (price_a(t) - price_b(t))`.  
 
 The multiplier `(1-probability_a(t))` collapses as outcome A approaches certainty. The conditional-to-spot difference therefore approaches zero even if the counterfactual spread between outcomes A and B remains large.  
+
+## Is this relevant to futarchy (decision-markets) or only to passive event markets?  
+
+The three broad applications of event-related markets are speculation, hedging, and information production for decisions, often called InfoFi. The preceding sections principally concern speculation and hedging. Impact futures are more applicable to those financial uses than to InfoFi.  
+
+Long-duration event markets create the clearest demand for impact futures. An election, court judgment, war, or protocol upgrade may remain unresolved for months. Traders may want event-spread exposure during that period, while unrelated moves in the underlying asset add noise to an ordinary conditional position.  
+
+In the decision-market form of InfoFi, markets can instead use a sufficiently short trading interval and read the conditional comparison at the decision cutoff. MetaDAO, for example, describes a three-day conditional trading period. Over a short enough interval, exogenous asset-price movement is negligible relative to proposal-related repricing, so a trader can simply take an unhedged position in the conditional market they believe is wrong. Ceteris paribus, AI agents make this approximation more practical by analysing information and updating prices faster.  
+
+Under those conditions, a dedicated impact future has no clear role. It becomes useful if evaluation must remain open long enough for unrelated asset movement to become material. It isolates the event spread during that longer pre-decision period, but it cannot continue after the decision makes one outcome unrealised, solve decision-selection bias, or make the counterfactual observable.  
 
 ## The first design: make both outcome legs settle  
 
@@ -112,9 +122,9 @@ The same loop works for `$5,000`, `$20,000`, or any other feasible constant spre
 
 The design therefore has many self-consistent fixed points rather than one market-discovered value. Making both legs settle in both worlds solves the outcome-dependent payoff problem only after the spread is known; it does not provide a non-circular way to determine it.  
 
-## An independent impact-spread index  
+## An independent impact-spread index from conditional markets  
 
-An oracle can derive an event-spread index from independently settled conditional markets. It uses spot, outcome probability, and whichever conditional quotes are available.  
+An oracle can derive an event-spread index from independently settled conditional markets. It uses spot, outcome probability, and whichever conditional quotes are available. These quotes are forward-looking market prices for the quantity being indexed. Unlike a mechanical estimate from a short series of probability and spot changes, they aggregate traders' forecasts without requiring settlement to extract the spread from a small number of observations. Their main practical cost is the need to create and maintain a separate sufficiently liquid conditional-asset market for each event.  
 
 If the outcome-A conditional price is used, its implied event-spread estimate is:  
 
@@ -124,9 +134,9 @@ If the outcome-B conditional price is used, its estimate is:
 
 `outcome_b_implied_spread(t) = (spot(t) - price_b(t)) / probability_a(t)`.  
 
-Under the pricing identity above, these are two estimates of the same event spread. When both quotes are available, the oracle always combines the estimates according to a disclosed rule that weights their relative reliability. Weighting the outcome-A-derived estimate by `1-probability_a` and the outcome-B-derived estimate by `probability_a` exactly produces the direct difference `price_a - price_b`, but those mechanical weights need not be best when one conditional quote is much less reliable than the other. If only one quote is available, the oracle can use an impact estimate derived from that quote, spot, and probability.  
+Under the pricing identity above, these are two estimates of the same event spread. When both quotes are available, the oracle always combines the estimates according to a disclosed rule that weights their relative reliability. If only one quote is available, the oracle can use an impact estimate derived from that quote, spot, and probability.  
 
-Probability amplification is the main conceptual trade-off. Suppose `probability_a = 5%` and the true event spread is `\\(10`. The difference `spot - price_b` is only `\\)0.50`, so the outcome-B-derived estimate recovers `$10` by dividing by `0.05`. A `$1` error in either input therefore becomes a `$20` error in the estimated spread.  
+Probability error amplification is the primary trade-off. Suppose `probability_a = 5%` and the true event spread is `\\(10`. The difference `spot - price_b` is only `\\)0.50`, so the outcome-B-derived estimate recovers `$10` by dividing by `0.05`. A `$1` error in either input therefore becomes a `$20` error in the estimated spread.  
 
 The outcome-A calculation has much less amplification: `price_a - spot` is `$9.50`, and dividing by `0.95` again produces `$10`, while a `$1` input error changes the estimate by only about `$1.05`. Its weakness is the source market. A claim paying `$1` under the 5% outcome is worth only about `$0.05`, so the same nominal liquidity commits much less economically valuable capital than it does under the 95% outcome. This makes the quote less robust. The reliability weighting balances the economic value of each source market's liquidity against the error amplification in its estimator. Its exact specification is out of scope.  
 
@@ -136,27 +146,93 @@ The oracle uses the most recent `observation_duration` of cumulative eligible ti
 
 Define `impact_TWAP` as the pre-resolution time-weighted average of the combined implied spread over that eligible observation window.  
 
+## A self-contained index from event beta  
+
+Conditional-asset quotes are not the only possible independent input. An oracle can instead estimate impact from joint changes in the event probability and the spot price. Over a short interval in which the two conditional asset values remain stable, the spot-pricing identity implies:  
+
+`change_spot(t) ≈ event_impact(t) · change_probability_a(t)`.  
+
+The slope of that relationship can be estimated as:  
+
+`event_beta = covariance(change_probability_a, change_spot) / variance(change_probability_a)`.  
+
+Beta, rather than correlation, is the relevant quantity because it retains units of asset-price change per unit probability change. This index requires an event-probability market and a spot oracle, but no separate conditional-asset market. It can therefore supply the settlement input for both unconditional speculative claims and outcome-conditional hedging claims when creating liquid conditional-asset markets would be uneconomic.  
+
+This estimate is associational. It recovers the event spread insofar that the observed correlation regime persists, the probability and spot observations are synchronised, and the conditional asset values do not change independently within the measurement interval. A market settlement rule that reduces random variance cannot remove bias caused by violations of these assumptions.  
+
+### Freshness versus measurement variance  
+
+A longer beta window contains more observations and reduces sampling variance, but it estimates the time-weighted average relationship across the regimes in that window. It is not a market forecast of the relationship that will prevail near resolution. If traders anticipate a change in the beta regime as the event approaches, a precisely measured historical beta can still be systematically wrong for the event spread they want to trade.  
+
+A short window close to resolution better targets the event-specific regime, but contains fewer probability changes and gives unrelated spot movements more influence. This creates a measurement-level bias-variance trade-off: freshness reduces historical-regime bias while increasing random and manipulation-induced variance. Settlement design can limit the effect of that random variance instead of reducing it by averaging across older, less relevant regimes. Whether an implementation uses the final resolution jump, a short pre-resolution beta window, or a disclosed combination is out of scope.  
+
+## Variance-reduced settlement from forecast errors  
+
+The event beta can determine settlement directly, but that transmits all of its measurement noise into the payoff. It can instead act as an external error signal for the impact market's own forecast. Let `market_impact_TWAP` be the pre-resolution full-spread estimate implied by the impact claims themselves. Together with the pre-event spot and probability, it implies the following branch forecasts:  
+
+`forecast_price_a = pre_event_spot + (1-probability_a) · market_impact_TWAP`.  
+
+`forecast_price_b = pre_event_spot - probability_a · market_impact_TWAP`.  
+
+If outcome A occurs, define `oriented_forecast_error` as `settlement_spot - forecast_price_a`. If outcome B occurs, define it as `forecast_price_b - settlement_spot`. The reversed sign under B makes a positive error mean that `market_impact_TWAP` understated the spread under either outcome.   
+
+Suppose outcome A has 90% probability, pre-event spot is `\\(100`, and `market_impact_TWAP` is zero. If the true conditional values are `\\)101` under A and `$91` under B, their probability-weighted average is `$100` and their spread is `$10`. The oriented forecast error is `$1` under A and `$9` under B. The following rules allocate that error differently.  
+
+### Full statewise correction  
+
+Dividing the A error by `1-probability_a` and the B error by `probability_a` produces the direct resolution-jump beta. In the example, the A settlement correction is `$1 / 10% = $10`, while the B correction is `$9 / 90% = $10`. Either outcome therefore produces the correct impact in conditional expectation.  
+
+When A was already 90% likely, its resolution increases its probability by only 10 percentage points, from 90% to 100%. A `$10` error in the estimated impact therefore appears as only a `$1` error in the predicted A-conditional asset price: 90% of A's effect was already incorporated into spot. To recover the full `$10` spread error from that `$1` observation, the statewise rule divides it by the remaining 10% probability change.  
+
+The division cannot distinguish the event-related signal from another price movement occurring at the same time. If unrelated news, noise, or manipulation adds another `$1` to the observed A price, the measured forecast error becomes `$2` and the inferred impact becomes `$20` rather than `$10`. The unrelated `$1` has been amplified into a `$10` impact-estimation error. This amplification occurs under A, which resolves 90% of the time. Under B, probability moves by 90 percentage points, so dividing its larger price delta by 90% causes the same `$1` of noise to change the impact estimate by only about `$1.11`. Statewise correction makes either outcome accurate in conditional expectation when the observation is clean, but does so by assigning the greatest leverage to the common outcome's lowest-signal-to-noise observation.  
+
+### Reliability-weighted unconditional correction  
+
+Dividing the A error by `probability_a` and the B error by `1-probability_a` instead makes the unconditional expected correction equal the full impact forecast error. In the example, settlement is corrected by about `$1.11` under A and `$90` under B. The probability-weighted correction is still `$10`: 90% of `$1.11` plus 10% of `$90`.  
+
+This weighting avoids assigning excessive influence to the small absolute price delta observed when an already-likely outcome resolves. Fixed-size price noise or manipulation is large relative to that event-related delta, so it is a less reliable source of error information than the larger delta associated with the surprising outcome. When absolute residual noise is equal across outcomes and the market TWAP is close to the target, inverse-realised-outcome-probability weighting minimises the additive-noise contribution to ex ante variance among linear correction rules whose unconditional expected settlement equals the target impact. It does not minimise total settlement variance for every possible TWAP error. It is an instance of the more general principle that error observations should be weighted according to their estimated precision while preserving the intended expected correction.  
+
+Probability is only one reliability heuristic. Liquidity, observed volatility, oracle dispersion, time synchronisation, and the cost of moving the source price can imply different weights. The contract must specify its reliability rule in advance. Increasing the weight because the realised error itself is large would allow noise or manipulation to increase its own influence. Even with an appropriate rule, shifting correction away from common outcomes creates rare, extreme settlements and does not make each outcome's conditional expected settlement correct. It is therefore better suited to an unconditional speculative claim than to a hedge that depends on accuracy in one specified outcome.  
+
+### Unweighted low-gain correction  
+
+The non-amplifying version adds `oriented_forecast_error` directly to `market_impact_TWAP`, without dividing it by either probability:  
+
+`terminal_impact_index = market_impact_TWAP + oriented_forecast_error`.  
+
+In the example, the correction is `$1` under A and `$9` under B, so its expected value is only `$1.80`. More generally:  
+
+`expected_correction = 2 · probability_a · (1-probability_a) · (true_impact - market_impact_TWAP)`.  
+
+This rule does not make settlement's conditional or unconditional expected value equal the correct impact whenever the market TWAP is wrong. It instead gives the market a low-gain external error signal without amplifying random oracle noise or creating deliberately extreme tail corrections. Under the pricing assumptions above, any positive correction still makes the true impact the unique frictionless fixed point while both outcomes have nonzero probability. In practice, the alignment incentive becomes weak near extreme probabilities and can be outweighed by trading costs, risk aversion, or limited arbitrage capital.  
+
+A related self-resolving design could settle to the market's own TWAP in most cases and directly to the noisy external calculation in randomly selected cases. That also adds an external anchor, but concentrates the oracle's variance in the selected settlements. The unweighted rule instead uses the external observation every time at low gain, spreading its influence across all settlements without rare full-oracle resolution. This comparison assumes that obtaining the external observation for every settlement is feasible.  
+
+Settlement weighting therefore trades expected-value accuracy against noise and tail risk. Making settlement conditionally or unconditionally correct requires scaling the observed error enough to recover the full impact forecast error. This can assign extreme weight either to small, noisy deltas in common outcomes or to rare outcomes. Reliability weighting allocates more of the correction to observations expected to contain a stronger signal relative to their noise, improving the risk-adjusted incentive for the market price to track the intended underlying. Leaving the error unweighted avoids amplification but supplies only a partial expected correction. No rule simultaneously guarantees exact expected-value anchoring, low ordinary variance, and bounded rare-state corrections.  
+
+These rules reduce non-adversarial measurement noise; they are not manipulation-resistance mechanisms. A manipulator can influence `market_impact_TWAP` and may also influence the probability or spot inputs. The choice of oracle safeguards remains a separate problem.  
+
 ## Why an unconditional impact future is not a hedge  
 
-The simplest derivative on the index would be an unconditional impact claim that settles to `impact_TWAP` whichever outcome is realised. Traders could buy or short it to speculate on the market-implied event spread.  
+Call the final value produced by the contract's chosen index and correction rule `terminal_impact_index`. The simplest derivative on it is an unconditional impact claim that settles to `terminal_impact_index` whichever outcome is realised. Traders can buy or short it to speculate on the market-implied event spread.  
 
 It cannot implement the hedge calculated above. That hedge requires a spread payment under one outcome but not the other. An unconditional position has the same directional payoff under both outcomes, so adding it to the asset does not make the holder's combined payoff outcome-independent.  
 
-The hedging implementation requires one linear impact claim for each outcome. Each settles to the full `impact_TWAP` if its outcome is realised and to zero otherwise. A hedger needs only one: shorting the outcome-A claim preserves the outcome-B asset value, while buying the outcome-B claim preserves the outcome-A value. Settling to the full spread keeps the chosen offset aligned with the estimated exposure and makes the combined asset-and-hedge payoff independent of the outcome.  
+The hedging implementation requires one linear impact claim for each outcome. Each settles to the full `terminal_impact_index` if its outcome is realised and to zero otherwise. A hedger needs only one: shorting the outcome-A claim preserves the outcome-B asset value, while buying the outcome-B claim preserves the outcome-A value. Settling to the full index keeps the chosen offset aligned with the estimated exposure and makes the combined asset-and-hedge payoff independent of the outcome relative to that index. A low-gain self-contained rule can leave residual hedge basis when its market TWAP is wrong. Full statewise beta correction reduces that basis at the cost of greater settlement noise.  
 
 ## Deriving the unconditional impact future  
 
-An unconditional impact future is a claim that settles to `impact_TWAP` whichever outcome is realised. It provides a direct way to speculate on the direction and magnitude of the market-implied event spread, but is not useful for transferring the outcome-contingent risk described above.  
+An unconditional impact future is a claim that settles to `terminal_impact_index` whichever outcome is realised. It provides a direct way to speculate on the direction and magnitude of the market-implied event spread, but is not useful for transferring the outcome-contingent risk described above.  
 
-The instrument does not need its own market. A wrapper can bundle matched same-direction positions in the two outcome-conditional impact claims. Exactly one claim pays after resolution, so a long bundle settles to `impact_TWAP` under either outcome. A short bundle has the inverse payoff. This creates the unconditional instrument from the contracts already used for hedging; a separate order book would duplicate the same payoff and split liquidity across markets.  
+The instrument does not need its own market. A wrapper can bundle matched same-direction positions in the two outcome-conditional impact claims. Exactly one claim pays after resolution, so a long bundle settles to `terminal_impact_index` under either outcome. A short bundle has the inverse payoff. The sum of the two claims' contemporaneous quotes supplies the full-spread market estimate used to calculate `market_impact_TWAP`. This creates the unconditional instrument and its quote from the contracts already used for hedging; a separate order book would duplicate the same payoff and split liquidity across markets.  
 
 ## The capital-efficiency limitation  
 
-The independent index fixes circularity, but the baseline source-market design still requires one dollar of collateral per dollar of conditional notional for each market question or decision. The two outcome claims are mutually exclusive and already share that dollar. The inefficiency is therefore not duplicated collateral between outcomes, but rather is the need to fully collateralise each separate event's conditional markets, even for events with low probability.  
+Whichever index is used, the hedging implementation still requires outcome-conditional impact claims. The two outcome claims within one event are mutually exclusive and can share collateral, but a fully collateralised design must reserve the specified maximum liability for each separate event. The inefficiency is therefore not duplicated collateral between the two outcomes of one event, but rather the inability to reuse that collateral across separate events, including events with low probability. A self-contained beta index removes the additional requirement for liquid conditional-asset source markets; it does not remove the collateral requirement of the outcome-conditional impact claims themselves. A conditional-market-derived index bears both requirements.  
 
-Examples of low-probability outcomes with large potential asset-price spreads include a stablecoin depeg of a specified severity, an exchange insolvency determination, a critical protocol exploit, or a particular judgment in litigation affecting a token. These are valuable impact-hedging candidates precisely because an unlikely outcome could materially change the holder's wealth. Yet a fully collateralised one-dollar claim on an outcome priced at five cents still locks one dollar of collateral.  
+Examples of low-probability outcomes with large potential asset-price spreads include a stablecoin depeg of a specified severity, an exchange insolvency determination, a critical protocol exploit, or a particular judgment in litigation affecting a token. These are valuable impact-hedging candidates precisely because an unlikely outcome could materially change the holder's wealth. Yet one dollar of maximum payout conditional on an outcome priced at five cents still locks one dollar of collateral.  
 
-Across many markets, much of this collateral can remain idle. Ten separate one-dollar conditional positions across ten questions require ten dollars of collateral even if they use low-probability outcomes and few are expected to be realised. This makes a portfolio of low-probability conditional markets expensive to supply.  
+Across many markets, much of this collateral can remain idle. Ten separate one-dollar conditional impact positions across ten questions require ten dollars of collateral even if they use low-probability outcomes and few are expected to be realised. This makes a portfolio of low-probability conditional impact markets expensive to supply.  
 
 ## Portfolio-insured collateral for low-probability outcomes  
 
@@ -164,16 +240,8 @@ The [shared-collateral design for highly improbable events](https://ethresear.ch
 
 Instead, [portfolio-insured minting](https://distbit.xyz/insured-prediction-market-minting/) keeps each outcome claim isolated and moves diversification to an insurance provider's balance sheet. The provider issues undercollateralised claims for selected low-probability outcomes across a risk-assessed portfolio. Each claim pays one dollar when its market resolves to its associated outcome and zero under the alternative outcome, regardless of resolutions elsewhere, so different markets can resolve independently.  
 
-The conditional-asset market remains separate and simply uses the insured outcome claim as collateral. The impact oracle takes `probability_a(t)` from the secondary-market price of the outcome-A claim, not the provider's fee-inclusive mint quote. Because the claims retain standard payoffs, the ordinary two-outcome decomposition applies without a cross-market multiplicity adjustment.  
+Portfolio-insured outcome claims can support the conditional payout layer as long as each impact contract specifies a bounded payout range. In the conditional-market index design, the conditional-asset source market can use the same form of collateral; the self-contained design does not require that source market. The impact oracle takes `probability_a(t)` from the secondary-market price of the outcome-A claim, not the provider's fee-inclusive mint quote. Because the claims retain standard payoffs, the ordinary two-outcome decomposition applies without a cross-market multiplicity adjustment.  
 
-Across a portfolio, insured minting can supply these claims without locking a separate fully collateralised dollar behind every low-probability outcome. It reduces the capital cost of betting against overpriced low-probability claims and therefore, ceteris paribus, improves their pricing accuracy. It also makes more outcome claims available as collateral for conditional impact contracts. These improvements support a wider eligible probability band than the separately fully collateralised design, and reduce hedging costs.  
-
-## Is this relevant to futarchy (decision-markets) or only to passive event markets?  
-
-Long-duration event markets create the clearest demand for impact futures. An election, court judgment, war, or protocol upgrade may remain unresolved for months. Traders may want event-spread exposure during that period, while unrelated moves in the underlying asset add noise to an ordinary conditional position.  
-
-Decision markets can instead choose a sufficiently short trading interval. MetaDAO, for example, describes a three-day conditional trading period. Over a short enough interval, exogenous asset-price movement is negligible relative to proposal-related repricing, so a trader can simply take an unhedged position in the conditional market they believe is wrong. Ceteris paribus, AI agents make this approximation more practical by analysing information and updating prices faster.  
-
-Under those conditions, a dedicated impact future has no clear role. It becomes useful if evaluation must remain open long enough for unrelated asset movement to become material. It isolates the event spread during that longer pre-decision period, but it cannot continue after the decision makes one outcome unrealised, solve decision-selection bias, or make the counterfactual observable.  
+Across a portfolio, insured minting can supply these claims without locking a separate fully collateralised dollar behind every low-probability outcome. It reduces the capital cost of betting against overpriced low-probability claims and therefore, ceteris paribus, improves their pricing accuracy. It also makes more outcome claims available as collateral for conditional impact contracts and, when used, conditional-asset source markets. These improvements support a wider eligible probability band than the separately fully collateralised design, and reduce hedging costs.  
 
 If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
