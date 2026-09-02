@@ -34,25 +34,29 @@ Conditional markets already exist in practice. [MetaDAO](https://docs.metadao.fi
 
 The article assumes a separate asset-futures market for each outcome, collateralised by claims that pay `$1` only if that outcome occurs. The future associated with the realised outcome settles at the asset's nominal price, while the other becomes worthless. Throughout, `price_a(t)` denotes the asset-futures quote conditional on outcome A at observation time `t`; `price_b(t)` denotes the corresponding quote conditional on outcome B.   
 
-## Why impact exposure is useful  
+## What an impact future is and why it is useful  
 
-The difference between the two conditional prices is the market-implied event spread, used here as the event's impact estimate:  
+An impact future is a derivative whose underlying is the market-implied event spread: the difference between the asset's conditional prices under two outcomes. This spread is used here as the event's impact estimate:  
 
 `impact(t) = price_a(t) - price_b(t)`  
 
-Only one outcome will be realised, but conditional markets let traders price both possible worlds beforehand.   
+The instrument therefore provides direct exposure to the difference between the two prices, rather than to the asset's price under either outcome. A long gains when the A-minus-B spread rises; a short gains when it falls. This describes what an impact future affords, independently of the settlement designs considered later.  
 
-Suppose the market prices Bitcoin at `$110,000` if Republicans lose and `$100,000` if they retain control, implying a `+$10,000` event spread. A trader who expects the market near the election to price the outcomes `$15,000` apart could trade the change in that gap directly. Because the payoff is indexed to the difference between the conditional prices rather than either price level, it eliminates undesired payoff variance from Bitcoin movements due to factors unrelated to the event in question.  
+Suppose the market prices Bitcoin at `$110,000` under outcome A and `$100,000` under outcome B, implying a `+$10,000` event spread. A trader who expects the market near the election to price the outcomes `$15,000` apart can trade that view without also taking a position on Bitcoin's full price level. A Bitcoin movement that adds the same amount to both conditional prices cancels from the spread.  
 
-The primary use developed below is hedging event-related price exposure: offsetting changes in the event spread while retaining exposure to the asset's other price movements.  
+This direct exposure has both speculative and risk-transfer uses. An outcome-independent impact future acts as a prediction market on how the market-implied event spread will change. Outcome-conditional impact futures can instead be combined to hedge changes in the event-related difference between the two asset prices while retaining exposure to price movements common to both outcomes.  
 
-## Why ordinary conditional futures do not provide this hedge  
+The event spread is a market-implied comparison between outcomes, not by itself an identified causal effect. It measures the price difference traders expect the asset market to reflect near the event.  
 
-Ordinary conditional asset futures cannot provide this hedge because their payoff does not isolate the event spread. Suppose a trader goes long the asset through a future conditional on outcome A and shorts an equal amount through one conditional on outcome B. Only the future associated with the realised outcome settles, while the other settles to zero. The pair therefore pays `+settlement_spot` under outcome A and `-settlement_spot` under outcome B. Its value depends on which outcome occurs and on the asset's full price level, rather than offsetting changes in the pre-resolution spread `price_a - price_b` while leaving the holder's other asset exposure intact.  
+## Why ordinary conditional futures do not provide this exposure  
+
+An ordinary conditional asset future has a different underlying: the asset's price under one outcome, not the difference between its prices under two outcomes. Combining ordinary conditional futures therefore does not reproduce an impact future's exposure.  
+
+Suppose a trader goes long the asset through a future conditional on outcome A and shorts an equal amount through one conditional on outcome B. Only the future associated with the realised outcome settles, while the other settles to zero. The pair therefore pays `+settlement_spot` under outcome A and `-settlement_spot` under outcome B, rather than the pre-resolution spread `price_a - price_b`. Its value depends on which outcome occurs and on the asset's full price level. It consequently neither isolates the event spread for speculation nor offsets changes in the event-related part of an asset holder's exposure while leaving the rest intact.  
 
 The trader can exit before resolution, but the position remains exposed to changes in outcome probabilities and to asset-price movements unrelated to the event until it is closed. For a long-running election market, a Bitcoin move caused by interest rates, regulation, or macro conditions can dominate the PnL of a trader who only intended to speculate on the event spread.  
 
-A trader might instead buy the asset in the outcome-A conditional market and short an equal amount in the spot market. The resulting spread, `price_a - spot`, still does not isolate the event spread. Let `probability_a(t)` be the market-implied probability of outcome A. Under the pricing assumption used throughout this article, spot reflects the probability-weighted average of the conditional prices:  
+Nor does pairing one conditional future with spot solve the problem. A trader might buy the asset in the outcome-A conditional market and short an equal amount in the spot market, but the resulting difference, `price_a - spot`, still does not isolate the event spread. Let `probability_a(t)` be the market-implied probability of outcome A. Under the pricing assumption used throughout this article, spot reflects the probability-weighted average of the conditional prices:  
 
 `spot(t) = probability_a(t) · price_a(t) + (1-probability_a(t)) · price_b(t)`.  
 
@@ -119,7 +123,7 @@ It does not hedge an asset holder's event-related price exposure. If the A-minus
 
 ## Outcome-conditional impact futures  
 
-The solution is to create one impact future for each outcome. Each uses the matching outcome claim as collateral and settlement numeraire. If that outcome is realised, a long earns `impact_TWAP - entry_price` and a short earns the inverse. Under the other outcome, the collateral claim and both positions pay zero.  
+The solution is to create one impact future for each outcome. Each uses the matching outcome claim as collateral and settlement numeraire. If that outcome is realised, a long earns `impact_TWAP - entry_price` and a short earns the inverse. Under any other outcome, both positions pay zero.  
 
 An asset holder can then short the impact future conditional on outcome A and long the one conditional on outcome B. When the event spread widens, the short reduces the holder's relative gain under outcome A, while the long offsets the relative loss under outcome B. When the spread narrows, the payoffs reverse. The pair therefore isolates changes in the event-related difference between the two asset prices while leaving price movements common to both outcomes unhedged.  
 
