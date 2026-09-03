@@ -17,7 +17,7 @@ title: Actually impact futures
 
 
 
-# (Actually) Impact Futures  
+# (Actually) impact futures  
 
 ## Event-conditional futures  
 
