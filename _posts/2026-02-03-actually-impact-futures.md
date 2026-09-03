@@ -30,7 +30,7 @@ Consider the next US midterm elections, with two relevant outcomes. A pair of Bi
 
 If the two conditional prices are `$110,000` and `$100,000`, the market is pricing a `$10,000` difference between those two possible political outcomes.   
 
-Several platforms have offerings which permit trading in markets conditional on different event outcomes. [Butter](https://butter.markets/) has previously deployed such markets, [Proof](https://www.proof.trade/) calls its version “Multiverse Markets,” and [if.market](https://www.if.market/), [Lightcone](https://lightcone.xyz/), and [Branchpoint](https://www.branchpoint.xyz/) are building or piloting similar markets. [MetaDAO](https://docs.metadao.fi/governance/markets) applies the design specifically to governance proposals.  
+Several platforms have offerings which permit trading in markets conditional on different event outcomes. [Butter](https://butter.markets/) has previously deployed such markets while [Proof](https://www.proof.trade/),  [if.market](https://www.if.market/), [Lightcone](https://lightcone.xyz/), and [Branchpoint](https://www.branchpoint.xyz/) are building or piloting similar markets. [MetaDAO](https://docs.metadao.fi/governance/markets) applies the design specifically to governance proposals.  
 
 The article assumes a separate asset-futures market for each outcome, collateralised by claims that pay `$1` only if that outcome occurs. The future associated with the realised outcome settles at the asset's nominal price, while the other becomes worthless. Throughout, `price_a(t)` denotes the asset-futures quote conditional on outcome A at observation time `t`; `price_b(t)` denotes the corresponding quote conditional on outcome B.   
 
