@@ -6,8 +6,10 @@ date: 2023-06-15 00:00
 description: null
 gist_url: https://gist.github.com/73e7ccffcb0e1215a24aa12313321945
 headerImage: false
+hidden: false
 layout: post
 live: true
+published: true
 tag:
 - ai
 - epistemology

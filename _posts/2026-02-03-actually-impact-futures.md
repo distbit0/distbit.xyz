@@ -6,10 +6,10 @@ date: 2026-02-03 00:00
 description: ''
 gist_url: https://gist.github.com/1906750660be85a0f69290899104bb11
 headerImage: false
-hidden: true
+hidden: false
 layout: post
 live: true
-published: false
+published: true
 tag: []
 title: Actually impact futures
 ---
@@ -30,7 +30,7 @@ Consider the next US midterm elections, with two relevant outcomes. A pair of Bi
 
 If the two conditional prices are `$110,000` and `$100,000`, the market is pricing a `$10,000` difference between those two possible political outcomes.   
 
-Conditional markets already exist in practice. [Butter](https://butter.markets/) has deployed event-conditional markets that price an asset under specified outcomes. [MetaDAO](https://docs.metadao.fi/governance/markets) runs pass and fail markets that price a project’s token under each proposal outcome. [Proof](https://www.proof.trade/) describes “Multiverse Markets” that price assets such as BTC, ETH, gold, and crude oil under different outcomes.  
+Several platforms have offerings in this space: trading an asset at prices conditional on different event outcomes. [Butter](https://butter.markets/) has deployed it, [Proof](https://www.proof.trade/) calls its version “Multiverse Markets,” and [if.market](https://www.if.market/), [Lightcone](https://lightcone.xyz/), and [Branchpoint](https://www.branchpoint.xyz/) are building or piloting similar markets. [MetaDAO](https://docs.metadao.fi/governance/markets) applies the design specifically to governance proposals, with pass and fail markets for a project's token.  
 
 The article assumes a separate asset-futures market for each outcome, collateralised by claims that pay `$1` only if that outcome occurs. The future associated with the realised outcome settles at the asset's nominal price, while the other becomes worthless. Throughout, `price_a(t)` denotes the asset-futures quote conditional on outcome A at observation time `t`; `price_b(t)` denotes the corresponding quote conditional on outcome B.   
 
@@ -140,7 +140,7 @@ Probability error amplification is the primary trade-off. Suppose `probability_a
 
 The outcome-A calculation has much less amplification: `price_a - spot` is `$9.50`, and dividing by `0.95` again produces `$10`, while a `$1` input error changes the estimate by only about `$1.05`. Its weakness is the source market. A claim paying `$1` under the 5% outcome is worth only about `$0.05`, so the same nominal liquidity commits much less economically valuable capital than it does under the 95% outcome. This makes the quote less robust. The reliability weighting balances the economic value of each source market's liquidity against the error amplification in its estimator. Its exact specification is out of scope.  
 
-The baseline accepts observations only while `probability_a(t)` is between `minimum_probability` and `maximum_probability`. This is the permitted probability band. An eligible observation samples probability, spot, and at least one conditional quote at the same timestamp while probability is within that band.  
+The baseline accepts observations only while `probability_a(t)` is between `minimum_probability` and `maximum_probability`. This is the permitted probability band. The band excludes near-extreme probabilities because event-market prices can become unreliable there and therefore unsuitable for impact settlement. An eligible observation samples probability, spot, and at least one conditional quote at the same timestamp while probability is within that band.  
 
 The oracle uses the most recent `observation_duration` of cumulative eligible time before resolution. Ineligible periods are skipped, and later eligible observations after re-entry displace older ones. If the eligible time totals less than `observation_duration`, contracts using the index refund. The exact safeguards governing disconnected or stale observations remain implementation details to be worked out.  
 
@@ -178,25 +178,19 @@ If outcome A occurs, define `oriented_forecast_error` as `settlement_spot - fore
 
 Suppose outcome A has 90% probability, pre-event spot is `\\(100`, and `market_impact_TWAP` is zero. If the true conditional values are `\\)101` under A and `$91` under B, their probability-weighted average is `$100` and their spread is `$10`. The oriented forecast error is `$1` under A and `$9` under B. The following rules allocate that error differently.  
 
-### Full statewise correction  
+### Choosing the correction rule  
 
-Dividing the A error by `1-probability_a` and the B error by `probability_a` produces the direct resolution-jump beta. In the example, the A settlement correction is `$1 / 10% = $10`, while the B correction is `$9 / 90% = $10`. Either outcome therefore produces the correct impact in conditional expectation.  
+Full statewise correction divides the A error by `1-probability_a` and the B error by `probability_a`, producing the direct resolution-jump beta. In the example, the A settlement correction is `$1 / 10% = $10`, while the B correction is `$9 / 90% = $10`. Either outcome therefore produces the correct impact in conditional expectation.  
 
 When A was already 90% likely, its resolution increases its probability by only 10 percentage points, from 90% to 100%. A `$10` error in the estimated impact therefore appears as only a `$1` error in the predicted A-conditional asset price: 90% of A's effect was already incorporated into spot. To recover the full `$10` spread error from that `$1` observation, the statewise rule divides it by the remaining 10% probability change.  
 
-The division cannot distinguish the event-related signal from another price movement occurring at the same time. If unrelated news, noise, or manipulation adds another `$1` to the observed A price, the measured forecast error becomes `$2` and the inferred impact becomes `$20` rather than `$10`. The unrelated `$1` has been amplified into a `$10` impact-estimation error. This amplification occurs under A, which resolves 90% of the time. Under B, probability moves by 90 percentage points, so dividing its larger price delta by 90% causes the same `$1` of noise to change the impact estimate by only about `$1.11`. Statewise correction makes either outcome accurate in conditional expectation when the observation is clean, but does so by assigning the greatest leverage to the common outcome's low-signal-to-noise observation.  
+The division also scales unrelated movements. If news, noise, or manipulation adds another `$1` to the observed A price, the inferred impact becomes `$20` rather than `$10`: the extra `$1` becomes a `$10` impact-estimation error under the outcome that occurs 90% of the time. Under B, the same `$1` of noise changes the estimate by only about `$1.11`, because the observed price delta is divided by a 90-percentage-point probability move. Statewise correction supports an outcome-specific hedge, but gives the greatest leverage to the common outcome's lowest-signal observation.  
 
-### Reliability-weighted unconditional correction  
+Reliability-weighted unconditional correction instead divides the A error by `probability_a` and the B error by `1-probability_a`. In the example, settlement is corrected by about `$1.11` under A and `$90` under B, whose probability-weighted average is `$10`. This shifts leverage away from the small, relatively noisy price delta observed when an already-likely outcome resolves. When absolute residual noise is equal across outcomes and the market TWAP is close to the target, this weighting minimises the additive-noise contribution to ex ante variance among linear rules whose unconditional expected settlement equals the target impact.  
 
-Dividing the A error by `probability_a` and the B error by `1-probability_a` instead makes the unconditional expected correction equal the full impact forecast error. In the example, settlement is corrected by about `$1.11` under A and `$90` under B. The probability-weighted correction is still `$10`: 90% of `$1.11` plus 10% of `$90`.  
+Probability is only one reliability heuristic. Liquidity, observed volatility, oracle dispersion, and time synchronisation can imply different weights. The contract must specify its rule in advance rather than derive a weight from the realised error magnitude. Even with an appropriate rule, reliability weighting creates rare, extreme settlements and does not make each outcome's conditional expected settlement correct. It is therefore better suited to an unconditional speculative claim than to a hedge that depends on accuracy in one specified outcome.  
 
-This weighting avoids assigning excessive influence to the small absolute price delta observed when an already-likely outcome resolves. Fixed-size price noise or manipulation is large relative to that event-related delta, so it is a less reliable source of error information than the larger delta associated with the surprising outcome. When absolute residual noise is equal across outcomes and the market TWAP is close to the target, inverse-realised-outcome-probability weighting minimises the additive-noise contribution to ex ante variance among linear correction rules whose unconditional expected settlement equals the target impact. It is an instance of the more general principle that error observations should be weighted according to their estimated precision while preserving the intended expected correction.  
-
-Probability is only one reliability heuristic. Liquidity, observed volatility, oracle dispersion and time synchronisation can imply different weights. The contract must specify its reliability rule in advance. Even with an appropriate rule, shifting correction away from common outcomes creates rare, extreme settlements and does not make each outcome's conditional expected settlement correct. It is therefore better suited to an unconditional speculative claim than to a hedge that depends on accuracy in one specified outcome.  
-
-### Unweighted low-gain correction  
-
-The non-amplifying version adds `oriented_forecast_error` directly to `market_impact_TWAP`, without dividing it by either probability:  
+Unweighted low-gain correction adds `oriented_forecast_error` directly to `market_impact_TWAP`, without dividing it by either probability:  
 
 `terminal_impact_index = market_impact_TWAP + oriented_forecast_error`.  
 
@@ -204,11 +198,11 @@ In the example, the correction is `$1` under A and `$9` under B, so its expected
 
 `expected_correction = 2 · probability_a · (1-probability_a) · (true_impact - market_impact_TWAP)`.  
 
-This rule does not make settlement's conditional or unconditional expected value equal the correct impact whenever the market TWAP is wrong. It instead gives the market a low-gain external error signal without amplifying random oracle noise or creating deliberately extreme tail corrections. Under the pricing assumptions above, any positive correction still makes the true impact the unique frictionless fixed point while both outcomes have nonzero probability. In practice, the alignment incentive becomes weak near extreme probabilities and can be outweighed by trading costs, risk aversion, or limited arbitrage capital.  
+This rule does not make settlement's conditional or unconditional expected value equal the correct impact whenever the market TWAP is wrong. It instead gives the market a low-gain external error signal without amplifying random oracle noise or creating deliberately extreme tail corrections. Under the pricing assumptions above, it still makes the true impact the unique frictionless fixed point while both outcomes have nonzero probability, although market frictions can overwhelm the weak alignment incentive near extreme probabilities.  
 
 A related [self-resolving prediction market design](https://arxiv.org/abs/2306.04305) could settle to the market's own TWAP in most cases and directly to the noisy external calculation in randomly selected cases. That also adds an external anchor, but concentrates the oracle's variance in the selected settlements. The unweighted rule instead uses the external observation every time at low gain, spreading its influence across all settlements without rare full-oracle resolution. This comparison assumes that obtaining the external observation for every settlement is feasible.  
 
-Settlement weighting therefore trades expected-value accuracy against noise and tail risk. Making settlement conditionally or unconditionally correct requires scaling the observed error enough to recover the full impact forecast error. This can assign extreme weight either to small, noisy deltas in common outcomes or to rare outcomes. Reliability weighting allocates more of the correction to observations expected to contain a stronger signal relative to their noise, improving the risk-adjusted incentive for the market price to track the intended underlying. Leaving the error unweighted avoids amplification but supplies only a partial expected correction. No rule simultaneously guarantees exact expected-value anchoring, low ordinary variance, and bounded rare-state corrections.  
+The choice is therefore between statewise accuracy with common-state noise amplification, exact unconditional anchoring with rare tails, and low-variance partial anchoring. No rule simultaneously guarantees exact expected-value anchoring, low ordinary variance, and limited rare-state corrections.  
 
 These rules reduce non-adversarial measurement noise; they are not manipulation-resistance mechanisms. A manipulator can influence `market_impact_TWAP` and may also influence the probability or spot inputs. The choice of oracle safeguards remains a separate problem.  
 
@@ -230,7 +224,7 @@ The [shared-collateral design for highly improbable events](https://ethresear.ch
 
 Instead, [portfolio-insured minting](https://distbit.xyz/insured-prediction-market-minting/) keeps each outcome claim isolated and moves diversification to an insurance provider's balance sheet. The provider issues undercollateralised claims for selected low-probability outcomes across a risk-assessed portfolio. Each claim pays one dollar when its market resolves to its associated outcome and zero under the alternative outcome, regardless of resolutions elsewhere, so different markets can resolve independently.  
 
-Portfolio-insured outcome claims can support the conditional payout layer as long as each impact contract specifies a bounded payout range. In the conditional-market index design, the conditional-asset source market can use the same form of collateral; the self-contained design does not require that source market. The impact oracle takes `probability_a(t)` from the secondary-market price of the outcome-A claim, not the provider's premium-inclusive mint quote. Because the claims retain standard payoffs, the ordinary two-outcome decomposition applies without a cross-market multiplicity adjustment which would be required under the above mentioned shared-collateral design.  
+Portfolio-insured outcome claims can collateralise the outcome-conditional impact claims and, in the conditional-market index design, the conditional-asset source market; the self-contained design does not require the latter. The impact oracle takes `probability_a(t)` from the secondary-market price of the outcome-A claim, not the provider's premium-inclusive mint quote. Because the claims retain standard payoffs, the ordinary two-outcome decomposition applies without the cross-market multiplicity adjustment required by the shared-collateral design.  
 
 Across a portfolio, insured minting can supply these claims without locking a separate fully collateralised dollar behind every low-probability outcome. It reduces the capital cost of betting against overpriced low-probability claims and therefore, ceteris paribus, improves their pricing accuracy. It also makes more outcome claims available as collateral for conditional impact contracts and, when used, conditional-asset source markets. These improvements support a wider eligible probability band than the separately fully collateralised design, and reduce hedging costs.  
 

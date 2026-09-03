@@ -5,7 +5,9 @@ category: blog
 date: 2022-09-05 00:00
 description: Analysis of collateral required by IRS contracts
 headerImage: false
+hidden: false
 layout: post
+published: true
 tag:
 - defi
 - derivatives

@@ -9,6 +9,7 @@ headerImage: false
 hidden: false
 layout: post
 live: false
+published: true
 tag: []
 title: Decision market challenges
 ---

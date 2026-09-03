@@ -6,8 +6,10 @@ date: 2025-10-06 00:00
 description: ''
 gist_url: https://gist.github.com/59d9bad6ca43aff375c7c503945123d5
 headerImage: false
+hidden: false
 layout: post
 live: true
+published: true
 tag:
 - share
 title: Addressing the self fulfilling futarchy manipulation attack

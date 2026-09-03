@@ -6,8 +6,10 @@ date: 2025-10-06 00:00
 description: ''
 gist_url: https://gist.github.com/3ce9705b0efcfb628346d0fb38f027ed
 headerImage: false
+hidden: false
 layout: post
 live: true
+published: true
 tag:
 - share
 title: Intro to advisory markets

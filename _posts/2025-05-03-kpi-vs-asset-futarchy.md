@@ -6,8 +6,10 @@ date: 2025-05-03 00:00
 description: ''
 gist_url: https://gist.github.com/a7e6cc863704b3085b77ef758307a4d0
 headerImage: false
+hidden: false
 layout: post
 live: false
+published: true
 tag: []
 title: The different types of futarchy
 ---

@@ -6,8 +6,10 @@ date: 2026-05-19 00:00
 description: ''
 gist_url: https://gist.github.com/db7422f8704b0638eaf9469f1af239cd
 headerImage: false
+hidden: false
 layout: post
 live: true
+published: true
 tag: []
 title: Futarchy is not secure without a proposal gatekeeper
 ---
