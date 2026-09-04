@@ -133,7 +133,7 @@ The leg matching the realised outcome is anchored to that outcome's observed spo
 
 The design defines `endogenous_spread_TWAP` from the pre-resolution spread between the A and B prices. It then uses that average to determine the terminal values of those same two claims. The prices determine the average, while the average determines the values that the prices anticipate.  
 
-Suppose traders coordinate on an expected spread of `$10,000`. The settlement rule then gives the two claims a `$10,000` terminal spread, which validates prices with a `\\(10,000` spread, so the oracle reports an `endogenous_spread_TWAP` of `\\)10,000`.  
+Suppose traders coordinate on an expected spread of `$10,000`. The settlement rule then gives the two claims a `$10,000` terminal spread, which validates prices with a `$10,000` spread, so the oracle reports an `endogenous_spread_TWAP` of `$10,000`.  
 
 The same loop works for `$5,000`, `$20,000`, or any other feasible constant spread. Each expected value can make itself correct because the settlement rule turns that expectation into the claims’ terminal payoff difference. Nothing outside the two markets selects one of those values as the event spread.  
 
@@ -153,7 +153,7 @@ If the outcome-B conditional price is used, its estimate is:
 
 Under the pricing identity above, these are two estimates of the same event spread. When both quotes are available, the oracle always combines the estimates according to a disclosed rule that weights their relative reliability. If only one quote is available, the oracle can use an impact estimate derived from that quote, spot, and probability.  
 
-Probability error amplification is the primary trade-off. Suppose `probability_a = 5%` and the true event spread is `\\(10`. The difference `spot - price_b` is only `\\)0.50`, so the outcome-B-derived estimate recovers `$10` by dividing by `0.05`. A `$1` error in either input therefore becomes a `$20` error in the estimated spread.  
+Probability error amplification is the primary trade-off. Suppose `probability_a = 5%` and the true event spread is `$10`. The difference `spot - price_b` is only `$0.50`, so the outcome-B-derived estimate recovers `$10` by dividing by `0.05`. A `$1` error in either input therefore becomes a `$20` error in the estimated spread.  
 
 The outcome-A calculation has much less amplification: `price_a - spot` is `$9.50`, and dividing by `0.95` again produces `$10`, while a `$1` input error changes the estimate by only about `$1.05`. Its weakness is the source market. A claim paying `$1` under the 5% outcome is worth only about `$0.05`, so the same nominal liquidity commits much less economically valuable capital than it does under the 95% outcome. This makes the quote less robust. The reliability weighting balances the economic value of each source market's liquidity against the error amplification in its estimator. Its exact specification is out of scope.  
 
@@ -193,7 +193,7 @@ The event beta can determine settlement directly, but that transmits all of its 
 
 If outcome A occurs, define `oriented_forecast_error` as `settlement_spot - forecast_price_a`. If outcome B occurs, define it as `forecast_price_b - settlement_spot`. The reversed sign under B makes a positive error mean that `market_impact_TWAP` understated the spread under either outcome.   
 
-Suppose outcome A has 90% probability, pre-event spot is `\\(100`, and `market_impact_TWAP` is zero. If the true conditional values are `\\)101` under A and `$91` under B, their probability-weighted average is `$100` and their spread is `$10`. The oriented forecast error is `$1` under A and `$9` under B. The following rules allocate that error differently.  
+Suppose outcome A has 90% probability, pre-event spot is `$100`, and `market_impact_TWAP` is zero. If the true conditional values are `$101` under A and `$91` under B, their probability-weighted average is `$100` and their spread is `$10`. The oriented forecast error is `$1` under A and `$9` under B. The following rules allocate that error differently.  
 
 ### Choosing the correction rule  
 

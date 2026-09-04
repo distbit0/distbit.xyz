@@ -116,15 +116,15 @@ Resistance-contingent delivery is a contract-design problem. Proposers need enfo
 
 Bag-holder extraction is a market-access problem. Spot conditional markets limit corrective selling to current holders willing to exit pass-branch ASSET. Synthetic conditional markets let non-holders sell or short PASS exposure, broadening the capital that can oppose mildly negative-EV proposals.  
 
-Proposal convexity maximisation needs a randomised mechanism that sometimes separates market settlement from market-guided execution.[^dynomight-futarchy] In a large randomly selected share of cases, the market should be cancelled and the proposal decision should follow its recommendation. In the remaining cases, the market should settle, but execution should be selected at random rather than by the market. Settled PASS states then no longer consist only of worlds where favorable proposal-specific information caused passage. Proposals that leave material information undisclosed should also be gated or penalized.  
+Proposal convexity maximisation needs a randomised mechanism that sometimes separates market settlement from market-guided execution.[^dynomight-futarchy] In a large randomly selected share of cases, the market should be cancelled and the proposal decision should follow its recommendation. In the remaining cases, the market should settle, but execution should be selected at random rather than by the market. Settled PASS states then no longer consist only of worlds where favorable proposal-specific information caused passage. Alternatively, if randomisation is overly burdensome, proposals which are determined to have left material information undisclosed should be gated or penalized.  
 
-Randomized settlement also makes admission economically relevant: every admitted proposal receives some chance of execution even when the market predicts that it is harmful. infofi-index#Resolution candidate — 2026-08-19 explains why cheap entry can turn this into a negative-value proposal lottery and why lowering the exploration rate alone need not bound aggregate harm.  
+Randomized settlement also makes admission economically relevant: every admitted proposal receives some chance of execution even when the market predicts that it is harmful. Cheap entry can turn this into a negative-value proposal lottery and why lowering the exploration rate alone need not bound aggregate harm.  
 
 Counter-manipulation deterrence is mainly an admission and enforcement problem. Under-defined proposals should be rejected before trading, and value-relevant commitments should have an available enforcement mechanism.  
 
 Fail-branch sabotage requires refusing threats as proposal inputs. Proposals that make the fail branch worse through explicit or implicit retaliation should be manually gated, slashed, or otherwise penalized.  
 
-Permissioned review is not necessarily the only possible defense capable of addressing all of these attacks, though it is the only one I am aware of capable of doing so. A design that does so without recreating a trusted review layer would be a meaningful improvement over the mitigations described here.  
+Permissioned review is not necessarily the only possible defense capable of addressing all of these attacks, though it is the only one I am aware of capable of doing so. A design that does so without requiring such a trusted review layer would be a meaningful improvement over the mitigations described here.  
 
 ## A two-layer gatekeeper architecture  
 
