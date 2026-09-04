@@ -126,6 +126,18 @@ Fail-branch sabotage requires refusing threats as proposal inputs. Proposals tha
 
 Permissioned review is not necessarily the only possible defense capable of addressing all of these attacks, though it is the only one I am aware of capable of doing so. A design that does so without recreating a trusted review layer would be a meaningful improvement over the mitigations described here.  
 
+## A two-layer gatekeeper architecture  
+
+A [validator-redirected revenue mechanism](https://ethresear.ch/t/validator-redirected-revenue/25248/40) could limit the authority assigned to this trusted review layer. Validators would determine how much revenue to redirect and which allocation mechanism should receive it, while a delegated futarchy contract would decide which proposals to fund. Validators are well positioned to set a funding rate, but asking them to evaluate specialized work proposal by proposal would give them a much broader and more demanding role.  
+
+The recipient contract should fund an allocation mechanism rather than pay final recipients directly. This separates the decision about how much to fund from the decision about what to fund. It also avoids relying on equal budgets for accredited institutions, which can reward institutional status and completed tasks without establishing how much value the work creates. Such budgets can reinforce institutional complexity and a preference for work produced within recognized institutions. Futarchy instead gives informed traders an incentive to compare proposals by their expected effect on ASSET value.  
+
+The delegated contract would contain the futarchy markets, allocation rules, grace periods, and moderator powers. After each market observation, moderators would have a grace period in which they could veto a proposal because its design or observed market behavior resembled an exploit. Replacing the moderators would then require validators to redirect revenue to a new contract instance rather than changing the validator layer itself.  
+
+This creates a hierarchy of gatekeepers. Moderators supervise proposal creators, while validators supervise the moderator set. Validators would not assess individual proposals or continuously evaluate every moderator decision. They would intervene only when clear evidence showed that moderators had admitted an exploitative proposal or unjustifiably vetoed a legitimate one. Their narrow role limits the surface through which validator capture can affect allocation while retaining a mechanism for replacing captured or incompetent moderators.  
+
+The initial allocation rule could keep one funding proposal incumbent until a challenger defeats it in a head-to-head futarchy market. Besides avoiding the complexity of allocating revenue across many small proposals, this makes the difference between the alternatives economically material enough to affect ASSET value and therefore produce a useful market signal.  
+
 [Ethresearch thread](https://ethresear.ch/t/futarchy-is-insecure-without-a-trusted-gatekeeper/25235/)  
 
 [^dynomight-futarchy]: The randomisation solution is introduced in Dynomight's [Prediction market does not imply causation](https://dynomight.net/prediction-market-causation/). See also [Futarchy's fundamental flaw](https://dynomight.net/futarchy/) for the related futarchy critique.  
