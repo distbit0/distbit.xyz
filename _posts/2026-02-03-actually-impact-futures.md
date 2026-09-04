@@ -63,7 +63,7 @@ Impact futures are most useful when an event remains unresolved for long enough 
 - **Biotech investors (speculators):** trade a trial-result impact future on sponsor or competitor equity to isolate the result's value from its probability and sector moves.  
 - **Shareholders and creditors (hedgers):** short an adverse-ruling-conditional impact future on company equity or debt; its payoff increases as the expected remedy becomes more damaging.  
 - **Tokenholders (hedgers):** short a proposal-passes-conditional impact future on the governed token, offsetting the proposal's estimated loss while retaining exposure to unrelated token gains.  
-- **DAOs (market sponsors):** subsidise an outcome-independent impact future on the governance token for a proposal passing versus failing, paying traders for a market estimate of the price difference before delegates vote.  
+- **Public-company boards (market sponsors):** subsidise an outcome-independent impact future on their shares for completing versus abandoning a proposed acquisition, buying a market estimate of the share-price difference before deciding whether to proceed.  
 - **Macro traders (speculators):** trade an outcome-independent election, tariff, sanctions, rate-decision, or ceasefire impact future without taking event-probability or market-direction risk.  
 
 ## Why prediction-market positions require rebalancing  
