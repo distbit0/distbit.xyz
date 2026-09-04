@@ -59,16 +59,12 @@ The event spread is a market-implied comparison between outcomes, not by itself 
 
 Impact futures are most useful when an event remains unresolved for long enough that its estimated impact changes while unrelated asset-price movements obscure that signal. Examples include:  
 
-- **Employees and founders (hedgers):** short a failed-launch-conditional impact future on employer equity to offset that event's loss without selling their general company exposure.  
-- **Suppliers (hedgers):** short a contract-cancellation-conditional impact future on their equity or revenue to cover the changing estimated loss of a major customer.  
 - **Merger arbitrageurs (speculators):** trade an outcome-independent approval impact future to forecast the deal's effect without betting on approval probability or the broader market.  
 - **Biotech investors (speculators):** trade a trial-result impact future on sponsor or competitor equity to isolate the result's value from its probability and sector moves.  
 - **Shareholders and creditors (hedgers):** short an adverse-ruling-conditional impact future on company equity or debt; its payoff increases as the expected remedy becomes more damaging.  
-- **Tokenholders (hedgers):** short a harmful-proposal, exploit, or depeg-conditional impact future while retaining their exposure to unrelated crypto gains.  
+- **Tokenholders (hedgers):** short a proposal-passes-conditional impact future on the governed token, offsetting the proposal's estimated loss while retaining exposure to unrelated token gains.  
 - **Manufacturers (hedgers):** buy a strike- or port-closure-conditional impact future on input or freight prices, with protection resizing as the expected disruption changes.  
 - **Macro traders (speculators):** trade an outcome-independent election, tariff, sanctions, rate-decision, or ceasefire impact future without taking event-probability or market-direction risk.  
-- **Acquirers (market sponsors):** subsidise a drug-approval impact market and index contingent acquisition payments to it, resolving valuation disagreements without fixing the milestone's value in advance.  
-- **Portfolio risk managers (market sponsors):** subsidise impact markets for one event across their holdings to identify the largest losses and contagion channels before allocating hedge capital.  
 
 ## Why prediction-market positions require rebalancing  
 
