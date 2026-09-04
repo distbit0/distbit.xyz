@@ -59,16 +59,16 @@ The event spread is a market-implied comparison between outcomes, not by itself 
 
 Impact futures are most useful when an event remains unresolved for long enough that its estimated impact changes while unrelated asset-price movements obscure that signal. Examples include:  
 
-- **Concentrated company exposure:** employees and founders can hedge the event-specific component of their equity and human-capital exposure without selling their general exposure to the company.  
-- **Customer and supplier concentration:** a business can hedge the effect of losing a major customer, suffering a supplier failure, or having an important contract renewed or cancelled.  
-- **Mergers and acquisitions:** shareholders can trade the effect of approval, prohibition, or revised terms on the target, acquirer, competitors, and suppliers without taking general market exposure.  
-- **Clinical development:** investors can isolate how a trial result or drug approval affects its sponsor and competing treatments rather than combining that view with the event's probability.  
-- **Litigation and regulation:** shareholders, creditors, and affected businesses can hedge the estimated effect of a court judgment, patent ruling, licence decision, or regulatory classification.  
-- **Protocol and infrastructure events:** tokenholders can hedge a protocol upgrade, governance proposal, stablecoin depeg or exploit while retaining their other crypto exposure.  
-- **Labour and supply-chain disruptions:** firms can hedge the effect of a strike, port closure, export restriction, factory outage, or shipping-chokepoint disruption on their assets or input prices.  
-- **Political and macro events:** traders can isolate how elections, governing coalitions, tariffs, sanctions, central-bank decisions, or ceasefires affect currencies, bonds, commodities, or sector portfolios.  
-- **Adaptive contingent claims:** acquisition consideration, insurance cover, and project-finance protection can scale with the market's changing estimate of a milestone or adverse event's economic effect instead of fixing the amount in advance.  
-- **Risk and resilience mapping:** trading the same event against many assets can identify expected winners, losers, contagion channels, and which firms or protocols are most resilient to a common shock.  
+- **Employees and founders (hedgers):** short a failed-launch-conditional impact future on employer equity to offset that event's loss without selling their general company exposure.  
+- **Suppliers (hedgers):** short a contract-cancellation-conditional impact future on their equity or revenue to cover the changing estimated loss of a major customer.  
+- **Merger arbitrageurs (speculators):** trade an outcome-independent approval impact future to forecast the deal's effect without betting on approval probability or the broader market.  
+- **Biotech investors (speculators):** trade a trial-result impact future on sponsor or competitor equity to isolate the result's value from its probability and sector moves.  
+- **Shareholders and creditors (hedgers):** short an adverse-ruling-conditional impact future on company equity or debt; its payoff increases as the expected remedy becomes more damaging.  
+- **Tokenholders (hedgers):** short a harmful-proposal, exploit, or depeg-conditional impact future while retaining their exposure to unrelated crypto gains.  
+- **Manufacturers (hedgers):** buy a strike- or port-closure-conditional impact future on input or freight prices, with protection resizing as the expected disruption changes.  
+- **Macro traders (speculators):** trade an outcome-independent election, tariff, sanctions, rate-decision, or ceasefire impact future without taking event-probability or market-direction risk.  
+- **Acquirers (market sponsors):** subsidise a drug-approval impact market and index contingent acquisition payments to it, resolving valuation disagreements without fixing the milestone's value in advance.  
+- **Portfolio risk managers (market sponsors):** subsidise impact markets for one event across their holdings to identify the largest losses and contagion channels before allocating hedge capital.  
 
 ## Why prediction-market positions require rebalancing  
 
@@ -104,13 +104,15 @@ The multiplier `(1-probability_a(t))` collapses as outcome A approaches certaint
 
 ## Is this relevant to futarchy (decision-markets) or only to passive event markets?  
 
-The three broad applications of event-related markets are speculation, hedging, and information production for decisions, often called InfoFi. The preceding sections principally concern speculation and hedging. Impact futures are more applicable to those financial uses than to InfoFi.  
+The three broad applications of event-related markets are speculation, hedging, and information production for decisions, often called InfoFi. Impact futures support InfoFi when an information buyer subsidises a market to learn an event's expected effect on an asset price.  
+
+The same estimate can be inferred from conditional-market prices, but a trader who corrects those prices must accept event-probability and asset-level risk or manage additional hedge positions. An impact future gives direct exposure to changes in the spread through one position. This improves trader UX by removing unwanted exposures and position management, so traders require less subsidy to contribute the same information. The information buyer can therefore purchase the impact estimate at lower cost.  
 
 Long-duration event markets create the clearest demand for impact futures. An election, court judgment, war, or protocol upgrade may remain unresolved for months. Traders may want event-spread exposure during that period, while unrelated moves in the underlying asset add noise to an ordinary conditional position.  
 
 In the decision-market form of InfoFi, markets can instead use a sufficiently short trading interval and read the conditional comparison at the decision cutoff. MetaDAO, for example, describes a three-day conditional trading period. Over a short enough interval, exogenous asset-price movement is negligible relative to proposal-related repricing, so a trader can simply take an unhedged position in the conditional market they believe is wrong. Ceteris paribus, AI agents make this approximation more practical by analysing information and updating prices faster.  
 
-Under those conditions, a dedicated impact future has no clear role. It becomes useful if evaluation must remain open long enough for unrelated asset movement to become material. It isolates the event spread during that longer pre-decision period, but it cannot continue after the decision makes one outcome unrealised, hence can not provide traders with proposal-specific exposure beyond the decision deadline.  
+Even during a short decision market, an impact future remains useful when its direct payoff lets the information buyer elicit the same impact estimate with less subsidy. Its advantage shrinks when an unhedged conditional position already gives traders comparably simple exposure and a separate instrument would fragment liquidity. If evaluation stays open long enough for unrelated asset movement to become material, the impact future also isolates the event spread. It cannot continue after the decision makes one outcome unrealised, so it cannot provide proposal-specific exposure beyond the decision deadline.  
 
 ## The first design: make both outcome legs settle  
 
