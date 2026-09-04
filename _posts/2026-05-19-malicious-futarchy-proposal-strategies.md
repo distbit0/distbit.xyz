@@ -126,9 +126,11 @@ Fail-branch sabotage requires refusing threats as proposal inputs. Proposals tha
 
 Permissioned review is not necessarily the only possible defense capable of addressing all of these attacks, though it is the only one I am aware of capable of doing so. A design that does so without requiring such a trusted review layer would be a meaningful improvement over the mitigations described here.  
 
-## A two-layer gatekeeper architecture  
+## Applying futarchy to validator-directed ecosystem funding  
 
-A [validator-redirected revenue mechanism](https://ethresear.ch/t/validator-redirected-revenue/25248/40) could limit the authority assigned to this trusted review layer. Validators would determine how much revenue to redirect and which allocation mechanism should receive it, while a delegated futarchy contract would decide which proposals to fund. Validators are well positioned to set a funding rate, but asking them to evaluate specialized work proposal by proposal would give them a much broader and more demanding role.  
+These constraints are directly relevant to applying asset futarchy to Ethereum ecosystem funding. Under a [validator-redirected revenue mechanism](https://ethresear.ch/t/validator-redirected-revenue/25248/40), validators would direct a share of protocol revenue to an allocation contract, which would use futarchy to choose among ecosystem funding proposals. The attacks described above mean that this contract could not safely operate as a fully autonomous funding mechanism. It would need trusted gatekeepers to review proposals.  
+
+The authority assigned to the human governance layers could remain narrow. Validators would determine how much revenue to redirect and which allocation mechanism should receive it, while the delegated futarchy contract would decide which proposals to fund. Validators are well positioned to set a funding rate, but asking them to evaluate specialized work proposal by proposal would give them a much broader and more demanding role.  
 
 The recipient contract should fund an allocation mechanism rather than pay final recipients directly. This separates the decision about how much to fund from the decision about what to fund. It also avoids relying on equal budgets for accredited institutions, which can reward institutional status and completed tasks without establishing how much value the work creates. Such budgets can reinforce institutional complexity and a preference for work produced within recognized institutions. Futarchy instead gives informed traders an incentive to compare proposals by their expected effect on ASSET value.  
 
