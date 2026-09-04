@@ -64,7 +64,7 @@ Impact futures are most useful when an event remains unresolved for long enough 
 - **Mergers and acquisitions:** shareholders can trade the effect of approval, prohibition, or revised terms on the target, acquirer, competitors, and suppliers without taking general market exposure.  
 - **Clinical development:** investors can isolate how a trial result or drug approval affects its sponsor and competing treatments rather than combining that view with the event's probability.  
 - **Litigation and regulation:** shareholders, creditors, and affected businesses can hedge the estimated effect of a court judgment, patent ruling, licence decision, or regulatory classification.  
-- **Protocol and infrastructure events:** tokenholders can hedge a protocol upgrade, governance proposal, stablecoin depeg, bridge failure, exploit, or restoration of exchange withdrawals while retaining their other crypto exposure.  
+- **Protocol and infrastructure events:** tokenholders can hedge a protocol upgrade, governance proposal, stablecoin depeg or exploit while retaining their other crypto exposure.  
 - **Labour and supply-chain disruptions:** firms can hedge the effect of a strike, port closure, export restriction, factory outage, or shipping-chokepoint disruption on their assets or input prices.  
 - **Political and macro events:** traders can isolate how elections, governing coalitions, tariffs, sanctions, central-bank decisions, or ceasefires affect currencies, bonds, commodities, or sector portfolios.  
 - **Adaptive contingent claims:** acquisition consideration, insurance cover, and project-finance protection can scale with the market's changing estimate of a milestone or adverse event's economic effect instead of fixing the amount in advance.  
