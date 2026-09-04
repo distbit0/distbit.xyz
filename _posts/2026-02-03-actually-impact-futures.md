@@ -55,6 +55,21 @@ For speculation, an outcome-independent impact future gives direct exposure to c
 
 The event spread is a market-implied comparison between outcomes, not by itself an identified causal effect. It measures the price difference traders expect the asset market to reflect near the event.  
 
+### Example applications  
+
+Impact futures are most useful when an event remains unresolved for long enough that its estimated impact changes while unrelated asset-price movements obscure that signal. Examples include:  
+
+- **Concentrated company exposure:** employees and founders can hedge the event-specific component of their equity and human-capital exposure without selling their general exposure to the company.  
+- **Customer and supplier concentration:** a business can hedge the effect of losing a major customer, suffering a supplier failure, or having an important contract renewed or cancelled.  
+- **Mergers and acquisitions:** shareholders can trade the effect of approval, prohibition, or revised terms on the target, acquirer, competitors, and suppliers without taking general market exposure.  
+- **Clinical development:** investors can isolate how a trial result or drug approval affects its sponsor and competing treatments rather than combining that view with the event's probability.  
+- **Litigation and regulation:** shareholders, creditors, and affected businesses can hedge the estimated effect of a court judgment, patent ruling, licence decision, or regulatory classification.  
+- **Protocol and infrastructure events:** tokenholders can hedge a protocol upgrade, governance proposal, stablecoin depeg, bridge failure, exploit, or restoration of exchange withdrawals while retaining their other crypto exposure.  
+- **Labour and supply-chain disruptions:** firms can hedge the effect of a strike, port closure, export restriction, factory outage, or shipping-chokepoint disruption on their assets or input prices.  
+- **Political and macro events:** traders can isolate how elections, governing coalitions, tariffs, sanctions, central-bank decisions, or ceasefires affect currencies, bonds, commodities, or sector portfolios.  
+- **Adaptive contingent claims:** acquisition consideration, insurance cover, and project-finance protection can scale with the market's changing estimate of a milestone or adverse event's economic effect instead of fixing the amount in advance.  
+- **Risk and resilience mapping:** trading the same event against many assets can identify expected winners, losers, contagion channels, and which firms or protocols are most resilient to a common shock.  
+
 ## Why prediction-market positions require rebalancing  
 
 An ordinary prediction-market position can approximate the hedge by fixing a payment for one outcome. After observing a `$10,000` event spread in the conditional markets, a holder of one Bitcoin could short `10,000` outcome-A claims or buy `10,000` outcome-B claims, assuming each claim pays `$1`.   
