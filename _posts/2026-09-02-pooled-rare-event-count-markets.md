@@ -138,4 +138,4 @@ Those prices make the pooled claims interpretable and let an underwriter quote f
 
 *Published 2 September 2026. This is a mechanism analysis, not a claim of novelty or deployment readiness.*  
 
-If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [schedule a 20 min call](https://cal.com/distbit/call?duration=20)
+If you found this interesting, have feedback or are working on something related, let's meet: [email: me@distbit.xyz](mailto:me@distbit.xyz), [twitter (@distbit0)](https://twitter.com/distbit0), or [20m call](https://cal.com/distbit/call?duration=20)
