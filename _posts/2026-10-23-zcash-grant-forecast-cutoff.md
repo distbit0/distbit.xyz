@@ -6,10 +6,11 @@ date: 2026-10-23 00:00
 description: Zcash's grant-market quotes scored 16.1% better after the announced cutoff.
   A reproducible audit separates pre-poll forecasting from later trading.
 draft: true
+gist_url: https://gist.github.com/a15762dca6f84852c952160127d736b7
 headerImage: false
 hidden: true
 layout: post
-live: false
+live: true
 published: true
 tag: []
 title: Zcash grant forecast cutoff
