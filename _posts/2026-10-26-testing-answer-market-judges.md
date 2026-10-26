@@ -9,7 +9,6 @@ draft: true
 headerImage: false
 hidden: true
 layout: post
-live: false
 published: true
 tag: []
 title: Testing answer market judges
