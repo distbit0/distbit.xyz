@@ -6,9 +6,11 @@ date: 2026-10-26 00:00
 description: Evaluate whether paid criticism corrects wrong answers without persuading
   the judge to reject correct ones.
 draft: true
+gist_url: https://gist.github.com/79c0d63d8763add2b492b6d27f932214
 headerImage: false
 hidden: true
 layout: post
+live: true
 published: true
 tag: []
 title: Testing answer market judges
